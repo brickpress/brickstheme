@@ -125,7 +125,7 @@
 			
 			
 	wp_enqueue_script( 'nivo-slider', trailingslashit( BRICKS_JS ) . 'jquery.nivo.slider.js', array( 'jquery' ), BRICKS_VERSION );		
-			wp_enqueue_style( 'nivo-slider-style', trailingslashit( BRICKS_CSS ) . 'bricks-nivo-slider.css' );
+			//wp_enqueue_style( 'nivo-slider-style', trailingslashit( BRICKS_CSS ) . 'bricks-nivo-slider.css' );
 wp_enqueue_style( 'page-templates', trailingslashit( BRICKS_CSS ) . 'page-templates.css' );
 //wp_enqueue_script( 'nivo-slider', trailingslashit( BRICKS_CSS ) . 'jquery.nivo.slider.js', array( 'jquery' ), BRICKS_VERSION );
 

@@ -27,8 +27,8 @@ global $theme_options, $bricks_theme_setup;
 
 function bricks_theme_option( $option ) {
 	$options = get_option( 'theme_options' );
-	if ( isset( $options[$option] ) )
-		return $options[$option];
+	if ( isset( $options[ $option ] ) )
+		return $options[ $option ];
 	else
 		return false;
 }

@@ -310,7 +310,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		if( $background_color ) :
 		?>
 		<style type="text/css">
-		    html body, html body.custom-background, body.paged {
+		    html body,
+			html body.custom-background,
+			body.paged {
 				font-size: <?php echo bricks_theme_option('body_text_size'); ?>px;
                 background: <?php echo $background_color; ?>; /* Show a solid color for older browsers */
                 background: rgba(<?php echo $this->hex_to_rgb($background_color) .','. bricks_theme_option('body_bg_opacity'); ?>) url(<?php echo bricks_theme_option('background_image'); ?>);
@@ -318,15 +320,28 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				background-repeat: <?php echo bricks_theme_option('background_repeat'); ?>;
 				background-attachment: <?php echo bricks_theme_option('background_attachment'); ?>;
             }
-            body, input, textarea {
+            body,
+			input,
+			textarea {
                 font-family: <?php echo bricks_theme_option('body_text_fontface'); ?>;
                 color: rgba(<?php echo $this->hex_to_rgb($body_text_color) .','. bricks_theme_option('body_text_opacity'); ?>);
             }
-			.single .entry-meta p, .entry-meta p, .widget ul li,
-			input[type=text], input[type=password], textarea {
+			.single .entry-meta p,
+			.entry-meta p,
+			.widget ul li,
+			input[type=text],
+			input[type=password],
+			textarea {
 				color: rgba(<?php echo $this->hex_to_rgb($secondary_text_color) .','. bricks_theme_option('secondary_text_opacity'); ?>);	
 			}
-			.inner-topbar, .inner-header, .inner-subnav, .inner-content, .inner-footer, #custom-header, #main, #headline-container {
+			.inner-topbar,
+			.inner-header,
+			.inner-subnav,
+			.inner-content,
+			.inner-footer,
+			#custom-header,
+			#main,
+			#headline-container {
 				max-width: <?php echo bricks_theme_option('page_width'); ?>px;
 				min-width: <?php echo bricks_theme_option('content_width'); ?>px;
 			}
@@ -350,12 +365,16 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			.single .entry-meta a, .entry-meta a {
 				color: <?php echo $link_color; ?>;
 			}
-			
 			<?php $button_color1 = bricks_theme_option('button_color1');
 				  $button_color2 = bricks_theme_option('button_color2');
 			?>	  
 
-			#content nav a.page-numbers.prev, #content nav a.page-numbers.next, #content nav span.previous a, #content nav span.next a, .graphic, .comments-link a, .submit-btn {
+			#content nav a.page-numbers.prev,
+			#content nav a.page-numbers.next,
+			#content nav span.previous a,
+			#content nav span.next a,
+			.graphic,
+			.comments-link a {
 				background: <?php echo $button_color1; ?>; /* Show a solid color for older browsers */
 				background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
 				background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
@@ -364,12 +383,18 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
 				color: <?php echo $button_text_color; ?>;
 			}
-
 			<?php $button_hover1 = bricks_theme_option('button_hover1');
 				  $button_hover2 = bricks_theme_option('button_hover2');
 				  $button_text_hover = bricks_theme_option('button_text_hover');
 			?>	  
-			#content nav a.page-numbers.prev:hover, #content nav a.page-numbers.next:hover, #content nav span.previous a:hover, #content nav span.next a:hover, #content nav span.page-numbers.current, .edit-link a:hover, .comments-link a:hover, .submit-btn:hover {
+			#content nav a.page-numbers.prev:hover,
+			#content nav a.page-numbers.next:hover,
+			#content nav span.previous a:hover,
+			#content nav span.next a:hover,
+			#content nav span.page-numbers.current,
+			.edit-link a:hover,
+			.comments-link a:hover,
+			.submit-btn:hover {
 				  background: <?php echo $button_hover1; ?>; /* Show a solid color for older browsers */
 				  background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
 				  background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
@@ -404,7 +429,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		if( $site_title_color ) :
 		?>
         <style type="text/css">
-		#site-header span.site-title, #site-header span.site-title a  {
+		#site-header span.site-title,
+		#site-header span.site-title a {
 			color: rgba(<?php echo $this->hex_to_rgb($site_title_color) .','. bricks_theme_option('site_title_opacity'); ?>);
 			font-family: <?php echo bricks_theme_option('site_title_fontface'); ?>;
 			font-size: <?php echo bricks_theme_option('site_title_size'); ?>%;
@@ -414,14 +440,13 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			color: rgba(<?php echo $this->hex_to_rgb($site_description_color) .','. bricks_theme_option('site_description_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('site_description_size'); ?>%;
 		}
-		<?php endif; ?>
 		<?php // Site Header Container //
-			  $siteheader_color1 = bricks_theme_option('siteheader_color1');
-			  $siteheader_color2 = bricks_theme_option('siteheader_color2');
-			  $siteheader_border_top = bricks_theme_option('siteheader_border_top');
-			  $siteheader_border_bottom = bricks_theme_option('siteheader_border_bottom');
-			  $siteheader_text_color = bricks_theme_option('siteheader_text_color');
-		if( $siteheader_color1 ) : ?>
+		$siteheader_color1 = bricks_theme_option('siteheader_color1');
+		$siteheader_color2 = bricks_theme_option('siteheader_color2');
+		$siteheader_border_top = bricks_theme_option('siteheader_border_top');
+		$siteheader_border_bottom = bricks_theme_option('siteheader_border_bottom');
+		$siteheader_text_color = bricks_theme_option('siteheader_text_color');
+		?>
 		#branding {
 			background: <?php echo $siteheader_color1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($siteheader_color1) .','. bricks_theme_option('siteheader_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($siteheader_color2) .','. bricks_theme_option('siteheader_opacity2'); ?>) );
@@ -431,12 +456,10 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			border-top: 1px solid rgba(<?php echo $this->hex_to_rgb($siteheader_border_top) .','. bricks_theme_option('siteheader_opacity1'); ?>);
 			border-bottom: 1px solid rgba(<?php echo $this->hex_to_rgb($siteheader_border_bottom) .','. bricks_theme_option('siteheader_opacity2'); ?>);
 		}
-		<?php endif; ?>
-		
 		<?php // Custom Header container div //
 			$custom_header_bg_color = bricks_theme_option('custom_header_bg_color');
 			$custom_header_bg_image = bricks_theme_option('custom_header_bg_image');
-		if( $custom_header_bg_color ) : ?>
+		?>
 		#custom-header-wrapper {
 			background: <?php echo $custom_header_bg_color; ?>; /* Show a solid color for older browsers */
 			background: rgba(<?php echo $this->hex_to_rgb($custom_header_bg_color) .','. bricks_theme_option('custom_header_bg_opacity'); ?>) url(<?php echo bricks_theme_option('custom_header_bg_image'); ?>);
@@ -471,7 +494,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		if($topbar_bg_color) :
 		?>
         <style type="text/css">
-		#topbar-wrapper, #topbar ul ul {
+		#topbar-wrapper,
+		#topbar ul ul {
 			background: rgba(<?php echo $this->hex_to_rgb($topbar_bg_color) .','. bricks_theme_option('topbar_bg_opacity'); ?>);	
 		}
 		#topbar a {
@@ -482,14 +506,17 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			font-weight: <?php echo bricks_theme_option('topbar_fontweight'); ?>;
 			text-transform: <?php echo bricks_theme_option('topbar_text_transform'); ?>;
 		}
-		#topbar li:hover > a, #topbar a:focus {
+		#topbar li:hover > a,
+		#topbar a:focus {
 			color: rgba(<?php echo $this->hex_to_rgb($topbar_text_color) .','. bricks_theme_option('topbar_text_opacity'); ?>);
 			background: rgba(<?php echo $this->hex_to_rgb($topbar_bg_hover) .','. bricks_theme_option('topbar_current_opacity'); ?>);
 		}
-		#topbar .current-menu-item > a, #topbar .current-menu-ancestor > a, #topbar .current_page_item > a, #topbar .current_page_ancestor > a {
+		#topbar .current-menu-item > a,
+		#topbar .current-menu-ancestor > a,
+		#topbar .current_page_item > a,
+		#topbar .current_page_ancestor > a {
 			color: rgba(<?php echo $this->hex_to_rgb($topbar_text_current) .','. bricks_theme_option('topbar_text_opacity'); ?>);
 		}
-
         <?php // Primary Navigation Menu
 			  $navmenu_bg_color = bricks_theme_option('navmenu_bg_color');
 			  $navmenu_bg_hover = bricks_theme_option('navmenu_bg_hover');
@@ -508,7 +535,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			text-transform: <?php echo bricks_theme_option('navmenu_text_transform'); ?>;
 			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($navmenu_bg_color) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 		}
-		#access li:hover > a, #access a:focus {
+		#access li:hover > a,
+		#access a:focus {
 			background: none;
 			color: rgba(<?php echo $this->hex_to_rgb($navmenu_text_color) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 		}
@@ -516,8 +544,14 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			color: rgba(<?php echo $this->hex_to_rgb($navmenu_text_color) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 			background: <?php echo $navmenu_bg_hover; ?>; /* Show a solid color for older browsers */
 		}
-		#access .current-menu-item > a, #access .current-menu-ancestor > a, #access .current_page_item > a, #access .current_page_ancestor > a,
-		#access .current-menu-item, #access .current-menu-ancestor, #access .current_page_item, #access .current_page_ancestor {
+		#access .current-menu-item > a,
+		#access .current-menu-ancestor > a,
+		#access .current_page_item > a,
+		#access .current_page_ancestor > a,
+		#access .current-menu-item,
+		#access .current-menu-ancestor,
+		#access .current_page_item,
+		#access .current_page_ancestor {
 			color: rgba(<?php echo $this->hex_to_rgb($navmenu_text_current) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($navmenu_bg_color) .','. bricks_theme_option('navmenu_text_opacity')/2; ?>);
 		}
@@ -536,7 +570,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			border-bottom: 1px solid rgba(<?php echo $this->hex_to_rgb($subnav_border_bottom) .','. bricks_theme_option('subnav_border_opacity'); ?>);
         }
 		<?php $footernav_text_color = bricks_theme_option('footernav_text_color'); ?>
-		#footer-navmenu li, #footer-navmenu a {
+		#footer-navmenu li,
+		#footer-navmenu a {
 			font-family: <?php echo bricks_theme_option('footernav_fontface'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($footernav_text_color) .','. bricks_theme_option('footernav_text_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('footernav_text_size'); ?>px;
@@ -584,30 +619,36 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: <?php echo $article_bg_color; ?>; /* Show a solid color for older browsers */
 			background: rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('article_bg_opacity'); ?>) url(<?php echo bricks_theme_option('article_bg_image'); ?>) <?php echo bricks_theme_option('article_bg_xpos'). ' ' .bricks_theme_option('article_bg_ypos'); ?><?php echo ' '.bricks_theme_option('article_bg_repeat').' '.bricks_theme_option('article_bg_attachment'); ?>;
 		}
-		.entry-title, .entry-title a, div.entry-title_text .entry-title, div.entry-title_text .entry-title a,
-		.archive-header .page-title, .search .page-title {
+		.entry-title,
+		.entry-title a,
+		div.entry-title_text .entry-title,
+		div.entry-title_text .entry-title a,
+		.archive-header .page-title,
+		.search .page-title {
 			font-family: <?php echo bricks_theme_option('entry_title_fontface'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($entry_title_color) .','. bricks_theme_option('entry_title_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('entry_title_size'); ?>%;
 			font-weight: <?php echo bricks_theme_option('entry_title_fontweight'); ?>;
 		}
-		.search .entry-title, .search .entry-title a {
+		.search .entry-title,
+		.search .entry-title a {
 			font-size: <?php echo bricks_theme_option('entry_title_size') - 30; ?>%;
 		}
 		<?php $grayarea_color1 = bricks_theme_option('grayarea_color1');
 			  $grayarea_color2 = bricks_theme_option('grayarea_color2');
-			  $secondary_text_color = bricks_theme_option('secondary_text_color'); ?>
-		
+			  $secondary_text_color = bricks_theme_option('secondary_text_color');
+		?>
 		.single article.post-box.entry-meta a:hover, article.post-box .entry-meta a:hover, archive.post-box .entry-meta a:hover {
 			color: rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>);	
 		}
 		<?php $content_shadow = bricks_theme_option('content_shadow'); ?>
-		#content > article, #content > #comments, #primary > #content .recent-posts {
+		#content > article,
+		#content > #comments,
+		#primary > #content .recent-posts {
 			-webkit-box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 			-moz-box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 			box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 		}
-		<?php //endif; ?>
 		</style>
         <?php endif;
 	}
@@ -630,10 +671,12 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		if( $widget_title_color ) :
 		?>
         <style type="text/css">
-		#secondary .widget, #secondary .widget a {
+		#secondary .widget,
+		#secondary .widget a {
 			color: rgba(<?php echo $this->hex_to_rgb($widget_text_color) .','. bricks_theme_option('widget_text_opacity'); ?>);
 		}
-		#secondary .widget-title a, #secondary > .widget-title a:link {
+		#secondary .widget-title a,
+		#secondary > .widget-title a:link {
 			font-family: <?php echo bricks_theme_option('widget_title_fontface'); ?>;
 			font-size: <?php echo bricks_theme_option('widget_title_size'); ?>px;
 			text-transform: <?php echo bricks_theme_option('widget_title_transform'); ?>;
@@ -646,7 +689,6 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		.tagcloud a:hover {
 			color: rgba(<?php echo $this->hex_to_rgb($widget_title_color) .','. bricks_theme_option('widget_title_opacity'); ?>);
 		}
-
 		<?php 
 		$fwidget_title_color = bricks_theme_option('fwidget_title_color');
 		$fwidget_title_shadow = bricks_theme_option('fwidget_title_shadow');
@@ -664,27 +706,33 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: rgba(<?php echo $this->hex_to_rgb($footsb_titlebg_color) .','. bricks_theme_option('footsb_titlebg_opacity'); ?>);
 		}
 		<?php $fwidget_text_color = bricks_theme_option('fwidget_text_color'); ?>
-		#supplementary .widget, #supplementary .widget a {
+		#supplementary .widget,
+		#supplementary .widget a {
 			color: rgba(<?php echo $this->hex_to_rgb($fwidget_text_color) .','. bricks_theme_option('fwidget_text_opacity'); ?>);
 		}
-		#content nav a.page-numbers, #content nav a.page-numbers:hover {
+		#content nav a.page-numbers,
+		#content nav a.page-numbers:hover {
 			background: <?php echo $fwidget_bg_color; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) );
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) );
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) ) ); /* older webkit syntax */
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) );
 		}
-		
 		<?php $widget_button1 = bricks_theme_option('widget_button1');
 			  $widget_button2 = bricks_theme_option('widget_button2');
 			  $widget_button_border = bricks_theme_option('widget_button_border');
 			  $widget_button_text = bricks_theme_option('widget_button_text');
 		?>
-		.widget .searchform input[type=text], .widget input.field, .widget .search-field input[type=text] {
+		.widget .searchform input[type=text],
+		.widget input.field,
+		.widget .search-field input[type=text] {
 			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity2'); ?>) );
 		}
-		#subscribe-blog input[type=submit], #content .searchform input[type=submit], #content .pushbutton-wide,
-		.widget .searchform input[type=submit], .widget input[type=submit] {
+		#subscribe-blog input[type=submit],
+		#content .searchform input[type=submit],
+		#content .pushbutton-wide,
+		.widget .searchform input[type=submit],
+		.widget input[type=submit] {
 			background: <?php echo $widget_button1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) );
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) );
@@ -697,7 +745,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		<?php $widget_button_hover1 = bricks_theme_option('widget_button_hover1');
 			  $widget_button_hover2 = bricks_theme_option('widget_button_hover2');
 		?>		
-		#subscribe-blog input:hover[type=submit], #supplementary input:hover[type=submit], .widget .searchform input:hover[type=submit],
+		#subscribe-blog input:hover[type=submit],
+		#supplementary input:hover[type=submit],
+		.widget .searchform input:hover[type=submit],
 		#content button.pushbutton-wide :hover {
 			background: <?php echo $widget_button_hover1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button_hover1) .','. bricks_theme_option('widget_button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button_hover2) .','. bricks_theme_option('widget_button_hover_opacity2'); ?>) );
@@ -706,7 +756,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button_hover1) .','. bricks_theme_option('widget_button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button_hover2) .','. bricks_theme_option('widget_button_hover_opacity2'); ?>) );
 			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity2'); ?>) );
 			color: <?php echo $widget_button_text; ?>;
-	  }
+	  	}
 		</style>
         <?php endif;
 	}
@@ -734,16 +784,12 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
         <style type="text/css">
 		#footer-widget-wrapper {
 			background: <?php echo $fwidget_bg_color; ?>; /* Show a solid color for older browsers */
-			background: rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) url(<?php echo bricks_theme_option('fwidget_bg_image'); ?>) <?php echo bricks_theme_option('fwidget_bg_xpos'). '% ' .bricks_theme_option('fwidget_bg_ypos') .'%'; ?><?php echo ' '.bricks_theme_option('fwidget_bg_repeat').' '.bricks_theme_option('fwidget_bg_attachment'); ?>;
+			background: rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) url(<?php echo bricks_theme_option('fwidget_bg_image'); ?>) <?php echo bricks_theme_option('fwidget_bg_xpos'). '% ' .bricks_theme_option('fwidget_bg_ypos') .'% '; ?><?php echo ' '.bricks_theme_option('fwidget_bg_repeat').' '.bricks_theme_option('fwidget_bg_attachment'); ?>;
 			border-top: <?php echo bricks_theme_option('fwidget_border_width'); ?>px solid rgba(<?php echo $this->hex_to_rgb($fwidget_border_top) .','. bricks_theme_option('fwidget_border_opacity'); ?>);
 			border-bottom: 1px solid rgba(<?php echo $this->hex_to_rgb($fwidget_border_bottom) .','. bricks_theme_option('fwidget_border_opacity'); ?>);
 		}
 		#footer-wrapper {
-			background-color: rgba(<?php echo $this->hex_to_rgb($footer_wrapper_color) .','. bricks_theme_option('footer_wrapper_opacity'); ?>);
-			background-image: url(<?php echo bricks_theme_option('footer_wrapper_img'); ?>);
-			background-position: <?php echo bricks_theme_option('footer_wrap_xpos') .'%'. bricks_theme_option('footer_wrap_ypos') .'%'; ?>;
-			background-attachment: <?php echo bricks_theme_option('footer_wrap_attachment'); ?>;
-			background-repeat: <?php echo bricks_theme_option('footer_wrap_repeat'); ?>;
+			background-color: rgba(<?php echo $this->hex_to_rgb($footer_wrapper_color) .','. bricks_theme_option('footer_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('footer_wrapper_img'); ?>) <?php echo bricks_theme_option('footer_wrap_repeat') . bricks_theme_option('footer_wrap_attachment') . bricks_theme_option('footer_wrap_xpos') .'% '. bricks_theme_option('footer_wrap_ypos') .'% '; ?>;
         }
 		<?php 
 		$footer_bg_color = bricks_theme_option('footer_bg_color');
@@ -752,16 +798,21 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		?>
 		#colophon {
 			background: <?php echo $footer_bg_color; ?>; /* Show a solid color for older browsers */
-			background: rgba(<?php echo $this->hex_to_rgb($footer_bg_color) .','. bricks_theme_option('footer_bg_opacity'); ?>) url(<?php echo bricks_theme_option('footer_bg_image'); ?>) <?php echo bricks_theme_option('footer_bg_xpos'). '% ' .bricks_theme_option('footer_bg_ypos') .'%'; ?><?php echo ' '.bricks_theme_option('fwidget_bg_repeat').' '.bricks_theme_option('fwidget_bg_attachment'); ?>;
+			background: rgba(<?php echo $this->hex_to_rgb($footer_bg_color) .','. bricks_theme_option('footer_bg_opacity'); ?>) url(<?php echo bricks_theme_option('footer_bg_image'); ?>) <?php echo bricks_theme_option('footer_bg_xpos'). '% ' .bricks_theme_option('footer_bg_ypos') .'% '; ?><?php echo ' '.bricks_theme_option('fwidget_bg_repeat'). ' ' .bricks_theme_option('fwidget_bg_attachment'); ?>;
 		}
-		#colophon #copyright-notice p, #colophon #footer-ads, #colophon #site-generator p {
+		#colophon #copyright-notice p,
+		#colophon #footer-ads,
+		#colophon #site-generator p {
 			font-family: <?php echo bricks_theme_option('footer_text_fontface'); ?>;
 			font-size: <?php echo bricks_theme_option('footer_text_size'); ?>px;
 			color: rgba(<?php echo $this->hex_to_rgb($footer_text_color) .','. bricks_theme_option('footer_text_opacity'); ?>);
 		}
-		#colophon #site-generator a, #colophon #site-generator a:hover,
-		#colophon #copyright-notice a,#colophon #copyright-notice a:hover,
-		#colophon #footer-ads a, #colophon #footer-ads a:hover {
+		#colophon #site-generator a,
+		#colophon #site-generator a:hover,
+		#colophon #copyright-notice a,
+		#colophon #copyright-notice a:hover,
+		#colophon #footer-ads a,
+		#colophon #footer-ads a:hover {
 			color: rgba(<?php echo $this->hex_to_rgb($footer_link_color) .','. bricks_theme_option('footer_text_opacity'); ?>);
 		}
 		</style>
@@ -781,7 +832,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) ) ); /* older webkit syntax */
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) );
 		}
-		.single .entry-meta a:hover, .entry-meta a:hover {
+		.single .entry-meta a:hover,
+		.entry-meta a:hover {
 			color: background: rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>);
 		}
 		blockquote {
