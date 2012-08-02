@@ -1,0 +1,14 @@
+/*
+	Stylesheet for Bricks Theme page templates.
+*/
+
+/* =Showcase
+----------------------------------------------- */
+#bricks-slider {
+}
+
+.inner-slider {
+	overflow: hidden;
+	width: auto;
+	height: 340px;
+}
