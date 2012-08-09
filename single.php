@@ -8,7 +8,7 @@
  */
 global $theme_options, $post;
 
-$article_container = bricks_theme_option('article_container');
+$post_round_corners = bricks_theme_option('post_round_corners');
 
 get_header(); ?>
 
@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
 			<?php bricks_before_single(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'no-box' ) {
+            <article id="post-<?php the_ID(); ?>" <?php post_class($post_round_corners); ?> <?php if( $post_round_corners == 'squared' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
 
                 <?php bricks_post_date(); ?>
@@ -58,10 +58,10 @@ get_header(); ?>
                     <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer><!-- .entry-meta -->
 				
-                <?php if( bricks_theme_option('author_avatar') == 'show_avatar' )
-						  bricks_author_meta(); ?>
+                <?php //if( bricks_theme_option('author_avatar') == 'show_avatar' )
+						 // bricks_author_meta(); ?>
                 
-                <?php comments_template( '', true ); ?>
+                <?php //comments_template( '', true ); ?>
             
             <div class="left-post-shadow"></div>
             <div class="right-post-shadow"></div>    

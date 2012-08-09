@@ -397,6 +397,10 @@ span.description {
 	display: block;
 	clear: both;
 }
+span.description strong {
+	font-style: normal;
+	color: #055CA1;
+}
 .theme-option fieldset {
 	margin-top: -10px;
 }

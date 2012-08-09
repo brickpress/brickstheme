@@ -21,6 +21,9 @@ Tags: light, white, black, gray, blue, one-column, two-columns, left-sidebar, ri
 /* Widget stylesheet */
 @import url(css/widgets.css);
 
+/* Post Formats stylesheet */
+@import url(css/postformats.css);
+
 /* Responsive stylesheet */
 @import url(css/responsive.css);
 

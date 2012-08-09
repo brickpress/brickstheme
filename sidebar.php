@@ -5,6 +5,7 @@
  * @package Bricks
  * @since Bricks 1.0.0
  */
+global $theme_options;
 $current_layout = bricks_theme_option('sidebar_layout');
 
 if ( 'no-sidebar' != $current_layout ) :
@@ -12,6 +13,9 @@ if ( 'no-sidebar' != $current_layout ) :
 		<?php bricks_before_primary_sidebar(); ?>
 		<div id="secondary" class="widget-area" role="complementary">
         <span class="sbar-top"></span>
+        	<?php if( bricks_theme_option('social_module') == 'before-sidebar' )
+                      bricks_social_media();
+            	  ?>
         	
 			<?php if ( ! dynamic_sidebar( 'Main Sidebar' ) ) : ?>
 

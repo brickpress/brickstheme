@@ -8,7 +8,7 @@
  
 global $theme_options;
 
-$article_container = bricks_theme_option('article_container');
+$post_round_corners = bricks_theme_option('post_round_corners');
 get_header(); ?>
 
         <div id="primary">
@@ -19,7 +19,7 @@ get_header(); ?>
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
             <?php bricks_before_single(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'no-box' ) {
+            <article id="post-<?php the_ID(); ?>" <?php if( ! $post_round_corners ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
     
                 <header class="entry-header">
@@ -83,9 +83,7 @@ get_header(); ?>
                         
                         <?php wp_link_pages( bricks_link_pages_args() ); ?>
                         
-                        <?php //bricks_post_footer(); ?>
-    
-                    <?php endif; ?>
+                        <?php endif; ?>
     
                     <div class="bottom-of-entry">&nbsp;</div>
                     <div class="clearfix"></div>

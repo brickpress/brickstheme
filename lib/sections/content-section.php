@@ -14,147 +14,12 @@ $this->settings['content-section-tab'] = array(
 	'type'    => 'no-data',
 	'class'   => 'subsectiontabs',
 	'choices' => array(
-	    'content-wrapper'	 => __( 'Content Wrapper', 'bricks' ),
 		'post-layout'	     => __( 'Post Layout', 'bricks' ),
 		'post-background'    => __( 'Article Background', 'bricks' ),
 		'post-formats' 	 	 => __( 'Post Formats', 'bricks' ),
-		'featured-slider' 	 => __( 'Featured Slider', 'bricks' )
+		'featured-slider' 	 => __( 'Featured Slider', 'bricks' ),
+		'slider-wrapper' 	 => __( 'Slider Wrapper', 'bricks' )
 	)
-);
-
-$this->settings['content-wrapper'] = array(
-	'section'  => 'content',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'open_subsection',
-);
-
-	/* Content Wrapper */
-	$this->settings['content_wrapper'] = array(
-		'section'  => 'content',
-		'title'	   => __( 'Content Wrapper', 'bricks' ),
-		'desc'     => __( 'This is the area between the header and footer.', 'bricks' ),
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'controller_wrap'
-	);
-	
-	$this->settings['content_wrapper_color'] = array(
-		'section' => 'content',
-		'title'	  => __( 'Background Color', 'bricks' ),
-		'desc'	  => '',
-		'type'	  => 'colorpicker',
-		'subtype' => 'wp_theme_mod',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
-		'std'     => '#FFFFFF'
-	);
-	
-	$this->settings['content_wrapper_opacity'] = array(
-		'section' => 'content',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 1,
-		'step'    => 0.1,
-		'std'	  => '0.5'
-	);
-
-	$this->settings['close-content-wrap'] = array(
-			'section'  => 'content',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-		
-	$this->settings['content_wrapper_img'] = array(
-		'section' => 'content',
-		'title'	  => __( '', 'bricks' ),
-		'desc'	  => __( 'Content Wrapper Image', 'bricks' ),
-		'type'	  => 'image',
-		'subtype' => 'wp_theme_mod',
-		'class'   => 'uploadimg',
-		'std'	  => ''
-	);
-
-	$this->settings['content-wrap-position'] = array(
-		'section'  => 'content',
-		'title'	   => __( 'Background Image Position', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'controller_wrap'
-	);
-	
-	$this->settings['content_wrap_xpos'] = array(
-		'section' => 'content',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 100,
-		'step'    => 1,
-		'std'	  => '50'
-	);
-	
-	$this->settings['content_wrap_ypos'] = array(
-		'section' => 'content',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 100,
-		'step'    => 1,
-		'std'	  => '0'
-	);
-	
-		$this->settings['content_wrap_repeat'] = array(
-		'section' => 'content',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
-		'type'    => 'radio',
-		'class'	  => 'radio-button',
-		'family'  => '_wrapped2',
-		'std'     => 'no-repeat',
-		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
-		)
-	);
-	
-	$this->settings['content_wrap_attachment'] = array(
-		'section' => 'content',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
-		'type'    => 'radio',
-		'subtype' => 'wp_theme_mod',
-		'class'	  => 'radio-button',
-		'family'  => '_wrapped2',
-		'std'     => 'scroll',
-		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
-		)
-	);
-	
-		$this->settings['close-content-wrap-position'] = array(
-			'section'  => 'content',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-
-$this->settings['close-content-wrapper'] = array(
-	'section'  => 'content',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'close_subsection'
 );
 
 $this->settings['post-layout'] = array(
@@ -221,6 +86,82 @@ $this->settings['post-layout'] = array(
 			'type'     => 'no-data',
 			'class'    => 'close_controller_wrap'
 		);
+		
+	$this->settings['headlines'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Headlines', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['headlines_color'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Font Color', 'bricks' ),
+		'desc'	  => '',
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#3e9400'
+	);
+	
+	$this->settings['headlines_opacity'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Headlines Text Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '1'
+	);
+	
+	$this->settings['headlines_fontface'] = array(
+		'section' => 'content',
+		'title'   => __( 'Font Family', 'bricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'type'	  => 'select',
+		'class'   => 'font-face',
+		'family'  => '_wrapped3',
+		'std'	  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
+		'choices' => $fontfamily
+	);
+
+	$this->settings['headlines_size'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Font Size', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 5,
+		'max'	  => 36,
+		'step'    => 1,
+		'std'	  => '20',
+		'unit'    => 'px'
+	);
+	
+	$this->settings['headlines_fontweight'] = array(
+		'section' => 'content',
+		'title'   => __( 'Font Weight', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'     => 'normal',
+		'choices' => array(
+			'normal' => __( 'Normal', 'bricks' ),
+			'bold'   => __( 'Bold', 'bricks' )
+		)
+	);
+	
+		$this->settings['close-headlines'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap'
+		);
 	
 	$this->settings['entry_title'] = array(
 		'section'  => 'content',
@@ -270,11 +211,11 @@ $this->settings['post-layout'] = array(
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
-		'min'	  => 50,
-		'max'	  => 200,
+		'min'	  => 5,
+		'max'	  => 36,
 		'step'    => 1,
-		'std'	  => '140',
-		'unit'    => '%'
+		'std'	  => '24',
+		'unit'    => 'px'
 	);
 	
 	$this->settings['entry_title_fontweight'] = array(
@@ -346,10 +287,11 @@ $this->settings['post-layout'] = array(
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
-		'min'	  => 50,
-		'max'	  => 200,
+		'min'	  => 5,
+		'max'	  => 36,
 		'step'    => 1,
-		'std'	  => '120'
+		'std'	  => '32',
+		'unit'    => 'px'
 	);
 
 		$this->settings['close-entry-content-text'] = array(
@@ -373,17 +315,13 @@ $this->settings['post-background'] = array(
 	'class'    => 'open_subsection',
 );
 
-	$this->settings['article_container'] = array(
+	$this->settings['post_round_corners'] = array(
 		'section' => 'content',
 		'title'   => __( 'Article/Posts Container', 'bricks' ),
-		'desc'    => __( 'Choose <strong>Show</strong> to enclose posts in boxes.', 'bricks' ),
-		'type'    => 'radio',
-		'class'	  => 'radio-button',
-		'std'     => 'post-box',
-		'choices' => array(
-			'post-box' => __( 'Show', 'bricks' ),
-			'no-box'   => __( 'Hide', 'bricks' )
-		)
+		'desc'    => __( 'Use rounded corners on post containers?', 'bricks' ),
+		'type'    => 'checkbox',
+		'std'     => 1,
+		'class'   => 'iphone_checkboxes'
 	);
 	
 	$this->settings['article_bg'] = array(
@@ -402,7 +340,7 @@ $this->settings['post-background'] = array(
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
-		'std'     => '#FFFFFF'
+		'std'     => '#FFF'
 	);
 	
 	$this->settings['article_bg_opacity'] = array(
@@ -597,23 +535,36 @@ $this->settings['featured-slider'] = array(
 		'desc'	   => __( 'Set a featured image on your sticky post.', 'bricks' )
 	);
 	
-	$this->settings['slider_items'] = array(
+	$this->settings['slider_position'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Number of Featured Posts to Show', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'min'	  => 1,
-		'max'	  => 10,
-		'step'    => 1,
-		'std'	  => '5'
+		'title'   => __( 'Custom Header Position', 'bricks' ),
+		'desc'    => __( 'Choose where you want your custom header to appear.', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'std'     => 'after-header',
+		'choices' => array(
+			'topnav' 		=> __( 'On top of the page', 'bricks' ),
+			'before-header' => __( 'Before site header', 'bricks' ),
+			'after-header'  => __( 'After site header', 'bricks' ),
+		)
 	);
 	
+	$this->settings['open-slider-options'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( '', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap',
+	);
+		
 	$this->settings['slider_order'] = array(
 		'section' => 'content',
 		'title'   => __( 'Featured Posts Order', 'bricks' ),
 		'desc'    => __( 'Choose the arrangement of Featured Posts.', 'bricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
 		'std'     => 'DESC',
 		'choices' => array(
 			'ASC'  => __( 'Oldest First', 'bricks' ),
@@ -621,11 +572,36 @@ $this->settings['featured-slider'] = array(
 		)
 	);
 	
+	$this->settings['slider_items'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Number of Featured Posts to Show', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 1,
+		'max'	  => 10,
+		'step'    => 1,
+		'std'	  => '6'
+	);
+	
+	$this->settings['slider_timer'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Featured Slider Timer', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 1,
+		'max'	  => 10,
+		'step'    => 1,
+		'std'	  => '5'
+	);
+	
 	$this->settings['slider_effects'] = array(
 		'section' => 'content',
 		'title'   => __( 'Featured Slider Effects', 'bricks' ),
 		'desc'    => __( '', 'bricks' ),
 		'type'	  => 'select',
+		'family'  => '_wrapped2',
 		'std'	  => 'random',
 		'choices' => array(
 			'sliceDownRight'  => 'sliceDownRight',
@@ -645,16 +621,12 @@ $this->settings['featured-slider'] = array(
 		)
 	);
 	
-	$this->settings['slider_timer'] = array(
-		'section' => 'content',
-		'title'	  => __( 'Featured Slider Timer', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'min'	  => 1,
-		'max'	  => 10,
-		'step'    => 1,
-		'std'	  => '5'
-	);
+		$this->settings['close-slider-options'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
 	
 	$this->settings['featured-img-size'] = array(
 		'section'  => 'content',
@@ -667,45 +639,201 @@ $this->settings['featured-slider'] = array(
 
 	$this->settings['medium_feature_width'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Featured Image Width', 'bricks' ),
-		'desc'	  => __( 'Sets the width for featured slider images.', 'bricks' ),
+		'title'	  => __( 'Medium Featured Image Width', 'bricks' ),
+		'desc'	  => __( 'Sets the width for medium featured slider images.', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '680',
+		'std'	  => '690',
+		'unit'    => 'px'
 	);
 	
 	$this->settings['medium_feature_height'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Featured Image Height', 'bricks' ),
-		'desc'	  => __( 'Sets the height for featured slider images.', 'bricks' ),
+		'title'	  => __( 'Mediun Featured Image Height', 'bricks' ),
+		'desc'	  => __( 'This sets the height of the slider container for medium featured slider. The height of the slider image is set automatically to maintain image aspect ratio.', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '340',
+		'std'	  => '385',
+		'unit'    => 'px'
 	);
 	
-	$this->settings['full_feature_width'] = array(
+	$this->settings['large_feature_width'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Full Width Featured Image', 'bricks' ),
-		'desc'	  => __( 'Sets the width for featured slider images.', 'bricks' ),
+		'title'	  => __( 'Large Featured Image Width', 'bricks' ),
+		'desc'	  => __( 'Sets the width for large featured slider images. This also sets the width of the slider container.', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
 		'std'	  => '1024',
+		'unit'    => 'px'
 	);
 	
-	$this->settings['full_feature_height'] = array(
+	$this->settings['large_feature_height'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Full Featured Image Height', 'bricks' ),
-		'desc'	  => __( 'Sets the height for featured slider images.', 'bricks' ),
+		'title'	  => __( 'Large Featured Image Height', 'bricks' ),
+		'desc'	  => __( 'This sets the height of the slider container for large featured slider. The height of the slider image is set automatically to maintain image aspect ratio.', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '512',
+		'std'	  => '550',
+		'unit'    => 'px'
 	);
 	
 		$this->settings['close-featured-img-size'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+	
+	$this->settings['showcase_recent_posts'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Number of Recent Posts to Show', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'min'	  => 1,
+		'max'	  => 50,
+		'step'    => 1,
+		'std'	  => '10'
+	);
+		
+$this->settings['close-featured-slider'] = array(
+	'section'  => 'content',
+	'archtype' => 'structure',
+	'type'     => 'no-data',
+	'class'    => 'close_subsection',
+);
+
+$this->settings['slider-wrapper'] = array(
+	'section'  => 'content',
+	'archtype' => 'structure',
+	'type'     => 'no-data',
+	'class'    => 'open_subsection',
+);
+
+	$this->settings['slider_wrapper_bg'] = array(
+		'section'  => 'content',
+		'title'	   => __( 'Background for Large Featured Image Slider.', 'bricks' ),
+		'desc'     => __( 'Lower opacity if you wish to make the container transparent.', 'bricks' ),
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'class'    => 'controller_wrap'
+	);
+		
+	$this->settings['slider_wrapper_color'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Background Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped2',
+		'std'     => '#FFFFFF'
+	);
+	
+	$this->settings['slider_wrapper_opacity'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Background Color Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '0'
+	);
+
+		$this->settings['close-slider-wrapper-bg'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+	
+	$this->settings['slider_wrapper_image'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Custom Header Container Background Image', 'bricks' ),
+		'desc'	  => __( 'Background image for the custom header container.', 'bricks' ),
+		'type'	  => 'image',
+		'class'   => 'uploadimg',
+		'std'	  => ''
+	);
+	
+	$this->settings['slider_wrapper_pos'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Background Position', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['slider_wrapper_xpos'] = array(
+		'section' => 'content',
+		'title'   => __( 'Horizontal Position', 'bricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 100,
+		'step'    => 1,
+		'std'	  => '50'
+	);
+	
+	$this->settings['slider_wrapper_ypos'] = array(
+		'section' => 'content',
+		'title'   => __( 'Vertical Position', 'bricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 100,
+		'step'    => 1,
+		'std'	  => '0'
+	);
+	
+	$this->settings['slider_wrapper_height'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Custom Header Container Height.', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'text',
+		'class'   => 'regular-text',
+		'family'  => '_wrapped3',
+		'std'	  => '576',
+		'unit'	  => 'px'
+	);
+	
+	$this->settings['slider_wrapper_repeat'] = array(
+		'section' => 'content',
+		'title'   => __( 'Background Repeat', 'bricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
+		'std'     => 'repeat',
+		'choices' => array(
+			'no-repeat' => __( 'No Repeat', 'bricks' ),
+			'repeat' 	=> __( 'Tile', 'bricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+		)
+	);
+	
+	$this->settings['slider_wrapper_attachment'] = array(
+		'section' => 'content',
+		'title'   => __( 'Background Attachment', 'bricks' ),
+		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
+		'std'     => 'scroll',
+		'choices' => array(
+			'scroll' => __( 'Scroll', 'bricks' ),
+			'fixed'  => __( 'Fixed', 'bricks' )
+		)
+	);
+	
+		$this->settings['close-slider-wrap-pos'] = array(
 			'section'  => 'content',
 			'archtype' => 'structure',
 			'type'     => 'no-data',

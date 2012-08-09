@@ -16,7 +16,6 @@ $this->settings['header-section-tab'] = array(
 	'choices'  => array(
 		'header-text'	        => __( 'Header Text', 'bricks' ),
 		'header-background'     => __( 'Header Background', 'bricks' ),
-		'custom-header-wrapper' => __( 'Custom Header Wrapper', 'bricks' ),
 		'custom-header'	        => __( 'Custom Header', 'bricks' ),
 	)
 );
@@ -44,7 +43,7 @@ $this->settings['header-text'] = array(
 		'type'    => 'checkbox',
 		'std'     => 1,
 		'class'   => 'iphone_checkboxes',
-		'family'  => '_wrapped3',
+		'family'  => '_wrapped2',
 	);
 	
 	$this->settings['show_site_description'] = array(
@@ -54,17 +53,7 @@ $this->settings['header-text'] = array(
 		'type'    => 'checkbox',
 		'std'     => 1,
 		'class'   => 'iphone_checkboxes',
-		'family'  => '_wrapped3',
-	);
-	
-	$this->settings['header_search'] = array(
-		'section' => 'header',
-		'title'   => __( 'Show Header Search', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
-		'type'    => 'checkbox',
-		'std'     => 1,
-		'class'   => 'iphone_checkboxes',
-		'family'  => '_wrapped3',
+		'family'  => '_wrapped2',
 	);
 	
 		$this->settings['close-site-toggle-wrap'] = array(
@@ -128,14 +117,37 @@ $this->settings['header-text'] = array(
 	$this->settings['site_title_size'] = array(
 		'section' => 'header',
 		'title'	  => __( 'Font Size', 'bricks' ),
+		'title'	  => __( 'Font Size', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
-		'min'	  => 50,
-		'max'	  => 200,
+		'min'	  => 5,
+		'max'	  => 36,
 		'step'    => 1,
-		'unit'    => 'percent',
-		'std'	  => '150'
+		'std'	  => '28',
+		'unit'    => 'px'
+	);
+	
+	$this->settings['site_title_shadow'] = array(
+		'section' => 'header',
+		'title'	  => __( 'Text Shadow', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#000'
+	);
+
+	$this->settings['site_title_shadow_opacity'] = array(
+		'section' => 'header',
+		'title'	  => __( 'Text Shadow Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '0.3'
 	);
 	
 		$this->settings['close-site-title-wrap'] = array(
@@ -193,11 +205,11 @@ $this->settings['header-text'] = array(
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
-		'min'	  => 50,
-		'max'	  => 150,
+		'min'	  => 5,
+		'max'	  => 36,
 		'step'    => 1,
-		'unit'    => 'percent',
-		'std'	  => '100'
+		'std'	  => '18',
+		'unit'    => 'px'
 	);
 
 		$this->settings['close-site-description-wrap'] = array(
@@ -285,7 +297,7 @@ $this->settings['header-background'] = array(
 		'section'  => 'header',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Site Header Background', 'bricks' ),
+		'title'	   => __( 'Site Header Borders', 'bricks' ),
 		'class'    => 'controller_wrap',
 	);
 	
@@ -328,118 +340,56 @@ $this->settings['header-background'] = array(
 			'class'    => 'close_controller_wrap',
 		);
 		
-$this->settings['close-header-bg'] = array(
-	'section'  => 'header',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'close_subsection',
-);
-
-$this->settings['custom-header-wrapper'] = array(
-	'section'  => 'header',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'open_subsection',
-);
-
-	$this->settings['custom_header_bg'] = array(
-		'section'  => 'header',
-		'title'	   => __( 'Background Color', 'bricks' ),
-		'desc'     => __( 'Lower opacity if you wish to make the header transparent.', 'bricks' ),
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'controller_wrap'
-	);
-		
-	$this->settings['custom_header_bg_color'] = array(
+	$this->settings['header_background_img'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Background Color', 'bricks' ),
+		'title'	  => __( 'Header Background Image', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'colorpicker',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
-		'std'     => '#FFFFFF'
-	);
-	
-	$this->settings['custom_header_bg_opacity'] = array(
-		'section' => 'header',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 1,
-		'step'    => 0.1,
-		'std'	  => '0'
-	);
-
-		$this->settings['close-custom-headerbg'] = array(
-			'section'  => 'header',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-	
-	$this->settings['custom_header_bg_image'] = array(
-		'section' => 'header',
-		'title'	  => __( 'Custom Header Container Background Image', 'bricks' ),
-		'desc'	  => __( 'Background image for the custom header container.', 'bricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
 	);
-	
-	$this->settings['custom_header_bg_pos'] = array(
+
+	$this->settings['header-background-position'] = array(
 		'section'  => 'header',
+		'title'	   => __( 'Background Image Position', 'bricks' ),
+		'desc'     => __( '', 'bricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Background Position', 'bricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
-	$this->settings['custom_header_bg_xpos'] = array(
+	$this->settings['header_background_xpos'] = array(
 		'section' => 'header',
 		'title'   => __( 'Horizontal Position', 'bricks' ),
 		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
 		'type'	  => 'jslider',
-		'family'  => '_wrapped3',
+		'family'  => '_wrapped2',
 		'min'	  => 0,
 		'max'	  => 100,
 		'step'    => 1,
 		'std'	  => '50'
 	);
 	
-	$this->settings['custom_header_bg_ypos'] = array(
+	$this->settings['header_background_ypos'] = array(
 		'section' => 'header',
 		'title'   => __( 'Vertical Position', 'bricks' ),
 		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
 		'type'	  => 'jslider',
-		'family'  => '_wrapped3',
+		'family'  => '_wrapped2',
 		'min'	  => 0,
 		'max'	  => 100,
 		'step'    => 1,
 		'std'	  => '0'
 	);
 	
-	$this->settings['custom_header_image_height'] = array(
-		'section' => 'header',
-		'title'	  => __( 'Custom Header Container Height.', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'text',
-		'class'   => 'regular-text',
-		'family'  => '_wrapped3',
-		'std'	  => '0',
-		'unit'	  => 'px'
-	);
-	
-	$this->settings['custom_header_bg_repeat'] = array(
+	$this->settings['header_background_repeat'] = array(
 		'section' => 'header',
 		'title'   => __( 'Background Repeat', 'bricks' ),
 		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
-		'std'     => 'repeat',
+		'std'     => 'no-repeat',
 		'choices' => array(
 			'no-repeat' => __( 'No Repeat', 'bricks' ),
 			'repeat' 	=> __( 'Tile', 'bricks' ),
@@ -448,10 +398,10 @@ $this->settings['custom-header-wrapper'] = array(
 		)
 	);
 	
-	$this->settings['custom_header_bg_attachment'] = array(
+	$this->settings['header_background_attachment'] = array(
 		'section' => 'header',
 		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
@@ -462,14 +412,14 @@ $this->settings['custom-header-wrapper'] = array(
 		)
 	);
 	
-		$this->settings['close-header-bg-pos'] = array(
+		$this->settings['close-header-background-position'] = array(
 			'section'  => 'header',
 			'archtype' => 'structure',
 			'type'     => 'no-data',
 			'class'    => 'close_controller_wrap',
 		);
 		
-$this->settings['close-custom-header-bg'] = array(
+$this->settings['close-header-bg'] = array(
 	'section'  => 'header',
 	'archtype' => 'structure',
 	'type'     => 'no-data',
@@ -491,6 +441,18 @@ $this->settings['custom-header'] = array(
 		'std'     => 0,
 		'class'   => 'iphone_checkboxes',
 	);
+	
+	$this->settings['custom_header_adjust'] = array(
+		'section' => 'header',
+		'title'	  => __( 'Adjust Custom Header Vertical Position', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'min'	  => 0,
+		'max'	  => 500,
+		'step'    => 10,
+		'std'	  => '0',
+		'unit'    => 'px'
+	);
 
 	$this->settings['custom_header'] = array(
 		'section' => 'header',
@@ -499,20 +461,6 @@ $this->settings['custom-header'] = array(
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => '',
-	);
-	
-	$this->settings['header_image_pos'] = array(
-		'section' => 'header',
-		'title'   => __( 'Custom Header Position', 'bricks' ),
-		'desc'    => __( 'Choose where you want your custom header to appear.', 'bricks' ),
-		'type'    => 'radio',
-		'class'	  => 'radio-button',
-		'std'     => 'topnav',
-		'choices' => array(
-			'topnav' 		=> __( 'On top of the page', 'bricks' ),
-			'before-header' => __( 'Before site header', 'bricks' ),
-			'after-header'  => __( 'After site header', 'bricks' ),
-		)
 	);
 	
 	$this->settings['header_image_size'] = array(
@@ -525,8 +473,8 @@ $this->settings['custom-header'] = array(
 	
 	$this->settings['header_image_width'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Custom Header Image Width', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Header Image Width', 'bricks' ),
+		'desc'	  => __( 'Set the width of your custom header image lower or equal to the value you set here. Larger images will be cropped to maintain aspect ratio.', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
@@ -535,12 +483,12 @@ $this->settings['custom-header'] = array(
 	
 	$this->settings['header_image_height'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Custom Header Container Height', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Header Image Height', 'bricks' ),
+		'desc'	  => __( 'Set the height of your custom header image lower or equal to the value you set here. Larger images will be cropped to maintain aspect ratio.', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '270'
+		'std'	  => '288'
 	);
 	
 		$this->settings['close-header-image-size'] = array(

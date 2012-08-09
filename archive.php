@@ -7,21 +7,19 @@
  */
 ?>
 <?php get_header();
-global $theme_options;
 
-$article_container = bricks_theme_option('article_container');
+$post_round_corners = bricks_theme_option('post_round_corners');
 ?>
-		<div id="primary">
+	<div id="primary">
 
         <?php bricks_before_content(); ?>
         
         <div id="content" role="main">
-        <?php  //bricks_archive_header(); ?>
-     
+
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-         
+        
         <?php bricks_before_article(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'no-box' ) {
+        <article id="post-<?php the_ID(); ?>" <?php if( ! $post_round_corners) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
             
             <?php $post_format = strtolower( get_post_format() ); ?>

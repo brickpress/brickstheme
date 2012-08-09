@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Showcase Template
+ * Template Name: Content Slider Template
  * Description: A Page Template that showcases Sticky Posts 
  *
  * The content slider template in Bricks consists of two sections. Each section can be customized
@@ -16,9 +16,12 @@
  */
 get_header(); ?>
 
-		<div id="primary" class="showcase">
+		<div id="primary">
 			<div id="content" role="main">
-				<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'bricks' ); ?></h1>
+            
+				<?php bricks_featured_slider(); ?>
+                
+                <h1 class="showcase-heading"><?php _e( 'Recent Posts', 'bricks' ); ?></h1>
 
 				<?php
 				$showcase_recent_posts = bricks_theme_option('showcase_recent_posts');
@@ -48,38 +51,13 @@ get_header(); ?>
 					// Set $more to 0 in order to only get the first part of the post.
 					global $more;
 					$more = 0;
-					
-			bricks_before_article(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class($post_round_corners); ?> <?php if( $post_round_corners == 'squared' ) {
-                echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
-
-                <?php bricks_post_date(); ?>
-                
-                <header class="entry-header">
-                    <hgroup> 
-                    <?php bricks_post_title(); ?>
-                    </hgroup>          
-                </header>
-                
-                <?php bricks_post_format_icon(); ?>
-                
-                <div class="clearfix"></div>
-      
-                <div class="entry-content">
-                    <?php bricks_before_entry_content(); ?>
-                    <?php the_excerpt(); ?>
-                    <?php bricks_after_entry_content(); ?>
-                </div><!-- .entry-content -->
-                
-    		<div class="left-post-shadow"></div>
-            <div class="right-post-shadow"></div> 
-            </article><!-- #post-<?php the_ID(); ?> -->
-			<?php bricks_after_article(); ?>
+					    
+                get_template_part( 'content', 'posts' ); ?>
             
             <?php endwhile; ?>
             
             <?php bricks_content_nav(); ?>
-                
+					
             <?php endif; ?>
 
             </div><!-- #content -->

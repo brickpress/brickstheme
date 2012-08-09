@@ -110,13 +110,13 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$medium_feature_width = bricks_theme_option('medium_feature_width');
 		$medium_feature_height = bricks_theme_option('medium_feature_height');
 		
-		$full_feature_width = bricks_theme_option('full_feature_width');
-		$full_feature_height = bricks_theme_option('full_feature_height');
+		$large_feature_width = bricks_theme_option('large_feature_width');
+		$large_feature_height = bricks_theme_option('large_feature_height');
 		
-		if ( function_exists( 'add_image_size' ) ) {
-			add_image_size( 'bricks-slider-full', $full_feature_width, 9999 ); 		  // 1024 pixels wide and unlimited height
-			add_image_size( 'bricks-slider-medium', $medium_feature_width, 9999, true );    //(cropped)
-		}
+		//if ( function_exists( 'add_image_size' ) ) {
+		add_image_size( 'bricks-large-slider', $large_feature_width, 9999 ); 		  // 1024 pixels wide and unlimited height
+		add_image_size( 'bricks-medium-slider', $medium_feature_width, $medium_feature_height, true );    //(cropped)
+		//}
 	}
 	
 
@@ -164,7 +164,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			'id' => 'sidebar-1',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
-			'before_title' => '<div class="widget-title-bg"><span class="wbar"></span><h3 class="widget-title">',
+			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
 			'after_title' => '</h3></div>',
 		) );
 	
@@ -174,7 +174,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
-			'before_title' => '<div class="widget-title-bg"><span class="wbar"></span><h3 class="widget-title">',
+			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
 			'after_title' => '</h3></div>',
 		) );
 	
@@ -184,7 +184,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
-			'before_title' => '<div class="widget-title-bg"><span class="wbar"></span><h3 class="widget-title">',
+			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
 			'after_title' => '</h3></div>',
 		) );
 	
@@ -194,7 +194,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
-			'before_title' => '<div class="widget-title-bg"><span class="wbar"></span><h3 class="widget-title">',
+			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
 			'after_title' => '</h3></div>',
 		) );
 		
@@ -204,7 +204,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
-			'before_title' => '<div class="widget-title-bg"><span class="wbar"></span><h3 class="widget-title">',
+			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
 			'after_title' => '</h3></div>',
 		) );
 		
@@ -214,7 +214,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
-			'before_title' => '<div class="widget-title-bg"><span class="wbar"></span><h3 class="widget-title">',
+			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
 			'after_title' => '</h3></div>',
 		) );
 		
@@ -224,7 +224,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
-			'before_title' => '<div class="widget-title-bg"><span class="wbar"></span><h3 class="widget-title">',
+			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
 			'after_title' => '</h3></div>',
 		) );
 	}
@@ -237,10 +237,12 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	 */
 	public function bricks_enqueue_styles() {
 		
-		wp_enqueue_style( 'postformats', trailingslashit( BRICKS_CSS ) . 'postformats.css' );
-		do_action( 'bricks_enqueue_styles', 'postformats' );
-		
-		if(is_page_template('showcase.php')) {
+		//wp_enqueue_style( 'postformats', trailingslashit( BRICKS_CSS ) . 'postformats.css' );
+		//do_action( 'bricks_enqueue_styles', 'postformats' );
+		wp_enqueue_script( 'scroll-to-top', trailingslashit( BRICKS_JS ) . 'scrolltopcontrol.js', array( 'jquery' ), BRICKS_VERSION );
+		wp_enqueue_script( 'superfish', trailingslashit( BRICKS_JS ) . 'superfish.js', array( 'jquery' ), BRICKS_VERSION );
+
+		if( is_page_template('showcase.php') || is_page_template('content-slider.php') ) {
 			
 			wp_enqueue_script( 'nivo-slider', trailingslashit( BRICKS_JS ) . 'jquery.nivo.slider.js', array( 'jquery' ), BRICKS_VERSION );		
 			wp_enqueue_style( 'nivo-slider-style', trailingslashit( BRICKS_CSS ) . 'nivo-slider.css' );
@@ -314,6 +316,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$secondary_text_color = bricks_theme_option('secondary_text_color');
 		$link_color = bricks_theme_option('link_color');
 		$button_text_color = bricks_theme_option('button_text_color');
+		$button_border = bricks_theme_option('button_border');
 		if( $background_color ) :
 		?>
 		<style type="text/css">
@@ -338,7 +341,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			.widget ul li,
 			input[type=text],
 			input[type=password],
-			textarea {
+			textarea,
+			.widget ul.tweets li {
 				color: rgba(<?php echo $this->hex_to_rgb($secondary_text_color) .','. bricks_theme_option('secondary_text_opacity'); ?>);	
 			}
 			.inner-topbar,
@@ -357,12 +361,19 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			}
 			#secondary {
 				margin-top: <?php echo bricks_theme_option('sidebar_top_margin'); ?>;
-			}		
-			#slider .nivoSlider {
-				max-width: <?php echo bricks_theme_option('page_width'); ?>px;
-				height: <?php echo bricks_theme_option('feature_image_height'); ?>px;
 			}
-    
+			.page-template-content-slider-php .nivoSlider {
+				width: <?php echo bricks_theme_option('medium_feature_width'); ?>px;
+			}
+			.page-template-showcase-php .nivoSlider {
+				width: <?php echo bricks_theme_option('large_feature_width'); ?>px;
+			}		
+			.page-template-showcase-php #bricks-slider-wrapper, .page-template-showcase-php .nivoSlider {
+				height: <?php echo bricks_theme_option('large_feature_height'); ?>px;
+			}
+			.page-template-content-slider-php #bricks-slider-wrapper, .page-template-content-slider-php .nivoSlider {
+				height: <?php echo bricks_theme_option('medium_feature_height'); ?>px;
+			}
             /* Link color */
 			#comments-title, .comments-link a:hover, section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
 			section.recent-posts .other-recent-posts .comments-link a:hover, #site-generator a:hover,
@@ -374,10 +385,16 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			}
 			<?php $button_color1 = bricks_theme_option('button_color1');
 				  $button_color2 = bricks_theme_option('button_color2');
-			?>	  
-
+			?>
+			#content nav span.previous a,
+			#content nav span.next a,
 			#content nav a.page-numbers.prev,
 			#content nav a.page-numbers.next,
+			#content nav span.previous a,
+			#content nav span.next a,
+			#content nav span.page-numbers.current {
+				font-size: <?php echo bricks_theme_option('button_text_size'); ?>px;
+			}
 			#content nav span.previous a,
 			#content nav span.next a,
 			.graphic,
@@ -387,15 +404,13 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
 				background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) ) ); /* older webkit syntax */
 				background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
-				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
+				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_hover_opacity1'); ?>) );
+				border-bottom-color: <?php echo $button_border; ?>;
 				color: <?php echo $button_text_color; ?>;
 			}
 			<?php $button_hover1 = bricks_theme_option('button_hover1');
 				  $button_hover2 = bricks_theme_option('button_hover2');
-				  $button_text_hover = bricks_theme_option('button_text_hover');
 			?>	  
-			#content nav a.page-numbers.prev:hover,
-			#content nav a.page-numbers.next:hover,
 			#content nav span.previous a:hover,
 			#content nav span.next a:hover,
 			#content nav span.page-numbers.current,
@@ -407,11 +422,12 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				  background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
 				  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) ) ); /* older webkit syntax */
 				  background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
-				  border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
-				  color: <?php echo $button_text_hover; ?>;
+				  border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>) );
+				  color: <?php echo $button_text_color; ?>;
+				  border-bottom-color: <?php echo $button_border; ?>;
 			}
 			input[type=text], input[type=password], textarea {
-				  border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
+				  border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>) );
 			}
 		</style>
         <?php endif;
@@ -433,6 +449,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		
 		$site_title_color = bricks_theme_option('site_title_color');
 		$site_description_color = bricks_theme_option('site_description_color');
+		$site_title_shadow = bricks_theme_option('site_title_shadow');
 		if( $site_title_color ) :
 		?>
         <style type="text/css">
@@ -440,12 +457,14 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		#site-header span.site-title a {
 			color: rgba(<?php echo $this->hex_to_rgb($site_title_color) .','. bricks_theme_option('site_title_opacity'); ?>);
 			font-family: <?php echo bricks_theme_option('site_title_fontface'); ?>;
-			font-size: <?php echo bricks_theme_option('site_title_size'); ?>%;
+			font-size: <?php echo bricks_theme_option('site_title_size'); ?>px;
+			text-shadow: rgba(<?php echo $this->hex_to_rgb($site_title_shadow) .','. bricks_theme_option('site_title_shadow_opacity'); ?>);
 		}
 		#site-header span.site-description {
 			font-family: <?php echo bricks_theme_option('site_description_fontface'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($site_description_color) .','. bricks_theme_option('site_description_opacity'); ?>);
-			font-size: <?php echo bricks_theme_option('site_description_size'); ?>%;
+			font-size: <?php echo bricks_theme_option('site_description_size'); ?>px;
+			text-shadow: rgba(<?php echo $this->hex_to_rgb($site_title_shadow) .','. bricks_theme_option('site_title_shadow_opacity'); ?>);
 		}
 		<?php // Site Header Container //
 		$siteheader_color1 = bricks_theme_option('siteheader_color1');
@@ -455,25 +474,30 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$siteheader_text_color = bricks_theme_option('siteheader_text_color');
 		?>
 		#branding {
+		<?php if( bricks_theme_option('header_background_img') != '' ) : ?>
+		
+			background: rgba(<?php echo $this->hex_to_rgb($siteheader_color1) .','. bricks_theme_option('siteheader_opacity1'); ?>) url(<?php echo bricks_theme_option('header_background_img'); ?>) <?php echo bricks_theme_option('header_background_repeat').' '.bricks_theme_option('header_background_attachment').' '.bricks_theme_option('header_background_xpos').'% '.bricks_theme_option('header_background_ypos'); ?>%;
+
+		<?php else : ?>
+		
 			background: <?php echo $siteheader_color1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($siteheader_color1) .','. bricks_theme_option('siteheader_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($siteheader_color2) .','. bricks_theme_option('siteheader_opacity2'); ?>) );
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($siteheader_color1) .','. bricks_theme_option('siteheader_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($siteheader_color2) .','. bricks_theme_option('siteheader_opacity2'); ?>) );
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($siteheader_color1) .','. bricks_theme_option('siteheader_opacity1'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($siteheader_color2) .','. bricks_theme_option('siteheader_opacity2'); ?>) ) ); /* older webkit syntax */
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($siteheader_color1) .','. bricks_theme_option('siteheader_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($siteheader_color2) .','. bricks_theme_option('siteheader_opacity2'); ?>) );
+			
+		<?php endif; ?>
 			border-top: 1px solid rgba(<?php echo $this->hex_to_rgb($siteheader_border_top) .','. bricks_theme_option('siteheader_opacity1'); ?>);
 			border-bottom: 1px solid rgba(<?php echo $this->hex_to_rgb($siteheader_border_bottom) .','. bricks_theme_option('siteheader_opacity2'); ?>);
 		}
-		<?php // Custom Header container div //
-			$custom_header_bg_color = bricks_theme_option('custom_header_bg_color');
-			$custom_header_bg_image = bricks_theme_option('custom_header_bg_image');
+		<?php // Featured Slider Wrapper
+			$slider_wrapper_color = bricks_theme_option('slider_wrapper_color');
+			$slider_wrapper_image = bricks_theme_option('slider_wrapper_image');
 		?>
-		#custom-header-wrapper {
-			background: <?php echo $custom_header_bg_color; ?>; /* Show a solid color for older browsers */
-			background: rgba(<?php echo $this->hex_to_rgb($custom_header_bg_color) .','. bricks_theme_option('custom_header_bg_opacity'); ?>) url(<?php echo bricks_theme_option('custom_header_bg_image'); ?>);
-			background-position: <?php echo bricks_theme_option('custom_header_bg_xpos'). '% ' .bricks_theme_option('custom_header_bg_ypos'); ?>%;
-			background-repeat: <?php echo bricks_theme_option('custom_header_bg_repeat'); ?>;
-			background-attachment: <?php echo bricks_theme_option('custom_header_bg_attachment'); ?>;
-			height: <?php echo bricks_theme_option('custom_header_image_height'); ?>px;
+		#bricks-slider-wrapper {
+			background: <?php echo $slider_wrapper_color; ?>; /* Show a solid color for older browsers */
+			background: rgba(<?php echo $this->hex_to_rgb($slider_wrapper_color).','.bricks_theme_option('slider_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('slider_wrapper_image'); ?>) <?php echo bricks_theme_option('slider_wrapper_repeat').' '.bricks_theme_option('slider_wrapper_attachment').' '.bricks_theme_option('slider_wrapper_xpos'). '% ' .bricks_theme_option('slider_wrapper_ypos'); ?>%;
+			height: <?php echo bricks_theme_option('slider_wrapper_height'); ?>px;
         }
 		<?php endif; ?>
 		</style>
@@ -494,24 +518,26 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	 */
 	public function bricks_navigation_print_style() {
 		
-		$topbar_bg_color = bricks_theme_option('topbar_bg_color');
+		$topbar_wrapper_color = bricks_theme_option('topbar_wrapper_color');
 		$topbar_text_color = bricks_theme_option('topbar_text_color');
 		$topbar_bg_hover = bricks_theme_option('topbar_bg_hover');
 		$topbar_text_current = bricks_theme_option('topbar_text_current');
-		if($topbar_bg_color) :
+		if($topbar_wrapper_color) :
 		?>
         <style type="text/css">
-		#topbar-wrapper,
+		#topbar-wrapper {
+			background: rgba(<?php echo $this->hex_to_rgb($topbar_wrapper_color) .','. bricks_theme_option('topbar_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('topbar_wrapper_img'); ?>) <?php echo bricks_theme_option('topbar_wrap_attachment').' '.bricks_theme_option('topbar_wrap_repeat').' '.bricks_theme_option('topbar_wrap_xpos').'% '. bricks_theme_option('topbar_wrap_ypos') .'%'?>;
+        }
 		#topbar ul ul {
-			background: rgba(<?php echo $this->hex_to_rgb($topbar_bg_color) .','. bricks_theme_option('topbar_bg_opacity'); ?>);	
+			background: rgba(<?php echo $this->hex_to_rgb($topbar_wrapper_color) .','. bricks_theme_option('topbar_wrapper_opacity'); ?>);	
 		}
 		#topbar a {
 			font-family: <?php echo bricks_theme_option('topbar_fontface'); ?>;
-			color: rgba(<?php echo $this->hex_to_rgb($topbar_text_color) .','. bricks_theme_option('topbar_text_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('topbar_text_size'); ?>px;
 			line-height: <?php echo bricks_theme_option('topbar_text_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('topbar_fontweight'); ?>;
 			text-transform: <?php echo bricks_theme_option('topbar_text_transform'); ?>;
+			color: rgba(<?php echo $this->hex_to_rgb($topbar_text_color) .','. bricks_theme_option('topbar_text_opacity'); ?>);
 		}
 		#topbar li:hover > a,
 		#topbar a:focus {
@@ -529,18 +555,20 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			  $navmenu_bg_hover = bricks_theme_option('navmenu_bg_hover');
 			  $navmenu_bg_border = bricks_theme_option('navmenu_bg_border');
 			  $navmenu_text_color = bricks_theme_option('navmenu_text_color');
+			  $navmenu_text_shadow = bricks_theme_option('navmenu_text_shadow');
 			  $navmenu_text_current = bricks_theme_option('navmenu_text_current');
 		?>
 		#access ul ul {
 			background: <?php echo $navmenu_bg_color; ?>; /* Show a solid color for older browsers */
+			border-bottom: inset 8px solid rgba(<?php echo $this->hex_to_rgb($navmenu_text_color) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 		}
 		#access a {
 			color: rgba(<?php echo $this->hex_to_rgb($navmenu_text_color) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 			font-family: <?php echo bricks_theme_option('navmenu_fontface'); ?>;
-			font-size: <?php echo bricks_theme_option('navmenu_text_size'); ?>%;
+			font-size: <?php echo bricks_theme_option('navmenu_text_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('navmenu_fontweight'); ?>;
 			text-transform: <?php echo bricks_theme_option('navmenu_text_transform'); ?>;
-			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($navmenu_bg_color) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
+			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($navmenu_text_shadow) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 		}
 		#access li:hover > a,
 		#access a:focus {
@@ -563,18 +591,14 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($navmenu_bg_color) .','. bricks_theme_option('navmenu_text_opacity')/2; ?>);
 		}
 		<?php
-		$subnav_wrapper_color = bricks_theme_option('subnav_wrapper_color');
-		$subnav_border_top = bricks_theme_option('subnav_border_top');
-		$subnav_border_bottom = bricks_theme_option('subnav_border_bottom');
+		$nav_wrapper_color = bricks_theme_option('nav_wrapper_color');
+		$nav_border_top = bricks_theme_option('nav_border_top');
+		$nav_border_bottom = bricks_theme_option('nav_border_bottom');
 		?>
-		#subnav-wrapper {
-			background-color: rgba(<?php echo $this->hex_to_rgb($subnav_wrapper_color) .','. bricks_theme_option('subnav_wrapper_opacity'); ?>);
-			background-image: url(<?php echo bricks_theme_option('subnav_wrapper_img'); ?>);
-			background-position: <?php echo bricks_theme_option('subnav_wrap_xpos') .'%'. bricks_theme_option('subnav_wrap_ypos') .'%'; ?>;
-			background-attachment: <?php echo bricks_theme_option('subnav_wrap_attachment'); ?>;
-			background-repeat: <?php echo bricks_theme_option('subnav_wrap_repeat'); ?>;
-			border-top: 1px solid rgba(<?php echo $this->hex_to_rgb($subnav_border_top) .','. bricks_theme_option('subnav_border_opacity'); ?>);
-			border-bottom: 1px solid rgba(<?php echo $this->hex_to_rgb($subnav_border_bottom) .','. bricks_theme_option('subnav_border_opacity'); ?>);
+		#nav-wrapper {
+			background: rgba(<?php echo $this->hex_to_rgb($nav_wrapper_color) .','. bricks_theme_option('nav_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('nav_wrapper_img'); ?>) <?php echo bricks_theme_option('nav_wrap_attachment').' '.bricks_theme_option('nav_wrap_repeat').' '.bricks_theme_option('nav_wrap_xpos').'% '. bricks_theme_option('nav_wrap_ypos') .'%'?>;
+			border-top: 1px solid rgba(<?php echo $this->hex_to_rgb($nav_border_top) .','. bricks_theme_option('nav_border_opacity'); ?>);
+			border-bottom: inset 1px solid rgba(<?php echo $this->hex_to_rgb($nav_border_bottom) .','. bricks_theme_option('nav_border_opacity'); ?>);
         }
 		<?php $footernav_text_color = bricks_theme_option('footernav_text_color'); ?>
 		#footer-navmenu li,
@@ -582,7 +606,6 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			font-family: <?php echo bricks_theme_option('footernav_fontface'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($footernav_text_color) .','. bricks_theme_option('footernav_text_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('footernav_text_size'); ?>px;
-			line-height: <?php echo bricks_theme_option('footernav_text_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('footernav_fontweight'); ?>;
 			text-transform: <?php echo bricks_theme_option('footernav_text_transform'); ?>;
 		}
@@ -610,43 +633,42 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$content_wrapper_color = bricks_theme_option('content_wrapper_color');
 		$article_bg_color = bricks_theme_option('article_bg_color');
 		$article_bg_image = bricks_theme_option('article_bg_image');
+		$headlines_color = bricks_theme_option('headlines_color');
 		$entry_title_color = bricks_theme_option('entry_title_color');
 		$linkformat_border = bricks_theme_option('linkformat_border');
 		if( $article_bg_color ) :
 		?>
         <style type="text/css">		
 		#content-wrapper {
-			background-color: rgba(<?php echo $this->hex_to_rgb($content_wrapper_color) .','. bricks_theme_option('content_wrapper_opacity'); ?>);
-			background-image: url(<?php echo bricks_theme_option('content_wrapper_img'); ?>);
-			background-position: <?php echo bricks_theme_option('content_wrap_xpos') .'%'. bricks_theme_option('content_wrap_ypos') .'%'; ?>;
-			background-attachment: <?php echo bricks_theme_option('content_wrap_attachment'); ?>;
-			background-repeat: <?php echo bricks_theme_option('content_wrap_repeat'); ?>;
+			background: rgba(<?php echo $this->hex_to_rgb($content_wrapper_color) .','. bricks_theme_option('content_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('content_wrapper_img'); ?>) <?php echo bricks_theme_option('content_wrap_repeat') .' '. bricks_theme_option('content_wrap_attachment') .' '. bricks_theme_option('content_wrap_xpos') .'% '. bricks_theme_option('content_wrap_ypos') .'%'; ?>;
         }
-		#content > article.post-box {
+		#content > article {
 			background: <?php echo $article_bg_color; ?>; /* Show a solid color for older browsers */
-			background: rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('article_bg_opacity'); ?>) url(<?php echo bricks_theme_option('article_bg_image'); ?>) <?php echo bricks_theme_option('article_bg_xpos'). ' ' .bricks_theme_option('article_bg_ypos'); ?><?php echo ' '.bricks_theme_option('article_bg_repeat').' '.bricks_theme_option('article_bg_attachment'); ?>;
+			background: rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('article_bg_opacity'); ?>) url(<?php echo bricks_theme_option('article_bg_image'); ?>) <?php echo bricks_theme_option('article_bg_repeat').' '.bricks_theme_option('article_bg_attachment').' '.bricks_theme_option('article_bg_xpos').' '.bricks_theme_option('article_bg_ypos'); ?>;
+		}
+		.archive-header .page-title,
+		.search-header .page-title,
+		.search .page-title,
+		.showcase-heading {
+			font-family: <?php echo bricks_theme_option('headlines_fontface'); ?>;
+			color: rgba(<?php echo $this->hex_to_rgb($headlines_color) .','. bricks_theme_option('headlines_opacity'); ?>);
+			font-size: <?php echo bricks_theme_option('headlines_size'); ?>px;
+			font-weight: <?php echo bricks_theme_option('headlines_fontweight'); ?>;
+			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($content_wrapper_color) .','. bricks_theme_option('headlines_opacity'); ?>);
 		}
 		.entry-title,
 		.entry-title a,
 		div.entry-title_text .entry-title,
-		div.entry-title_text .entry-title a,
-		.archive-header .page-title,
-		.search .page-title {
+		div.entry-title_text .entry-title a {
 			font-family: <?php echo bricks_theme_option('entry_title_fontface'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($entry_title_color) .','. bricks_theme_option('entry_title_opacity'); ?>);
-			font-size: <?php echo bricks_theme_option('entry_title_size'); ?>%;
+			font-size: <?php echo bricks_theme_option('entry_title_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('entry_title_fontweight'); ?>;
+			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($content_wrapper_color) .','. bricks_theme_option('entry_title_opacity'); ?>);
 		}
 		.search .entry-title,
 		.search .entry-title a {
-			font-size: <?php echo bricks_theme_option('entry_title_size') - 30; ?>%;
-		}
-		<?php $grayarea_color1 = bricks_theme_option('grayarea_color1');
-			  $grayarea_color2 = bricks_theme_option('grayarea_color2');
-			  $secondary_text_color = bricks_theme_option('secondary_text_color');
-		?>
-		.single article.post-box.entry-meta a:hover, article.post-box .entry-meta a:hover, archive.post-box .entry-meta a:hover {
-			color: rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>);	
+			font-size: <?php echo bricks_theme_option('entry_title_size'); ?>px;
 		}
 		<?php $content_shadow = bricks_theme_option('content_shadow'); ?>
 		#content > article,
@@ -655,6 +677,10 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			-webkit-box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 			-moz-box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 			box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
+		}
+		.page-template-showcase-php #slider {
+			width: <?php echo bricks_theme_option('large_feature_width'); ?>px;
+			height: <?php echo bricks_theme_option('large_feature_height'); ?>px;
 		}
 		</style>
         <?php endif;
@@ -675,26 +701,34 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$widget_title_color = bricks_theme_option('widget_title_color');
 		$widget_title_bg = bricks_theme_option('widget_title_bg');
 		$widget_text_color = bricks_theme_option('widget_text_color');
+		$widget_text_shadow = bricks_theme_option('widget_text_shadow');
+		$widget_title_shadow = bricks_theme_option('widget_title_shadow');
+		$widget_background_color = bricks_theme_option('widget_background_color');
 		if( $widget_title_color ) :
 		?>
         <style type="text/css">
 		#secondary .widget,
 		#secondary .widget a {
 			color: rgba(<?php echo $this->hex_to_rgb($widget_text_color) .','. bricks_theme_option('widget_text_opacity'); ?>);
+			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($widget_text_shadow) .','. bricks_theme_option('widget_shadow_opacity'); ?>);
 		}
-		#secondary .widget-title a,
-		#secondary > .widget-title a:link {
+		#secondary .widget-title,
+		#secondary .widget-title > a {
 			font-family: <?php echo bricks_theme_option('widget_title_fontface'); ?>;
 			font-size: <?php echo bricks_theme_option('widget_title_size'); ?>px;
 			text-transform: <?php echo bricks_theme_option('widget_title_transform'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($widget_title_color) .','. bricks_theme_option('widget_title_opacity'); ?>);
+			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($widget_title_shadow) .','. bricks_theme_option('widget_shadow_opacity'); ?>);
 		}
 		#secondary .widget-title-bg {
 			background: <?php echo $widget_title_bg; ?>; /* Show a solid color for older browsers */
-			background: rgba(<?php echo $this->hex_to_rgb($widget_title_bg) .','. bricks_theme_option('widget_titlebg_opacity'); ?>) url(<?php echo bricks_theme_option('widget_title_image'); ?>) <?php echo bricks_theme_option('widget_titlebg_repeat') . ' scroll ' . bricks_theme_option('widget_title_xpos'). '% ' .bricks_theme_option('widget_title_ypos'); ?>%;
+			background: rgba(<?php echo $this->hex_to_rgb($widget_title_bg) .','. bricks_theme_option('widget_titlebg_opacity'); ?>) url(<?php echo bricks_theme_option('widget_title_image'); ?>) <?php echo bricks_theme_option('widget_titlebg_repeat').' '.bricks_theme_option('widget_titlebg_attachment').' '.bricks_theme_option('widget_title_xpos').'% '.bricks_theme_option('widget_title_ypos'); ?>%;
 		}
 		.tagcloud a:hover {
 			color: rgba(<?php echo $this->hex_to_rgb($widget_title_color) .','. bricks_theme_option('widget_title_opacity'); ?>);
+		}
+		#secondary .widget {
+			background: rgba(<?php echo $this->hex_to_rgb($widget_background_color) .','. bricks_theme_option('widget_background_opacity'); ?>);
 		}
 		<?php 
 		$fwidget_title_color = bricks_theme_option('fwidget_title_color');
@@ -705,17 +739,15 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		#supplementary .widget-title {
 			font-family: <?php echo bricks_theme_option('fwidget_title_fontface'); ?>;	
 			color: rgba(<?php echo $this->hex_to_rgb($fwidget_title_color) .','. bricks_theme_option('fwidget_title_opacity'); ?>);
-			font-size: <?php echo bricks_theme_option('fwidget_title_size'); ?>%;
+			font-size: <?php echo bricks_theme_option('fwidget_title_size'); ?>px;
 			text-transform: <?php echo bricks_theme_option('fwidget_title_transform'); ?>;
-			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_title_opacity'); ?>);
-		}
-		#supplementary .widget-title {
-			background: rgba(<?php echo $this->hex_to_rgb($footsb_titlebg_color) .','. bricks_theme_option('footsb_titlebg_opacity'); ?>);
+			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($fwidget_title_shadow) .','. bricks_theme_option('fwidget_title_opacity'); ?>);
 		}
 		<?php $fwidget_text_color = bricks_theme_option('fwidget_text_color'); ?>
 		#supplementary .widget,
 		#supplementary .widget a {
 			color: rgba(<?php echo $this->hex_to_rgb($fwidget_text_color) .','. bricks_theme_option('fwidget_text_opacity'); ?>);
+			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($fwidget_title_shadow) .','. bricks_theme_option('fwidget_text_opacity'); ?>);
 		}
 		#content nav a.page-numbers,
 		#content nav a.page-numbers:hover {
@@ -789,14 +821,14 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		if( $footer_wrapper_color ) :
 		?>
         <style type="text/css">
-		#footer-widget-wrapper {
+		#footer-sidebar-wrapper {
 			background: <?php echo $fwidget_bg_color; ?>; /* Show a solid color for older browsers */
 			background: rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) url(<?php echo bricks_theme_option('fwidget_bg_image'); ?>) <?php echo bricks_theme_option('fwidget_bg_xpos'). '% ' .bricks_theme_option('fwidget_bg_ypos') .'% '; ?><?php echo ' '.bricks_theme_option('fwidget_bg_repeat').' '.bricks_theme_option('fwidget_bg_attachment'); ?>;
 			border-top: <?php echo bricks_theme_option('fwidget_border_width'); ?>px solid rgba(<?php echo $this->hex_to_rgb($fwidget_border_top) .','. bricks_theme_option('fwidget_border_opacity'); ?>);
 			border-bottom: 1px solid rgba(<?php echo $this->hex_to_rgb($fwidget_border_bottom) .','. bricks_theme_option('fwidget_border_opacity'); ?>);
 		}
 		#footer-wrapper {
-			background-color: rgba(<?php echo $this->hex_to_rgb($footer_wrapper_color) .','. bricks_theme_option('footer_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('footer_wrapper_img'); ?>) <?php echo bricks_theme_option('footer_wrap_repeat') . bricks_theme_option('footer_wrap_attachment') . bricks_theme_option('footer_wrap_xpos') .'% '. bricks_theme_option('footer_wrap_ypos') .'% '; ?>;
+			background: rgba(<?php echo $this->hex_to_rgb($footer_wrapper_color) .','. bricks_theme_option('footer_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('footer_wrapper_img'); ?>) <?php echo bricks_theme_option('footer_wrap_repeat').' '.bricks_theme_option('footer_wrap_attachment').' '.bricks_theme_option('footer_wrap_xpos') .'% '. bricks_theme_option('footer_wrap_ypos') .'%'; ?>;
         }
 		<?php 
 		$footer_bg_color = bricks_theme_option('footer_bg_color');
@@ -805,7 +837,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		?>
 		#colophon {
 			background: <?php echo $footer_bg_color; ?>; /* Show a solid color for older browsers */
-			background: rgba(<?php echo $this->hex_to_rgb($footer_bg_color) .','. bricks_theme_option('footer_bg_opacity'); ?>) url(<?php echo bricks_theme_option('footer_bg_image'); ?>) <?php echo bricks_theme_option('footer_bg_xpos'). '% ' .bricks_theme_option('footer_bg_ypos') .'% '; ?><?php echo ' '.bricks_theme_option('fwidget_bg_repeat'). ' ' .bricks_theme_option('fwidget_bg_attachment'); ?>;
+			background: rgba(<?php echo $this->hex_to_rgb($footer_bg_color) .','. bricks_theme_option('footer_bg_opacity'); ?>) url(<?php echo bricks_theme_option('footer_bg_image'); ?>) <?php echo bricks_theme_option('fwidget_bg_repeat').' '.bricks_theme_option('fwidget_bg_attachment').' '.bricks_theme_option('footer_bg_xpos').'% '.bricks_theme_option('footer_bg_ypos') .'%'; ?>;
 		}
 		#colophon #copyright-notice p,
 		#colophon #footer-ads,
@@ -831,13 +863,16 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$linkformat_color1 = bricks_theme_option('linkformat_color1');
 		$linkformat_color2 = bricks_theme_option('linkformat_color2');
 		if( $linkformat_color1 ) : ?>
-        <style>
+        <style type="text/css">
 		.link-content {
 			background: <?php echo $linkformat_color2; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) );
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) );
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) ) ); /* older webkit syntax */
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) );
+		}
+		.format-link .link-icon + p {
+			text-shadow: 1px 1px 1px rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>);
 		}
 		.single .entry-meta a:hover,
 		.entry-meta a:hover {

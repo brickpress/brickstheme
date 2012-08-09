@@ -54,6 +54,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 							'sidebars'		=> __( 'Sidebars', 'bricks' ),
 							'social' 		=> __( 'Social', 'bricks' ),
 							'footer' 		=> __( 'Footer', 'bricks' ),
+							'layout' 		=> __( 'Layout', 'bricks' ),
 							'reset'         => __( 'Reset to Defaults', 'bricks' )
 						);
 		
@@ -404,6 +405,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		require( trailingslashit( BRICKS_SECTIONS ) . 'sidebars-section.php' );
 		require( trailingslashit( BRICKS_SECTIONS ) . 'social-section.php' );
 		require( trailingslashit( BRICKS_SECTIONS ) . 'footer-section.php' );
+		require( trailingslashit( BRICKS_SECTIONS ) . 'layout-section.php' );
 		require( trailingslashit( BRICKS_SECTIONS ) . 'reset-section.php' );
 	}
 	

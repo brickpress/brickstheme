@@ -25,13 +25,38 @@ $this->settings['social-buttons'] = array(
 	'type'     => 'no-data',
 	'class'    => 'open_subsection',
 );
+
+	$this->settings['social_module'] = array(
+		'section' => 'social',
+		'title'   => __( 'Social Media', 'bricks' ),
+		'desc'    => __( 'Choose where you want your social media icons to appear.', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
+		'std'     => 'header-right',
+		'choices' => array(
+			'header-right'   => __( 'Header', 'bricks' ),
+			'before-sidebar' => __( 'Primary Sidebar', 'bricks' )
+		)
+	);
+	
+	$this->settings['search_module'] = array(
+		'section' => 'social',
+		'title'   => __( 'Show Search', 'bricks' ),
+		'desc'    => __( 'Display search bar below social media icons.', 'bricks' ),
+		'type'    => 'checkbox',
+		'std'     => 1,
+		'class'   => 'iphone_checkboxes',
+		'family'  => '_wrapped2',
+	);
+	
 	
 	$this->settings['social-buttons-heading'] = array(
 		'section'  => 'social',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'headings',
-		'desc'	  => __( 'Resetting the theme does not affect the values you put here. If you wish to update old values with new ones, just key in or paste the ones then click save.', 'bricks' ),
+		'desc'	  => __( 'Resetting the theme does not affect the values you put here. If you wish to replace old values with new ones, just key in or paste the new values then click save. To delete entries, click on the <strong>Clear Field</strong> button and click <strong>Save Changes</strong>.', 'bricks' ),
 	);
 	
 	$this->settings['facebook-wrap'] = array(
@@ -82,7 +107,7 @@ $this->settings['social-buttons'] = array(
 	$this->settings['google_profile'] = array(
 		'section' => 'social',
 		'title'	  => __( 'Google+ Profile', 'bricks' ),
-		'desc'	  => __( 'example: https://plus.google.com/012345678901234567890/', 'bricks' ),
+		'desc'	  => __( 'example: <strong>https://plus.google.com/u/0/012345678901234567890/</strong>', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
 		'family'  => '_wrapped2',
@@ -92,7 +117,7 @@ $this->settings['social-buttons'] = array(
 	$this->settings['google_page'] = array(
 		'section' => 'social',
 		'title'	  => __( 'Google+ Page ID', 'bricks' ),
-		'desc'	  => __( 'If you have a Google+ Page please enter your Google+ Page ID here.', 'bricks' ),
+		'desc'	  => __( 'If you have a Google+ Page please enter your Google+ Page ID here. <br />example: https://plus.google.com/u/0/b/<strong>012345678901234567890</strong>', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
 		'family'  => '_wrapped2',

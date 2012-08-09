@@ -14,10 +14,9 @@ $this->settings['sidebars-section-tab'] = array(
 	'type'    => 'no-data',
 	'class'   => 'subsectiontabs',
 	'choices' => array(
-		'primary-sidebar'	  => __( 'Main Sidebar', 'bricks' ),
-		'footer-sidebar-bg'   => __( 'Footer Sidebar Background', 'bricks' ),
-		'footer-sidebar-text' => __( 'Footer Sidebar Text', 'bricks' ),
-		'widget-buttons'      => __( 'Widget Buttons', 'bricks' )
+		'primary-sidebar'	=> __( 'Main Sidebar', 'bricks' ),
+		'footer-sidebar'    => __( 'Footer Sidebar', 'bricks' ),
+		'widget-buttons'    => __( 'Widget Buttons', 'bricks' )
 	)
 );
 
@@ -44,7 +43,7 @@ $this->settings['primary-sidebar'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#40668C'
+		'std'	  => '#F9F9F9'
 	);
 	
 	$this->settings['widget_title_opacity'] = array(
@@ -80,7 +79,7 @@ $this->settings['primary-sidebar'] = array(
 		'max'	  => 36,
 		'step'    => 1,
 		'unit'	  => 'px',
-		'std'	  => '14'
+		'std'	  => '18'
 	);
 	
 	$this->settings['widget_title_transform'] = array(
@@ -90,60 +89,32 @@ $this->settings['primary-sidebar'] = array(
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
-		'std'	  => 'none',
+		'std'	  => 'capitalize',
 		'choices' => array(
 			'none'     	 => __( 'None', 'bricks' ),
 			'capitalize' => __( 'Capitalize', 'bricks' ),
 			'uppercase'	 => __( 'Uppercase', 'bricks' )
 		)	
 	);
-
+	
+	$this->settings['widget_title_shadow'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Title Shadow', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
+		'std'	  => '#000'
+	);
+	
 		$this->settings['close-widget-title'] = array(
 			'section'  => 'sidebars',
 			'archtype' => 'structure',
 			'type'     => 'no-data',
 			'class'    => 'close_controller_wrap',
 		);
-		
-	$this->settings['widget-title-bg'] = array(
-		'section'  => 'sidebars',
-		'title'	   => __( 'Widget Title Background', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'controller_wrap'
-	);
 	
-	$this->settings['widget_title_bg'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Background Color', 'bricks' ),
-		'desc'	  => '',
-		'type'	  => 'colorpicker',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped3',
-		'std'     => '#CCCCCC'
-	);
-	
-	$this->settings['widget_titlebg_opacity'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped3',
-		'min'	  => 0,
-		'max'	  => 1,
-		'step'    => 0.1,
-		'std'	  => '0.5'
-	);
-	
-		$this->settings['close-widget-title-bg'] = array(
-			'section'  => 'sidebars',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-		
-	$this->settings['widget_text'] = array(
+		$this->settings['widget_text'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
@@ -162,6 +133,16 @@ $this->settings['primary-sidebar'] = array(
 		'std'	  => '#40668C'
 	);
 	
+	$this->settings['widget_text_shadow'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Text Shadow', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped2',
+		'std'	  => '#FFF'
+	);
+	
 	$this->settings['widget_text_opacity'] = array(
 		'section' => 'sidebars',
 		'title'	  => __( 'Widget Text Opacity', 'bricks' ),
@@ -175,7 +156,95 @@ $this->settings['primary-sidebar'] = array(
 		'std'	  => '1'
 	);
 	
+	$this->settings['widget_shadow_opacity'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Shadow Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '0.3'
+	);
+	
 		$this->settings['close-widget-text'] = array(
+			'section'  => 'sidebars',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+
+	$this->settings['widget_background'] = array(
+		'section'  => 'sidebars',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Widget Background Color', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['widget_background_color'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Background Color', 'bricks' ),
+		'desc'	  => '',
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped2',
+		'class'   => 'pick-color',
+		'std'	  => '#F9F9F9'
+	);
+	
+	$this->settings['widget_background_opacity'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Background Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '0.3'
+	);
+	
+		$this->settings['close-widget-background'] = array(
+			'section'  => 'sidebars',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+			
+	$this->settings['widget-title-bg'] = array(
+		'section'  => 'sidebars',
+		'title'	   => __( 'Widget Title Background', 'bricks' ),
+		'desc'     => __( '', 'bricks' ),
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['widget_title_bg'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Background Color', 'bricks' ),
+		'desc'	  => '',
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
+		'std'     => '#638ebc'
+	);
+	
+	$this->settings['widget_titlebg_opacity'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Background Color Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '1'
+	);
+	
+		$this->settings['close-widget-title-bg'] = array(
 			'section'  => 'sidebars',
 			'archtype' => 'structure',
 			'type'     => 'no-data',
@@ -188,7 +257,7 @@ $this->settings['primary-sidebar'] = array(
 		'desc'	  => __( 'Background image for primary widget title.', 'bricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
-		'std'	  => trailingslashit( BRICKS_IMAGES ) . 'small-diagonals.png'
+		'std'	  => ''
 	);
 	
 	$this->settings['widget_title_position'] = array(
@@ -229,13 +298,27 @@ $this->settings['primary-sidebar'] = array(
 		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
-		'family'  => '_wrapped3',
+		'family'  => '_wrapped2',
 		'std'     => 'repeat',
 		'choices' => array(
 			'no-repeat' => __( 'No Repeat', 'bricks' ),
 			'repeat' 	=> __( 'Tile', 'bricks' ),
 			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
 			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+		)
+	);
+	
+	$this->settings['widget_titlebg_attachment'] = array(
+		'section' => 'sidebars',
+		'title'   => __( 'Background Attachment', 'bricks' ),
+		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
+		'std'     => 'scroll',
+		'choices' => array(
+			'scroll' => __( 'Scroll', 'bricks' ),
+			'fixed'  => __( 'Fixed', 'bricks' )
 		)
 	);
 	
@@ -253,196 +336,7 @@ $this->settings['close-primary-sidebar'] = array(
 	'class'    => 'close_subsection'
 );	
 	
-$this->settings['footer-sidebar-bg'] = array(
-	'section'  => 'sidebars',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'open_subsection'
-);
-
-	$this->settings['fwidget_bg'] = array(
-		'section'  => 'sidebars',
-		'title'	   => __( 'Footer Widget Area Background', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'controller_wrap'
-	);
-
-	$this->settings['fwidget_bg_color'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Widget Area Background Color', 'bricks' ),
-		'desc'	  => '',
-		'type'	  => 'colorpicker',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
-		'std'     => '#E3EDF4'
-	);
-	
-	$this->settings['fwidget_bg_opacity'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Widget Area Background Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 1,
-		'step'    => 0.1,
-		'std'	  => '1'
-	);
-	
-		$this->settings['close-fwidget-bg'] = array(
-			'section'  => 'sidebars',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-	
-	$this->settings['fwidget_bg_image'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Background Image', 'bricks' ),
-		'desc'	  => __( 'Background image for footer widget area.', 'bricks' ),
-		'type'	  => 'image',
-		'class'   => 'uploadimg',
-		'std'	  => ''
-	);
-	
-	$this->settings['fwidget_bg_pos'] = array(
-		'section'  => 'sidebars',
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'title'	   => __( 'Background Position', 'bricks' ),
-		'class'    => 'controller_wrap'
-	);
-	
-	$this->settings['fwidget_bg_xpos'] = array(
-		'section' => 'sidebars',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 100,
-		'step'    => 1,
-		'std'	  => '50'
-	);
-	
-	$this->settings['fwidget_bg_ypos'] = array(
-		'section' => 'sidebars',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 100,
-		'step'    => 1,
-		'std'	  => '0'
-	);
-	
-	$this->settings['fwidget_bg_repeat'] = array(
-		'section' => 'sidebars',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
-		'type'    => 'radio',
-		'class'	  => 'radio-button',
-		'family'  => '_wrapped2',
-		'std'     => 'repeat',
-		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
-		)
-	);
-	
-	$this->settings['fwidget_bg_attachment'] = array(
-		'section' => 'sidebars',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
-		'type'    => 'radio',
-		'class'	  => 'radio-button',
-		'family'  => '_wrapped2',
-		'std'     => 'scroll',
-		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
-		)
-	);
-	
-		$this->settings['close-fwidget-bg-pos'] = array(
-			'section'  => 'sidebars',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-	
-	$this->settings['open-fwidget-border'] = array(
-		'section'  => 'sidebars',
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'title'	   => __( 'Footer Widet Area Borders', 'bricks' ),
-		'class'    => 'controller_wrap',
-	);
-	
-	$this->settings['fwidget_border_top'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Top Border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'colorpicker',
-		'family'  => '_wrapped3',
-		'class'   => 'pick-color',
-		'std'	  => '#DCE5EE'
-	);
-	
-	$this->settings['fwidget_border_bottom'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Bottom Border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'colorpicker',
-		'family'  => '_wrapped3',
-		'class'   => 'pick-color',
-		'std'	  => '#E3EDF4'
-	);
-	
-	$this->settings['fwidget_border_opacity'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Border Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped3',
-		'min'	  => 0,
-		'max'	  => 1,
-		'step'    => 0.1,
-		'std'	  => '1'
-	);
-	
-	$this->settings['fwidget_border_width'] = array(
-		'section' => 'sidebars',
-		'title'	  => __( 'Top Border Width', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped3',
-		'min'	  => 0,
-		'max'	  => 10,
-		'step'    => 1,
-		'std'	  => '1'
-	);
-	
-		$this->settings['close-fwidget-border'] = array(
-			'section'  => 'sidebars',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);	
-
-$this->settings['close-footer-sidebar-bg'] = array(
-	'section'  => 'sidebars',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'close_subsection'
-);
-	
-$this->settings['footer-sidebar-text'] = array(
+$this->settings['footer-sidebar'] = array(
 	'section'  => 'sidebars',
 	'archtype' => 'structure',
 	'type'     => 'no-data',
@@ -507,11 +401,11 @@ $this->settings['footer-sidebar-text'] = array(
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
-		'min'	  => 50,
-		'max'	  => 200,
+		'min'	  => 5,
+		'max'	  => 36,
 		'step'    => 1,
-		'std'	  => '133',
-		'unit'	  => __( 'percent', 'bricks' )
+		'std'	  => '18',
+		'unit'    => 'px'
 	);
 	
 	$this->settings['fwidget_title_transform'] = array(
@@ -664,7 +558,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#69e014'
+		'std'	  => '#3D9400'
 	);
 	
 	$this->settings['widget_button_hover2'] = array(
@@ -734,7 +628,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#69e014'
+		'std'	  => '#29691D'
 	);
 	
 	$this->settings['widget_button_fontface'] = array(

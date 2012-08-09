@@ -34,7 +34,6 @@ function bricks_theme_option( $option ) {
 }
 require_once( trailingslashit( BRICKS_DIR ) . 'bricks-category-posts-widget.php' );
 require_once( trailingslashit( BRICKS_DIR ) . 'bricks-search-widget.php' );
-require_once( trailingslashit( BRICKS_DIR ) . 'bricks-tabs-widget.php' );
 
 require_once( trailingslashit( BRICKS_DIR ) . 'class.bricks-theme-setup.php' );
 $bricks_theme_setup = new Bricks_Theme_Setup();
@@ -42,8 +41,6 @@ $bricks_theme_setup = new Bricks_Theme_Setup();
 require_once( trailingslashit( get_template_directory() ) . 'functions/template-tags.php' );
 require_once( trailingslashit( get_template_directory() ) . 'functions/post-formats.php' );
 require_once( trailingslashit( get_template_directory() ) . 'functions/custom-hooks.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/sidebar-tabs.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/entry-views.php' );
 
 require_once( trailingslashit( get_template_directory() ) . 'functions/cleaner-gallery.php' );
 require_once( trailingslashit( get_template_directory() ) . 'functions/get-the-image.php' );

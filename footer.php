@@ -14,9 +14,8 @@ global $theme_options;
 		</div><!-- .inner-content -->
 	</div>
 
-<div id="footer-widget-wrapper">
-    <div class="inner-widget-footer">
-    
+<div id="footer-sidebar-wrapper">
+    <div class="inner-widget-footer"> 
     <?php bricks_before_footer(); ?>
     
         <div id="supplementary" <?php bricks_footer_sidebar_class(); ?>>
@@ -57,7 +56,7 @@ global $theme_options;
             <?php endif; ?>
         </div><!-- #supplementary -->
     </div><!-- .footer-widget-inner -->
-</div><!-- #footer-widget-wrapper -->
+</div><!-- #footer-sidebar-wrapper -->
         
         
 <div id="footer-wrapper">

@@ -51,36 +51,6 @@ endif;
 
 
 /**
- * Adds a featured image to content.
- *
- * @since 1.0.0
- */
-function bricks_audio_content() {
-	
-	global $post; ?>
-    
-    <div class="audio-content">
-        <div class="audio-icon">
-            <?php // Gets the attachment image
-                  echo get_the_image(); ?>
-        </div>
-        <?php the_content(); ?>
-	</div>
-    <?php
-}
-
-add_shortcode( 'mp3', 'mp3_shortcode' );
-/**
- * Audio post format MP3 wrapper.
- *
- * @since 1.0.0
- */
-function caption_shortcode( $atts, $content = null ) {
-   return '<div class="mp3-wrap">' . $content . '</div>';
-}
-
-
-/**
  * Convert a chat post into a definition list based on "Name: What they said" content
  *
  * @since 1.0.0

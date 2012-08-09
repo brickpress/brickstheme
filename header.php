@@ -63,9 +63,9 @@
 <?php bricks_before_html(); ?>
 <body <?php body_class(); ?>>
 	
-    <?php if( bricks_theme_option('enable_custom_header') && bricks_theme_option('header_image_pos') == 'topnav' )
-				bricks_custom_header(); ?>
-    
+	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'topnav' )
+          bricks_featured_slider(); ?>
+              
     <?php if( bricks_theme_option('show_topbar_nav') ) : ?>
 	<div id="topbar-wrapper">
     	<div class="inner-topbar">
@@ -74,8 +74,9 @@
     </div>
     <?php endif; ?>
     
-    <?php if( bricks_theme_option('enable_custom_header') && bricks_theme_option('header_image_pos') == 'before-header' )
-				bricks_custom_header(); ?>
+    <?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'before-header' )
+			  bricks_featured_slider(); ?>
+
 	<header id="branding" role="banner">
     	<div class="inner-header">
             <div id="site-header">
@@ -98,36 +99,33 @@
                     </li>
                 </ul>
 
-        	<?php bricks_social_media(); ?>    
+        	<?php if( bricks_theme_option('social_module') == 'header-right' )
+					  bricks_social_media(); ?>    
             </div><!-- #site-header -->
+            
+            <?php if( ! is_page_template('showcase.php') && bricks_theme_option('enable_custom_header') )
+				  bricks_custom_header(); ?>
+                  
         </div><!-- .inner-header -->
 	</header><!-- #branding -->
-    <?php if( bricks_theme_option('enable_custom_header') && bricks_theme_option('header_image_pos') == 'after-header' )
-				bricks_custom_header(); ?>
-     
+    <?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-header' )
+			  bricks_featured_slider(); ?>
+                
 	<?php // Secondary navigation menu. ?>
-    <div id="subnav-wrapper">
+    <div id="nav-wrapper">
         <div class="inner-subnav">
             <?php bricks_nav_menu(); ?>
         </div>
     </div>
-    
-	<div id="bricks-slider-wrapper">
-	<?php if( is_page_template('showcase.php') )
-			  bricks_featured_slider(); ?>
-    </div><!-- #bricks-slider-wrapper -->	
-    
+ 
     <div id="content-wrapper">
     	<div class="inner-content">
-
-            <div id="headline-container">
+ 
             <?php if( is_archive() ) {
                       bricks_archive_header();
                   } elseif( is_search() || is_404() ) {
                       bricks_search_header();
                   } ?>
-            </div><!-- #headline-container -->
-            <div class="clearfix"></div>
-         
+
             <?php bricks_before_main(); ?>
                 <div id="main">

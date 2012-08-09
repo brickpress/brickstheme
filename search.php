@@ -8,7 +8,7 @@
  */
 global $theme_options;
 
-$article_container = bricks_theme_option('article_container');
+$post_round_corners = bricks_theme_option('post_round_corners');
 get_header(); ?>
 
 	<div id="primary">
@@ -19,7 +19,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
          
         <?php bricks_before_article(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'no-box' ) {
+        <article id="post-<?php the_ID(); ?>" <?php post_class($post_round_corners); ?> <?php if( $post_round_corners == 'squared' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
             
             <header class="entry-header">
@@ -52,7 +52,7 @@ get_header(); ?>
           
         <?php else : ?>
         
-        <article id="post-0" class="post error404 not-found"<?php if( $article_container == 'no-box' ) {
+        <article id="post-0" class="post error404 not-found"<?php if( $post_round_corners == 'squared' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
         
             <div class="entry-content">        
@@ -61,22 +61,25 @@ get_header(); ?>
                 <div class="widget widget_search">
                 <?php the_widget( 'Bricks_Search_Widget', array( 'search_text'   => 'Search', 'search_submit' => 'Search' ), array( 'widget_id' => 'Search' ) ); ?>
                 </div>
-                
+                <br /><br/>
                 <?php the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ), array( 'widget_id' => 'Search' ) ); ?>
-
+				
+                <hr /><br/>
                 <div class="widget widget_categories">
                     <h2 class="widgettitle"><?php _e( 'Most Used Categories', 'bricks' ); ?></h2>
                     <ul>
                     <?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
                     </ul>
                 </div>
-
+				<hr /><br/>
+                
                 <?php
                 /* translators: %1$s: smilie */
                 $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'bricks' ), convert_smilies( ':)' ) ) . '</p>';
                 the_widget( 'WP_Widget_Archives', array('count' => 1 , 'dropdown' => 0 ), array( 'after_title' => '</h2>'.$archive_content ) );
                 ?>
-
+				<hr /><br/>
+                
                 <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
 			</div><!-- .entry-content -->

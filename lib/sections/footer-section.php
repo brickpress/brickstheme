@@ -14,146 +14,10 @@ $this->settings['footer-section-tab'] = array(
 	'type'     => 'no-data',
 	'class'    => 'subsectiontabs',
 	'choices'  => array(
-		'footer-wrapper'	=> __( 'Footer Wrapper', 'bricks' ),
 		'footer-background' => __( 'Footer Background', 'bricks' ),
 		'footer-text'		=> __( 'Footer Text', 'bricks' ),
 		'footer-extras'		=> __( 'Logo, Copyright, Ads', 'bricks' )
 	)
-);
-
-// Footer Wrapper
-$this->settings['footer-wrapper'] = array(
-	'section'  => 'footer',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'open_subsection',
-);
-
-	$this->settings['footer_wrapper'] = array(
-		'section'  => 'footer',
-		'title'	   => __( 'Footer Wrapper', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'controller_wrap'
-	);
-	
-	$this->settings['footer_wrapper_color'] = array(
-		'section' => 'footer',
-		'title'	  => __( 'Background Color', 'bricks' ),
-		'desc'	  => '',
-		'type'	  => 'colorpicker',
-		'subtype' => 'wp_theme_mod',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
-		'std'     => '#191919'
-	);
-	
-	$this->settings['footer_wrapper_opacity'] = array(
-		'section' => 'footer',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 1,
-		'step'    => 0.1,
-		'std'	  => '1'
-	);
-	
-		$this->settings['close-footer-wrap'] = array(
-			'section'  => 'footer',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-		
-	$this->settings['footer_wrapper_img'] = array(
-		'section' => 'footer',
-		'title'	  => __( 'Footer Wrapper Image', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'image',
-		'subtype' => 'wp_theme_mod',
-		'class'   => 'uploadimg',
-		'std'	  => ''
-	);
-
-	$this->settings['footer-wrap-position'] = array(
-		'section'  => 'footer',
-		'title'	   => __( 'Background Image Position', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'controller_wrap'
-	);
-	
-	$this->settings['footer_wrap_xpos'] = array(
-		'section' => 'footer',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 100,
-		'step'    => 1,
-		'std'	  => '50'
-	);
-	
-	$this->settings['footer_wrap_ypos'] = array(
-		'section' => 'footer',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
-		'type'	  => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 100,
-		'step'    => 1,
-		'std'	  => '0'
-	);
-	
-	$this->settings['footer_wrap_repeat'] = array(
-		'section' => 'footer',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
-		'type'    => 'radio',
-		'class'	  => 'radio-button',
-		'family'  => '_wrapped2',
-		'std'     => 'no-repeat',
-		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
-		)
-	);
-	
-	$this->settings['footer_wrap_attachment'] = array(
-		'section' => 'footer',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
-		'type'    => 'radio',
-		'subtype' => 'wp_theme_mod',
-		'class'	  => 'radio-button',
-		'family'  => '_wrapped2',
-		'std'     => 'scroll',
-		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
-		)
-	);
-	
-		$this->settings['close-footer-wrap-position'] = array(
-			'section'  => 'footer',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-		
-$this->settings['close-footer-wrapper'] = array(
-	'section'  => 'footer',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'close_subsection',
 );
 
 // Footer Background
@@ -180,7 +44,7 @@ $this->settings['footer-background'] = array(
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped2',
-		'std'     => '#E3EDF4'
+		'std'     => '#191919'
 	);
 	
 	$this->settings['footer_bg_opacity'] = array(
@@ -339,7 +203,7 @@ $this->settings['footer-text'] = array(
 	
 	$this->settings['footer_text_opacity'] = array(
 		'section' => 'footer',
-		'title'	  => __( 'Footer Opacity', 'bricks' ),
+		'title'	  => __( 'Footer Text Opacity', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
@@ -403,7 +267,7 @@ $this->settings['footer-extras'] = array(
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'title'	   => __( 'Creative Commons License', 'bricks' ),
-		'desc'	   => __( 'There is no registration to use the Creative Commons licenses. Licensing a work is as simple as selecting which of the six licenses best meets your goals, and then marking your work in some way so that others know that you have chosen to release the work under the terms of that license. <a href="' .esc_attr( 'http://creativecommons.org/choose/' ). '" target="_blank">Choose a license.</a>', 'bricks' ),
+		'desc'	   => __( 'There is no registration to use the Creative Commons licenses. Licensing a work is as simple as selecting which of the six licenses best meets your goals, and then marking your work in some way so that others know that you have chosen to release the work under the terms of that license. <a href="' .esc_attr( 'http://creativecommons.org/choose/' ). '" target="_blank"><strong>Choose a license</strong>.</a>', 'bricks' ),
 		'class'    => 'controller_wrap'
 	);
 	

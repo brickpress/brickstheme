@@ -21,8 +21,14 @@ if( ! function_exists('bricks_topbar') ) :
             <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
             <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'bricks' ); ?>"><?php _e( 'Skip to primary content', 'bricks' ); ?></a></div>
             <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'bricks' ); ?>"><?php _e( 'Skip to secondary content', 'bricks' ); ?></a></div>
-            <?php wp_nav_menu( array( 'theme_location' => 'topbar' ) ); ?>
-           
+            <?php wp_nav_menu( array( 'theme_location' => 'topbar', 'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>', ) ); ?>
+           	<script> 
+ 
+    $(document).ready(function() { 
+        $('ul.sf-menu').superfish(); 
+    }); 
+ 
+</script>
             <div class="site-admin">
                 <ul>
                   <li><?php wp_register(); ?></li>
@@ -120,10 +126,11 @@ if( ! function_exists('bricks_custom_header') ) :
 	$bricks_image = bricks_theme_option('custom_header');
 	$header_image_width = bricks_theme_option('header_image_width');
 	$header_image_height = bricks_theme_option('header_image_height');
+	$custom_header_adjust = bricks_theme_option('custom_header_adjust');
 	?>
     	
-	<div id="custom-header-wrapper" <?php if ( $header_image || $bricks_image ) { echo 'style="height:'.esc_attr($header_image_height).'px;"'; } ?>>
-        <div id="custom-header">
+	<div id="custom-header-wrapper" <?php if( $header_image || $bricks_image ) { echo 'style="max-height:'.esc_attr($header_image_height).'px;"'; } ?>>
+        <div id="custom-header" <?php if( '0' != $custom_header_adjust ) { echo 'style="margin-top: -'.esc_attr($custom_header_adjust).'px;"'; } ?>>
 		
 		<?php // Check to see if the header image has been removed
 		if ( $header_image || $bricks_image ) :
@@ -131,7 +138,7 @@ if( ! function_exists('bricks_custom_header') ) :
 				$header_image_height = get_theme_support( 'custom-header', 'height' );
 			?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<img src="<?php header_image(); ?>" width="<?php echo esc_attr($header_image_width); ?>" height="auto" alt="" />
+			<img src="<?php echo ('' != $bricks_image) ? esc_attr($bricks_image) : header_image(); ?>" width="<?php echo esc_attr($header_image_width); ?>" height="auto" />
 		</a>
         <?php endif; // end check for removed header image ?>
     	</div>
@@ -165,14 +172,16 @@ endif;
 
 
 /**
- * Returns header for archives.
+ * Returns header for archive pages.
  * @since 1.0.0
  */
 if( ! function_exists('bricks_archive_header') ) :
-function bricks_archive_header() { ?>
+function bricks_archive_header() {
 	
-    <header class="archive-header">
-        <h1 class="page-title">
+    $format = get_post_format(); ?>
+    <div id="headline-container">
+    	<header class="archive-header">
+          <h1 class="page-title">
             <?php if ( is_day() ) {
                 printf( __( 'Daily Archives: %s', 'bricks' ), '<span>' . get_the_date() . '</span>' );
             } elseif ( is_month() ) {
@@ -184,34 +193,47 @@ function bricks_archive_header() { ?>
             } elseif ( is_tag() ) {
                 printf( __( 'Tag Archives: %s', 'bricks' ), single_tag_title( '', false ) );
             } elseif ( is_author() ) {
-                printf( __( 'Author Archives: %s', 'bricks' ), get_the_author() );
+                printf( __( 'Author Archives: %s', 'bricks' ) );
+			} elseif ( has_post_format('aside') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+			} elseif ( has_post_format('audio') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+			} elseif ( has_post_format('chat') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+			} elseif ( has_post_format('gallery') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+			} elseif ( has_post_format('image') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+			} elseif ( has_post_format('link') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+			} elseif ( has_post_format('quote') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+			} elseif ( has_post_format('status') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+			} elseif ( has_post_format('video') ) {
+                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
             } else {
                 _e( 'Blog Archives', 'bricks' );
             } ?>
-            
-            <?php /*
-            if ( is_search() && have_posts() ) {
-				printf( __( 'Search Results for: %s', 'bricks' ), '<span>' . get_search_query() . '</span>' );
-            } elseif ( is_404() ) {
-                _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'bricks' );
-            } else {
-                _e( 'Nothing Found', 'bricks' );
-            }*/ ?>
-        </h1>
-    </header><?php
+          </h1>
+    	</header>
+    </div><!-- #headline-container -->
+    <div class="clearfix"></div>
+	<?php
 }
 endif;
 
 
 /**
- * Returns header for archives.
+ * Returns header for search pages.
  * @since 1.0.0
  */
 if( ! function_exists('bricks_search_header') ) :
 function bricks_search_header() { ?>
-	
-    <header class="search-header">
-        <h1 class="page-title">
+
+	<div id="headline-container">
+    	<header class="search-header">
+          <h1 class="page-title">
             <?php 
 			if ( is_search() && have_posts() ) {
 				printf( __( 'Search Results for: %s', 'bricks' ), '<span>' . get_search_query() . '</span>' );
@@ -220,13 +242,15 @@ function bricks_search_header() { ?>
             } else {
                 _e( 'Nothing Found', 'bricks' );
             } ?>
-        </h1>
-    </header><?php
+          </h1>
+    </header>
+	</div><!-- #headline-container -->
+    <div class="clearfix"></div>
+	<?php
 }
 endif;
 
-
-              
+         
 /**
  * Returns comments link.
  *
@@ -555,7 +579,7 @@ if ( ! function_exists( 'bricks_post_footer' ) ) :
 			$format = 'article';
 			
 		/* translators: used between list items, there is a space after the comma */
-		$tag_list = get_the_tag_list( '#', __( ', #', 'bricks' ) );
+		$tag_list = get_the_tag_list( '', __( ', ', 'bricks' ) );
 		
 		/* Footer entry meta for single post */
 		if ( is_single() ) {
@@ -675,15 +699,16 @@ if( ! function_exists('bricks_copyright_notices') ) :
 function bricks_copyright_notices() {
 	
     $footer_ad_url = get_theme_mod('footer_ad_url'); ?>
-	<div id="copyright-notice"<?php if( ' ' == $footer_ad_url ) { echo 'style="width:100%;"'; } ?>>
+	<div id="copyright-notice"<?php if( '' == $footer_ad_url ) { echo 'style="width:100%;"'; } ?>>
     	<?php if( '' != get_theme_mod('copyright_notices') ) : ?>	
-		<p><?php echo get_theme_mod('copyright_notices'); ?></p>
-        <?php endif; ?>
-		<p>
-        <?php _e( 'Except where otherwise noted, content on this site is licensed under a ', 'bricks' ); ?>
-        <?php if( '' != get_theme_mod('cc_license_url') ) : ?>
-        <a rel="license" href="<?php echo esc_attr( get_theme_mod('cc_license_url') ); ?>"><?php echo esc_attr( get_theme_mod('cc_license_type') ); ?></a>.</p>
-        <p><a rel="license" href="<?php echo esc_attr( get_theme_mod('cc_license_url') ); ?>"><img alt="Creative Commons License" style="border-width:0" src="<?php echo esc_attr( get_theme_mod('cc_license_img') ); ?>" /></a></p>
+		<p><?php echo get_theme_mod('copyright_notices'); ?>
+        
+			<?php if( '' != get_theme_mod('cc_license_url') ) : ?>
+            <?php _e( 'Except where otherwise noted, content on this site is licensed under a ', 'bricks' ); ?>
+            <a rel="license" href="<?php echo esc_attr( get_theme_mod('cc_license_url') ); ?>"><?php echo esc_attr( get_theme_mod('cc_license_type') ); ?></a>.</p>
+            
+            <p><a rel="license" href="<?php echo esc_attr( get_theme_mod('cc_license_url') ); ?>"><img alt="Creative Commons License" style="border-width:0" src="<?php echo esc_attr( get_theme_mod('cc_license_img') ); ?>" /></a></p>
+            <?php endif; ?>
         <?php endif; ?>
 	</div>
     <?php
@@ -721,8 +746,8 @@ endif;
 if( !function_exists('bricks_social_media') ) :
 function bricks_social_media() { ?>
 	
-	<div id="social-media">
-      <ul>  
+	<div id="social-media-<?php echo bricks_theme_option('social_module'); ?>">
+      <ul>
       	<?php $facebook_page = get_theme_mod( 'facebook_page' );
 			  $twitter_id = get_theme_mod( 'twitter_id' );
 			  $google_page = get_theme_mod( 'google_page' );
@@ -745,20 +770,18 @@ function bricks_social_media() { ?>
         <?php if( '' != $tumblr_id ) : ?>
         <li class="tumblr"><a href="<?php echo esc_attr( 'http://' .$tumblr_id. '.tumblr.com' ); ?>" title="<?php _e( 'Follow me on Tumblr', 'bricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
-
-		<?php if(  bricks_theme_option('header_search') === false ) : ?>
-        <li class="header-search"><?php get_search_form(); ?></li>
-        <?php endif; ?>	
       </ul>
-        <?php if(  bricks_theme_option('header_search') ) : ?>
-        <div id="header-search">
+      <div class="clearfix"></div>
+      
+        <?php if( bricks_theme_option('search_module') ) : ?>
+        <div id="search-module">
             <div class="widget widget_search">
             <?php the_widget( 'Bricks_Search_Widget', array( 'search_text'   => 'Search', 'search_submit' => 'Search' ), array( 'widget_id' => 'Search' ) ); ?>
             </div>
         </div>
-        <?php endif; ?>	
+        <?php endif; ?>
     </div>
-		<?php
+	<?php
 }
 endif;
 
@@ -861,15 +884,3 @@ function bricks_footer_ads() {
 	}
 }
 endif;
-
-
-
-add_filter( 'post_thumbnail_html', 'my_post_thumbnail_html' );
-
-function my_post_thumbnail_html( $html ) {
-
-	if ( empty( $html ) )
-		$html = '<img src="' . trailingslashit( get_stylesheet_directory_uri() ) . 'images/default-thumbnail.png' . '" alt="" />';
-
-	return $html;
-}

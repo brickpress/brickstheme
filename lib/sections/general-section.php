@@ -15,7 +15,7 @@ $this->settings['general-section-tab'] = array(
 	'class'    => 'subsectiontabs',
 	'choices'  => array(
 		'quick-start'	    => __( 'Quick Start', 'bricks' ),
-		'button-background' => __( 'Button Background', 'bricks' ),
+		'buttons' 			=> __( 'Buttons', 'bricks' ),
 		'custom-background' => __( 'Custom Background', 'bricks' )
 	)
 );
@@ -31,7 +31,7 @@ $this->settings['quick-start'] = array(
 		'section'  => 'general',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Page Layout Width', 'bricks' ),
+		'title'	   => __( 'Page Layout', 'bricks' ),
 		'desc'	   => __( '', 'bricks' ),
 		'class'    => 'controller_wrap'
 	);
@@ -174,7 +174,7 @@ $this->settings['quick-start'] = array(
 		'max'	  => 36,
 		'step'    => 1,
 		'unit'	  => 'px',
-		'std'	  => '13'
+		'std'	  => '14'
 	);
 	
 		$this->settings['close-body-text'] = array(
@@ -190,7 +190,7 @@ $this->settings['quick-start'] = array(
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'title'	   => __( 'Secondary Text', 'bricks' ),
-		'desc'	   => __( 'Widget items, Content meta (e.g. This entry was posted in...), copyright text, credits text (e.g. Powered by WordPress)', 'bricks' ),
+		'desc'	   => __( 'Widget items, Entry meta (e.g. This entry was posted in...), copyright text, credits text, form fields.', 'bricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
@@ -206,7 +206,7 @@ $this->settings['quick-start'] = array(
 	
 	$this->settings['secondary_text_opacity'] = array(
 		'section' => 'general',
-		'title'	  => __( 'Body Text Opacity', 'bricks' ),
+		'title'	  => __( 'Secondary Text Opacity', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'class'   => 'jslider',
@@ -223,68 +223,7 @@ $this->settings['quick-start'] = array(
 			'type'     => 'no-data',
 			'class'    => 'close_controller_wrap',
 		);
-		
-	$this->settings['gray-areas-color'] = array(
-		'section'  => 'general',
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'title'	   => __( 'Post Meta', 'bricks' ),
-		'class'    => 'controller_wrap',
-	);
-		
-	$this->settings['grayarea_color1'] = array(
-		'section' => 'general',
-		'title'	  => __( 'Primary Color', 'bricks' ),
-		'desc'	  => __( 'Top gradient', 'bricks' ),
-		'type'	  => 'colorpicker',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
-		'std'	  => '#EAEAEA'
-	);
-	
-	$this->settings['grayarea_color2'] = array(
-		'section' => 'general',
-		'title'	  => __( 'Secondary Color', 'bricks' ),
-		'desc'	  => __( 'Bottom gradient', 'bricks' ),
-		'type'	  => 'colorpicker',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
-		'std'	  => '#9B9B9B'
-	);
-	
-	$this->settings['grayarea_opacity1'] = array(
-		'section' => 'general',
-		'title'	  => __( 'Primary Color Opacity', 'bricks' ),
-		'desc'	  => __( 'Lowering opacity can also make the primary color lighter.', 'bricks' ),
-		'type'	  => 'jslider',
-		'class'   => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 1,
-		'step'    => 0.1,
-		'std'	  => '1'
-	);
 
-	$this->settings['grayarea_opacity2'] = array(
-		'section' => 'general',
-		'title'	  => __( 'Secondary Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'jslider',
-		'class'   => 'jslider',
-		'family'  => '_wrapped2',
-		'min'	  => 0,
-		'max'	  => 1,
-		'step'    => 0.1,
-		'std'	  => '1'
-	);	
-	
-		$this->settings['close-grayarea-color'] = array(
-			'section'  => 'general',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-	
 $this->settings['close-quick-start-tab'] = array(
 	'section'  => 'general',
 	'archtype' => 'structure',
@@ -292,7 +231,7 @@ $this->settings['close-quick-start-tab'] = array(
 	'class'    => 'close_subsection',
 );
 
-	$this->settings['button-background'] = array(
+	$this->settings['buttons'] = array(
 		'section'  => 'general',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
@@ -303,8 +242,8 @@ $this->settings['close-quick-start-tab'] = array(
 		'section'  => 'general',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Background Color', 'bricks' ),
-		'desc'	   => __( 'Pagination buttons, Comment button', 'bricks' ),
+		'title'	   => __( 'Button Color', 'bricks' ),
+		'desc'	   => __( 'Styles buttons used at the header and primary content area.', 'bricks' ),
 		'class'    => 'controller_wrap',
 	);
 		
@@ -315,7 +254,7 @@ $this->settings['close-quick-start-tab'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#117cc8'
+		'std'	  => '#4D90FE'
 	);
 	
 	$this->settings['button_color2'] = array(
@@ -325,7 +264,7 @@ $this->settings['close-quick-start-tab'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#0460ab'
+		'std'	  => '#055CA1'
 	);
 	
 	$this->settings['button_opacity1'] = array(
@@ -363,28 +302,28 @@ $this->settings['close-quick-start-tab'] = array(
 		'section'  => 'general',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Link Background Color on Hover', 'bricks' ),
+		'title'	   => __( '', 'bricks' ),
 		'class'    => 'controller_wrap',
 	);
 			
 	$this->settings['button_hover1'] = array(
 		'section' => 'general',
-		'title'	  => __( 'Primary Color', 'bricks' ),
-		'desc'	  => __( 'Bottom gradient', 'bricks' ),
+		'title'	  => __( 'Button text color.', 'bricks' ),
+		'desc'	  => __( 'Top gradient', 'bricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#0460ab'
+		'std'	  => '#055CA1'
 	);
 	
 	$this->settings['button_hover2'] = array(
 		'section' => 'general',
 		'title'	  => __( 'Secondary Color', 'bricks' ),
-		'desc'	  => __( 'Top gradient', 'bricks' ),
+		'desc'	  => __( 'Bottom gradient', 'bricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#117cc8'
+		'std'	  => '#4D90FE'
 	);
 	
 	$this->settings['button_hover_opacity1'] = array(
@@ -401,7 +340,7 @@ $this->settings['close-quick-start-tab'] = array(
 
 	$this->settings['button_hover_opacity2'] = array(
 		'section' => 'general',
-		'title'	  => __( 'Secondary Color Opacity', 'bricks' ),
+		'title'	  => __( '', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
@@ -437,16 +376,6 @@ $this->settings['close-quick-start-tab'] = array(
 		'std'	  => '#FFFFFF'
 	);
 	
-	$this->settings['button_text_hover'] = array(
-		'section' => 'general',
-		'title'	  => __( 'Font Hover Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'colorpicker',
-		'family'  => '_wrapped3',
-		'class'   => 'pick-color',
-		'std'	  => '#FFFFFF'
-	);
-	
 	$this->settings['button_fontface'] = array(
 		'section' => 'general',
 		'title'   => __( 'Font Family', 'bricks' ),
@@ -464,14 +393,24 @@ $this->settings['close-quick-start-tab'] = array(
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
-		'min'	  => 50,
-		'max'	  => 200,
+		'min'	  => 5,
+		'max'	  => 32,
 		'step'    => 1,
-		'unit'	  => 'percent',
-		'std'	  => '100'
+		'unit'	  => 'px',
+		'std'	  => '14'
 	);
 
-		$this->settings['close-linkbg-text'] = array(
+	$this->settings['button_border'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Button border', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#20559A'
+	);
+	
+		$this->settings['close-buttons'] = array(
 			'section'  => 'general',
 			'archtype' => 'structure',
 			'type'     => 'no-data',
@@ -509,7 +448,7 @@ $this->settings['custom-background'] = array(
 		'subtype' => 'wp_theme_mod',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped2',
-		'std'     => '#FFFFFF'
+		'std'     => '#F7F7F7'
 	);
 	
 	$this->settings['body_bg_opacity'] = array(
@@ -521,7 +460,7 @@ $this->settings['custom-background'] = array(
 		'min'	  => 0,
 		'max'	  => 1,
 		'step'    => 0.1,
-		'std'	  => '0.7'
+		'std'	  => '1'
 	);
 	
 		$this->settings['close-body-bg'] = array(
@@ -538,7 +477,7 @@ $this->settings['custom-background'] = array(
 		'type'	  => 'image',
 		'subtype' => 'wp_theme_mod',
 		'class'   => 'uploadimg',
-		'std'	  => trailingslashit( BRICKS_IMAGES ) . 'body-bg.png'
+		'std'	  => trailingslashit( BRICKS_IMAGES ) . 'small-diagonals.png'
 	);
 	
 	$this->settings['body-background-image'] = array(

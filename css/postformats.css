@@ -4,7 +4,13 @@
 
 /* =Post Format Containers
 ----------------------------------------------- */
-
+article.format-audio > .entry-content p + object {
+	margin-top: 2%;
+}
+article.format-standard > .entry-content object {
+	margin: 0 auto;
+	width: 100%;
+}
 
 
 /* =Post Format Icons
@@ -22,7 +28,7 @@
 	padding: 15px 15px;
 }
 .entry-format-audio {
-	background: url(../images/postformats/audio-icon.png) no-repeat scroll 50% 50%;
+	background: url(../images/postformats/audio-icon.png) no-repeat scroll 0% 0%;
 	padding: 20px 15px;
 }
 .entry-format-chat {
@@ -81,7 +87,7 @@
 	padding: 8px 12px;
 }
 .entry-meta .article-post {
-	background: url(../images/postformats/article.png) no-repeat scroll 0% 50%;
+	background: url(../images/postformats/standard.png) no-repeat scroll 0% 50%;
 	padding: 8px 22px 8px 0;
 }
 .entry-meta .aside-post {
@@ -139,117 +145,6 @@
 	padding: 1.625em 0 0;
 }
 
-
-/* =Audio
------------------------------------------------ */
-.format-audio blockquote, .format-audio p {
-	clear: both;
-}
-
-/* =Image
------------------------------------------------ */
-#content > article.format-image div.entry-content + p {
-	margin: 0 auto;
-}
-#content > article.format-image .entry-content p {
-	margin-bottom: 0;
-}
-
-
-/* =Gallery
------------------------------------------------ */
-.format-gallery .gallery-thumb {
-	float: left;
-	display: block;
-	margin: .375em 1.625em 0 0;
-}
-
-
-/* =Status
------------------------------------------------ */
-.singular .format-status .entry-title {
-	display: block;
-}
-#content > article.format-status .entry-content {
-	padding: 1.625em 2% 0 2%;
-}
-#content > article.format-status div.avatar {
-	display: inline-block;
-	float: left;
-	margin-bottom: 1.625em;
-}
-#content > article.format-status div.avatar + p {
-	display: inline-block;
-	float: left;
-	width: 80%;
-}
-.format-status img.avatar {
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-box-shadow: 0 1px 2px #ccc;
-	-moz-box-shadow: 0 1px 2px #ccc;
-	box-shadow: 0 1px 2px #ccc;
-	float: left;
-	margin: 4px 10px 2px 0;
-	padding: 0;
-}
-
-
-/* =Quote
------------------------------------------------ */
-.format-quote blockquote {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	background: url(../images/postformats/blockquote.png) 0% 10% no-repeat scroll;
-	color: #373737;
-	font-size: 18px;
-	font-style: italic;
-	margin: 0 2%;
-	padding: 20px 0 0 50px;
-	border-left: none;
-}
-.format-quote blockquote + p {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #373737;
-	font-size: 14px;
-	text-align: left;
-	margin: 1.625em 2%;
-	padding: 0 0 0 50px;
-}
-.format-quote blockquote + p:before {
-	content: '\2014';
-	padding: 0 5px 10px 5px;
-}
-blockquote cite {
-	margin: 0 auto;
-}
-.format-quote span.lquote {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 500%;
-	color: #555;
-}
-.format-quote span.rquote {
-	font-family: Georgia,"Bitstream Charter",serif;
-	font-size: 500%;
-	color: #555;
-}
-
-
-/* =Chat
------------------------------------------------ */
-.bricks-chat {
-	margin: 0;
-	list-style: none;
-	line-height: 1.625em;
-	padding: 1.625em;
-}
-.bricks-chat li {
-	color: #373737;
-}
-.bricks-chat .chat-even strong {
-	color: #1B8BE0;
-}
-
-
 /* =Audio
 ----------------------------------------------- */
 .format-audio .audio-icon {
@@ -266,7 +161,44 @@ blockquote cite {
 	width: 76.5%;
 	display: inline-block;
 }
+.format-audio blockquote, .format-audio p {
+	clear: both;
+}
+#content > article.format-audio .entry-content + span {
+	margin-top: 2%;
+}
 
+/* =Chat
+----------------------------------------------- */
+.bricks-chat {
+	margin: 0;
+	list-style: none;
+	line-height: 1.625em;
+	padding: 1.625em 0;
+}
+.bricks-chat li {
+	color: #373737;
+}
+.bricks-chat .chat-even strong {
+	color: #1B8BE0;
+}
+
+/* =Gallery
+----------------------------------------------- */
+.format-gallery .gallery-thumb {
+	float: left;
+	display: block;
+	margin: .375em 1.625em 0 0;
+}
+
+/* =Image
+----------------------------------------------- */
+#content > article.format-image div.entry-content + p {
+	margin: 0 auto;
+}
+#content > article.format-image .entry-content p {
+	margin-bottom: 0;
+}
 
 /* =Link
 ----------------------------------------------- */
@@ -328,6 +260,73 @@ blockquote cite {
 .singular .format-link .entry-content {
 
 	padding: 1.625em 0 0;
+}
+
+/* =Quote
+----------------------------------------------- */
+.format-quote blockquote {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: url(../images/postformats/blockquote.png) 0% 10% no-repeat scroll;
+	color: #373737;
+	font-size: 18px;
+	font-style: italic;
+	margin: 0 2%;
+	padding: 20px 0 0 50px;
+	border-left: none;
+}
+.format-quote blockquote + p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #373737;
+	font-size: 14px;
+	text-align: left;
+	margin: 1.625em 2%;
+	padding: 0 0 0 50px;
+}
+.format-quote blockquote + p:before {
+	content: '\2014';
+	padding: 0 5px 10px 5px;
+}
+blockquote cite {
+	margin: 0 auto;
+}
+.format-quote span.lquote {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 500%;
+	color: #555;
+}
+.format-quote span.rquote {
+	font-family: Georgia,"Bitstream Charter",serif;
+	font-size: 500%;
+	color: #555;
+}
+
+/* =Status
+----------------------------------------------- */
+.singular .format-status .entry-title {
+	display: block;
+}
+#content > article.format-status .entry-content {
+	padding: 1.625em 2% 0 2%;
+}
+#content > article.format-status div.avatar {
+	display: inline-block;
+	float: left;
+	margin-bottom: 1.625em;
+}
+#content > article.format-status div.avatar + p {
+	display: inline-block;
+	float: left;
+	width: 80%;
+}
+.format-status img.avatar {
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 2px #ccc;
+	-moz-box-shadow: 0 1px 2px #ccc;
+	box-shadow: 0 1px 2px #ccc;
+	float: left;
+	margin: 4px 10px 2px 0;
+	padding: 0;
 }
 
 /* =Image
