@@ -156,6 +156,21 @@ $this->settings['post-layout'] = array(
 		)
 	);
 	
+	$this->settings['headlines_text_transform'] = array(
+		'section' => 'content',
+		'title'   => __( 'Text Transform', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'	  => 'radio',
+		'class'   => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'	  => 'none',
+		'choices' => array(
+			'none'     	 => __( 'None', 'bricks' ),
+			'capitalize' => __( 'Capitalize', 'bricks' ),
+			'uppercase'	 => __( 'Uppercase', 'bricks' )
+		)	
+	);
+	
 		$this->settings['close-headlines'] = array(
 			'section'  => 'content',
 			'archtype' => 'structure',
@@ -230,6 +245,21 @@ $this->settings['post-layout'] = array(
 			'normal' => __( 'Normal', 'bricks' ),
 			'bold'   => __( 'Bold', 'bricks' )
 		)
+	);
+	
+	$this->settings['entry_title_text_transform'] = array(
+		'section' => 'content',
+		'title'   => __( 'Text Transform', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'	  => 'radio',
+		'class'   => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'	  => 'none',
+		'choices' => array(
+			'none'     	 => __( 'None', 'bricks' ),
+			'capitalize' => __( 'Capitalize', 'bricks' ),
+			'uppercase'	 => __( 'Uppercase', 'bricks' )
+		)	
 	);
 	
 		$this->settings['close-entry-title'] = array(
@@ -315,13 +345,17 @@ $this->settings['post-background'] = array(
 	'class'    => 'open_subsection',
 );
 
-	$this->settings['post_round_corners'] = array(
+	$this->settings['article_container'] = array(
 		'section' => 'content',
 		'title'   => __( 'Article/Posts Container', 'bricks' ),
-		'desc'    => __( 'Use rounded corners on post containers?', 'bricks' ),
-		'type'    => 'checkbox',
-		'std'     => 1,
-		'class'   => 'iphone_checkboxes'
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'std'     => 'round-corners',
+		'choices' => array(
+			'round-corners' => __( 'Round Corners', 'bricks' ),
+			'sharp-edges'   => __( 'Sharp Edges', 'bricks' )
+		)
 	);
 	
 	$this->settings['article_bg'] = array(

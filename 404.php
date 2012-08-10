@@ -6,7 +6,7 @@
  * @subpackage Page Templates
  * @since Bricks 1.0.0
  */
-$post_round_corners = bricks_theme_option('post_round_corners');
+$article_container = bricks_theme_option('article_container');
 
 get_header(); ?>
 
@@ -15,7 +15,7 @@ get_header(); ?>
         <?php bricks_before_content(); ?>
         <div id="content" role="main">
 
-        <article id="post-0" class="post error404 not-found"<?php if(! $post_round_corners) {
+        <article id="post-0" class="post error404 not-found"<?php if(! $article_container) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
         
             <div class="entry-content">        

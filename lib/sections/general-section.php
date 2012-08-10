@@ -371,9 +371,19 @@ $this->settings['close-quick-start-tab'] = array(
 		'title'	  => __( 'Font Color', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'colorpicker',
-		'family'  => '_wrapped3',
+		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
 		'std'	  => '#FFFFFF'
+	);
+	
+	$this->settings['button_border'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Button border', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped2',
+		'class'   => 'pick-color',
+		'std'	  => '#20559A'
 	);
 	
 	$this->settings['button_fontface'] = array(
@@ -382,7 +392,7 @@ $this->settings['close-quick-start-tab'] = array(
 		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
-		'family'  => '_wrapped3',
+		'family'  => '_wrapped2',
 		'std'	  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
 		'choices' => $fontfamily
 	);
@@ -392,22 +402,12 @@ $this->settings['close-quick-start-tab'] = array(
 		'title'	  => __( 'Font Size', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
-		'family'  => '_wrapped3',
+		'family'  => '_wrapped2',
 		'min'	  => 5,
 		'max'	  => 32,
 		'step'    => 1,
 		'unit'	  => 'px',
 		'std'	  => '14'
-	);
-
-	$this->settings['button_border'] = array(
-		'section' => 'general',
-		'title'	  => __( 'Button border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
-		'type'	  => 'colorpicker',
-		'family'  => '_wrapped3',
-		'class'   => 'pick-color',
-		'std'	  => '#20559A'
 	);
 	
 		$this->settings['close-buttons'] = array(

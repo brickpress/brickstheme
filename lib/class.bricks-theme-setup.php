@@ -655,6 +655,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			font-size: <?php echo bricks_theme_option('headlines_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('headlines_fontweight'); ?>;
 			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($content_wrapper_color) .','. bricks_theme_option('headlines_opacity'); ?>);
+			text-transform: <?php echo bricks_theme_option('headlines_text_transform'); ?>;
 		}
 		.entry-title,
 		.entry-title a,
@@ -665,6 +666,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			font-size: <?php echo bricks_theme_option('entry_title_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('entry_title_fontweight'); ?>;
 			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($content_wrapper_color) .','. bricks_theme_option('entry_title_opacity'); ?>);
+			text-transform: <?php echo bricks_theme_option('entry_title_text_transform'); ?>;
 		}
 		.search .entry-title,
 		.search .entry-title a {

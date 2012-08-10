@@ -50,7 +50,7 @@ get_header(); ?>
 					$more = 0;
 					
 			bricks_before_article(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class($post_round_corners); ?> <?php if( $post_round_corners == 'squared' ) {
+            <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
 
                 <?php bricks_post_date(); ?>

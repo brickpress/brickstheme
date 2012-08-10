@@ -5,11 +5,9 @@
  * @package Bricks
  * @since 1.0.0
  */
- 
-global $theme_options;
+get_header(); 
 
-$post_round_corners = bricks_theme_option('post_round_corners');
-get_header(); ?>
+$article_container = bricks_theme_option('article_container'); ?>
 
         <div id="primary">
     
@@ -18,8 +16,8 @@ get_header(); ?>
             
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
-            <?php bricks_before_single(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php if( ! $post_round_corners ) {
+			<?php bricks_before_article(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
     
                 <header class="entry-header">

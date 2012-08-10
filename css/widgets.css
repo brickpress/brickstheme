@@ -137,7 +137,9 @@ input[type=text] {
 	display: inline-block;
 	float: left;
 }
-.widget .searchform input[type=submit], .widget .search-field input[type=submit] {
+.widget .searchform input[type=submit],
+.widget .search-field input[type=submit],
+.widget input.submit [type=submit] {
 	text-shadow: #719E03 1px 1px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;

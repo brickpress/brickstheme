@@ -57,10 +57,6 @@ img[class*="wp-image-"], img[class*="wp-image-"], span[class*="embed-"], div[cla
 }
 article .entry-content p,
 .page-template-showcase-php.page #content > article.format-audio p,
-#content > article.format-standard .sharedaddy,
-.page-template-showcase-php.page #content > article.format-audio .sharedaddy,
-.page-template-showcase-php.page #content > article.format-image .sharedaddy,
-.page-template-showcase-php.page #content > article.format-video .sharedaddy,
 .page-template-showcase-php.page #content > article.format-video p {
 	padding: 0;
 }
@@ -78,6 +74,7 @@ article .entry-content p,
 #content > article.format-video p,
 .single-attachment > article .entry,
 .author.archive #content > article.format-image p,
+.author.archive #content > article.format-chat p,
 #content > article#post-0 .entry-content {
 	padding: 0 2%; 
 }
@@ -90,12 +87,23 @@ article .entry-content p,
 #content > article.format-audio .entry-content span {
 	padding: 2% 0;
 }
-/*.archive #content > article .entry-content .sharedaddy,*/
+/*.archive #content > article .entry-content .sharedaddy,
+.page-template-showcase-php.page #content > article.format-audio .sharedaddy,
+.page-template-showcase-php.page #content > article.format-image .sharedaddy,
+.page-template-showcase-php.page #content > article.format-video .sharedaddy,
 .archive #content > article.format-chat .sharedaddy,
 .author.archive #content > article.format-link .sharedaddy,
 .author.archive #content > article.format-standard .sharedaddy,
+.page #content > article .sharedaddy, */
+.page #content > article.format-chat .sharedaddy, .archive #content > article.format-chat .sharedaddy,
 .page-template-showcase-php.page #content > article .entry-content {
 	padding: 0 2%;
+}
+#content > article.format-standard .sharedaddy, .blog #content > article.format-standard .sharedaddy,
+.page #content > article.format-audio .sharedaddy, .single #content > article.format-audio .sharedaddy,
+.page #content > article.format-image .sharedaddy,
+.page #content > article.format-video .sharedaddy, .single #content > article.format-video .sharedaddy {
+	padding: 0;
 }
 .error404 #content > article, 
 .search-no-results #content > article {
@@ -1024,7 +1032,6 @@ li.rss-feed a:hover {
 	.page-header {
 	}
 	.archive-header, .search-header {
-		background: url(../images/horizontal_sep.png) repeat-x scroll 0% 100%;
 		width: 100%;
 	}
 	.archive-header .page-title,

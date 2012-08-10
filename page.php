@@ -6,15 +6,16 @@
  * @subpackage Bricks
  * @since Bricks 1.0.0
  */
-$post_round_corners = bricks_theme_option('post_round_corners');
+get_header();
 
-get_header(); ?>
+$article_container = bricks_theme_option('article_container'); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 
-                <article id="post-<?php the_ID(); ?>" <?php if( ! $post_round_corners ) {
+			<?php bricks_before_article(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
                 
                 <?php $post_format = strtolower( get_post_format() ); ?>
