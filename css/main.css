@@ -650,11 +650,17 @@ li.facebook a {
 li.twitter a {
 	background: url(../images/icons/social/twitter_dark.png) no-repeat scroll;
 }
+li.flickr {
+	background: url(../images/icons/social/flickr_dark.png) no-repeat scroll;
+}
 li.google {
 	background: url(../images/icons/social/google_dark.png) no-repeat scroll;
 }
 li.tumblr {
 	background: url(../images/icons/social/tumblr_dark.png) no-repeat scroll;
+}
+li.youtube {
+	background: url(../images/icons/social/youtube_dark.png) no-repeat scroll;
 }
 li.rss-feed a {
 	background: url(../images/icons/social/rss_dark.png) no-repeat scroll;
@@ -666,11 +672,17 @@ li.facebook a:hover {
 li.twitter a:hover {
 	background: url(../images/icons/social/twitter_active.png) no-repeat scroll;
 }
+li.flickr a:hover {
+	background: url(../images/icons/social/flickr_active.png) no-repeat scroll;
+}
 li.google a:hover {
 	background: url(../images/icons/social/google_active.png) no-repeat scroll;
 }
 li.tumblr a:hover {
 	background: url(../images/icons/social/tumblr_active.png) no-repeat scroll;
+}
+li.youtube a:hover {
+	background: url(../images/icons/social/youtube_active.png) no-repeat scroll;
 }
 li.rss-feed a:hover {
 	background: url(../images/icons/social/rss_active.png) no-repeat scroll;

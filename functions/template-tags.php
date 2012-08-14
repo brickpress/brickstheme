@@ -768,26 +768,41 @@ function bricks_social_media() {
       <ul>
       	<?php $facebook_page = get_theme_mod( 'facebook_page' );
 			  $twitter_id = get_theme_mod( 'twitter_id' );
+			  $flickr_id = get_theme_mod( 'flickr_id' );
+			  $google_profile = get_theme_mod( 'google_profile' );
 			  $google_page = get_theme_mod( 'google_page' );
-              $tumblr_id = get_theme_mod( 'tumblr_id' ); ?>
+              $tumblr_id = get_theme_mod( 'tumblr_id' );
+			  $youtube_id = get_theme_mod( 'youtube_id' ); ?>
               
         <li class="rss-feed"><a href="<?php echo esc_url( home_url( '/feed/' ) ); ?>" title="<?php _e( 'Syndicate this site using RSS 2.0', 'bricks' ); ?>"></a></li>
              
         <?php if( '' != $facebook_page ) : ?>     
-    	<li class="facebook"><a href="<?php echo esc_attr( 'http://www.facebook.com/' . esc_attr($facebook_page) ); ?>" title="<?php _e( 'Like my page on Facebook', 'bricks' ); ?>" target="_blank"></a></li>
+    	<li class="facebook"><a href="<?php echo esc_url( 'http://www.facebook.com/' . esc_attr($facebook_page) ); ?>" title="<?php _e( 'Like my page on Facebook', 'bricks' ); ?>" target="_blank"></a></li>
 		<?php endif; ?>
         
         <?php if( '' != $twitter_id ) : ?>
-        <li class="twitter"><a href="<?php echo esc_attr( 'http://www.twitter.com/' . $twitter_id ); ?>" title="<?php _e( 'Follow me on Twitter', 'bricks' ); ?>" target="_blank"></a></li>
+        <li class="twitter"><a href="<?php echo esc_url( 'http://www.twitter.com/' . $twitter_id ); ?>" title="<?php _e( 'Follow me on Twitter', 'bricks' ); ?>" target="_blank"></a></li>
+        <?php endif; ?>
+          
+        <?php if( '' != $google_profile ) : ?>
+        <li class="google"><a href="<?php echo esc_url( 'http://plus.google.com/' . $google_profile ); ?>" title="<?php _e( 'Add me to your Google+ Circles', 'bricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
         
         <?php if( '' != $google_page ) : ?>
-        <li class="google"><a href="<?php echo esc_attr( 'http://plus.google.com/' . $google_page ); ?>" title="<?php _e( 'Add me to your Google+ Circles', 'bricks' ); ?>" target="_blank"></a></li>
+        <li class="google"><a href="<?php echo esc_url( 'http://plus.google.com/' . $google_page ); ?>" title="<?php _e( 'Add my Google+ page to your Circles', 'bricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
         
         <?php if( '' != $tumblr_id ) : ?>
-        <li class="tumblr"><a href="<?php echo esc_attr( 'http://' .$tumblr_id. '.tumblr.com' ); ?>" title="<?php _e( 'Follow me on Tumblr', 'bricks' ); ?>" target="_blank"></a></li>
+        <li class="tumblr"><a href="<?php echo esc_url( 'http://' .$tumblr_id. '.tumblr.com/' ); ?>" title="<?php _e( 'Follow me on Tumblr', 'bricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
+        
+        <?php if( '' != $flickr_id ) : ?>
+        <li class="flickr"><a href="<?php echo esc_url( 'http://www.flickr.com/photos/' .$flickr_id ); ?>" title="<?php _e( 'Check out my Flickr photostream', 'bricks' ); ?>" target="_blank"></a></li>
+        <?php endif; ?>
+        
+        <?php if( '' != $youtube_id ) : ?>     
+    	<li class="youtube"><a href="<?php echo esc_url( 'http://www.youtube.com/user/' . $youtube_id ); ?>" title="<?php _e( 'Subscribe to my channel on Youtube', 'bricks' ); ?>" target="_blank"></a></li>
+		<?php endif; ?>
       </ul>
       <div class="clearfix"></div>
       

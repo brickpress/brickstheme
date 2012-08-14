@@ -67,26 +67,7 @@ $this->settings['social-buttons'] = array(
 		'class'   => 'constant',
 		'std'	  => __( 'Connect with ', 'bricks' ) . $site_name
 	);
-	
-	$this->settings['facebook-wrap'] = array(
-		'section'  => 'social',
-		'title'	   => __( 'Facebook', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'controller_wrap'
-	);
-	
-	$this->settings['facebook_profile'] = array(
-		'section' => 'social',
-		'title'	  => __( 'Facebook Username', 'bricks' ),
-		'desc'	  => __( 'Username for your personal profile on Facebook.', 'bricks' ),
-		'type'	  => 'text',
-		'class'   => 'constant',
-		'family'  => '_wrapped2',
-		'std'	  => '',
-	);
-			
+		
 	$this->settings['facebook_page'] = array(
 		'section' => 'social',
 		'title'	  => __( 'Facebook Page', 'bricks' ),
@@ -96,14 +77,7 @@ $this->settings['social-buttons'] = array(
 		'family'  => '_wrapped2',
 		'std'	  => '',
 	);
-	
-		$this->settings['close-facebook-wrap'] = array(
-			'section'  => 'social',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-	
+
 	$this->settings['google-wrap'] = array(
 		'section'  => 'social',
 		'title'	   => __( 'Google', 'bricks' ),
@@ -116,7 +90,7 @@ $this->settings['social-buttons'] = array(
 	$this->settings['google_profile'] = array(
 		'section' => 'social',
 		'title'	  => __( 'Google+ Profile', 'bricks' ),
-		'desc'	  => __( 'example: <strong>https://plus.google.com/u/0/012345678901234567890/</strong>', 'bricks' ),
+		'desc'	  => __( 'example: https://plus.google.com/u/0/<strong>012345678901234567890</strong>', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
 		'family'  => '_wrapped2',
@@ -143,7 +117,7 @@ $this->settings['social-buttons'] = array(
 	$this->settings['twitter_id'] = array(
 		'section' => 'social',
 		'title'	  => __( 'Twitter Username', 'bricks' ),
-		'desc'	  => __( 'Your Twitter Username.', 'bricks' ),
+		'desc'	  => __( 'example: <strong>Username</strong>.twitter.com', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
 		'std'	  => '',
@@ -152,7 +126,16 @@ $this->settings['social-buttons'] = array(
 	$this->settings['tumblr_id'] = array(
 		'section' => 'social',
 		'title'	  => __( 'Tumblr Username', 'bricks' ),
-		'desc'	  => __( 'Your Tumblr Username.', 'bricks' ),
+		'desc'	  => __( 'example: <strong>Username</strong>.tumblr.com', 'bricks' ),
+		'type'	  => 'text',
+		'class'   => 'constant',
+		'std'	  => '',
+	);
+	
+	$this->settings['flickr_id'] = array(
+		'section' => 'social',
+		'title'	  => __( 'Flickr Username', 'bricks' ),
+		'desc'	  => __( 'example: http://www.flickr.com/photos/<strong>Username</strong>', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
 		'std'	  => '',
@@ -161,7 +144,7 @@ $this->settings['social-buttons'] = array(
 	$this->settings['youtube_id'] = array(
 		'section' => 'social',
 		'title'	  => __( 'YouTube Username', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'desc'	  => __( 'example: http://www.youtube.com/user/<strong>Username</strong>', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
 		'std'	  => '',
