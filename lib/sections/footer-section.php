@@ -253,6 +253,15 @@ $this->settings['footer-extras'] = array(
 		'std'	  => ''
 	);
 	
+	$this->settings['footer_logo_url'] = array(
+		'section' => 'footer',
+		'title'	  => __( 'Destination URL for the footer logo.', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'text',
+		'class'   => 'constant',
+		'std'	  => '',
+	);
+	
 	$this->settings['copyright_notices'] = array(
 		'section' => 'footer',
 		'title'	  => __( 'Copyright Notice', 'bricks' ),
