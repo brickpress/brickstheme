@@ -21,8 +21,8 @@ function bricks_featured_slider() {
 
         <div class="inner-slider">
             <div id="slider"><!-- nivoSlider -->
-            <?php
-                // Proceed only if sticky posts exist.
+            <?php // Proceed only if sticky posts exist.
+			
                 if ( ! empty( $sticky ) ) :
                 $featured_args = array(
                     'post__in' => $sticky,
@@ -30,21 +30,18 @@ function bricks_featured_slider() {
                     'posts_per_page' => $slider_items,
                     'no_found_rows' => true,
                 );
+				
                 // The Featured Posts query.
                 $featured = new WP_Query( $featured_args );
+				
                 // Proceed only if published posts exist
                 if ( $featured->have_posts() ) :
                     $counter_slider = 0;
                     
                 while ( $featured->have_posts() ) : $featured->the_post();		
                 // Increase the counter.
-                $counter_slider++; ?>
+                $counter_slider++; 
     
-                <?php
-				
-				$medium_feature_width = bricks_theme_option('medium_feature_width');
-				$medium_feature_height = bricks_theme_option('medium_feature_height');
-
 				if ( has_post_thumbnail() ) {
 					
                    echo '<a href="' .esc_url( get_permalink() ). '" title="' .esc_attr( the_title_attribute('echo=0') ). '">';

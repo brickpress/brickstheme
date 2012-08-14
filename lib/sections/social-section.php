@@ -65,7 +65,7 @@ $this->settings['social-buttons'] = array(
 		'desc'	  => __( 'Appears on Author archive page and widget title if you choose to place your social media icons before the primary sidebar. ', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
-		'std'	  => __( 'Follow Me Elsewhere', 'bricks' )
+		'std'	  => __( 'Connect with ', 'bricks' ) . $site_name
 	);
 	
 	$this->settings['facebook-wrap'] = array(

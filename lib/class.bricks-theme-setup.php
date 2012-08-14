@@ -69,6 +69,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link',  'quote', 'status',  'video' ) );
+		
+		// add post-formats to post_type 'page'
+		add_post_type_support( 'page', 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'editor-style' );
 
@@ -113,8 +116,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$large_feature_width = bricks_theme_option('large_feature_width');
 		$large_feature_height = bricks_theme_option('large_feature_height');
 		
-		add_image_size( 'bricks-large-slider', $large_feature_width, 9999 ); 		  			    // 1024 pixels wide and unlimited height
-		add_image_size( 'bricks-medium-slider', $medium_feature_width, $medium_feature_height ); 
+		add_image_size( 'bricks-large-slider', $large_feature_width, 9999 );       // 1024 pixels wide and unlimited height
+		add_image_size( 'bricks-medium-slider', $medium_feature_width, 999 ); 
 	}
 	
 

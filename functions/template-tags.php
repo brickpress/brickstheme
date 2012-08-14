@@ -760,7 +760,7 @@ function bricks_social_media() {
 	if( bricks_theme_option('social_module') == 'before-sidebar' ) : ?>
     	<div class="widget-title-bg">
         	<h3 class="widget-title">
-            <?php esc_attr_e($social_icons_label); ?>
+            <?php printf(__( '%1$s', 'bricks' ), $social_icons_label); ?>
             </h3>
         </div>   
     <?php endif; ?>

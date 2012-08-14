@@ -72,7 +72,9 @@ article.format-standard > .entry-content object {
 	padding: 0;
 }
 .page-template-showcase-php #content > article.format-video .entry-content,
-.page-template-showcase-php #content > article.format-image .entry-content {
+.page-template-showcase-php #content > article.format-image .entry-content,
+.author.archive #content > article.format-video .entry-content,
+.author.archive #content > article.format-image .entry-content {
 	padding: 0 3%;
 }
 .single-attachment #content > article .entry h5 {

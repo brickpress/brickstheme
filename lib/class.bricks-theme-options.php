@@ -397,6 +397,8 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 			'"Trebuchet MS", Helvetica, sans-serif' => 'trebuchet',
 			'Verdana, Geneva, sans-serif' => 'verdana'
 		);
+		
+		$site_name = get_option( 'blogname' );
 
 		require( trailingslashit( BRICKS_SECTIONS ) . 'general-section.php' );
 		require( trailingslashit( BRICKS_SECTIONS ) . 'header-section.php' );

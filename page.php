@@ -27,7 +27,20 @@ $article_container = bricks_theme_option('article_container'); ?>
                 <div class="clearfix"></div>
     
                 <div class="entry-content">
-                    <?php the_content(); ?>
+                <?php bricks_before_entry_content();
+				
+                    if( $post_format == 'chat' ) {
+						echo bricks_chat_content();
+					} elseif( has_post_format('link') ) {
+						echo bricks_link_content();
+					} elseif(  $post_format == 'quote' ) {
+						echo bricks_quote_content();
+					} elseif(  $post_format == 'status' ) {
+						echo bricks_status_content();
+					} else {	
+						the_content();
+					} ?>
+
                     <?php wp_link_pages( bricks_link_pages_args() ); ?>
                 </div><!-- .entry-content -->
                     

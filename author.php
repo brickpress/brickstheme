@@ -5,7 +5,9 @@
  * @package Bricks
  * @since Bricks 1.0.0
  */
-get_header(); ?>
+get_header();
+
+$article_container = bricks_theme_option('article_container'); ?>
 
 		<div id="primary">
         
@@ -22,11 +24,7 @@ get_header(); ?>
 					 * properly with a call to rewind_posts().
 					 */
 					the_post();
-				?>
 
-				<?php //bricks_archive_header(); ?>
-                
-				<?php
 					/* Since we called the_post() above, we need to
 					 * rewind the loop back to the beginning that way
 					 * we can run the loop properly, in full.
