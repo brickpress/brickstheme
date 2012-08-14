@@ -59,6 +59,15 @@ $this->settings['social-buttons'] = array(
 		'desc'	  => __( 'Resetting the theme does not affect the values you put here. If you wish to replace old values with new ones, just key in or paste the new values then click save. To delete entries, click on the <strong>Clear Field</strong> button and click <strong>Save Changes</strong>.', 'bricks' ),
 	);
 	
+	$this->settings['social_icons_label'] = array(
+		'section' => 'social',
+		'title'	  => __( 'Social Media Label', 'bricks' ),
+		'desc'	  => __( 'Appears on Author archive page and widget title if you choose to place your social media icons before the primary sidebar. ', 'bricks' ),
+		'type'	  => 'text',
+		'class'   => 'constant',
+		'std'	  => __( 'Follow Me Elsewhere', 'bricks' )
+	);
+	
 	$this->settings['facebook-wrap'] = array(
 		'section'  => 'social',
 		'title'	   => __( 'Facebook', 'bricks' ),

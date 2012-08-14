@@ -306,7 +306,7 @@ $this->settings['primary-navigation'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#F3F6F9'
+		'std'	  => '#E3EDF4'
 	);
 	
 	$this->settings['navmenu_bg_hover'] = array(
@@ -316,7 +316,7 @@ $this->settings['primary-navigation'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#FFFFFF'
+		'std'	  => '#F3F6F9'
 	);
 	
 	$this->settings['navmenu_bg_border'] = array(

@@ -1,12 +1,14 @@
 <?php
 /**
  * Template Name: Content Slider Template
- * Description: A Page Template that showcases Sticky Posts 
+ * Description: A Page Template that showcases Sticky Posts using nivoSlider.
  *
- * The content slider template in Bricks consists of two sections. Each section can be customized
- * on the theme options admin panel. The first section showcases sticky posts as featured posts. The
- * second section contains recent posts, showing an excerpt of the latest post and a list of subsequent
- * posts in reverse chronological order.
+ * The content slider template in Bricks works the same way as the default blog post
+ * template. The only difference is that it displays sticky posts in a slider instead of
+ * displaying them as individual posts.
+ *
+ * Compared to the Showcase Template, the Content Slider Template's width is set by the content width.
+ * The content slider's location is fixed while that of the Showcase template is customizable.
  *
  * We are creating two queries to fetch the proper posts.
  *
@@ -30,14 +32,6 @@ get_header(); ?>
 					'order' => 'DESC',
 					'posts_per_page' => $showcase_recent_posts,
 					'post__not_in' => get_option( 'sticky_posts' ),
-					/*'tax_query' => array(
-						array(
-							'taxonomy' => 'post_format',
-							'terms' => array( 'post-format-aside', 'post-format-link', 'post-format-quote', 'post-format-status' ),
-							'field' => 'slug',
-							'operator' => 'NOT IN',
-						),
-					),*/
 					'no_found_rows' => true,
 				);
 

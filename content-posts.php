@@ -52,8 +52,9 @@ $article_container = bricks_theme_option('article_container');
 			<div class="clearfix"></div>
             
 			<footer class="entry-meta">
-				<?php bricks_post_footer(); ?>
+                <?php bricks_post_date_text(); ?>
                 <?php bricks_comments_link(); ?>
+                <?php bricks_post_footer(); ?>
                 <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
 			</footer>
 			<div class="clearfix"></div>

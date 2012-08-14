@@ -16,6 +16,7 @@ $this->settings['general-section-tab'] = array(
 	'choices'  => array(
 		'quick-start'	    => __( 'Quick Start', 'bricks' ),
 		'buttons' 			=> __( 'Buttons', 'bricks' ),
+		'html-elements' 	=> __( 'HTML Elements', 'bricks' ),
 		'custom-background' => __( 'Custom Background', 'bricks' )
 	)
 );
@@ -65,7 +66,7 @@ $this->settings['quick-start'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '0',
+		'std'	  => '10',
 		'unit'	  => 'px'
 	);
 	
@@ -77,7 +78,7 @@ $this->settings['quick-start'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '0',
+		'std'	  => '10',
 		'unit'	  => 'px'
 	);
 	
@@ -416,7 +417,7 @@ $this->settings['close-quick-start-tab'] = array(
 			'type'     => 'no-data',
 			'class'    => 'close_controller_wrap',
 		);
-	
+		
 $this->settings['close-button-background-tab'] = array(
 	'section'  => 'general',
 	'archtype' => 'structure',
@@ -424,6 +425,83 @@ $this->settings['close-button-background-tab'] = array(
 	'class'    => 'close_subsection',
 );
 
+	$this->settings['html-elements'] = array(
+		'section'  => 'general',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'class'    => 'open_subsection',
+	);
+	
+	$this->settings['content_headings'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Headings Color', 'bricks' ),
+		'desc'	  => __( 'h1, h2, h3, h4, h5, h6', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'std'	  => '#1e5a8e'
+	);
+	
+	$this->settings['table_header'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Table Header Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'std'	  => '#3e9400'
+	);
+	
+	$this->settings['caption_background'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Caption Background Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'std'	  => '#DFF1C4'
+	);
+	
+	$this->settings['preformatted-text'] = array(
+		'section'  => 'general',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Preformatted Text', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['preformat_text'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Preformatted Text Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped2',
+		'std'	  => '#373737'
+	);
+	
+	$this->settings['preformat_background'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Preformatted Background Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped2',
+		'std'	  => '#F4F4F4'
+	);
+	
+		$this->settings['close-preformatted'] = array(
+			'section'  => 'general',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+	
+$this->settings['close-html-elements-tab'] = array(
+	'section'  => 'general',
+	'archtype' => 'structure',
+	'type'     => 'no-data',
+	'class'    => 'close_subsection',
+);
+	
 $this->settings['custom-background'] = array(
 	'section'  => 'general',
 	'archtype' => 'structure',

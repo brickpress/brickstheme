@@ -4,12 +4,84 @@
 
 /* =Post Format Containers
 ----------------------------------------------- */
-article.format-audio > .entry-content p + object {
+#content > article.format-standard .entry-content,
+#content > article.format-aside .entry-content,
+#content > article.format-gallery .entry-content,
+#content > article.format-quote .entry-content,
+#content > article.format-status .entry-content,
+#content > article.format-audio .entry-content,
+.attachment #content > article .entry {
+	margin: 2% 3% 0 3%;
+}
+.single #content > article.format-audio .entry-content,
+.single #content > article.format-chat .entry-content,
+#content > article.format-image .entry-content a.tumblr_blog,
+.blog #content > article.format-video .entry-content .sharedaddy,
+.blog #content > article.format-image .entry-content .sharedaddy {
+	margin: 0 3%;
+}
+.single #content > article .entry-content {
+	margin: 0 3%;
+}
+.search #content > article.not-found .entry-content,
+.error404 #content > article.not-found .entry-content {
+	margin: 2% 3%;
+}
+p.none-found {
+	padding-top: 2%;
+}
+.search.search-results #content > article .entry-content {
+	margin: 0 3%;
+}
+.blog #content > article.format-video .entry-content p,
+#content > article div.attribution {
+	margin: 0 3% 1.6% 3%;
+}
+#content > article.format-aside .entry-content,
+#content > article.format-audio .entry-content,
+#content > article.format-quote .entry-content,
+#content > article.format-status .entry-content {
+	padding: 2.65% 0;
+}
+#content > article.format-chat .entry-content,
+#content > article.format-link .entry-content {
+	padding-top: 2.65%;
+	margin: 0 3%;
+}
+#content > article.format-video iframe,
+#content > article.format-image div.wp-caption,
+#content > article.format-image .entry-content img,
+article > .link-content,
+article > .audio-content {
+	padding: 0;
+	margin-bottom: 1.65%;
+	width: 100%!important;
+}
+#content > article.format-status .entry-content, {
 	margin-top: 2%;
 }
 article.format-standard > .entry-content object {
 	margin: 0 auto;
 	width: 100%;
+}
+.page-template-default #content > article .entry-content {
+	padding: 2% 3%;
+}
+.page-template-showcase-php #content > article,
+.page-template-showcase-php #content > article .entry-content {
+	padding: 0;
+}
+.page-template-showcase-php #content > article.format-video .entry-content,
+.page-template-showcase-php #content > article.format-image .entry-content {
+	padding: 0 3%;
+}
+.single-attachment #content > article .entry h5 {
+	margin: 2% auto;
+}
+.entry-content p > a + img {
+	padding: 0!important;
+	margin: 0!important;
+	width: 100%!important;
 }
 
 
@@ -72,15 +144,22 @@ article.format-standard > .entry-content object {
 	background: url(../images/postformats/tag.png) no-repeat scroll 0% 50%;
 	padding: 8px 12px 8px 8px;
 }
+.entry-meta .category {
+	background: url(../images/postformats/category.png) no-repeat scroll 0% 50%;
+	padding: 8px 12px 8px 8px;
+}
 .entry-meta .comments-link {
 	background: url(../images/postformats/comment.png) no-repeat scroll 0% 50%;
 	padding: 8px 16px 8px 8px;
 }
-.entry-meta .edit-link {
+.entry-meta .edit-link,
+.comment-meta .edit-link {
 	margin-left: 5px;
 }
-.page .entry-meta .edit-link {
-	float: right;
+.entry-meta .edit-link {
+	position: absolute;
+	right: 0;
+	bottom: 5px;
 }
 .entry-meta .edit-icon {
 	background: url(../images/postformats/edit.png) no-repeat scroll 0% 50%;
@@ -127,12 +206,6 @@ article.format-standard > .entry-content object {
 	padding: 8px 22px 8px 0;
 }
 
-
-#content > article.format-aside .entry-content ,
-#content > article.format-quote .entry-content {
-	padding: 1.5em 2% 0 2%;
-}
-
 /* =Aside
 ----------------------------------------------- */
 .singular .format-aside .entry-title {
@@ -164,20 +237,20 @@ article.format-standard > .entry-content object {
 .format-audio blockquote, .format-audio p {
 	clear: both;
 }
-#content > article.format-audio .entry-content + span {
-	margin-top: 2%;
-}
 
 /* =Chat
 ----------------------------------------------- */
 .bricks-chat {
 	margin: 0;
 	list-style: none;
-	line-height: 1.625em;
-	padding: 1.625em 0;
+	line-height: 1.825;
+	padding-bottom: 1.625%;
 }
 .bricks-chat li {
 	color: #373737;
+}
+.bricks-chat .chat-odd strong {
+	color: #398A00;
 }
 .bricks-chat .chat-even strong {
 	color: #1B8BE0;
@@ -190,14 +263,56 @@ article.format-standard > .entry-content object {
 	display: block;
 	margin: .375em 1.625em 0 0;
 }
+#content .gallery {
+	margin: 0 auto 1.6%;
+}
+#content .gallery a img {
+	border: none;
+}
+img#wpstats {
+	display: block;
+	margin: 0 auto 1.6%;
+}
+#content .gallery-columns-3 .gallery-item {
+	width: 31%;
+	padding: 0 1%;
+}
+#content .gallery-columns-4 .gallery-item {
+	width: 23%;
+	padding: 0 1%;
+}
+#content .gallery-columns-4 .gallery-item img {
+	width: 100%;
+	height: auto;
+}
+.format-gallery blockquote, .format-gallery p {
+	clear: both;
+}
+.attachment-nav-left {
+	float: left;
+}
+.attachment-nav-right {
+	float: right;
+}
 
 /* =Image
 ----------------------------------------------- */
+#content > article.format-image .entry-content img[class*="wp-image-"],
+#content > article.format-image .entry-content img[class*="wp-image-"],
+#content > article.format-video span[class*="embed-"],
+#content > article.format-video div[class*="embed-"],
+#content > article.format-image .entry-content a + img {
+	width: 100%!important;
+	margin: 0!important;
+}
 #content > article.format-image div.entry-content + p {
 	margin: 0 auto;
 }
 #content > article.format-image .entry-content p {
 	margin-bottom: 0;
+}
+.indexed.format-image .entry-header {
+	min-height: 61px; /* Prevent the comment icon from colliding with the image when there is no title */
 }
 
 /* =Link
@@ -211,7 +326,7 @@ article.format-standard > .entry-content object {
 	min-height: 45px;
 	padding: 1% 2% 0 2%;
 }
-.single .link-content {
+.link-content {
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -239,7 +354,6 @@ article.format-standard > .entry-content object {
 .format-link .link-icon {
 	background: url(../images/postformats/chainlink.png) 0% 70% no-repeat scroll;
 	padding: 20px;
-	margin: 0 2%;
 	float: left;
 	position: relative;
 }
@@ -305,9 +419,6 @@ blockquote cite {
 .singular .format-status .entry-title {
 	display: block;
 }
-#content > article.format-status .entry-content {
-	padding: 1.625em 2% 0 2%;
-}
 #content > article.format-status div.avatar {
 	display: inline-block;
 	float: left;
@@ -328,96 +439,3 @@ blockquote cite {
 	margin: 4px 10px 2px 0;
 	padding: 0;
 }
-
-/* =Image
------------------------------------------------ */
-.indexed.format-image .entry-header {
-	min-height: 61px; /* Prevent the comment icon from colliding with the image when there is no title */
-}
-.indexed.format-image .entry-content {
-	padding-top: 0.5em;
-}
-.indexed.format-image p,
-.indexed.format-image p img {
-	margin-bottom: 0;
-}
-.indexed.format-image footer.entry-meta {
-	background: #ddd;
-	margin-top: -7px;
-	padding: 20px 30px;
-	overflow: hidden;
-}
-.indexed.format-image div.entry-meta {
-	display: inline-block;
-	float: left;
-	width: 35%;
-}
-.indexed.format-image div.entry-meta + div.entry-meta {
-	float: none;
-	width: 65%;
-}
-.indexed.format-image .entry-meta span.cat-links,
-.indexed.format-image .entry-meta span.tag-links,
-.indexed.format-image .entry-meta span.comments-link {
-	display: block;
-}
-.indexed.format-image footer.entry-meta a {
-	color: #444;
-}
-.indexed.format-image footer.entry-meta a:hover {
-	color: #fff;
-}
-#content .indexed.format-image img {
-	border: none;
-	max-width: 100%;
-	padding: 0;
-}
-.indexed.format-image .wp-caption {
-	background: #111;
-	margin-bottom: 0;
-	max-width: 96%;
-	padding: 11px;
-}
-.indexed.format-image .wp-caption .wp-caption-text {
-	color: #ddd;
-}
-.indexed.format-image .wp-caption .wp-caption-text:before {
-	color: #444;
-}
-.indexed.format-image a:hover img {
-	opacity: 0.8;
-}
-
-/* =Attachments
------------------------------------------------ 
-.image-attachment div.attachment {
-	background: #f9f9f9;
-	border: 1px solid #ddd;
-	border-width: 1px 0;
-	margin: 0 -8.9% 1.625em;
-	overflow: hidden;
-	padding: 1.625em 1.625em 0;
-	text-align: center;
-}
-.image-attachment div.attachment img {
-	display: block;
-	height: auto;
-	margin: 0 auto 1.625em;
-	max-width: 100%;
-}
-.image-attachment div.attachment a img {
-	border-color: #f9f9f9;
-}
-.image-attachment div.attachment a:focus img,
-.image-attachment div.attachment a:hover img,
-.image-attachment div.attachment a:active img {
-	border-color: #ddd;
-	background: #fff;
-}
-.image-attachment .entry-caption p {
-	font-size: 10px;
-	letter-spacing: 0.1em;
-	line-height: 2.6em;
-	margin: 0 0 2.6em;
-	text-transform: uppercase;
-} */

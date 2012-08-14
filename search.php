@@ -35,8 +35,8 @@ $article_container = bricks_theme_option('article_container'); ?>
             </div><!-- .entry-content -->
             
             <footer class="entry-meta">
-            	<?php bricks_post_footer(); ?>
-                <?php bricks_comments_link(); ?>
+                <?php bricks_post_date_text(); ?>
+                <?php bricks_post_footer(); ?>
                 <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
             </footer>
          
@@ -51,7 +51,7 @@ $article_container = bricks_theme_option('article_container'); ?>
           
         <?php else : ?>
         
-        <article id="post-0" class="post error404 not-found"<?php if( $article_container == 'sharp-edges' ) {
+        <article id="post-0" class="post error404 not-found <?php echo $article_container; ?>" <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
         
             <div class="entry-content">        

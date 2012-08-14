@@ -113,10 +113,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$large_feature_width = bricks_theme_option('large_feature_width');
 		$large_feature_height = bricks_theme_option('large_feature_height');
 		
-		//if ( function_exists( 'add_image_size' ) ) {
-		add_image_size( 'bricks-large-slider', $large_feature_width, 9999 ); 		  // 1024 pixels wide and unlimited height
-		add_image_size( 'bricks-medium-slider', $medium_feature_width, $medium_feature_height, true );    //(cropped)
-		//}
+		add_image_size( 'bricks-large-slider', $large_feature_width, 9999 ); 		  			    // 1024 pixels wide and unlimited height
+		add_image_size( 'bricks-medium-slider', $medium_feature_width, $medium_feature_height ); 
 	}
 	
 
@@ -245,7 +243,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		if( is_page_template('showcase.php') || is_page_template('content-slider.php') ) {
 			
 			wp_enqueue_script( 'nivo-slider', trailingslashit( BRICKS_JS ) . 'jquery.nivo.slider.js', array( 'jquery' ), BRICKS_VERSION );		
-			wp_enqueue_style( 'nivo-slider-style', trailingslashit( BRICKS_CSS ) . 'nivo-slider.css' );
+			//wp_enqueue_style( 'nivo-slider-style', trailingslashit( BRICKS_CSS ) . 'nivo-slider.css' );
 			wp_enqueue_style( 'page-templates', trailingslashit( BRICKS_CSS ) . 'page-templates.css' );
 		}
 		
@@ -317,50 +315,34 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$link_color = bricks_theme_option('link_color');
 		$button_text_color = bricks_theme_option('button_text_color');
 		$button_border = bricks_theme_option('button_border');
-		if( $background_color ) :
-		?>
+		if( $background_color ) : ?>
+        
 		<style type="text/css">
-		    html body,
-			html body.custom-background,
-			body.paged {
+		    html body, html body.custom-background, body.paged {
 				font-size: <?php echo bricks_theme_option('body_text_size'); ?>px;
                 background: <?php echo $background_color; ?>; /* Show a solid color for older browsers */
                 background: rgba(<?php echo $this->hex_to_rgb($background_color) .','. bricks_theme_option('body_bg_opacity'); ?>) url(<?php echo bricks_theme_option('background_image'); ?>);
-				background-position: <?php echo bricks_theme_option('background_position_x'). ' ' .bricks_theme_option('background_position_y'); ?>;
+				background-position: <?php echo bricks_theme_option('background_position_x').'% '.bricks_theme_option('background_position_y'); ?>%;
 				background-repeat: <?php echo bricks_theme_option('background_repeat'); ?>;
 				background-attachment: <?php echo bricks_theme_option('background_attachment'); ?>;
             }
-            body,
-			input,
-			textarea {
+            body, input, textarea, .bricks-chat li {
                 font-family: <?php echo bricks_theme_option('body_text_fontface'); ?>;
                 color: rgba(<?php echo $this->hex_to_rgb($body_text_color) .','. bricks_theme_option('body_text_opacity'); ?>);
             }
-			.single .entry-meta p,
-			.entry-meta p,
-			.widget ul li,
-			input[type=text],
-			input[type=password],
-			textarea,
-			.widget ul.tweets li {
+			.single .entry-meta p, .entry-meta p, .widget ul li, input[type=text], input[type=password], textarea, .widget ul.tweets li {
 				color: rgba(<?php echo $this->hex_to_rgb($secondary_text_color) .','. bricks_theme_option('secondary_text_opacity'); ?>);	
 			}
-			.inner-topbar,
-			.inner-header,
-			.inner-subnav,
-			.inner-content,
-			.inner-footer,
-			#custom-header,
-			#main,
-			#headline-container {
+			.inner-topbar, .inner-header, .inner-navigation, .inner-content, .inner-footer,
+			#custom-header, #main, #headline-container {
 				max-width: <?php echo bricks_theme_option('page_width'); ?>px;
 				min-width: <?php echo bricks_theme_option('content_width'); ?>px;
 			}
-			#primary {
-				margin-top: <?php echo bricks_theme_option('content_top_margin'); ?>;
+			#primary, .left-sidebar #primary {
+				margin-top: <?php echo bricks_theme_option('content_top_margin'); ?>px;
 			}
-			#secondary {
-				margin-top: <?php echo bricks_theme_option('sidebar_top_margin'); ?>;
+			#secondary, .left-sidebar #secondary {
+				margin-top: <?php echo bricks_theme_option('sidebar_top_margin'); ?>px;
 			}
 			.page-template-content-slider-php .nivoSlider {
 				width: <?php echo bricks_theme_option('medium_feature_width'); ?>px;
@@ -384,50 +366,63 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				color: <?php echo $link_color; ?>;
 			}
 			<?php $button_color1 = bricks_theme_option('button_color1');
-				  $button_color2 = bricks_theme_option('button_color2');
-			?>
+				  $button_color2 = bricks_theme_option('button_color2'); ?>
 			#content nav span.previous a,
 			#content nav span.next a,
 			#content nav a.page-numbers.prev,
 			#content nav a.page-numbers.next,
-			#content nav span.previous a,
-			#content nav span.next a,
 			#content nav span.page-numbers.current {
 				font-size: <?php echo bricks_theme_option('button_text_size'); ?>px;
 			}
 			#content nav span.previous a,
 			#content nav span.next a,
-			.graphic,
-			.comments-link a {
+			#content nav a.page-numbers.prev,
+			#content nav a.page-numbers.next,
+			#content nav span.page-numbers.current,
+			.entry-date.graphic,
+			.comments-link a,
+			.submit-btn {
 				background: <?php echo $button_color1; ?>; /* Show a solid color for older browsers */
 				background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
 				background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
 				background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) ) ); /* older webkit syntax */
 				background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
-				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_hover_opacity1'); ?>) );
-				border-bottom-color: <?php echo $button_border; ?>;
+				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_border) .','. bricks_theme_option('button_opacity1'); ?>);
 				color: <?php echo $button_text_color; ?>;
 			}
 			<?php $button_hover1 = bricks_theme_option('button_hover1');
-				  $button_hover2 = bricks_theme_option('button_hover2');
-			?>	  
+				  $button_hover2 = bricks_theme_option('button_hover2'); ?>	  
 			#content nav span.previous a:hover,
 			#content nav span.next a:hover,
+			#content nav a.page-numbers.prev:hover,
+			#content nav a.page-numbers.next:hover,
 			#content nav span.page-numbers.current,
 			.edit-link a:hover,
 			.comments-link a:hover,
 			.submit-btn:hover {
-				  background: <?php echo $button_hover1; ?>; /* Show a solid color for older browsers */
-				  background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
-				  background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
-				  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) ) ); /* older webkit syntax */
-				  background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
-				  border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>) );
-				  color: <?php echo $button_text_color; ?>;
-				  border-bottom-color: <?php echo $button_border; ?>;
+				background: <?php echo $button_hover1; ?>; /* Show a solid color for older browsers */
+				background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
+				background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
+				background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) ) ); /* older webkit syntax */
+				background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
+				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_border) .','. bricks_theme_option('button_hover_opacity1'); ?>);
+				color: <?php echo $button_text_color; ?>;
 			}
 			input[type=text], input[type=password], textarea {
-				  border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>) );
+				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>);
+			}
+			.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+				color: <?php echo bricks_theme_option('content_headings'); ?>;
+			}
+			.entry-content th, .comment-content th {
+				color: <?php echo bricks_theme_option('table_header'); ?>;
+			}
+			.wp-caption {
+				background: <?php echo bricks_theme_option('caption_background'); ?>;
+			}
+			pre {
+				background: <?php echo bricks_theme_option('preformat_background'); ?>;
+				color: <?php echo bricks_theme_option('preformat_text'); ?>;	
 			}
 		</style>
         <?php endif;
@@ -646,10 +641,13 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: <?php echo $article_bg_color; ?>; /* Show a solid color for older browsers */
 			background: rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('article_bg_opacity'); ?>) url(<?php echo bricks_theme_option('article_bg_image'); ?>) <?php echo bricks_theme_option('article_bg_repeat').' '.bricks_theme_option('article_bg_attachment').' '.bricks_theme_option('article_bg_xpos').' '.bricks_theme_option('article_bg_ypos'); ?>;
 		}
+		#comments-title,
 		.archive-header .page-title,
 		.search-header .page-title,
 		.search .page-title,
-		.showcase-heading {
+		.showcase-heading,
+		 #content > .widgettitle,
+		#content article.error404 > .widgettitle {
 			font-family: <?php echo bricks_theme_option('headlines_fontface'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($headlines_color) .','. bricks_theme_option('headlines_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('headlines_size'); ?>px;
@@ -675,14 +673,25 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		<?php $content_shadow = bricks_theme_option('content_shadow'); ?>
 		#content > article,
 		#content > #comments,
-		#primary > #content .recent-posts {
+		#primary > #content .recent-posts,
+		#content > #author-info {
 			-webkit-box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 			-moz-box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 			box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 		}
-		.page-template-showcase-php #slider {
-			width: <?php echo bricks_theme_option('large_feature_width'); ?>px;
-			height: <?php echo bricks_theme_option('large_feature_height'); ?>px;
+		<?php $slider_caption_bg   = bricks_theme_option('slider_caption_bg'); 
+			  $slider_caption_text = bricks_theme_option('slider_caption_text'); ?>
+	    .nivo-caption {
+			background: rgba(<?php echo $this->hex_to_rgb($slider_caption_bg) .','. bricks_theme_option('slider_caption_opacity'); ?>);
+			color: <?php echo $slider_caption_text; ?>;
+		}
+		<?php $bricks_chat_odd  = bricks_theme_option('bricks_chat_odd'); 
+			  $bricks_chat_even = bricks_theme_option('bricks_chat_even'); ?>
+		.bricks-chat .chat-odd strong {
+			color: <?php echo $bricks_chat_odd; ?>;
+		}
+		.bricks-chat .chat-even strong {
+			color: <?php echo $bricks_chat_even; ?>;
 		}
 		</style>
         <?php endif;
@@ -712,7 +721,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		#secondary .widget,
 		#secondary .widget a {
 			color: rgba(<?php echo $this->hex_to_rgb($widget_text_color) .','. bricks_theme_option('widget_text_opacity'); ?>);
-			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($widget_text_shadow) .','. bricks_theme_option('widget_shadow_opacity'); ?>);
+			text-shadow: -1px -1px 0 rgba(<?php echo $this->hex_to_rgb($widget_text_shadow) .','. bricks_theme_option('widget_shadow_opacity'); ?>);
 		}
 		#secondary .widget-title,
 		#secondary .widget-title > a {
@@ -720,7 +729,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			font-size: <?php echo bricks_theme_option('widget_title_size'); ?>px;
 			text-transform: <?php echo bricks_theme_option('widget_title_transform'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($widget_title_color) .','. bricks_theme_option('widget_title_opacity'); ?>);
-			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($widget_title_shadow) .','. bricks_theme_option('widget_shadow_opacity'); ?>);
+			text-shadow: -1px -1px 0 rgba(<?php echo $this->hex_to_rgb($widget_title_shadow) .','. bricks_theme_option('widget_shadow_opacity'); ?>);
+			font-weight: <?php echo bricks_theme_option('widget_title_fontweight'); ?>;
 		}
 		#secondary .widget-title-bg {
 			background: <?php echo $widget_title_bg; ?>; /* Show a solid color for older browsers */

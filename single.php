@@ -9,6 +9,7 @@
 global $theme_options, $post;
 
 $article_container = bricks_theme_option('article_container');
+$entry_date = bricks_theme_option('entry_date');
 
 get_header(); ?>
 
@@ -23,12 +24,17 @@ get_header(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
 
-                <?php bricks_post_date(); ?>
+                <?php if($entry_date == 'graphic') {
+					  	  bricks_post_date_graphic();
+					  } ?>
                 
                 <?php $post_format = strtolower( get_post_format() ); ?>
-                <header class="entry-header">
+                <header class="entry-header <?php echo $entry_date; ?>">
                     <hgroup> 
                     <?php bricks_post_title(); ?>
+                    <?php if($entry_date == 'text') {
+					  	      bricks_post_date_text();
+					      } ?>
                     </hgroup>          
                 </header>
                 <div class="clearfix"></div>

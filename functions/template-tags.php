@@ -22,13 +22,11 @@ if( ! function_exists('bricks_topbar') ) :
             <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'bricks' ); ?>"><?php _e( 'Skip to primary content', 'bricks' ); ?></a></div>
             <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'bricks' ); ?>"><?php _e( 'Skip to secondary content', 'bricks' ); ?></a></div>
             <?php wp_nav_menu( array( 'theme_location' => 'topbar', 'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>', ) ); ?>
-           	<script> 
- 
-    $(document).ready(function() { 
-        $('ul.sf-menu').superfish(); 
-    }); 
- 
-</script>
+			<script>
+			jQuery(document).ready(function() { 
+				jQuery('ul.sf-menu').superfish(); 
+			}); 
+            </script>
             <div class="site-admin">
                 <ul>
                   <li><?php wp_register(); ?></li>
@@ -54,8 +52,14 @@ if( ! function_exists('bricks_nav_menu') ) :
         <nav id="access" role="navigation">
         <?php bricks_before_primary_menu(); ?>
 
-            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-
+            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>', ) ); ?>
+            <?php if( false == bricks_theme_option('show_topbar_nav') ) : ?>
+				<script>
+                jQuery(document).ready(function() { 
+                    jQuery('ul.sf-menu').superfish(); 
+                }); 
+                </script>
+            <?php endif; ?>
         </nav><!-- #access -->
 	<?php
 	}
@@ -68,49 +72,47 @@ endif;
  *
  * @since 1.0.0
  */
-if( ! function_exists('bricks_post_date') ) : 
-	function bricks_post_date() {
-	
-		$entry_date = bricks_theme_option( 'entry_date' );
-		if( $entry_date == 'graphic' ) {
-			$month = get_the_time('M');
-			$day = get_the_time('d');
-			$year = get_the_time('Y');
-		echo '<div class="entry-date ' .$entry_date. '"> 
-				<span class="month">' .$month. '</span><span class="day">' .$day. '</span><span class="year">' .$year. '</span></div>';
-		} else {
-			printf( '<div class="entry-date ' .$entry_date. '"><span class="sep">' .__( 'Posted on', 'bricks' ). '</span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> ' .__( 'by', 'bricks' ). '</span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span></div>',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() ),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_attr( sprintf( __( 'View all posts by %s', 'bricks' ), get_the_author() ) ),
-				get_the_author()
-			);
-		}
+if( ! function_exists('bricks_post_date_graphic') ) : 
+	function bricks_post_date_graphic() {
+
+		$month = get_the_time('M');
+		$day = get_the_time('d');
+		$year = get_the_time('Y');
+		echo '<div class="entry-date graphic"><span class="month">' .$month. '</span><span class="day">' .$day. '</span><span class="year">' .$year. '</span></div>';
 	}
 endif;
 
 
 /**
- * Displays entry meta post date.
+ * Displays post date.
+ * Styling and date format can be customized at the theme options admin panel page.
  *
  * @since 1.0.0
  */
-if( ! function_exists('bricks_entry_meta_date') ) : 
-	function bricks_entry_meta_date() {
-	
-		printf( __( '<span class="date-posted"></span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'bricks' ),
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'bricks' ), get_the_author() ) ),
-			get_the_author()
-		);
-	}
+if( ! function_exists('bricks_post_date_text') ) : 
+function bricks_post_date_text() {
+		
+	global $theme_options;
+	$format = get_post_format();
+	$author_avatar = bricks_theme_option('author_avatar');
+	if( is_sticky() || false === $format )
+		$format = 'article';
+		
+	$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%7$s" title="%8$s" rel="author">%9$s.</a></span></span>' );
+
+	printf(
+		$utility_text,																		// [0]
+		$post_icon = strtolower( $format ),													// [1]
+		$post_format = ucwords( $format ),													// [2]
+		esc_url( get_permalink() ),															// [3]
+		esc_attr( get_the_time() ),															// [4]
+		esc_attr( get_the_date( 'c' ) ),													// [5]
+		esc_html( get_the_date() ),															// [6]
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),						// [7]
+		esc_attr( sprintf( __( 'View all posts by %s', 'bricks' ), get_the_author() ) ),	// [8]
+		get_the_author()																	// [9]																		
+	);
+}
 endif;
 
 
@@ -173,6 +175,8 @@ endif;
 
 /**
  * Returns header for archive pages.
+ * 
+ * @todo  use switch for post formats.
  * @since 1.0.0
  */
 if( ! function_exists('bricks_archive_header') ) :
@@ -260,7 +264,7 @@ if( ! function_exists('bricks_comment_link') ) :
 function bricks_comments_link() {
 	
 	if( comments_open() && ! post_password_required() ) {
-		comments_popup_link( '<span class="comments-link"></span>' . __( 'Leave a Comment', 'bricks' ), '<span class="comments-link"></span>' . _x( '1 Comment', 'comments number', 'bricks' ), '<span class="comments-link"></span>' . _x( '% Comments', 'comments number', 'bricks' ) );
+		comments_popup_link( '<span class="comments-link"></span>' . __( 'Leave a Comment.', 'bricks' ), '<span class="comments-link"></span>' . _x( '1 Comment', 'comments number', 'bricks' ), '<span class="comments-link"></span>' . _x( '% Comments', 'comments number', 'bricks' ) );
 	}
 }
 endif;
@@ -531,6 +535,20 @@ function bricks_author_meta() {
                     </a>
                 </div><!-- #author-link	-->
             </div><!-- #author-description -->
+        <?php $social_icons_label = get_theme_mod('social_icons_label');
+			  $facebook_profile = get_theme_mod('facebook_profile');
+			  $google_profile = get_theme_mod('google_profile');
+			  
+		if( '' != $facebook_profile ) {
+			
+			$utility_text = __( '<span class="author-social-header"> %1$s </span><br /><a href="%2$s" /><span class="fb-profile"></span></a>', 'bricks' );
+			printf(
+			    $utility_text,
+			    $social_profile,
+				esc_url( 'http://www.facebook.com/' . trailingslashit($facebook_profile)),
+				esc_url( $google_profile )
+			);
+		} ?>
 		</div><!-- #entry-author-info -->
 		<?php
 		}
@@ -584,33 +602,24 @@ if ( ! function_exists( 'bricks_post_footer' ) ) :
 		/* Footer entry meta for single post */
 		if ( is_single() ) {
 			if( '' != $tag_list ) {
-				$utility_text = __( '<span class="%1$s-post"></span>%2$s posted in %10$s and tagged %11$s.', 'bricks' );
+				$utility_text = __( '<span class="%1$s-post"></span>%2$s posted in %3$s and tagged %4$s.', 'bricks' );
 			} else {
-				$utility_text = __( '<span class="%1$s-post"></span>%2$s posted in %10$s.', 'bricks' );
+				$utility_text = __( '<span class="%1$s-post"></span>%2$s posted in %3$s.', 'bricks' );
 			}	
 		/* Footer entry meta for posts, archives */	
 		} else {
 			if( '' != $tag_list ) {
-				$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%7$s" title="%8$s" rel="author">%9$s.</a></span></span>
-				<br /><span class="tags"></span> %11$s.', 'bricks' );
+				$utility_text = __( '<span class="category"></span> %3$s. <span class="tags"></span> %4$s.', 'bricks' );
 			} else {
-				$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%7$s" title="%8$s" rel="author">%9$s.</a></span></span>', 'bricks' );
+				$utility_text = __( '<span class="category"></span> %3$s.', 'bricks' );
 			}
 		}
 		printf(
 			$utility_text,																		// [0]
 			$post_icon = strtolower( $format ),													// [1]
 			$post_format = ucwords( $format ),													// [2]
-			esc_url( get_permalink() ),															// [3]
-			esc_attr( get_the_time() ),															// [4]
-			esc_attr( get_the_date( 'c' ) ),													// [5]
-			esc_html( get_the_date() ),															// [6]
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),						// [7]
-			esc_attr( sprintf( __( 'View all posts by %s', 'bricks' ), get_the_author() ) ),	// [8]
-			get_the_author(),																	// [9]
-			/* translators: used between list items, there is a space after the comma */
-			get_the_category_list( __( ', ', 'bricks' ) ),										// [10]
-			$tag_list																			// [11]
+			get_the_category_list( __( ', ', 'bricks' ) ),										// [3]
+			$tag_list																			// [4]
 		);
 	}
 endif;
@@ -744,9 +753,18 @@ endif;
  * @since 1.0.0 
  */
 if( !function_exists('bricks_social_media') ) :
-function bricks_social_media() { ?>
+function bricks_social_media() {
 	
-	<div id="social-media-<?php echo bricks_theme_option('social_module'); ?>">
+	$social_icons_label = get_theme_mod('social_icons_label');
+	
+	if( bricks_theme_option('social_module') == 'before-sidebar' ) : ?>
+    	<div class="widget-title-bg">
+        	<h3 class="widget-title">
+            <?php esc_attr_e($social_icons_label); ?>
+            </h3>
+        </div>   
+    <?php endif; ?>
+    <div id="social-media-<?php echo bricks_theme_option('social_module'); ?>">
       <ul>
       	<?php $facebook_page = get_theme_mod( 'facebook_page' );
 			  $twitter_id = get_theme_mod( 'twitter_id' );
@@ -756,7 +774,7 @@ function bricks_social_media() { ?>
         <li class="rss-feed"><a href="<?php echo esc_url( home_url( '/feed/' ) ); ?>" title="<?php _e( 'Syndicate this site using RSS 2.0', 'bricks' ); ?>"></a></li>
              
         <?php if( '' != $facebook_page ) : ?>     
-    	<li class="facebook"><a href="<?php echo esc_attr( 'http://www.facebook.com/' . $facebook_page ); ?>" title="<?php _e( 'Like my page on Facebook', 'bricks' ); ?>" target="_blank"></a></li>
+    	<li class="facebook"><a href="<?php echo esc_attr( 'http://www.facebook.com/' . esc_attr($facebook_page) ); ?>" title="<?php _e( 'Like my page on Facebook', 'bricks' ); ?>" target="_blank"></a></li>
 		<?php endif; ?>
         
         <?php if( '' != $twitter_id ) : ?>
@@ -843,19 +861,19 @@ add_action( 'wp_head', 'bricks_ga_tracking_code' );
 if( !function_exists('bricks_ga_tracking_code') ) :
 function bricks_ga_tracking_code() {
 	
-	$tracking_code = get_theme_mod('google_analytics');
-	?><script type="text/javascript">
-	
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', '<?php echo $tracking_code; ?>']);
-	  _gaq.push(['_trackPageview']);
-	
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	
+	$tracking_code = get_theme_mod('google_analytics'); ?>
+	<script type="text/javascript">
+	<!--
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', '<?php echo $tracking_code; ?>']);
+		_gaq.push(['_trackPageview']);
+	  
+		(function() {
+		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	//-->
 	</script><?php
 }
 endif;

@@ -107,6 +107,21 @@ $this->settings['primary-sidebar'] = array(
 		'std'	  => '#000'
 	);
 	
+	$this->settings['widget_title_fontweight'] = array(
+		'section' => 'sidebars',
+		'title'   => __( 'Font Weight', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'     => 'normal',
+		'choices' => array(
+			'normal' => __( 'Normal', 'bricks' ),
+			'bold'   => __( 'Bold', 'bricks' )
+		)
+	);
+	
+	
 		$this->settings['close-widget-title'] = array(
 			'section'  => 'sidebars',
 			'archtype' => 'structure',
@@ -499,7 +514,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#3D9400'
+		'std'	  => '#58c908'
 	);
 	
 	$this->settings['widget_button2'] = array(
@@ -558,7 +573,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#3D9400'
+		'std'	  => '#53b30e'
 	);
 	
 	$this->settings['widget_button_hover2'] = array(
@@ -568,7 +583,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#398A00'
+		'std'	  => '#3e9400'
 	);
 	
 	$this->settings['widget_button_hover_opacity1'] = array(
@@ -628,7 +643,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#29691D'
+		'std'	  => '#58c908'
 	);
 	
 	$this->settings['widget_button_fontface'] = array(

@@ -70,8 +70,8 @@ $article_container = bricks_theme_option('article_container'); ?>
 					<div class="clearfix"></div>
                     
                     <div class="navigation attachment">
-                        <div class="alignleft"><?php previous_image_link(); ?></div>
-                        <div class="alignright"><?php next_image_link(); ?></div>
+                        <div class="attachment-nav-left"><?php previous_image_link(); ?></div>
+                        <div class="attachment-nav-right"><?php next_image_link(); ?></div>
                     </div>
     
                     <?php else : ?>

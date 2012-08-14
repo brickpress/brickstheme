@@ -1,14 +1,12 @@
 <?php
 /**
  * Template Name: Showcase Template
- * Description: A Page Template that showcases Sticky Posts 
+ * Description: A Page Template that showcases Sticky Posts using nivoSlider.
  *
- * The content slider template in Bricks consists of two sections. Each section can be customized
- * on the theme options admin panel. The first section showcases sticky posts as featured posts. The
- * second section contains recent posts, showing an excerpt of the latest post and a list of subsequent
- * posts in reverse chronological order.
- *
- * We are creating two queries to fetch the proper posts.
+ * The showcase template consists of two sections. The first section displays a full width slideshow of
+ * featured posts. The position of the slides can be customized on the theme options admin panel. The
+ * second section contains a list of posts in reverse chronological order. The number of posts to show on
+ * this page can also be customized on the theme options admin panel.
  *
  * @package Bricks
  * @subpackage Page Templates
@@ -27,14 +25,6 @@ get_header(); ?>
 					'order' => 'DESC',
 					'posts_per_page' => $showcase_recent_posts,
 					'post__not_in' => get_option( 'sticky_posts' ),
-					/*'tax_query' => array(
-						array(
-							'taxonomy' => 'post_format',
-							'terms' => array( 'post-format-aside', 'post-format-link', 'post-format-quote', 'post-format-status' ),
-							'field' => 'slug',
-							'operator' => 'NOT IN',
-						),
-					),*/
 					'no_found_rows' => true,
 				);
 
@@ -53,7 +43,7 @@ get_header(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
 
-                <?php bricks_post_date(); ?>
+                <?php bricks_post_date_graphic(); ?>
                 
                 <header class="entry-header">
                     <hgroup> 
@@ -70,6 +60,13 @@ get_header(); ?>
                     <?php the_excerpt(); ?>
                     <?php bricks_after_entry_content(); ?>
                 </div><!-- .entry-content -->
+                
+                <footer class="entry-meta">
+                    <?php bricks_post_footer(); ?>
+                    <?php bricks_comments_link(); ?>
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                </footer>
+                <div class="clearfix"></div>
                 
     		<div class="left-post-shadow"></div>
             <div class="right-post-shadow"></div> 

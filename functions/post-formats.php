@@ -74,7 +74,7 @@ function bricks_chat_content() {
 			$name = strip_tags( trim( $line_pieces[0] ) );
 			$text = force_balance_tags( strip_tags( trim( $line_pieces[1] ), '<strong><em><a><img><del><ins><span>' ) );
 			
-			$rowclass = ( $i % 2 == 0 ? ' class="chat-even"' : '' );
+			$rowclass = ( $i % 2 == 0 ? ' class="chat-even"' : ' class="chat-odd"' );
 			
 			$output .= '<li' .$rowclass. '><strong>' .$name. ': </strong>' .$text. '</li>';
 			

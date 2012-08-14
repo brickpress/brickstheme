@@ -48,7 +48,7 @@ $this->settings['post-layout'] = array(
 		'std'     => 'graphic',
 		'choices' => array(
 			'graphic' => __( 'Graphic', 'bricks' ),
-			'text'	   => __( 'Plain Text', 'bricks' )
+			'text'	  => __( 'Plain Text', 'bricks' )
 		)
 	);
 	
@@ -240,7 +240,7 @@ $this->settings['post-layout'] = array(
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
-		'std'     => 'normal',
+		'std'     => 'bold',
 		'choices' => array(
 			'normal' => __( 'Normal', 'bricks' ),
 			'bold'   => __( 'Bold', 'bricks' )
@@ -498,6 +498,42 @@ $this->settings['post-formats'] = array(
 	'class'    => 'open_subsection',
 );
 
+	$this->settings['open-chat-format'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Chat Post Format Color', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['bricks_chat_odd'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Odd Speaker Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped2',
+		'class'   => 'pick-color',
+		'std'	  => '#398A00'
+	);
+
+	$this->settings['bricks_chat_even'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Even Speaker Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped2',
+		'class'   => 'pick-color',
+		'std'	  => '#1B8BE0'
+	);
+	
+		$this->settings['close-chat-format'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+
 	$this->settings['open-link-format'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
@@ -571,15 +607,16 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['slider_position'] = array(
 		'section' => 'content',
-		'title'   => __( 'Custom Header Position', 'bricks' ),
-		'desc'    => __( 'Choose where you want your custom header to appear.', 'bricks' ),
+		'title'   => __( 'Featured Slider Position', 'bricks' ),
+		'desc'    => __( 'Choose where you want your full width featured slider.', 'bricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'std'     => 'after-header',
 		'choices' => array(
-			'topnav' 		=> __( 'On top of the page', 'bricks' ),
-			'before-header' => __( 'Before site header', 'bricks' ),
-			'after-header'  => __( 'After site header', 'bricks' ),
+			'topnav' 		 => __( 'On top of the page', 'bricks' ),
+			'before-header'  => __( 'Before site header', 'bricks' ),
+			'after-header'   => __( 'After site header', 'bricks' ),
+			'after-main-nav' => __( 'After primary nav', 'bricks' ),
 		)
 	);
 	
@@ -621,7 +658,7 @@ $this->settings['featured-slider'] = array(
 	$this->settings['slider_timer'] = array(
 		'section' => 'content',
 		'title'	  => __( 'Featured Slider Timer', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'desc'	  => __( 'Time interval (in seconds) between slides.', 'bricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 1,
@@ -678,7 +715,7 @@ $this->settings['featured-slider'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '690',
+		'std'	  => '700',
 		'unit'    => 'px'
 	);
 	
@@ -689,7 +726,7 @@ $this->settings['featured-slider'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '385',
+		'std'	  => '394',
 		'unit'    => 'px'
 	);
 	
@@ -732,6 +769,54 @@ $this->settings['featured-slider'] = array(
 		'step'    => 1,
 		'std'	  => '10'
 	);
+	
+	$this->settings['slider-caption'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Slider Caption', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['slider_caption_bg'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Slider Caption Background Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#000'
+	);
+	
+	$this->settings['slider_caption_opacity'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Slider Caption Background Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '0.8'
+	);
+	
+	$this->settings['slider_caption_text'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Slider Caption Text', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#FFF'
+	);
+	
+		$this->settings['close-slider-caption'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
 		
 $this->settings['close-featured-slider'] = array(
 	'section'  => 'content',

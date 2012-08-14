@@ -113,11 +113,14 @@
                 
 	<?php // Secondary navigation menu. ?>
     <div id="nav-wrapper">
-        <div class="inner-subnav">
+        <div class="inner-navigation">
             <?php bricks_nav_menu(); ?>
         </div>
     </div>
- 
+ 	
+	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-main-nav' )
+              bricks_featured_slider(); ?>
+              
     <div id="content-wrapper">
     	<div class="inner-content">
  

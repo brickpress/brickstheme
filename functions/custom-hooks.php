@@ -335,5 +335,3 @@ function bricks_before_comment_list() {
 function bricks_after_comment_list() {
 	do_action( 'bricks_after_comment_list' );
 }
-
-?>

@@ -1,23 +1,24 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying 404 Error pages.
  *
  * @package Bricks Theme
  * @subpackage Page Templates
  * @since Bricks 1.0.0
  */
-$article_container = bricks_theme_option('article_container');
+get_header();
 
-get_header(); ?>
+$article_container = bricks_theme_option('article_container'); ?>
 
 	<div id="primary">
     
         <?php bricks_before_content(); ?>
         <div id="content" role="main">
 
-        <article id="post-0" class="post error404 not-found"<?php if(! $article_container) {
-                echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
-        
+        <?php bricks_before_article(); ?>
+        <article id="post-0" class="post error404 not-found <?php echo $article_container; ?>" <?php if( $article_container == 'sharp-edges' ) {
+            echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
+
             <div class="entry-content">        
             	<?php bricks_no_posts(); ?>
                 

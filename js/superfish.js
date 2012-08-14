@@ -1,4 +1,3 @@
-
 /*
  * Superfish v1.4.8 - jQuery menu widget
  * Copyright (c) 2008 Joel Birch
@@ -9,7 +8,6 @@
  *
  * CHANGELOG: http://users.tpg.com.au/j_birch/plugins/superfish/changelog.txt
  */
-
 ;(function($){
 	$.fn.superfish = function(op){
 

@@ -190,7 +190,7 @@ $this->settings['primary-nav-wrapper'] = array(
 		'min'	  => 0,
 		'max'	  => 1,
 		'step'    => 0.1,
-		'std'	  => '0.7'
+		'std'	  => '1'
 	);
 	
 		$this->settings['close-navigation-wrapper'] = array(
@@ -385,7 +385,7 @@ $this->settings['content-wrapper'] = array(
 		'desc'	  => __( 'Content Wrapper Image', 'bricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
-		'std'	  => ''
+		'std'	  => trailingslashit( BRICKS_IMAGES ) . 'background.jpg'
 	);
 
 	$this->settings['content-wrap-position'] = array(
@@ -428,7 +428,7 @@ $this->settings['content-wrapper'] = array(
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
-		'std'     => 'no-repeat',
+		'std'     => 'repeat',
 		'choices' => array(
 			'no-repeat' => __( 'No Repeat', 'bricks' ),
 			'repeat' 	=> __( 'Tile', 'bricks' ),

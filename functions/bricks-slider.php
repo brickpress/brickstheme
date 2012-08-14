@@ -44,15 +44,15 @@ function bricks_featured_slider() {
 				
 				$medium_feature_width = bricks_theme_option('medium_feature_width');
 				$medium_feature_height = bricks_theme_option('medium_feature_height');
-                    
-                if ( has_post_thumbnail() ) {
+
+				if ( has_post_thumbnail() ) {
 					
-                   echo '<a href="' . the_permalink() . '" title="' . the_title_attribute('echo=0') . '" >';
+                   echo '<a href="' .esc_url( get_permalink() ). '" title="' .esc_attr( the_title_attribute('echo=0') ). '">';
 				   
                    if( is_page_template('showcase.php') ) {
-				       the_post_thumbnail($post->ID, 'bricks-slider-large', array( 'class' => 'large-slider' ) );
+				       the_post_thumbnail('bricks-large-slider');
 				   } else {
-				       the_post_thumbnail($post->ID, array($medium_feature_width,$medium_feature_height), array( 'src' => '', 'class' => 'medium-slider' ) );
+				       the_post_thumbnail('bricks-medium-slider');
 				   }
                    echo '</a>';
                 }
@@ -61,13 +61,14 @@ function bricks_featured_slider() {
                 </div><!-- .nivoSlider -->
                 <?php endif; // End check for sticky posts. ?>       
                         
-                <script type="text/javascript"> 
+                <script type="text/javascript">
+				<!--
                 jQuery(window).load(function() {
-                    jQuery('#slider').nivoSlider({ pauseTime: parseInt(jQuery('#slider_timer').val() * 2000), pauseOnHover: true, effect: '<?php echo $slider_effects; ?>', captionOpacity: 1, controlNav: true, controlNavThumbs:false, controlNavThumbsFromRel:true, boxCols:16, boxRows:8, afterLoad: function(){ 
-                    //jQuery('#slider_loading').css('display', 'none');
-                    //jQuery('#slider_wrapper').css('visibility', 'visible');
+                    jQuery('#slider').nivoSlider({ pauseTime: parseInt(jQuery('#slider_timer').val() * 1200), pauseOnHover: true, effect: '<?php echo $slider_effects; ?>', captionOpacity: 1, controlNav: true, controlNavThumbs:false, controlNavThumbsFromRel:true, boxCols:8, boxRows:4, manualAdvance: false, afterLoad: function(){ 
+					jQuery('.inner-slider').css('visibility', 'visible');
                     } });
-                }); 
+                });
+				//-->
                 </script>
             
             <?php endif; // End check for published posts. ?>
