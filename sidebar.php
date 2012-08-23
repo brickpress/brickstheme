@@ -5,7 +5,6 @@
  * @package Bricks
  * @since Bricks 1.0.0
  */
-global $theme_options;
 $current_layout = bricks_theme_option('sidebar_layout');
 
 if ( 'no-sidebar' != $current_layout ) :

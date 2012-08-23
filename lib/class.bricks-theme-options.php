@@ -65,6 +65,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		add_action( 'admin_menu', array( &$this, 'add_admin_panel_pages' ) );
 		add_action( 'admin_init', array( &$this, 'register_theme_settings' ) );
 		add_action( 'admin_init', array( &$this, 'remove_custom_background_submenu' ) );
+		add_action( 'admin_bar_menu', array( &$this, 'bricks_admin_bar_menu' ), 99 );
 		
 		// If our database options is still empty, let's set our default options. 
 		if ( ! get_option( 'theme_options' ) )
@@ -110,10 +111,57 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		if ( ! $admin_page )
 			return;
 		
+		add_action( 'load-'.$admin_page, array( &$this, 'bricks_admin_help' ) );
 		add_action( 'admin_print_scripts-' . $admin_page, array( &$this, 'scripts' ) );
 		add_action( 'admin_print_styles-' . $admin_page, array( &$this, 'styles' ) );
 	}
 	
+	
+	/**
+	 * Add help tab to the theme admin settings page.
+	 *
+	 * @return false if not on the theme options page
+	 * @since Bricks 1.0.0
+	 */
+	public function bricks_admin_help() {
+		
+		$current_screen = get_current_screen();
+
+		// Overview
+		$current_screen->add_help_tab( array(
+			'id'		=> 'overview',
+			'title'		=> __( 'Overview', 'bricks' ),
+			'content'	=>
+				'<p><strong>' . __( 'Bricks Theme by <a href="http://cubrick.brickpress.us/" target="_blank">Raphael Villanea</a>', 'bricks' ) . '</strong></p>' .
+				'<p>' . __( 'Thank you for using Bricks theme. I hope you will have as much fun customizing your blog as I have building this theme. I believe that while knowledge can be taught, imagination and creativity can not - it can be inspired.', 'bricks' ) . '</p>' .
+				'<p>' . __( 'Bricks theme gives you control over your website\'s stylesheet and positioning of some HTML blocks such as the custom header, navigation menu and image slider.', 'bricks' ) . '</p>'
+		) );
+
+		// Screen Content
+		$current_screen->add_help_tab( array(
+			'id'		=> 'sections',
+			'title'		=> __( 'Sections', 'bricks' ),
+			'content'	=>
+				'<p>' . __( '<strong>General Section</strong> &mdash; sets the overall layout of your website and <strong><em>global</em></strong> styles. This section also sets HTML elements found on your content and your website\'s custom background.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Header Section</strong> &mdash; sets site logo, site header and site description. This also sets your custom header.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Navigation Section</strong> &mdash; Bricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Content Section</strong> &mdash; sets the style for your content boxes.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Sidebars Section</strong> &mdash; set the color and opacity for the primary sidebar widgets if you\'re using a custom background to give it contrast.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Social Section</strong> &mdash; add your social network profiles. This also lets you add webmaster tools meta data if you haven\'t done so already.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Footer Section</strong> &mdash; sets footer logo, copyright notice and a site badge or a wide ad banner', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Layout Section</strong> &mdash; exlpore advanced styling options. Try setting images for sections with wrappers and manipulate opacity to give your website a distinct flavor.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Reset Section</strong> &mdash; resets theme settings to defaults. This does not reset text entries such as copyright notice, Creative Commons license, and footer ads. This does not reset social media entries and webmaster tools entries as well. To remove the aforementioned entries, click on the the <strong>Clear Field</strong> button found at the bottom of each entry field.', 'bricks' ) . '</p>'
+		) );
+
+		// Help Sidebar
+		$current_screen->set_help_sidebar(
+			'<p><strong>' . __( 'For more information:', 'bricks' ) . '</strong></p>' .
+			'<p><a href="http://brickstheme.brickpress.us/" target="_blank">' . __( 'Bricks Live Demo', 'bricks' ) . '</a></p>' .
+			'<p><a href="http://brickpress.us/" target="_blank">' . __( 'Bricks Support', 'bricks' ) . '</a></p>' .
+			'<p><strong>' . __( 'For developers:', 'bricks' ) . '</strong></p>' .
+			'<p><a href="https://github.com/brickpress/bricks-theme/" target="_blank">' . __( 'Github Repository', 'bricks' ) . '</a></p>'
+		);
+	}
 	
 	/**
 	 * Removes the Custom Background, Custom Header and Theme Editor submenu pages.
@@ -309,19 +357,8 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	 * @since 1.0.0
 	 */
 	public function render_theme_settings_page() {
-	?>
-	
-    	<div id="admin-page-header"><div class="default-state">
-			<?php echo '<div id="bricks-icon"><img src="' .trailingslashit( BRICKS_IMAGES ). 'admin/brickpress64' . '.png' . '" /></div><div id="theme-title"><h2>' . __( THEMENAME.' Theme Options', 'bricks' ) . '</h2>';
-            echo '<p class="bricks-author">' . __( 'Bricks Theme by ', 'bricks' ) . '<a href="' .esc_url('http://www.brickpress.us'). '">' . __( 'BrickPress', 'bricks' ) . '</a></p></div>
-            <input type="hidden" name="current_tab" id="current_tab" value="#bricks_menu_general" />';
-            if ( isset( $_REQUEST['settings-updated'] ) && $_REQUEST['settings-updated'] == true ) {
-                echo '<div class="updated-fade"><p>' . __( 'Theme options updated.', 'bricks' ) . '</p></div>';
-            }
-		echo '</div></div>';
-		echo '<div id="donate-button"><form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="L9HPGNY39D6FQ"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form><div id="donate-minifig"></div></div>';
-		echo '<div class="clearfix"></div>';
 		
+		echo '<input type="hidden" name="current_tab" id="current_tab" value="#bricks_menu_general" />';
 		echo '<form action="options.php" method="post" enctype="multipart/form-data">';
 			
 		settings_fields( 'theme_options' );
@@ -506,5 +543,27 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 			return false; //Invalid hex color code
 		}
 		return $returnAsString ? implode($seperator, $rgbArray) : $rgbArray; // returns the rgb string or the associative array
+	}
+	
+	
+	/**
+	 * Add a menu item to wp_admin_bar.
+	 * 
+	 * @param     $wp_admin_bar
+	 * @access    public
+	 *
+	 * @since     1.0.0
+	 */
+	public function bricks_admin_bar_menu( $wp_admin_bar ) {
+		
+		global $wp_admin_bar;
+		
+		// Bail early if current user can not edit theme options.
+		if ( !current_user_can( 'manage_options' ) )
+			return;
+			
+		$bricks_url = admin_url( 'themes.php?page=theme-options' );
+		
+		$wp_admin_bar->add_menu( array( 'id' => 'bricks-menu', 'title' => __( 'Bricks Theme', 'bricks' ), 'href'  => $bricks_url ) );
 	}
 }

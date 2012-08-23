@@ -597,3 +597,43 @@ label.iPhoneCheckLabelOff span {
 	width: 100%;
 	background: url(images/iphone-checkboxes/slider_center.png);
 }
+
+
+/* Help Tabs */
+#screen-meta {
+    background-color: #F1F1F1;
+    border-color: #CCCCCC;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+#contextual-help-back {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.contextual-help-tabs a:hover {
+    color: #333333;
+}
+#contextual-help-back, .contextual-help-tabs .active {
+    border-color: #CCCCCC;
+}
+.contextual-help-tabs .active, .contextual-help-tabs .active a, .contextual-help-tabs .active a:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #333333;
+}
+#screen-options-link-wrap, #contextual-help-link-wrap {
+    background-color: #E3E3E3;
+    background-image: -moz-linear-gradient(center bottom , #DFDFDF, #F1F1F1);
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+}
+#screen-meta-links a.show-settings {
+    color: #1E5A8E;
+}
+#screen-meta-links a.show-settings:hover {
+    color: #333333;
+}
+#screen-meta-links a.show-settings {
+    background: url("../images/arrows.png") no-repeat scroll right 4px transparent;
+}
+#screen-meta-links a.show-settings.screen-meta-active {
+    background: url("../images/arrows.png") no-repeat scroll right -31px transparent;
+}

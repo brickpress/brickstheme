@@ -241,7 +241,7 @@
 	body {
 		padding: 0;
 	}
-	#page {
+	.page {
 		margin-top: 0;
 	}
 	#branding {
@@ -263,7 +263,7 @@
 	footer.entry-meta a[rel=bookmark]:visited:after {
 		content: " [" attr(href) "] "; /* Show URLs */
 	}
-	#page {
+	.page {
 		clear: both !important;
 		display: block !important;
 		float: none !important;

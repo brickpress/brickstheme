@@ -213,7 +213,7 @@ body {
 	background-image: url(../images/mindstorms/small-diagonals.png);
 	background-repeat: repeat;
 }
-#page {
+.page {
 	background: #fff;
 }
 ol, ul {

@@ -350,6 +350,15 @@ $this->settings['footer-navigation'] = array(
 	'class'    => 'open_subsection',
 );
 
+	$this->settings['show_footer_nav'] = array(
+		'section' => 'navigation',
+		'title'   => __( 'Show Footer Navigation', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'checkbox',
+		'std'     => 1,
+		'class'   => 'iphone_checkboxes',
+	);
+
 	$this->settings['footernav_text'] = array(
 		'section'  => 'navigation',
 		'archtype' => 'structure',

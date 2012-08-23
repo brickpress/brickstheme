@@ -14,6 +14,7 @@ $article_container = bricks_theme_option('article_container'); ?>
     
         <?php bricks_before_content(); ?>
         <div id="content" role="main">
+        <?php bricks_search_header(); ?>
 
         <?php bricks_before_article(); ?>
         <article id="post-0" class="post error404 not-found <?php echo $article_container; ?>" <?php if( $article_container == 'sharp-edges' ) {
@@ -58,7 +59,5 @@ $article_container = bricks_theme_option('article_container'); ?>
 
     </div><!-- #primary -->
 
-<?php if( bricks_theme_option( 'singular_sidebar' ) == 'sidebar' ) {
-	      get_sidebar();
-	  } ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

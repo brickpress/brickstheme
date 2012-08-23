@@ -27,7 +27,7 @@
 .nivoSlider {
 	margin: 0 auto;
 	position: relative;
-	width: 100%;
+	width: 100% !important;
 	height: auto;
 	overflow: hidden;
 }
@@ -187,6 +187,9 @@
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-khtml-border-radius: 6px;
+}
+.left-sidebar .nivo-caption {
+	right: 30px;
 }
 .nivo-caption a { 
     color: #efe9d1;

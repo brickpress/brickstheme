@@ -123,12 +123,6 @@
               
     <div id="content-wrapper">
     	<div class="inner-content">
- 
-            <?php if( is_archive() ) {
-                      bricks_archive_header();
-                  } elseif( is_search() || is_404() ) {
-                      bricks_search_header();
-                  } ?>
 
             <?php bricks_before_main(); ?>
-                <div id="main">
+            <div id="main">

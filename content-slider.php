@@ -26,22 +26,32 @@ get_header(); ?>
                 <h1 class="showcase-heading"><?php _e( 'Recent Posts', 'bricks' ); ?></h1>
 
 				<?php
+				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				$showcase_recent_posts = bricks_theme_option('showcase_recent_posts');
-				// Display our recent posts, showing full content for the very latest, ignoring Aside posts.
-				$recent_args = array(
-					'order' => 'DESC',
-					'posts_per_page' => $showcase_recent_posts,
-					'post__not_in' => get_option( 'sticky_posts' ),
-					'no_found_rows' => true,
+				
+				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+				$post_per_page = $showcase_recent_posts;
+				$do_not_show_stickies = 1;     // 0 to show stickies
+				
+				$args = array(
+					'orderby'             => 'date',
+					'order'               => 'DESC',
+					'paged'               => $paged,
+					'posts_per_page'      => $post_per_page,
+					'offset'              => '0',
+					'ignore_sticky_posts' => $do_not_show_stickies
 				);
-
+				
+				$temp = $wp_query;              // assign orginal query to temp variable for later use  
+				$wp_query = null;
+				//$wp_query = new WP_Query($args); 
 				// Our new query for the Recent Posts section.
-				$recent = new WP_Query( $recent_args );
+				$wp_query = new WP_Query( $args );
 
 				// The first Recent post is displayed normally
-				if ( $recent->have_posts() ) : $recent->the_post();
+				if ( have_posts() ) :
 
-				while ( $recent->have_posts() ) : $recent->the_post();
+				while ( $wp_query->have_posts() ) : $wp_query->the_post();
 					// Set $more to 0 in order to only get the first part of the post.
 					global $more;
 					$more = 0;
@@ -53,6 +63,8 @@ get_header(); ?>
             <?php bricks_content_nav(); ?>
 					
             <?php endif; ?>
+
+<?php $wp_query = $temp; //reset back to original query ?>
 
             </div><!-- #content -->
         <?php bricks_after_content(); ?>

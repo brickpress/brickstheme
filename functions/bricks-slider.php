@@ -6,6 +6,11 @@
  * @subpackage Functions
  */
 
+/** 
+ * Bricks theme content slider powered by nivoSlider.
+ *
+ * @since 1.0.0
+ */
 function bricks_featured_slider() {
 	
 	global $theme_options, $post;
@@ -59,13 +64,13 @@ function bricks_featured_slider() {
                 <?php endif; // End check for sticky posts. ?>       
                         
                 <script type="text/javascript">
-				<!--
+				<!--//--><![CDATA[//><!--
                 jQuery(window).load(function() {
                     jQuery('#slider').nivoSlider({ pauseTime: parseInt(jQuery('#slider_timer').val() * 1200), pauseOnHover: true, effect: '<?php echo $slider_effects; ?>', captionOpacity: 1, controlNav: true, controlNavThumbs:false, controlNavThumbsFromRel:true, boxCols:8, boxRows:4, manualAdvance: false, afterLoad: function(){ 
 					jQuery('.inner-slider').css('visibility', 'visible');
                     } });
                 });
-				//-->
+				//--><!]]>
                 </script>
             
             <?php endif; // End check for published posts. ?>

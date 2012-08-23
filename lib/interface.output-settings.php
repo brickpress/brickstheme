@@ -1,6 +1,6 @@
 <?php
 /**
- * Renders our theme options form fields.
+ * Renders Bricks theme options form fields.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,10 +43,11 @@
 					echo '<li><a href="#' . $section_tab . '" />' . $label . '</a></li>';
 				}
 				echo '</ul>';
-				echo '<script type="text/javascript">
+				echo '<script type="text/javascript"><!--//--><![CDATA[//><!--
 					  jQuery(document).ready(function($) {
 						  $(".subsectiontabs").tabs({ fx: { opacity: "toggle",duration: 500 } });	
 					   });
+					  //--><!]]> 
 					  </script>';
 				} elseif( $class == 'headings' ) {
 					echo '<div id="' .$id. '" class="' .$class. '"><label for="' .$id. '"><h3>' .$title. '</h3></label>';	
@@ -160,7 +161,7 @@
 						echo '<input type="radio" name="theme_options[' . $id . ']" id="' . $value . '" value="' . esc_attr( $value ) . '" ' . checked( $options[$id], $value, false ) . '/><label for="' .$value. '">' .$label. '</label>';
 					}
 					echo '</div>';	
-					echo '<script>jQuery(document).ready(function($) {
+					echo '<script type="text/javascript">jQuery(document).ready(function($) {
 						$(function() {
 							$("#radio'.$id.'").buttonset();
 						});
@@ -205,7 +206,7 @@
 				echo '<div id="slider-range-min" style="width: 200px; padding: 0 !important;">';
 				echo '<input id="' .$id. '" name="theme_options[' .$id. ']" value="' .esc_attr( $options[$id] ). '" type="text" class="' .$class. '" style="width:40px;" /><em>' .$unit. '</em>';
 				echo '<div id="slider_' .$id. '"></div></div>';
-					echo '<script>jQuery(document).ready(function($) {
+					echo '<script type="text/javascript">jQuery(document).ready(function($) {
 					$( "div#' .$id. ' #slider_' .$id. '" ).slider({ range: "min", value: ' .$options[$id]. ', min: ' .$min. ', max: ' .$max. ', step: ' .$step. ',
 							slide: function( event, ui ) {
 								$( "div#' .$id. ' #' .$id. '" ).val( ui.value );

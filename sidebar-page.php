@@ -1,10 +1,12 @@
 <?php
 /**
- * The default template for displaying all pages.
+ * Template Name: Sidebar Page Template
+ * Description: A Page Template that shows a page with a sidebar.
+ *
+ * Sidebar bar layout will be the same with the one selected on the
+ * theme options admin page.
  *
  * @package Bricks
- * @subpackage Bricks
- * @since Bricks 1.0.0
  */
 get_header();
 
@@ -61,4 +63,5 @@ $article_container = bricks_theme_option('article_container'); ?>
 			</div><!-- #content -->
 		</div><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

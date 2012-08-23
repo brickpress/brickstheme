@@ -55,7 +55,7 @@ $this->settings['post-layout'] = array(
 	$this->settings['singular_sidebar'] = array(
 		'section' => 'content',
 		'title'   => __( 'Single Post Sidebar', 'bricks' ),
-		'desc'    => __( 'Displays sidebar on single post, archives and search.', 'bricks' ),
+		'desc'    => __( 'Show/hide primary sidebar on single posts while retaining your sidebar layout on blog posts, archives and search. <p><strong>TIP: </strong>Hide primary sidebar on single posts to have your readers dig right in your content.', 'bricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
@@ -550,7 +550,7 @@ $this->settings['post-formats'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#FF9900'
+		'std'	  => '#58c908'
 	);
 	
 	$this->settings['linkformat_color2'] = array(
@@ -560,7 +560,7 @@ $this->settings['post-formats'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#F89100'
+		'std'	  => '#398A00'
 	);
 	
 	$this->settings['linkformat_opacity'] = array(
@@ -715,7 +715,7 @@ $this->settings['featured-slider'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '700',
+		'std'	  => '685',
 		'unit'    => 'px'
 	);
 	
@@ -726,7 +726,7 @@ $this->settings['featured-slider'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '394',
+		'std'	  => '390',
 		'unit'    => 'px'
 	);
 	

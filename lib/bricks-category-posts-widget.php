@@ -10,7 +10,7 @@ class Bricks_Category_Posts_Widget extends WP_Widget {
 		$widget_ops = array('classname' => 'widget_category_posts', 'description' => __( "Show posts in a category.", 'bricks' ) );
 		
 		/* Create the widget. */
-		parent::__construct('category-posts', __('Catgeory Posts', 'bricks'), $widget_ops );
+		parent::__construct('category-posts', __('Bricks Category Posts', 'bricks'), $widget_ops );
 		$this->alt_option_name = 'widget_category_posts';
 
 		add_action( 'save_post', array(&$this, 'flush_widget_cache') );
@@ -37,7 +37,7 @@ class Bricks_Category_Posts_Widget extends WP_Widget {
 		ob_start();
 		extract($args);
 
-		$title = apply_filters('widget_title', empty($instance['category_name']) ? __('Recent Posts', 'bricks') : $instance['title'], $instance, $this->id_base);
+		$title = apply_filters('widget_title', empty($instance['category_name']) ? __('Category Posts', 'bricks') : $instance['title'], $instance, $this->id_base);
 		if ( empty( $instance['numposts'] ) || ! $numposts = absint( $instance['numposts'] ) )
  			$numposts = 10;
 			
@@ -86,12 +86,13 @@ class Bricks_Category_Posts_Widget extends WP_Widget {
 
 	function form( $instance ) {
 		
-		/* Set defaults */
-		$title = isset($instance['title']) ? esc_attr($instance['title']) : $this->get_field_name('category_name');
-		$numposts = isset($instance['numposts']) ? absint($instance['numposts']) : 5;
-		
 		/* Category list */
         $categories = get_categories(array('type' => 'post', 'hide_empty' => 0, 'orderby' => 'name', 'order' => 'ASC', 'taxonomy' => 'category'));
+		
+		/* Set defaults */
+		$title = isset($instance['title']) ? esc_attr($instance['title']) : '';
+		$numposts = isset($instance['numposts']) ? absint($instance['numposts']) : 5;
+		$category_name = $this->get_field_name('category_name');
 ?>
 
 	<p>
@@ -107,10 +108,10 @@ class Bricks_Category_Posts_Widget extends WP_Widget {
 	<p><!-- Category -->
 	    <label for="<?php echo $this->get_field_id('category_name'); ?>"><?php _e('Category: ', 'bricks'); ?></label>
 	    <select id="<?php echo $this->get_field_id('category_name'); ?>" name="<?php echo $this->get_field_name('category_name'); ?>">
-                <option value="-1"<?php if(-1 == $category_name) { ?> selected="selected"<?php } ?>>Current category of post</option>
-                <?php
+        	<option value="-1"<?php if(-1 == $category_name) { ?> selected="selected"<?php } ?>>Current category of post</option>
+        <?php
 		foreach($categories as $category) {
-		    ?>
+		?>
 		    <option value="<?php echo $category->term_id; ?>"<?php if($category->term_id == $category_name) { ?> selected="selected"<?php } ?>><?php echo $category->name.' ('.$category->count.')'; ?></option>
 		    <?php
 		}

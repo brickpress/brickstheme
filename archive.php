@@ -14,15 +14,16 @@ $article_container = bricks_theme_option('article_container'); ?>
         <?php bricks_before_content(); ?>
         
         <div id="content" role="main">
+        <?php bricks_archive_header(); ?>
 
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         
         <?php bricks_before_article(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'sharp-edges' ) {
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( $article_container == 'sharp-edges' ) {
             echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
             
             <?php $post_format = strtolower( get_post_format() ); ?>
-            <?php if( $post_format == '' || $post_format == 'gallery' ) : ?>
+            <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' ) : ?>
             <header class="entry-header">
                 <hgroup>
                 <?php bricks_post_title(); ?>
@@ -52,6 +53,7 @@ $article_container = bricks_theme_option('article_container'); ?>
             <footer class="entry-meta">
                 <?php bricks_post_date_text(); ?>
                 <?php bricks_comments_link(); ?>
+                <br />
                 <?php bricks_post_footer(); ?>
                 <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
             </footer>
@@ -76,7 +78,5 @@ $article_container = bricks_theme_option('article_container'); ?>
 
     </div><!-- #primary -->
 
-<?php if( bricks_theme_option( 'singular_sidebar' ) == 'sidebar' ) {
-	      get_sidebar();
-	  } ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -514,7 +514,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#58c908'
+		'std'	  => '#FF9900'
 	);
 	
 	$this->settings['widget_button2'] = array(
@@ -524,7 +524,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#398A00'
+		'std'	  => '#F89100'
 	);
 	
 	$this->settings['widget_button_opacity1'] = array(
@@ -573,7 +573,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#53b30e'
+		'std'	  => '#F89100'
 	);
 	
 	$this->settings['widget_button_hover2'] = array(
@@ -583,7 +583,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#3e9400'
+		'std'	  => '#FF9900'
 	);
 	
 	$this->settings['widget_button_hover_opacity1'] = array(
@@ -643,7 +643,7 @@ $this->settings['close-footer-text-sub'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#58c908'
+		'std'	  => '#FF9900'
 	);
 	
 	$this->settings['widget_button_fontface'] = array(

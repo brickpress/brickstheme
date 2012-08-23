@@ -1,6 +1,6 @@
 <?php
 /**
- * Post presenter for posts post type.
+ * This is the default template for posts.
  *
  * @package Bricks
  * @since 1.0.0
@@ -8,11 +8,11 @@
 $article_container = bricks_theme_option('article_container');
 		
         bricks_before_article(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'sharp-edges' ) {
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( $article_container == 'sharp-edges' ) {
             echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
         
         <?php $post_format = strtolower( get_post_format() ); ?>
-        <?php if( $post_format == '' || $post_format == 'gallery' ) : ?>
+        <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' ) : ?>
 			<header class="entry-header">
             	<hgroup>
 					<?php bricks_post_title(); ?>
@@ -21,23 +21,16 @@ $article_container = bricks_theme_option('article_container');
         <?php endif; ?>
         <div class="clearfix"></div>
             
-            <?php if ( is_search() || is_archive() || is_category() || is_tag() ) : ?> 
-            <div class="entry-summary">
-				<?php the_excerpt(); ?>
-            </div><!-- .entry-summary -->
-			
-            <?php else : ?>
-            
             <div class="entry-content">
                 <?php bricks_before_entry_content();
 				
-					if( $post_format == 'chat' ) {
+					if( has_post_format('chat') ) {
 						echo bricks_chat_content();
 					} elseif( has_post_format('link') ) {
 						echo bricks_link_content();
-					} elseif(  $post_format == 'quote' ) {
+					} elseif(  has_post_format('quote') ) {
 						echo bricks_quote_content();
-					} elseif(  $post_format == 'status' ) {
+					} elseif(  has_post_format('status') ) {
 						echo bricks_status_content();
 					} else {
 						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) );
@@ -46,14 +39,13 @@ $article_container = bricks_theme_option('article_container');
                 <?php wp_link_pages( bricks_link_pages_args() ); ?>
                 
                 <?php bricks_after_entry_content(); ?>
-            </div><!-- .entry-content -->
-            
-            <?php endif; ?>
+            </div><!-- .entry-content -->        
 			<div class="clearfix"></div>
             
 			<footer class="entry-meta">
                 <?php bricks_post_date_text(); ?>
                 <?php bricks_comments_link(); ?>
+                <br />
                 <?php bricks_post_footer(); ?>
                 <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
 			</footer>

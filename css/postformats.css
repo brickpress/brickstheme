@@ -4,23 +4,33 @@
 
 /* =Post Format Containers
 ----------------------------------------------- */
-#content > article.format-standard .entry-content,
 #content > article.format-aside .entry-content,
-#content > article.format-gallery .entry-content,
-#content > article.format-quote .entry-content,
-#content > article.format-status .entry-content,
 #content > article.format-audio .entry-content,
+#content > article.format-chat .entry-content,
+#content > article.format-gallery .entry-content,
+#content > article.format-link .entry-content,
+#content > article.format-quote .entry-content,
+#content > article.format-standard .entry-content,
+#content > article.format-status .entry-content,
 .attachment #content > article .entry {
 	margin: 2% 3% 0 3%;
 }
-.single #content > article.format-audio .entry-content,
-.single #content > article.format-chat .entry-content,
-#content > article.format-image .entry-content a.tumblr_blog,
-.blog #content > article.format-video .entry-content .sharedaddy,
-.blog #content > article.format-image .entry-content .sharedaddy {
+
+#content > article.format-image .entry-content p > img + p,
+#content > article.format-video .entry-content p,
+#content > article.format-gallery .entry-content .sharedaddy,
+#content > article.format-image .entry-content .sharedaddy,
+#content > article.format-video .entry-content .sharedaddy {
 	margin: 0 3%;
 }
-.single #content > article .entry-content {
+#content > article div.fb-mentions.entry-meta,
+.single #content > article.format-audio .entry-content,
+.single #content > article.format-chat .entry-content,
+#content > article.format-image .entry-content a.tumblr_blog {
+	margin: 0 3%;
+}
+.single #content > article .entry-content,
+.search.search-results #content > article.format-image .entry-content p {
 	margin: 0 3%;
 }
 .search #content > article.not-found .entry-content,
@@ -29,9 +39,6 @@
 }
 p.none-found {
 	padding-top: 2%;
-}
-.search.search-results #content > article .entry-content {
-	margin: 0 3%;
 }
 .blog #content > article.format-video .entry-content p,
 #content > article div.attribution {
@@ -43,11 +50,6 @@ p.none-found {
 #content > article.format-status .entry-content {
 	padding: 2.65% 0;
 }
-#content > article.format-chat .entry-content,
-#content > article.format-link .entry-content {
-	padding-top: 2.65%;
-	margin: 0 3%;
-}
 #content > article.format-video iframe,
 #content > article.format-image div.wp-caption,
 #content > article.format-image .entry-content img,
@@ -57,35 +59,48 @@ article > .audio-content {
 	margin-bottom: 1.65%;
 	width: 100%!important;
 }
-#content > article.format-status .entry-content, {
+#content > article.format-status .entry-content {
 	margin-top: 2%;
 }
 article.format-standard > .entry-content object {
 	margin: 0 auto;
 	width: 100%;
 }
-.page-template-default #content > article .entry-content {
+.page-template-default #content > article,
+.single.singular-fullwidth #content > article {
 	padding: 2% 3%;
+}
+#content > article.format-image .entry-content,
+.single #content > article.format-video .entry-content p,
+.single #content > article.format-video .entry-content .sharedaddy,
+.page-template-default #content > article .entry-content,
+.single.singular-fullwidth #content > article .entry-content {
+	margin: 0;
 }
 .page-template-showcase-php #content > article,
 .page-template-showcase-php #content > article .entry-content {
-	padding: 0;
+	padding: 0 0 1%;
 }
-.page-template-showcase-php #content > article.format-video .entry-content,
-.page-template-showcase-php #content > article.format-image .entry-content,
-.author.archive #content > article.format-video .entry-content,
-.author.archive #content > article.format-image .entry-content {
-	padding: 0 3%;
+
+/* Search results */
+.search.search-results #content > article.format-audio .entry-content,
+.search.search-results #content > article.format-status .entry-content {
+	padding: 0;
 }
 .single-attachment #content > article .entry h5 {
 	margin: 2% auto;
+}
+#content > article .entry-content .pd-rating + p {
+	display: none;
 }
 .entry-content p > a + img {
 	padding: 0!important;
 	margin: 0!important;
 	width: 100%!important;
 }
-
+#content > article .entry-content .pd-rating {
+	margin: 0 3%;
+}
 
 /* =Post Format Icons
 ----------------------------------------------- */
@@ -142,17 +157,21 @@ article.format-standard > .entry-content object {
 
 /* =Footer Meta
 ----------------------------------------------- */
+.by-author {
+	margin-right: 5px;
+}	
 .entry-meta .tags {
 	background: url(../images/postformats/tag.png) no-repeat scroll 0% 50%;
-	padding: 8px 12px 8px 8px;
+	padding: 8px;
+	margin-left: 5px;
 }
 .entry-meta .category {
 	background: url(../images/postformats/category.png) no-repeat scroll 0% 50%;
-	padding: 8px 12px 8px 8px;
+	padding: 8px;
 }
 .entry-meta .comments-link {
 	background: url(../images/postformats/comment.png) no-repeat scroll 0% 50%;
-	padding: 8px 16px 8px 8px;
+	padding: 8px 12px 8px 8px;
 }
 .entry-meta .edit-link,
 .comment-meta .edit-link {
@@ -160,8 +179,19 @@ article.format-standard > .entry-content object {
 }
 .entry-meta .edit-link {
 	position: absolute;
-	right: 0;
+	right: 5px;
 	bottom: 5px;
+}
+.single .edit-link {
+	position: absolute;
+	top: 0.6%;
+	right: 2%;
+}
+.page-template-default .edit-link,
+.page-template-sidebar-page-php .edit-link {
+	position: absolute;
+	top: 1.6%;
+	right: 2%;
 }
 .entry-meta .edit-icon {
 	background: url(../images/postformats/edit.png) no-repeat scroll 0% 50%;
@@ -169,15 +199,15 @@ article.format-standard > .entry-content object {
 }
 .entry-meta .article-post {
 	background: url(../images/postformats/standard.png) no-repeat scroll 0% 50%;
-	padding: 8px 22px 8px 0;
+	padding: 8px 16px 8px 0;
 }
 .entry-meta .aside-post {
 	background: url(../images/postformats/aside.png) no-repeat scroll 0% 50%;
-	padding: 8px 22px 8px 0;
+	padding: 8px 16px 8px 0;
 }
 .entry-meta .audio-post {
 	background: url(../images/postformats/audio.png) no-repeat scroll 0% 50%;
-	padding: 8px 22px 8px 0;
+	padding: 8px;
 }
 .entry-meta .chat-post {
 	background: url(../images/postformats/chat.png) no-repeat scroll 0% 50%;
@@ -185,11 +215,11 @@ article.format-standard > .entry-content object {
 }
 .entry-meta .gallery-post {
 	background: url(../images/postformats/gallery.png) no-repeat scroll 0% 50%;
-	padding: 8px 22px 8px 0;
+	padding: 8px 16px 8px 0;
 }
 .entry-meta .link-post {
 	background: url(../images/postformats/link.png) no-repeat scroll 0% 50%;
-	padding: 8px 22px 8px 0;
+	padding: 8px 16px 8px 0;
 }
 .entry-meta .image-post {
 	background: url(../images/postformats/image.png) no-repeat scroll 0% 50%;
@@ -201,11 +231,11 @@ article.format-standard > .entry-content object {
 }
 .entry-meta .status-post {
 	background: url(../images/postformats/status.png) no-repeat scroll 0% 50%;
-	padding: 8px 22px 8px 0;
+	padding: 8px 16px 8px 0;
 }
 .entry-meta .video-post {
 	background: url(../images/postformats/video.png) no-repeat scroll 0% 50%;
-	padding: 8px 22px 8px 0;
+	padding: 8px 16px 8px 0;
 }
 
 /* =Aside
@@ -246,7 +276,7 @@ article.format-standard > .entry-content object {
 	margin: 0;
 	list-style: none;
 	line-height: 1.825;
-	padding-bottom: 1.625%;
+	padding: 2% 0;
 }
 .bricks-chat li {
 	color: #373737;
@@ -270,6 +300,8 @@ article.format-standard > .entry-content object {
 }
 #content .gallery a img {
 	border: none;
+	width: 100% !important;
+	height: auto !important;
 }
 img#wpstats {
 	display: block;
@@ -306,6 +338,7 @@ img#wpstats {
 #content > article.format-image .entry-content a + img {
 	width: 100%!important;
 	margin: 0!important;
+	padding-bottom: 1%;
 }
 #content > article.format-image div.entry-content + p {
 	margin: 0 auto;
@@ -320,13 +353,17 @@ img#wpstats {
 /* =Link
 ----------------------------------------------- */
 .link-content {
-	background: #cc6600; /* Show solid color for older browsers */
-	background: -moz-linear-gradient(#ff9966, #CC6600) repeat scroll 0 0 transparent;
-	background: -o-linear-gradient(top, #ff9966, #cc6600);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff9966), to(#cc6600)); /* older webkit syntax */
-	background: -webkit-linear-gradient(top, #ff9966, #cc6600);
+	background: #398A00; /* Show solid color for older browsers */
+	background: -moz-linear-gradient(#58c908, #398A00) repeat scroll 0 0 transparent;
+	background: -o-linear-gradient(top, #58c908, #398A00);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#58c908), to(#398A00)); /* older webkit syntax */
+	background: -webkit-linear-gradient(top, #58c908, #398A00);
 	min-height: 45px;
+	height: auto;
+	width: 96%;
+	display: inline-block;
 	padding: 1% 2% 0 2%;
+	margin: 2% 0;
 }
 .link-content {
 	border-radius: 6px;

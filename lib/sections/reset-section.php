@@ -31,7 +31,7 @@ $this->settings['reset-options'] = array(
 		'type'    => 'checkbox',
 		'std'     => 0,
 		'class'   => 'iphone_checkboxes',
-		'desc'    => __( 'Check this box and click on <strong>Save Changes</strong> to reset theme options to their defaults.', 'bricks' )
+		'desc'    => __( 'Check this box and click on <strong>Save Changes</strong> to reset theme options to their defaults. <p><strong>', 'bricks' )
 	);
 
 $this->settings['close-reset-tab'] = array(

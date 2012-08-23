@@ -126,7 +126,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		if( bricks_theme_option('show_adminbar') == false ) {
 			add_filter( 'show_admin_bar', '__return_false' );
 		}
-		
+
 		add_action( 'widgets_init', array( &$this, 'bricks_widgets_init' ) );
 		
 		add_filter( 'admin_init', array( &$this, 'bricks_editor_style' ) );
@@ -146,7 +146,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		add_filter( 'the_content',  array( &$this, 'valid_attachment_rel' ) );
 	}
 	
-	
+		
 	/**
 	 * Register default sidebars and widgets.
 	 * 
@@ -341,10 +341,15 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				max-width: <?php echo bricks_theme_option('page_width'); ?>px;
 				min-width: <?php echo bricks_theme_option('content_width'); ?>px;
 			}
-			#primary, .left-sidebar #primary {
+			#primary,
+			.left-sidebar #primary,
+			.error404 #primary,
+			.single.singular-fullwidth #primary,
+			.error404.left-sidebar #primary {
 				margin-top: <?php echo bricks_theme_option('content_top_margin'); ?>px;
 			}
-			#secondary, .left-sidebar #secondary {
+			#secondary,
+			.left-sidebar #secondary {
 				margin-top: <?php echo bricks_theme_option('sidebar_top_margin'); ?>px;
 			}
 			.page-template-content-slider-php .nivoSlider {
@@ -383,7 +388,10 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			#content nav a.page-numbers.next,
 			#content nav span.page-numbers.current,
 			.entry-date.graphic,
-			.comments-link a,
+			.comments-link a
+			.entry-meta .edit-link a,
+			.single .edit-link a,
+			.page .edit-link a ,
 			.submit-btn {
 				background: <?php echo $button_color1; ?>; /* Show a solid color for older browsers */
 				background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
@@ -400,7 +408,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			#content nav a.page-numbers.prev:hover,
 			#content nav a.page-numbers.next:hover,
 			#content nav span.page-numbers.current,
-			.edit-link a:hover,
+			.entry-meta .edit-link a:hover,
+			.single .edit-link a:hover,
+			.page .edit-link a:hover,
 			.comments-link a:hover,
 			.submit-btn:hover {
 				background: <?php echo $button_hover1; ?>; /* Show a solid color for older browsers */
@@ -426,6 +436,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			pre {
 				background: <?php echo bricks_theme_option('preformat_background'); ?>;
 				color: <?php echo bricks_theme_option('preformat_text'); ?>;	
+			}
+			.page-template-showcase-php .inner-slider {
+				max-width: <?php echo bricks_theme_option('large_feature_width'); ?>px;
 			}
 		</style>
         <?php endif;
@@ -607,9 +620,6 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			font-weight: <?php echo bricks_theme_option('footernav_fontweight'); ?>;
 			text-transform: <?php echo bricks_theme_option('footernav_text_transform'); ?>;
 		}
-		#footer-navmenu li {
-			border-right: 1px solid rgba(<?php echo $this->hex_to_rgb($footernav_text_color) .','. bricks_theme_option('footernav_text_opacity'); ?>);
-		}
 		</style>
         <?php endif;
 	}
@@ -649,6 +659,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		.search-header .page-title,
 		.search .page-title,
 		.showcase-heading,
+		.archive-heading,
+		.search-heading,
 		 #content > .widgettitle,
 		#content article.error404 > .widgettitle {
 			font-family: <?php echo bricks_theme_option('headlines_fontface'); ?>;
@@ -751,7 +763,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$fwidget_bg_color = bricks_theme_option('fwidget_bg_color');
 		$article_bg_color = bricks_theme_option('article_bg_color');
 		?>
-		#supplementary .widget-title {
+		#supplementary .widget-title, 
+		#supplementary .widget-title > a {
 			font-family: <?php echo bricks_theme_option('fwidget_title_fontface'); ?>;	
 			color: rgba(<?php echo $this->hex_to_rgb($fwidget_title_color) .','. bricks_theme_option('fwidget_title_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('fwidget_title_size'); ?>px;
@@ -781,6 +794,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		.widget input.field,
 		.widget .search-field input[type=text] {
 			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity2'); ?>) );
+		}
+		#supplementary .widget.search input[type=text] {
+			border-right: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity2'); ?>) );
 		}
 		#subscribe-blog input[type=submit],
 		#content .searchform input[type=submit],
@@ -879,12 +895,22 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$linkformat_color2 = bricks_theme_option('linkformat_color2');
 		if( $linkformat_color1 ) : ?>
         <style type="text/css">
-		.link-content {
-			background: <?php echo $linkformat_color2; ?>; /* Show a solid color for older browsers */
+		.link-content,
+		#content input[type=submit],
+		.post-password-required input[type=submit] {
+			background: <?php echo $linkformat_color1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) );
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) );
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) ) ); /* older webkit syntax */
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) );
+		}
+		#content input:hover[type=submit],
+		.post-password-required input:hover[type=submit] {
+			background: <?php echo $linkformat_color2; ?>; /* Show a solid color for older browsers */
+			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) );
+			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) );
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) ) ); /* older webkit syntax */
+			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) );
 		}
 		.format-link .link-icon + p {
 			text-shadow: 1px 1px 1px rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>);

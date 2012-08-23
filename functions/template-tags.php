@@ -1,16 +1,28 @@
 <?php
 /** 
  * Bricks Theme template tags.
- *
- * @package Bricks Theme
- * @subpackage Functions
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * @package    Bricks
+ * @subpackage Bricks Theme Functions
+ * @author     Raphael Villanea <support@brickpress.us>
+ * @copyright  Copyright (c) 2011, BrickPress
+ * @license    http://www.gnu.org/licenses/gpl-3.0.html
+ * @since      1.0.0
  */
  
-/**
- * Displays Bricks primary navigation menu.
- *
- * @since 1.0.0
- */
 if( ! function_exists('bricks_topbar') ) :
 	function bricks_topbar() { 
 	
@@ -21,12 +33,16 @@ if( ! function_exists('bricks_topbar') ) :
             <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
             <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'bricks' ); ?>"><?php _e( 'Skip to primary content', 'bricks' ); ?></a></div>
             <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'bricks' ); ?>"><?php _e( 'Skip to secondary content', 'bricks' ); ?></a></div>
-            <?php wp_nav_menu( array( 'theme_location' => 'topbar', 'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>', ) ); ?>
-			<script>
-			jQuery(document).ready(function() { 
-				jQuery('ul.sf-menu').superfish(); 
-			}); 
-            </script>
+            <?php wp_nav_menu( array(
+				'theme_location' => 'topbar',
+				'items_wrap'     => '<ul id="%1$s" class="sf-menu">%3$s</ul>' ) ); ?>
+				<script type="text/javascript">
+                <!--//--><![CDATA[//><!--
+                jQuery(document).ready(function() { 
+                    jQuery('ul.sf-menu').superfish(); 
+                }); 
+                //--><!]]>
+                </script>
             <div class="site-admin">
                 <ul>
                   <li><?php wp_register(); ?></li>
@@ -50,15 +66,19 @@ if( ! function_exists('bricks_nav_menu') ) :
     	global $page, $paged, $theme_options; ?>
 		
         <nav id="access" role="navigation">
-        <?php bricks_before_primary_menu(); ?>
-
-            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'items_wrap' => '<ul id="%1$s" class="sf-menu">%3$s</ul>', ) ); ?>
+            <?php wp_nav_menu( array(
+					  'theme_location' => 'primary',
+					  'items_wrap'     => '<ul id="%1$s" class="sf-menu">%3$s</ul>'
+				      )
+				   ); ?>
             <?php if( false == bricks_theme_option('show_topbar_nav') ) : ?>
-				<script>
-                jQuery(document).ready(function() { 
-                    jQuery('ul.sf-menu').superfish(); 
-                }); 
-                </script>
+			<script type="text/javascript">
+            <!--//--><![CDATA[//><!--
+            jQuery(document).ready(function() { 
+                jQuery('ul.sf-menu').superfish(); 
+            });
+            //--><!]]>
+            </script>
             <?php endif; ?>
         </nav><!-- #access -->
 	<?php
@@ -66,9 +86,44 @@ if( ! function_exists('bricks_nav_menu') ) :
 endif;
 
 
+add_action( 'bricks_footer_menu', 'bricks_footer_nav' );
+/**
+ * Displays Bricks footer navigation menu.
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists('bricks_footer_nav') ) :
+	function bricks_footer_nav() { ?>
+    
+        <nav id="footer-navmenu" role="navigation">
+        <?php wp_nav_menu( array(
+				  'theme_location' => 'footer',
+				  'show_home' 	   => true,
+				  'depth'          => 1
+				  )
+			  ); ?>
+        </nav><!-- #footer-navmenu -->
+        <div class="clearfix"></div>
+	<?php
+	}
+endif;
+
+
+/**
+ * Default navigation menu fallback, wp_page_menu()
+ *
+ * @since 1.0.0
+ */
+function bricks_page_menu_args( $args ) {
+	$args['show_home'] = false;
+	return $args;
+}
+add_filter( 'wp_page_menu_args', 'bricks_page_menu_args' );
+
+
 /**
  * Displays post date.
- * Styling and date format can be customized at the theme options admin panel page.
+ * Styling and date format can be customized at the theme options admin page.
  *
  * @since 1.0.0
  */
@@ -85,7 +140,6 @@ endif;
 
 /**
  * Displays post date.
- * Styling and date format can be customized at the theme options admin panel page.
  *
  * @since 1.0.0
  */
@@ -93,13 +147,20 @@ if( ! function_exists('bricks_post_date_text') ) :
 function bricks_post_date_text() {
 		
 	global $theme_options;
+	
 	$format = get_post_format();
 	$author_avatar = bricks_theme_option('author_avatar');
-	if( is_sticky() || false === $format )
+	if( '' == $format )
 		$format = 'article';
+	
+	if( $author_avatar == 'hide_avatar') {
 		
-	$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%7$s" title="%8$s" rel="author">%9$s.</a></span></span>' );
-
+		$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%7$s" title="%8$s" rel="author">%9$s.</a></span></span>' );		
+	} else {
+		
+		$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a>' );
+	}
+	
 	printf(
 		$utility_text,																		// [0]
 		$post_icon = strtolower( $format ),													// [1]
@@ -151,14 +212,14 @@ endif;
 
 
 /**
- * Display a div containing the current post's title.
+ * Displays the current post's title.
  *
  * @since 1.0.0
  */
 if( ! function_exists('bricks_post_title') ) :
 function bricks_post_title() {
 	?>
-	<?php if( is_single() ) { ?>
+	<?php if( is_single() || is_page() ) { ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
     <?php } elseif( is_sticky() ) { ?>
 		<h1 class="entry-title">
@@ -174,82 +235,72 @@ endif;
 
 
 /**
- * Returns header for archive pages.
+ * Returns headlines header for archive pages.
  * 
- * @todo  use switch for post formats.
  * @since 1.0.0
  */
 if( ! function_exists('bricks_archive_header') ) :
 function bricks_archive_header() {
 	
     $format = get_post_format(); ?>
-    <div id="headline-container">
-    	<header class="archive-header">
-          <h1 class="page-title">
-            <?php if ( is_day() ) {
-                printf( __( 'Daily Archives: %s', 'bricks' ), '<span>' . get_the_date() . '</span>' );
-            } elseif ( is_month() ) {
-                printf( __( 'Monthly Archives: %s', 'bricks' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); 
-            } elseif ( is_year() ) {
-                printf( __( 'Yearly Archives: %s', 'bricks' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
-            } elseif ( is_category() ) {
-                printf( __( 'Category Archives: %s', 'bricks' ), single_cat_title( '', false ) );
-            } elseif ( is_tag() ) {
-                printf( __( 'Tag Archives: %s', 'bricks' ), single_tag_title( '', false ) );
-            } elseif ( is_author() ) {
-                printf( __( 'Author Archives: %s', 'bricks' ) );
-			} elseif ( has_post_format('aside') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-			} elseif ( has_post_format('audio') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-			} elseif ( has_post_format('chat') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-			} elseif ( has_post_format('gallery') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-			} elseif ( has_post_format('image') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-			} elseif ( has_post_format('link') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-			} elseif ( has_post_format('quote') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-			} elseif ( has_post_format('status') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-			} elseif ( has_post_format('video') ) {
-                printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
-            } else {
-                _e( 'Blog Archives', 'bricks' );
-            } ?>
-          </h1>
-    	</header>
-    </div><!-- #headline-container -->
-    <div class="clearfix"></div>
+    <h1 class="archive-heading">
+		<?php if ( is_day() ) {
+            printf( __( 'Daily Archives: %s', 'bricks' ), '<span>' . get_the_date() . '</span>' );
+        } elseif ( is_month() ) {
+            printf( __( 'Monthly Archives: %s', 'bricks' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); 
+        } elseif ( is_year() ) {
+            printf( __( 'Yearly Archives: %s', 'bricks' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+        } elseif ( is_category() ) {
+            printf( __( 'Category Archives: %s', 'bricks' ), single_cat_title( '', false ) );
+        } elseif ( is_tag() ) {
+            printf( __( 'Tag Archives: %s', 'bricks' ), single_tag_title( '', false ) );
+        } elseif ( is_author() ) {
+            printf( __( 'Author Archives: %s', 'bricks' ) );
+        } elseif ( has_post_format('aside') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('audio') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('chat') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('gallery') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('image') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('link') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('quote') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('status') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('video') ) {
+            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+        } else {
+            _e( 'Blog Archives', 'bricks' );
+        } ?>
+    </h1>
 	<?php
 }
 endif;
 
 
 /**
- * Returns header for search pages.
+ * Returns headlines header for search pages.
+ *
  * @since 1.0.0
  */
 if( ! function_exists('bricks_search_header') ) :
 function bricks_search_header() { ?>
 
-	<div id="headline-container">
-    	<header class="search-header">
-          <h1 class="page-title">
-            <?php 
-			if ( is_search() && have_posts() ) {
-				printf( __( 'Search Results for: %s', 'bricks' ), '<span>' . get_search_query() . '</span>' );
-            } elseif ( is_404() ) {
-                _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'bricks' );
-            } else {
-                _e( 'Nothing Found', 'bricks' );
-            } ?>
-          </h1>
-    </header>
-	</div><!-- #headline-container -->
-    <div class="clearfix"></div>
+    <h1 class="search-heading">
+		<?php 
+        if ( is_search() && have_posts() ) {
+            printf( __( 'Search Results for: %s', 'bricks' ), '<span>' . get_search_query() . '</span>' );
+        } elseif ( is_404() ) {
+            _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'bricks' );
+        } else {
+            _e( 'Nothing Found', 'bricks' );
+        } ?>
+    </h1>
 	<?php
 }
 endif;
@@ -264,7 +315,7 @@ if( ! function_exists('bricks_comment_link') ) :
 function bricks_comments_link() {
 	
 	if( comments_open() && ! post_password_required() ) {
-		comments_popup_link( '<span class="comments-link"></span>' . __( 'Leave a Comment.', 'bricks' ), '<span class="comments-link"></span>' . _x( '1 Comment', 'comments number', 'bricks' ), '<span class="comments-link"></span>' . _x( '% Comments', 'comments number', 'bricks' ) );
+		comments_popup_link( '<span class="comments-link"></span>' . __( 'Leave a Comment. ', 'bricks' ), '<span class="comments-link"></span>' . _x( '1 Comment ', 'comments number', 'bricks' ), '<span class="comments-link"></span>' . _x( '% Comments ', 'comments number', 'bricks' ) );
 	}
 }
 endif;
@@ -365,7 +416,8 @@ function bricks_continue_reading_link() {
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and bricks_continue_reading_link().
  *
  * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.  * @since 1.0.0
+ * function tied to the excerpt_more filter hook.  
+ * @since 1.0.0
  */
 function bricks_auto_excerpt_more( $more ) {
 	return ' &hellip;' . bricks_continue_reading_link();
@@ -390,18 +442,10 @@ add_filter( 'get_the_excerpt', 'bricks_custom_excerpt_more' );
 
 
 /**
- * Default navigation menu fallback, wp_page_menu()
+ * Bricks pagination
  *
- * @since 1.0.0
+ * @since   1.0.0
  */
-function bricks_page_menu_args( $args ) {
-	$args['show_home'] = false;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'bricks_page_menu_args' );
-
-
-
 function bricks_link_pages_args() {
 	
 	$args = array(
@@ -447,7 +491,7 @@ endif;
 /**
  * Return the URL for the first link found in the post content.
  *
- * @since Bricks 1.0.9
+ * @since Bricks 1.0.0
  * @return string|bool URL or false when no link is present.
  */
 function bricks_first_link() {
@@ -503,7 +547,7 @@ function bricks_first_image() {
 	preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i', $post->post_content, $matches );
 
 	if ( isset( $matches ) )
-		return $matches;
+		return esc_attr($matches);
 	else
 		return false;
 }
@@ -511,49 +555,31 @@ function bricks_first_image() {
 
 /**
  * Shows author bio on single post entries if one is filled out by the author.
+ * This can be toggled on/off at the theme options admin page.
  *
  * @since 1.0.0
  */
 if( ! function_exists( 'bricks_author_meta' ) ) :
 function bricks_author_meta() {
-	
-	if( bricks_theme_option( 'author_avatar' ) == 'show_avatar' ) {
 		
-		if ( get_the_author_meta( 'description' ) && is_multi_author() ) { // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>
-        <div class="footer-meta-hr"></div>
-		<div id="author-info">
-            <div id="author-avatar">
-                <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'bricks_author_bio_avatar_size', 90 ) ); ?>
-            </div><!-- #author-avatar -->
-            
-            <div id="author-description">
-                <h2><?php printf( esc_attr__( 'About %s', 'bricks' ), get_the_author() ); ?></h2>
-                <?php the_author_meta( 'description' ); ?>
-                <div id="author-link">
-                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-                        <?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'bricks' ), get_the_author() ); ?>
-                    </a>
-                </div><!-- #author-link	-->
-            </div><!-- #author-description -->
-        <?php $social_icons_label = get_theme_mod('social_icons_label');
-			  $facebook_profile = get_theme_mod('facebook_profile');
-			  $google_profile = get_theme_mod('google_profile');
-			  
-		if( '' != $facebook_profile ) {
-			
-			$utility_text = __( '<span class="author-social-header"> %1$s </span><br /><a href="%2$s" /><span class="fb-profile"></span></a>', 'bricks' );
-			printf(
-			    $utility_text,
-			    $social_profile,
-				esc_url( 'http://www.facebook.com/' . trailingslashit($facebook_profile)),
-				esc_url( $google_profile )
-			);
-		} ?>
-		</div><!-- #entry-author-info -->
-		<?php
-		}
-	} else {
-		return;
+	if ( get_the_author_meta( 'description' ) && is_multi_author() ) { // If a user has filled out their description and this is a multi-author blog, show a bio on their entries ?>
+	<div class="footer-meta-hr"></div>
+	<div id="author-info">
+		<div id="author-avatar">
+			<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'bricks_author_bio_avatar_size', 90 ) ); ?>
+		</div><!-- #author-avatar -->
+		
+		<div id="author-description">
+			<h2><?php printf( esc_attr__( 'About %s', 'bricks' ), get_the_author() ); ?></h2>
+			<?php the_author_meta( 'description' ); ?>
+			<div id="author-link">
+				<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+					<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'bricks' ), get_the_author() ); ?>
+				</a>
+			</div><!-- #author-link	-->
+		</div><!-- #author-description -->
+	</div><!-- #entry-author-info -->
+	<?php
 	}
 }
 endif;
@@ -584,7 +610,7 @@ endif;
 
 
 /**
- * Post meta & comments link.
+ * Post entry meta after the post content.
  *
  * @since 1.0.0
  */
@@ -593,7 +619,7 @@ if ( ! function_exists( 'bricks_post_footer' ) ) :
 		
 		global $theme_options;
 		$format = get_post_format();
-		if( is_sticky() || false === $format )
+		if( '' == $format )
 			$format = 'article';
 			
 		/* translators: used between list items, there is a space after the comma */
@@ -626,7 +652,7 @@ endif;
 
 
 /* 
- * Footer sidebar class
+ * Footer sidebar class.
  *
  * Count the number of footer sidebars to enable dynamic classes for the footer.
  *
@@ -680,27 +706,9 @@ if( ! function_exists( 'bricks_footer_sidebar_class' ) ) :
 endif;
 
 
-add_action( 'bricks_footer_menu', 'bricks_footer_nav' );
-/**
- * Displays Bricks footer navigation menu.
- *
- * @since 1.0.0
- */
-if( ! function_exists('bricks_footer_nav') ) :
-	function bricks_footer_nav() { ?>
-        <nav id="footer-navmenu" role="navigation">
-            <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
-            <?php wp_nav_menu( array( 'theme_location' => 'footer', 'show_home' => true,'depth' => 1 ) ); ?>
-        </nav><!-- #footer-navmenu -->
-        <div class="clearfix"></div>
-	<?php
-	}
-endif;
-
-
 add_action( 'bricks_after_footer_menu', 'bricks_copyright_notices' );
 /**
- * Shows links to Bricks homepage and Wordpress at the footer.
+ * Displays a copyright notice or a Creative Commons license at the footer. 
  *
  * @since 1.0.0 
  */
@@ -745,7 +753,8 @@ endif;
 
 
 /**
- * Adds social media icons at the header.
+ * Adds social media icons at two locations: either at the header or
+ * before the primary sidebar.
  *
  * @uses bricks_theme_options
  * @uses get_theme_mod
@@ -878,7 +887,7 @@ function bricks_ga_tracking_code() {
 	
 	$tracking_code = get_theme_mod('google_analytics'); ?>
 	<script type="text/javascript">
-	<!--
+	<!--//--><![CDATA[//><!--
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', '<?php echo $tracking_code; ?>']);
 		_gaq.push(['_trackPageview']);
@@ -888,7 +897,7 @@ function bricks_ga_tracking_code() {
 		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
-	//-->
+	//--><!]]>
 	</script><?php
 }
 endif;
@@ -917,3 +926,39 @@ function bricks_footer_ads() {
 	}
 }
 endif;
+
+
+/**
+ * Adds post container class to the array of post classes.
+ * This provides easy styling to post containers.
+ *
+ * @uses bricks_theme_options
+ * @since 1.0.0 
+ */
+function post_container_class($classes) {
+	
+	global $post;
+	
+	$classes[] = bricks_theme_option('article_container');
+	return $classes;
+}
+add_filter('post_class', 'post_container_class');
+
+
+/**
+ * Adds singular post layout class to the array of body classes.
+ *
+ * @uses bricks_theme_options
+ * @since 1.0.0 
+ */
+function singular_post_body_class($classes) {
+	
+	global $post;
+	
+	if( is_single() ) {
+		$sidebar = bricks_theme_option('singular_sidebar');
+		$classes[] = 'singular-' . $sidebar;
+	}
+	return $classes;
+}
+add_filter('body_class', 'singular_post_body_class');

@@ -10,10 +10,8 @@
  * @package Bricks
  * @since Bricks 1.0.0
  */
-
-$single_post_layout = bricks_theme_option('single_post_layout');
 ?>
-	<div id="comments" class="<?php echo $single_post_layout; ?>" <?php if( $single_post_layout == 'tabbed' ) { echo 'style="border-top-left-radius: 0; -moz-border-top-left-radius: 0; -webkit-border-top-left-radius: 0; -khtml-border-top-left-radius: 0; display: none; padding: 10px 0; margin-bottom: 20px;"'; } else { echo 'style="border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0; background: transparent; box-shadow: none; border: none; padding: 0; margin-bottom: 20px;"'; } ?>>
+	<div id="comments">
     
 	<?php if ( post_password_required() ) : ?>
 		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'bricks' ); ?></p>

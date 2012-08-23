@@ -2,13 +2,12 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the id=main div and all content after
+ * Contains the closing of the id=main div and all content after.
  *
  * @package Bricks
  * @subpackage Bricks
  * @since Bricks 1.0.0
  */
-global $theme_options;
 ?>
 			</div><!-- #main -->
 		</div><!-- .inner-content -->
@@ -64,9 +63,11 @@ global $theme_options;
 		<footer id="colophon" role="contentinfo">
 
         <?php $footer_logo = bricks_theme_option('footer_logo');
+		      $footer_logo_url = get_theme_mod('footer_logo_url');
+			  
 		if( $footer_logo ) { ?>
 			<div id="footer-logo">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $footer_logo ); ?>" /></a>
+                <a href="<?php echo esc_url( $footer_logo_url ); ?>"><img src="<?php echo esc_url( $footer_logo ); ?>" /></a>
                 <span id="footer-divider"></span>   
 			</div>
 		<?php } ?>
@@ -75,8 +76,10 @@ global $theme_options;
             <?php bricks_copyright_notices(); ?> 
             <?php bricks_footer_ads(); ?>
 		</div><!-- #main -->
-            <?php bricks_footer_menu(); ?>
-			<?php bricks_credits(); ?>
+        <?php if( bricks_theme_option('show_footer_nav') ) {
+        	    bricks_footer_menu();
+			  } ?>
+		<?php bricks_credits(); ?>
 		</footer><!-- #colophon -->
         	
     </div><!-- .inner-footer -->

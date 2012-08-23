@@ -14,36 +14,42 @@ $article_container = bricks_theme_option('article_container'); ?>
     
         <?php bricks_before_content(); ?>
         <div id="content" role="main">
+        <?php bricks_search_header(); ?>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
          
-        <?php bricks_before_article(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'squared' ) {
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
-            
-            <header class="entry-header">
-                <hgroup>
-                <?php bricks_post_title(); ?>
-                </hgroup>
-            </header>
-            <div class="clearfix"></div>
 
-            <div class="entry-content">
-                <?php bricks_before_entry_content(); ?>
-                <?php the_excerpt(); ?>
-                <?php bricks_after_entry_content(); ?>
-            </div><!-- .entry-content -->
-            
-            <footer class="entry-meta">
-                <?php bricks_post_date_text(); ?>
-                <?php bricks_post_footer(); ?>
-                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
-            </footer>
-         
-        <div class="left-post-shadow"></div>
-        <div class="right-post-shadow"></div>    
-        </article><!-- #post-<?php the_ID(); ?> -->
-        <?php bricks_after_article(); ?>
+                <?php bricks_post_date_graphic(); ?>
+                
+                <header class="entry-header">
+                    <hgroup> 
+                    <?php bricks_post_title(); ?>
+                    </hgroup>          
+                </header>
+                
+                <?php bricks_post_format_icon(); ?>
+                
+                <div class="clearfix"></div>
+      
+                <div class="entry-content">
+                    <?php bricks_before_entry_content(); ?>
+                    <?php the_excerpt(); ?>
+                    <?php bricks_after_entry_content(); ?>
+                </div><!-- .entry-content -->
+                
+                <footer class="entry-meta">
+                    <?php bricks_post_footer(); ?>
+                    <?php bricks_comments_link(); ?>
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                </footer>
+                <div class="clearfix"></div>
+                
+    		<div class="left-post-shadow"></div>
+            <div class="right-post-shadow"></div> 
+            </article><!-- #post-<?php the_ID(); ?> -->
+			<?php bricks_after_article(); ?>
         
         <?php endwhile; ?>
         
@@ -98,7 +104,5 @@ $article_container = bricks_theme_option('article_container'); ?>
 
     </div><!-- #primary -->
 
-<?php if( bricks_theme_option( 'singular_sidebar' ) == 'sidebar' ) {
-	      get_sidebar();
-	  } ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
