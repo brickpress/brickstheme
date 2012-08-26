@@ -13,15 +13,52 @@ $article_container = bricks_theme_option('article_container'); ?>
 
 		<div id="primary">
 			<div id="content" role="main">
+            
+            <?php if($post->post_content != '') : ?>
+            
+            <?php while ( have_posts() ) : the_post(); ?>
+            
+			<?php bricks_before_article(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class('intro'); ?> <?php if( $article_container == 'sharp-edges' ) {
+                echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
+                
+                <header class="entry-header">
+                    <hgroup> 
+                    <?php bricks_post_title(); ?>
+                    </hgroup>          
+                </header>
+                <div class="clearfix"></div>
 
-			<?php
-			
-			$page_id = get_the_ID();
+                <div class="entry-content">
+                <?php bricks_before_entry_content(); ?>
+				
+				<?php the_content(); ?>
+
+                <?php wp_link_pages( bricks_link_pages_args() ); ?>
+                </div><!-- .entry-content -->
+                <div class="clearfix"></div>
+                
+                <?php comments_template( '', true ); ?>
+                
+                <footer class="entry-meta">
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                </footer>
+                <div class="clearfix"></div>
+            
+            <div class="left-post-shadow"></div>
+            <div class="right-post-shadow"></div>    
+            </article><!-- #post-<?php the_ID(); ?> -->
+
+			<?php endwhile; ?>
+            
+            <?php endif; // End check for page content. ?>
+
+			<?php $page_id = get_the_ID();
 			
 			/* Get the meta key. */
 			$meta_key = page_category_field_meta_key();
 		
-			if (is_page() ) {
+			if ( is_page() ) {
 				/* Get the meta value of the custom field key. */
 				$category = get_post_meta( $page_id, $meta_key, true );
 			}

@@ -16,17 +16,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 
  * @package    Bricks
- * @subpackage Bricks Theme Options
  * @author     Raphael Villanea <support@brickpress.us>
- * @copyright  Copyright (c) 2011, BrickPress
+ * @copyright  Copyright (c) 2012, BrickPress
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
- * @since      1.0.0
  */
 require( trailingslashit( dirname( __FILE__ ) ) . 'lib/class.bricks-theme-options.php' );
 $theme_options = new Bricks_Theme_Options();
 
 global $theme_options, $bricks_theme_setup;
 
+/**
+ * Retrieves an option from our array of theme options.
+ *
+ * @since	1.0.0
+ */
 function bricks_theme_option( $option ) {
 	$options = get_option( 'theme_options' );
 	if ( isset( $options[ $option ] ) )
@@ -46,8 +49,10 @@ $bricks_theme_setup = new Bricks_Theme_Setup();
 /* Theme functions */
 require_once( trailingslashit( get_template_directory() ) . 'functions/template-tags.php' );
 require_once( trailingslashit( get_template_directory() ) . 'functions/post-formats.php' );
+require_once( trailingslashit( get_template_directory() ) . 'functions/bricks-slider.php' );
+require_once( trailingslashit( get_template_directory() ) . 'functions/page-category-field.php' );
+
+/* Justin Tadlock's Theme Hybid extensions */
 require_once( trailingslashit( get_template_directory() ) . 'functions/custom-hooks.php' );
 require_once( trailingslashit( get_template_directory() ) . 'functions/cleaner-gallery.php' );
 require_once( trailingslashit( get_template_directory() ) . 'functions/get-the-image.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/bricks-slider.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/page-category-field.php' );

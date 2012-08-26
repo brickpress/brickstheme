@@ -12,10 +12,10 @@
 #content > article.format-quote .entry-content,
 #content > article.format-standard .entry-content,
 #content > article.format-status .entry-content,
-.attachment #content > article .entry {
+.attachment #content > article .entry,
+.page-template-category-page-php #content > article.format-aside .entry-content {
 	margin: 2% 3% 0 3%;
 }
-
 #content > article.format-image .entry-content p > img + p,
 #content > article.format-video .entry-content p,
 #content > article.format-gallery .entry-content .sharedaddy,
@@ -30,7 +30,8 @@
 	margin: 0 3%;
 }
 .single #content > article .entry-content,
-.search.search-results #content > article.format-image .entry-content p {
+.search.search-results #content > article.format-image .entry-content p,
+.one-column.single-post #content > article.post .entry-content {
 	margin: 0 3%;
 }
 .search #content > article.not-found .entry-content,
@@ -67,16 +68,31 @@ article.format-standard > .entry-content object {
 	width: 100%;
 }
 .page-template-default #content > article,
-.single.singular-fullwidth #content > article {
+.single.singular-fullwidth #content > article,
+.one-column.page-template-default #content > article,
+.one-column.page-template-sidebar-page-php #content > article,
+.one-column.page-template-category-page-php #content > article.page {
 	padding: 2% 3%;
 }
 #content > article.format-image .entry-content,
 .single #content > article.format-video .entry-content p,
 .single #content > article.format-video .entry-content .sharedaddy,
+.one-column.single-post #content > article .entry-content,
 .page-template-default #content > article .entry-content,
-.single.singular-fullwidth #content > article .entry-content {
+.one-column.page-template-sidebar-page-php #content > article .entry-content,
+.one-column.page-template-category-page-php #content > article .entry-content,
+.one-column.attachment #content > article .entry,
+.singular-fullwidth.attachment #content > article .entry,
+.page.attachment #content > article .entry {
 	margin: 0;
-}
+}/*
+.single.singular-fullwidth #content > article .entry-content,
+.one-column.page-template-default #content > article .entry-content,
+.one-column.page-template-sidebar-page-php #content > article .entry-content,
+.one-column.page-template-category-page-php #content > article .entry-content {
+	margin: 0;
+	padding: 2% 0;
+}*/
 .page-template-showcase-php #content > article,
 .page-template-showcase-php #content > article .entry-content {
 	padding: 0 0 1%;
@@ -87,7 +103,8 @@ article.format-standard > .entry-content object {
 .search.search-results #content > article.format-status .entry-content {
 	padding: 0;
 }
-.single-attachment #content > article .entry h5 {
+.single-attachment #content > article .entry h5,
+.page.attachment #content > article .entry h5 {
 	margin: 2% auto;
 }
 #content > article .entry-content .pd-rating + p {
@@ -104,7 +121,17 @@ article.format-standard > .entry-content object {
 
 /* =Post Format Icons
 ----------------------------------------------- */
-.entry-format-standard, .entry-format-aside, .entry-format-image, .entry-format-gallery, .entry-format-video, .entry-format-audio, .entry-format-link, .entry-format-quote, .entry-format-chat, .entry-format-status, .entry-format-featured {
+.entry-format-standard,
+.entry-format-aside,
+.entry-format-image,
+.entry-format-gallery,
+.entry-format-video,
+.entry-format-audio,
+.entry-format-link,
+.entry-format-quote,
+.entry-format-chat,
+.entry-format-status,
+.entry-format-featured {
 	float: right;
 	margin: 10px;
 }
@@ -161,12 +188,11 @@ article.format-standard > .entry-content object {
 	margin-right: 5px;
 }	
 .entry-meta .tags {
-	background: url(../images/postformats/tag.png) no-repeat scroll 0% 50%;
+	background: url(../images/postformats/tags.png) no-repeat scroll 0% 50%;
 	padding: 8px;
-	margin-left: 5px;
 }
 .entry-meta .category {
-	background: url(../images/postformats/category.png) no-repeat scroll 0% 50%;
+	background: url(../images/postformats/tags.png) no-repeat scroll 0% 50%;
 	padding: 8px;
 }
 .entry-meta .comments-link {
@@ -186,6 +212,10 @@ article.format-standard > .entry-content object {
 	position: absolute;
 	top: 0.6%;
 	right: 2%;
+}
+.commentlist li.comment .edit-link,
+.commentlist .children li.comment .edit-link {
+	top: 1.6%;
 }
 .page-template-default .edit-link,
 .page-template-sidebar-page-php .edit-link {
@@ -266,7 +296,8 @@ article.format-standard > .entry-content object {
 	width: 76.5%;
 	display: inline-block;
 }
-.format-audio blockquote, .format-audio p {
+.format-audio blockquote,
+.format-audio p {
 	clear: both;
 }
 
@@ -276,7 +307,7 @@ article.format-standard > .entry-content object {
 	margin: 0;
 	list-style: none;
 	line-height: 1.825;
-	padding: 2% 0;
+	padding: 0 0 2% 0;
 }
 .bricks-chat li {
 	color: #373737;
@@ -319,7 +350,8 @@ img#wpstats {
 	width: 100%;
 	height: auto;
 }
-.format-gallery blockquote, .format-gallery p {
+.format-gallery blockquote,
+.format-gallery p {
 	clear: both;
 }
 .attachment-nav-left {
@@ -335,7 +367,8 @@ img#wpstats {
 #content > article.format-image .entry-content img[class*="wp-image-"],
 #content > article.format-video span[class*="embed-"],
 #content > article.format-video div[class*="embed-"],
-#content > article.format-image .entry-content a + img {
+#content > article.format-image .entry-content a + img,
+.widget .textwidget span[class*="embed-"] {
 	width: 100%!important;
 	margin: 0!important;
 	padding-bottom: 1%;

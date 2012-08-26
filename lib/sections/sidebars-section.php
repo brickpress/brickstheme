@@ -460,7 +460,17 @@ $this->settings['footer-sidebar'] = array(
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
+		'family'  => '_wrapped3',
+		'std'	  => '#1E598E'
+	);
+	
+	$this->settings['fwidget_text_shadow'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Text Shadow', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
 		'std'	  => '#1E598E'
 	);
 	
@@ -470,11 +480,25 @@ $this->settings['footer-sidebar'] = array(
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'jslider',
 		'class'   => 'jslider',
-		'family'  => '_wrapped2',
+		'family'  => '_wrapped3',
 		'min'	  => 0,
 		'max'	  => 1,
 		'step'    => 0.1,
 		'std'	  => '1'
+	);
+	
+	$this->settings['fwidget_text_fontweight'] = array(
+		'section' => 'sidebars',
+		'title'   => __( 'Footer Widget Text Font Weight', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'	  => 'radio',
+		'class'   => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'	  => 'bold',
+		'choices' => array(
+			'normal' => __( 'Normal', 'bricks' ),
+			'bold'   => __( 'Bold', 'bricks' )
+		)	
 	);
 	
 		$this->settings['close-fwidget-text'] = array(

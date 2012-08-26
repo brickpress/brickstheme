@@ -309,7 +309,7 @@ $this->settings['close-quick-start-tab'] = array(
 			
 	$this->settings['button_hover1'] = array(
 		'section' => 'general',
-		'title'	  => __( 'Button text color.', 'bricks' ),
+		'title'	  => __( 'Primary Color', 'bricks' ),
 		'desc'	  => __( 'Top gradient', 'bricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',

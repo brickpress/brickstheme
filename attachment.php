@@ -19,7 +19,8 @@ $article_container = bricks_theme_option('article_container'); ?>
 			<?php bricks_before_article(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
-    
+    			
+                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
                 <header class="entry-header">
                     <hgroup>
                     <h1 class="entry-title"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title( $post->post_parent ); ?>&raquo; <?php the_title(); ?></a>
@@ -69,7 +70,7 @@ $article_container = bricks_theme_option('article_container'); ?>
                     </div>
 					<div class="clearfix"></div>
                     
-                    <div class="navigation attachment">
+                    <div class="navigation-attachment">
                         <div class="attachment-nav-left"><?php previous_image_link(); ?></div>
                         <div class="attachment-nav-right"><?php next_image_link(); ?></div>
                     </div>
@@ -86,10 +87,6 @@ $article_container = bricks_theme_option('article_container'); ?>
                     <div class="bottom-of-entry">&nbsp;</div>
                     <div class="clearfix"></div>
                 </div><!-- .entry -->
-            	
-                <footer class="entry-meta">
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
-                </footer><!-- .entry-meta -->
 				
                 <?php if( bricks_theme_option('author_avatar') == 'show_avatar' )
 						  bricks_author_meta(); ?>

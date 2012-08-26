@@ -104,7 +104,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		$admin_page = add_theme_page(
 			__( 'Theme Options', 'bricks' ),
 			__( 'Theme Options', 'bricks' ),							
-			'manage_options',						    
+			'edit_theme_options',						    
 			'theme-options',								
 			array( &$this, 'render_theme_settings_page' ) );
 			
@@ -146,10 +146,10 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 				'<p>' . __( '<strong>Header Section</strong> &mdash; sets site logo, site header and site description. This also sets your custom header.', 'bricks' ) . '</p>' .
 				'<p>' . __( '<strong>Navigation Section</strong> &mdash; Bricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.', 'bricks' ) . '</p>' .
 				'<p>' . __( '<strong>Content Section</strong> &mdash; sets the style for your content boxes.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Sidebars Section</strong> &mdash; set the color and opacity for the primary sidebar widgets if you\'re using a custom background to give it contrast.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Sidebars Section</strong> &mdash; when setting an image as custom background, your primary sidebar text may not stand out, thus difficult to read. If so, you can try increase the primary widget background opacity or change it\'s color altogether. ', 'bricks' ) . '</p>' .
 				'<p>' . __( '<strong>Social Section</strong> &mdash; add your social network profiles. This also lets you add webmaster tools meta data if you haven\'t done so already.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Footer Section</strong> &mdash; sets footer logo, copyright notice and a site badge or a wide ad banner', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Layout Section</strong> &mdash; exlpore advanced styling options. Try setting images for sections with wrappers and manipulate opacity to give your website a distinct flavor.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Footer Section</strong> &mdash; sets footer logo, copyright notice and a site badge or a wide ad banner.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Layout Section</strong> &mdash; exlpore advanced styling options. Try setting background images for sections with wrappers, manipulate opacity to reveal images in the background, or just about anything you can imagine.', 'bricks' ) . '</p>' .
 				'<p>' . __( '<strong>Reset Section</strong> &mdash; resets theme settings to defaults. This does not reset text entries such as copyright notice, Creative Commons license, and footer ads. This does not reset social media entries and webmaster tools entries as well. To remove the aforementioned entries, click on the the <strong>Clear Field</strong> button found at the bottom of each entry field.', 'bricks' ) . '</p>'
 		) );
 
@@ -171,6 +171,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	public function remove_custom_background_submenu() {
 		
 		global $submenu;
+		
 		$submenu_pages = array( 'custom-background', 'theme-editor.php', 'custom-header' );
 		foreach ( $submenu_pages as $submenu_page )
 			remove_submenu_page( 'themes.php', $submenu_page );
@@ -559,7 +560,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		global $wp_admin_bar;
 		
 		// Bail early if current user can not edit theme options.
-		if ( !current_user_can( 'manage_options' ) )
+		if ( !current_user_can( 'edit_theme_options' ) )
 			return;
 			
 		$bricks_url = admin_url( 'themes.php?page=theme-options' );

@@ -22,7 +22,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
 			<?php bricks_before_single(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class('single-'.$singular_sidebar); ?> <?php if( $article_container == 'sharp-edges' ) {
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( $article_container == 'sharp-edges' ) {
                 echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
 
                 <?php if($entry_date == 'graphic') {

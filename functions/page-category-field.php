@@ -87,7 +87,7 @@ function page_category_field_admin_setup() {
 
 
 /**
- * Hooks into the 'add_meta_boxes' hook to add the custom field series meta box and the 'save_post' hook 
+ * Hooks into the 'add_meta_boxes' hook to add the custom field category meta box and the 'save_post' hook 
  * to save the metadata.
  *
  * @access private
@@ -96,7 +96,7 @@ function page_category_field_admin_setup() {
  */
 function page_category_field_load_meta_boxes() {
 
-	/* Add the custom field series meta box on the 'add_meta_boxes' hook. */
+	/* Add the custom field category meta box on the 'add_meta_boxes' hook. */
 	add_action( 'add_meta_boxes', 'page_category_field_create_meta_box', 10, 2 );
 
 	/* Saves the post meta box data. */
@@ -136,18 +136,23 @@ function page_category_field_meta_box( $object, $box ) {
 		$category_name = esc_attr( get_post_meta( $object->ID, page_category_field_meta_key(), true ) );
 		
 		wp_nonce_field( basename( __FILE__ ), 'page-category-field-nonce' ); ?>
-        
-        
-        <p><select id="page-category-field" name="page-category-field">
-		<option value="-1"<?php if(-1 == $category_name) { ?> selected="selected"<?php } ?>>Select category of post</option>  
-        <?php foreach($categories as $category) { ?>
-
-		    <option value="<?php echo esc_attr( $category->term_id ); ?>" selected="selected"><?php echo $category->name.' ('.$category->count.')'; ?></option>
-			<?php
+ 
+        <p>
+        <select id="page-category-field" name="page-category-field">
+		
+        	<option value="-1"<?php if(-1 == $category_name) { ?> selected="selected"<?php } ?>>Current category of post</option>
+        <?php
+		foreach($categories as $category) {
+		?>
+		    <option value="<?php echo $category->term_id; ?>"<?php if($category->term_id == $category_name) { ?> selected="selected"<?php } ?>><?php echo $category->name.' ('.$category->count.')'; ?></option>
+		    <?php
 		}
 		?>
-	    </select></p>
-        <p>Select <strong>Category Page Template</strong> from Page Attributes then choose from which categories of posts you want to display on this page.</p>
+        </select>
+        </p>
+        <p>
+      		Select <strong>Category Page Template</strong> from Page Attributes then choose from which categories of posts you want to display on this page.
+        </p>
 <?php
 }
 
@@ -167,7 +172,7 @@ function page_category_field_meta_box_save( $post_id, $post ) {
 	if ( !isset( $_POST['page-category-field-nonce'] ) || !wp_verify_nonce( $_POST['page-category-field-nonce'], basename( __FILE__ ) ) )
 		return $post_id;
 
-	/* Get the posted series title and strip all tags from it. */
+	/* Get the posted category title and strip all tags from it. */
 	$new_meta_value = $_POST['page-category-field'];
 
 	/* Get the meta key. */

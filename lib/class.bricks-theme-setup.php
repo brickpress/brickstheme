@@ -121,6 +121,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	}
 	
 
+
 	public function bricks_hooks_and_filters() {
 		
 		if( bricks_theme_option('show_adminbar') == false ) {
@@ -336,8 +337,15 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			.single .entry-meta p, .entry-meta p, .widget ul li, input[type=text], input[type=password], textarea, .widget ul.tweets li {
 				color: rgba(<?php echo $this->hex_to_rgb($secondary_text_color) .','. bricks_theme_option('secondary_text_opacity'); ?>);	
 			}
-			.inner-topbar, .inner-header, .inner-navigation, .inner-content, .inner-footer,
-			#custom-header, #main, #headline-container {
+			.inner-topbar,
+			.inner-header,
+			.inner-navigation,
+			.inner-content,
+			.inner-footer,
+			.inner-widget-footer,
+			#custom-header,
+			#main,
+			#headline-container {
 				max-width: <?php echo bricks_theme_option('page_width'); ?>px;
 				min-width: <?php echo bricks_theme_option('content_width'); ?>px;
 			}
@@ -345,7 +353,10 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			.left-sidebar #primary,
 			.error404 #primary,
 			.single.singular-fullwidth #primary,
-			.error404.left-sidebar #primary {
+			.error404.left-sidebar #primary,
+			.page-template-sidebar-page-php #primary,
+			.right-sidebar.page-template-sidebar-page-php #primary,
+			.no-sidebar.page-template-sidebar-page-php #primary {
 				margin-top: <?php echo bricks_theme_option('content_top_margin'); ?>px;
 			}
 			#secondary,
@@ -358,19 +369,29 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			.page-template-showcase-php .nivoSlider {
 				width: <?php echo bricks_theme_option('large_feature_width'); ?>px;
 			}		
-			.page-template-showcase-php #bricks-slider-wrapper, .page-template-showcase-php .nivoSlider {
+			.page-template-showcase-php #bricks-slider-wrapper,
+			.page-template-showcase-php .nivoSlider {
 				height: <?php echo bricks_theme_option('large_feature_height'); ?>px;
 			}
-			.page-template-content-slider-php #bricks-slider-wrapper, .page-template-content-slider-php .nivoSlider {
+			.page-template-content-slider-php #bricks-slider-wrapper,
+			.page-template-content-slider-php .nivoSlider {
 				height: <?php echo bricks_theme_option('medium_feature_height'); ?>px;
 			}
             /* Link color */
-			#comments-title, .comments-link a:hover, section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
-			section.recent-posts .other-recent-posts .comments-link a:hover, #site-generator a:hover,
-			article.feature-image.small .entry-summary p a:hover, .entry-header .comments-link a:hover,
-			.entry-header .comments-link a:focus, .entry-header .comments-link a:active,
+			#comments-title,
+			.comments-link a:hover,
+			section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
+			section.recent-posts .other-recent-posts .comments-link a:hover,
+			#site-generator a:hover,
+			article.feature-image.small .entry-summary p a:hover,
+			.entry-header .comments-link a:hover,
+			.entry-header .comments-link a:focus,
+			.entry-header .comments-link a:active,
 			.feature-slider a.active,
-			.single .entry-meta a, .entry-meta a {
+			.single .entry-meta a,
+			.entry-meta a,
+			.entry-content a,
+			#comments a {
 				color: <?php echo $link_color; ?>;
 			}
 			<?php $button_color1 = bricks_theme_option('button_color1');
@@ -387,11 +408,13 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			#content nav a.page-numbers.prev,
 			#content nav a.page-numbers.next,
 			#content nav span.page-numbers.current,
+			#comment-nav-above .nav-previous a,
+			#comment-nav-above .nav-next a,
 			.entry-date.graphic,
-			.comments-link a
+			.comments-link a,
 			.entry-meta .edit-link a,
 			.single .edit-link a,
-			.page .edit-link a ,
+			.page .edit-link a,
 			.submit-btn {
 				background: <?php echo $button_color1; ?>; /* Show a solid color for older browsers */
 				background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
@@ -408,6 +431,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			#content nav a.page-numbers.prev:hover,
 			#content nav a.page-numbers.next:hover,
 			#content nav span.page-numbers.current,
+			#comment-nav-above .nav-previous a:hover,
+			#comment-nav-above .nav-next a:hover,
 			.entry-meta .edit-link a:hover,
 			.single .edit-link a:hover,
 			.page .edit-link a:hover,
@@ -421,17 +446,22 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_border) .','. bricks_theme_option('button_hover_opacity1'); ?>);
 				color: <?php echo $button_text_color; ?>;
 			}
-			input[type=text], input[type=password], textarea {
-				border: 1px solid rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>);
+			#comments a.comment-edit-link {
+				color: <?php echo $button_text_color; ?>;
 			}
+			<?php $caption_background = bricks_theme_option('caption_background'); ?>
 			.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
 				color: <?php echo bricks_theme_option('content_headings'); ?>;
 			}
 			.entry-content th, .comment-content th {
 				color: <?php echo bricks_theme_option('table_header'); ?>;
 			}
-			.wp-caption {
+			.wp-caption,
+			.attachment .navigation-attachment {
 				background: <?php echo bricks_theme_option('caption_background'); ?>;
+			}
+			.commentlist .children li.comment {
+				border-left: 1px solid rgba(<?php echo $this->hex_to_rgb($caption_background) .','. bricks_theme_option('body_text_opacity'); ?>);
 			}
 			pre {
 				background: <?php echo bricks_theme_option('preformat_background'); ?>;
@@ -518,6 +548,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	/**
 	 * Bricks primary navigation menu print style.
+
 	 * 
 	 * Customizes the navigation section stylesheet.
 	 * 
@@ -760,6 +791,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		<?php 
 		$fwidget_title_color = bricks_theme_option('fwidget_title_color');
 		$fwidget_title_shadow = bricks_theme_option('fwidget_title_shadow');
+		$fwidget_text_shadow = bricks_theme_option('fwidget_text_shadow');
 		$fwidget_bg_color = bricks_theme_option('fwidget_bg_color');
 		$article_bg_color = bricks_theme_option('article_bg_color');
 		?>
@@ -775,7 +807,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		#supplementary .widget,
 		#supplementary .widget a {
 			color: rgba(<?php echo $this->hex_to_rgb($fwidget_text_color) .','. bricks_theme_option('fwidget_text_opacity'); ?>);
-			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($fwidget_title_shadow) .','. bricks_theme_option('fwidget_text_opacity'); ?>);
+			font-weight: <?php echo bricks_theme_option('fwidget_text_fontweight'); ?>;
+			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($fwidget_text_shadow) .','. bricks_theme_option('fwidget_text_opacity'); ?>);
 		}
 		#content nav a.page-numbers,
 		#content nav a.page-numbers:hover {
@@ -792,11 +825,13 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		?>
 		.widget .searchform input[type=text],
 		.widget input.field,
-		.widget .search-field input[type=text] {
-			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity2'); ?>) );
+		.widget .search-field input[type=text],
+		input[type=text],
+		textarea {
+			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('widget_button_opacity2'); ?>);
 		}
 		#supplementary .widget.search input[type=text] {
-			border-right: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity2'); ?>) );
+			border-right: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('widget_button_opacity2'); ?>);
 		}
 		#subscribe-blog input[type=submit],
 		#content .searchform input[type=submit],
@@ -808,7 +843,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) );
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) ) ); /* older webkit syntax */
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) );
-			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity1'); ?>) );
+			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity1'); ?> );
 			color: <?php echo $widget_button_text; ?>;
 			text-shadow: 0px 0px 2px rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>) );
 		}
@@ -824,7 +859,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button_hover1) .','. bricks_theme_option('widget_button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button_hover2) .','. bricks_theme_option('widget_button_hover_opacity2'); ?>) );
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($widget_button_hover1) .','. bricks_theme_option('widget_button_hover_opacity1'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($widget_button_hover2) .','. bricks_theme_option('widget_button_hover_opacity2'); ?>) ) ); /* older webkit syntax */
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button_hover1) .','. bricks_theme_option('widget_button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button_hover2) .','. bricks_theme_option('widget_button_hover_opacity2'); ?>) );
-			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity2'); ?>) );
+			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('button_opacity2'); ?> );
 			color: <?php echo $widget_button_text; ?>;
 	  	}
 		</style>
@@ -912,6 +947,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) ) ); /* older webkit syntax */
 			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>) );
 		}
+		input[type=password] {
+			border: 1px solid rgba(<?php echo $this->hex_to_rgb($linkformat_color2) .','. bricks_theme_option('linkformat_opacity'); ?>);
+		}
 		.format-link .link-icon + p {
 			text-shadow: 1px 1px 1px rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>);
 		}
@@ -921,6 +959,10 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		}
 		blockquote {
 			border-left: 3px solid rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>);
+		}
+		.commentlist > li.bypostauthor,
+		.commentlist .children > li.bypostauthor {
+			border-top: 3px solid rgba(<?php echo $this->hex_to_rgb($linkformat_color1) .','. bricks_theme_option('linkformat_opacity'); ?>);
 		}
 		</style>
         <?php endif;

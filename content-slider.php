@@ -38,8 +38,7 @@ get_header(); ?>
 					'order'               => 'DESC',
 					'paged'               => $paged,
 					'posts_per_page'      => $post_per_page,
-					'offset'              => '0',
-					'ignore_sticky_posts' => $do_not_show_stickies
+					'post__not_in' => get_option( 'sticky_posts' )
 				);
 				
 				$temp = $wp_query;              // assign orginal query to temp variable for later use  
