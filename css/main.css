@@ -1443,7 +1443,7 @@ blockquote.pull {
 #content nav {
 	clear: both;
 	overflow: visible;
-	padding: 3% 0 0 0;
+	padding: 3% 0;
 	float: left;
 	width: 100%;
 }
