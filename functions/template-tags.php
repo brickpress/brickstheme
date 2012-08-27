@@ -876,36 +876,6 @@ function bricks_site_verification() {
 endif;       
 
 
-add_action( 'wp_head', 'bricks_ga_tracking_code' );
-/**
- * Adds Google Analytics tracking code at the header.
- *
- * @uses bricks_theme_options
- * @uses get_theme_mod
- *
- * @since 1.0.0 
- */
-if( !function_exists('bricks_ga_tracking_code') ) :
-function bricks_ga_tracking_code() {
-	
-	$tracking_code = get_theme_mod('google_analytics'); ?>
-	<script type="text/javascript">
-	<!--//--><![CDATA[//><!--
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', '<?php echo $tracking_code; ?>']);
-		_gaq.push(['_trackPageview']);
-	  
-		(function() {
-		  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	//--><!]]>
-	</script><?php
-}
-endif;
-
-
 /**
  * Adds an ad banner at the footer.
  *

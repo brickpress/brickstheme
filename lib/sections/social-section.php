@@ -172,15 +172,6 @@ $this->settings['webmaster-tools'] = array(
 		'class'    => 'headings',
 		'desc'	  => __( 'If your website is already verified you may forget about these. Enter the meta tags for the following:', 'bricks' ),
 	);
-	
-	$this->settings['google_analytics'] = array(
-		'section' => 'social',
-		'title'	  => __( 'Google Analytics ID', 'bricks' ),
-		'desc'	  => __( 'Enter your Google Analytics ID here to automatically insert tracking code.', 'bricks' ),
-		'type'	  => 'text',
-		'class'   => 'constant',
-		'std'	  => '',
-	);
 
 	$this->settings['google_verify'] = array(
 		'section' => 'social',
