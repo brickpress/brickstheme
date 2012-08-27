@@ -5,10 +5,9 @@
  * @package Bricks
  * @since Bricks 1.0.0
  */
-global $post, $page;
 $current_layout = bricks_theme_option('sidebar_layout');
 
-if ( 'no-sidebar' != $current_layout || !is_page_template('sidebar-page.php') ) :
+if ( 'no-sidebar' != $current_layout ) :
 ?>
 		<?php bricks_before_primary_sidebar(); ?>
 		<div id="secondary" class="widget-area" role="complementary">

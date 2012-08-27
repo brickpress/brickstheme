@@ -678,6 +678,9 @@ if( ! function_exists( 'bricks_footer_sidebar_class' ) ) :
 		if ( is_active_sidebar( 'sidebar-f6' ) )
 			$count++;
 		$class = '';
+		
+		if( bricks_theme_option('sidebar_layout') == 'no-sidebar' && $count > 3 )
+			$class = 'three';
 	
 		switch ( $count ) {
 			case '1':
