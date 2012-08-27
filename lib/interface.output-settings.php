@@ -1,6 +1,6 @@
 <?php
 /**
- * Renders Bricks theme options form fields.
+ * Renders Cubricks theme options form fields.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,8 +15,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @package    Bricks Theme
- * @subpackage Bricks Theme Options
+ * @package    Cubricks Theme
+ * @subpackage Cubricks Theme Options
  * @author     Raphael Villanea <support@brickpress.us>
  * @copyright  Copyright (c) 2011, BrickPress
  * @license    http://www.gnu.org/licenses/gpl-3.0.html

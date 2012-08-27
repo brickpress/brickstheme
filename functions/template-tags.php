@@ -1,6 +1,6 @@
 <?php
 /** 
- * Bricks Theme template tags.
+ * Cubricks Theme template tags.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,8 +15,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 
- * @package    Bricks
- * @subpackage Bricks Theme Functions
+ * @package    Cubricks
+ * @subpackage Cubricks Theme Functions
  * @author     Raphael Villanea <support@brickpress.us>
  * @copyright  Copyright (c) 2011, BrickPress
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
@@ -56,7 +56,7 @@ endif;
 
 
 /**
- * Displays Bricks primary navigation menu.
+ * Displays Cubricks primary navigation menu.
  *
  * @since 1.0.0
  */
@@ -88,7 +88,7 @@ endif;
 
 add_action( 'bricks_footer_menu', 'bricks_footer_nav' );
 /**
- * Displays Bricks footer navigation menu.
+ * Displays Cubricks footer navigation menu.
  *
  * @since 1.0.0
  */
@@ -178,7 +178,7 @@ endif;
 
 
 /**
- * Bricks custom header.
+ * Cubricks custom header.
  *
  * @since 1.0.0
  */
@@ -326,7 +326,7 @@ endif;
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
- * @since Bricks 1.0.0
+ * @since Cubricks 1.0.0
  */
 if( ! function_exists('bricks_comments') ) :
 function bricks_comments($comment, $args, $depth) {
@@ -442,7 +442,7 @@ add_filter( 'get_the_excerpt', 'bricks_custom_excerpt_more' );
 
 
 /**
- * Bricks pagination
+ * Cubricks pagination
  *
  * @since   1.0.0
  */
@@ -491,7 +491,7 @@ endif;
 /**
  * Return the URL for the first link found in the post content.
  *
- * @since Bricks 1.0.0
+ * @since Cubricks 1.0.0
  * @return string|bool URL or false when no link is present.
  */
 function bricks_first_link() {
@@ -737,7 +737,7 @@ endif;
 
 
 /**
- * Shows links to Bricks homepage and Wordpress at the footer.
+ * Shows links to Cubricks homepage and Wordpress at the footer.
  *
  * @since 1.0.0 
  */

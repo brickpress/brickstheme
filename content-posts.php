@@ -2,7 +2,7 @@
 /**
  * This is the default template for posts.
  *
- * @package Bricks
+ * @package Cubricks
  * @since 1.0.0
  */
 bricks_before_article(); ?>

@@ -2,7 +2,7 @@
 /**
  * Displays the post archives in reverse chronological order.
  *
- * @package Bricks
+ * @package Cubricks
  * @since 1.0.0
  */
 get_header(); ?>

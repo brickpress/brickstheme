@@ -1,4 +1,4 @@
-== BRICKS THEME FOR WORDPRESS ==
+== CUBRICKS THEME FOR WORDPRESS ==
 
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
@@ -7,13 +7,12 @@ Version: 1.0.0
 
 == Description ==
 
-Bricks is a clean, intuitive, flexible and responsive theme for WordPress. Inspired by LEGO, WordPress and all the wonderful
-things that came along with 
+Cubricks is a clean, intuitive, flexible and responsive theme for WordPress. Inspired by LEGO and WordPress. 
 
 Theme Options Sections:
 * General Section     - set the overall layout of your website and global styles. This section also sets HTML elements found on your content and				                        your website's custom background.
 * Header Section      - set site logo, site header and site description. This also sets your custom header.
-* Navigation Section  - Bricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.
+* Navigation Section  - Cubricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.
 * Content Section     - sets the style for your content boxes.
 * Sidebars Section    - when setting an image as custom background, your primary sidebar text may not stand out, thus difficult to read. If so, 	                        you can try increase the primary widget background opacity or change it's color altogether. 
 * Social Section      - add your social network profiles. This also lets you add webmaster tools meta data if you haven't done so already.
@@ -24,7 +23,7 @@ Theme Options Sections:
 
 Custom Widgets:
 
-* Bricks Category Post Widget - show recent posts filed under a single category
+* Cubricks Category Post Widget - show recent posts filed under a single category
 
 Theme Supports:
 * Custom Header

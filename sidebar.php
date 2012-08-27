@@ -2,8 +2,8 @@
 /**
  * The Sidebar containing the main widget area.
  *
- * @package Bricks
- * @since Bricks 1.0.0
+ * @package Cubricks
+ * @since Cubricks 1.0.0
  */
 $current_layout = bricks_theme_option('sidebar_layout');
 

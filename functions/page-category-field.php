@@ -1,8 +1,8 @@
 <?php
 /** 
- * Bricks page category meta box.
+ * Cubricks page category meta box.
  *
- * @package Bricks Theme
+ * @package Cubricks Theme
  * @subpackage Functions
  *
  * @since 1.0.0

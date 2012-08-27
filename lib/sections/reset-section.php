@@ -2,7 +2,7 @@
 /**
 * Resets theme options to their default values.
 *
-* @package Bricks Theme Options
+* @package Cubricks Theme Options
 * @subpackage Sections
 * @since 1.0.0
 */

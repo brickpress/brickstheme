@@ -2,9 +2,9 @@
 /**
  * The template for displaying content in the single.php template
  *
- * @package Bricks
+ * @package Cubricks
  * @subpackage Templates
- * @since Bricks 1.0.0
+ * @since Cubricks 1.0.0
  */
 $entry_date = bricks_theme_option('entry_date');
 

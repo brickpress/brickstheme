@@ -2,7 +2,7 @@
 /**
  * Displays a single attachment.
  *
- * @package Bricks
+ * @package Cubricks
  * @since 1.0.0
  */
 get_header(); ?>

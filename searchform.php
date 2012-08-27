@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying search forms in Bricks Theme.
+ * The template for displaying search forms in Cubricks Theme.
  *
- * @package Bricks Theme
+ * @package Cubricks Theme
  * @subpackage Page Templates
- * @since Bricks 1.0.0
+ * @since Cubricks 1.0.0
  */
 ?>
 <?php

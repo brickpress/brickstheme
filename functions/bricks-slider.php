@@ -1,13 +1,13 @@
 <?php
 /** 
- * Bricks Slider Template
+ * Cubricks Slider Template
  *
- * @package Bricks Theme
+ * @package Cubricks Theme
  * @subpackage Functions
  */
 
 /** 
- * Bricks theme content slider powered by nivoSlider.
+ * Cubricks theme content slider powered by nivoSlider.
  *
  * @since 1.0.0
  */

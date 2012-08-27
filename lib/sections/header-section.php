@@ -2,7 +2,7 @@
 /**
  * Array of options under header section of our admin page.
  *
- * @package Bricks Theme Options
+ * @package Cubricks Theme Options
  * @subpackage Sections
  * @since 1.0.0
  */

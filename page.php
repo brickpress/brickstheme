@@ -2,9 +2,9 @@
 /**
  * The default template for displaying all pages.
  *
- * @package Bricks
- * @subpackage Bricks
- * @since Bricks 1.0.0
+ * @package Cubricks
+ * @subpackage Cubricks
+ * @since Cubricks 1.0.0
  */
 get_header(); ?>
 

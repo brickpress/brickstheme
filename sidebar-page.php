@@ -6,7 +6,7 @@
  * Sidebar bar layout will be the same with the one selected on the
  * theme options admin page.
  *
- * @package Bricks
+ * @package Cubricks
  */
 get_header(); ?>
 

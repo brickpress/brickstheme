@@ -2,8 +2,8 @@
 /**
  * The template for displaying Comments.
  *
- * @package Bricks
- * @since Bricks 1.0.0
+ * @package Cubricks
+ * @since Cubricks 1.0.0
  */
 ?>
 

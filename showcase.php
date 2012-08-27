@@ -8,9 +8,9 @@
  * second section contains a list of posts in reverse chronological order. The number of posts to show on
  * this page can also be customized on the theme options admin panel.
  *
- * @package Bricks
+ * @package Cubricks
  * @subpackage Page Templates
- * @since Bricks 1.0.0
+ * @since Cubricks 1.0.0
  */
 get_header(); ?>
 

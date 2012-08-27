@@ -4,9 +4,9 @@
  *
  * Contains the closing of the id=main div and all content after.
  *
- * @package Bricks
- * @subpackage Bricks
- * @since Bricks 1.0.0
+ * @package Cubricks
+ * @subpackage Cubricks
+ * @since Cubricks 1.0.0
  */
 ?>
 			</div><!-- #main -->

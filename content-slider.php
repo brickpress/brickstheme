@@ -3,7 +3,7 @@
  * Template Name: Content Slider Template
  * Description: A Page Template that showcases Sticky Posts using nivoSlider.
  *
- * The content slider template in Bricks works the same way as the default blog post
+ * The content slider template in Cubricks works the same way as the default blog post
  * template. The only difference is that it displays sticky posts in a slider instead of
  * displaying them as individual posts.
  *
@@ -12,9 +12,9 @@
  *
  * We are creating two queries to fetch the proper posts.
  *
- * @package Bricks
+ * @package Cubricks
  * @subpackage Page Templates
- * @since Bricks 1.0.0
+ * @since Cubricks 1.0.0
  */
 get_header(); ?>
 

@@ -10,7 +10,7 @@ class Bricks_Category_Posts_Widget extends WP_Widget {
 		$widget_ops = array('classname' => 'widget_category_posts', 'description' => __( "Show posts in a category.", 'bricks' ) );
 		
 		/* Create the widget. */
-		parent::__construct('category-posts', __('Bricks Category Posts', 'bricks'), $widget_ops );
+		parent::__construct('category-posts', __('Cubricks Category Posts', 'bricks'), $widget_ops );
 		$this->alt_option_name = 'widget_category_posts';
 
 		add_action( 'save_post', array(&$this, 'flush_widget_cache') );

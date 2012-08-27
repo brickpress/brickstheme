@@ -3,9 +3,9 @@
  * Template Name: Category Page Template
  * Description: A Page Template that shows posts from a single category.
  *
- * @package Bricks
+ * @package Cubricks
  * @subpackage Page Templates
- * @since Bricks 1.0.0
+ * @since Cubricks 1.0.0
  */
 get_header(); ?>
 

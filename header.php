@@ -4,8 +4,8 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package Bricks
- * @since Bricks 1.0.0
+ * @package Cubricks
+ * @since Cubricks 1.0.0
  */
 ?><!DOCTYPE html>
 <!--[if IE 6]>

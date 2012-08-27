@@ -1,13 +1,13 @@
 <?php 
 /**
- * Class Bricks Theme Setup
+ * Class Cubricks Theme Setup
  * 
- * This file extends Class Bricks Theme Options which is instantiated
+ * This file extends Class Cubricks Theme Options which is instantiated
  * by $theme_options in functions.php file.
  *
  * This file is required by functions.php
  * 
- * @package    Bricks Theme
+ * @package    Cubricks Theme
  * @author     Raphael Villanea <support@brickpress.us>
  * @copyright  Copyright (c) 2011, BrickPress
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
@@ -24,7 +24,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	 * @uses      BRICKS_DIR
 	 * @uses      BRICKS_FUNCTIONS
 	 * @uses      Bricks_Theme_Options
-	 * @uses      Bricks::wp_hooks()
+	 * @uses      Cubricks::wp_hooks()
 	 * 
 	 * @access    public
 	 * @since     1.0.0
@@ -235,7 +235,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	/**
 	 * Enqueue the styles for the current color scheme.
 	 *
-	 * @since Bricks 1.0.0
+	 * @since Cubricks 1.0.0
 	 */
 	public function bricks_enqueue_styles() {
 		
@@ -276,7 +276,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	
 	/**
-	 * Adds Bricks layout classes to the array of body classes.
+	 * Adds Cubricks layout classes to the array of body classes.
 	 *
 	 * @since 1.0.0
 	 */
@@ -303,7 +303,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	
 	/**
-	 * Bricks global print style.
+	 * Cubricks global print style.
 	 * 
 	 * @param     void
 	 * @return    string	$theme_options
@@ -481,7 +481,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	
 	/**
-	 * Bricks custom header print style.
+	 * Cubricks custom header print style.
 	 * 
 	 * Customizes the current theme stylesheet.
 	 * 
@@ -552,7 +552,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	
 	/**
-	 * Bricks primary navigation menu print style.
+	 * Cubricks primary navigation menu print style.
 
 	 * 
 	 * Customizes the navigation section stylesheet.
@@ -662,7 +662,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	
 	/**
-	 * Bricks content print style.
+	 * Cubricks content print style.
 	 * 
 	 * Customizes the current theme stylesheet.
 	 * 
@@ -768,7 +768,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	
 	/**
-	 * Bricks sidebar print style.
+	 * Cubricks sidebar print style.
 	 * 
 	 * @param     void
 	 * @return    string	$theme_options
@@ -891,7 +891,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	
 	/**
-	 * Bricks footer print style.
+	 * Cubricks footer print style.
 	 * 
 	 * Customizes the current theme stylesheet.
 	 * 

@@ -21,7 +21,7 @@ class Bricks_Search_Widget extends WP_Widget {
 		/* Create the widget. */
 		$this->WP_Widget(
 			'bricks-search',					// $this->id_base
-			__( 'Bricks Search', 'bricks' ),	// $this->name
+			__( 'Cubricks Search', 'bricks' ),	// $this->name
 			$widget_options						// $this->widget_options
 		);
 	}

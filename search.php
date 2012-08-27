@@ -2,9 +2,9 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package Bricks Theme
+ * @package Cubricks Theme
  * @subpackage Page Templates
- * @since Bricks 1.0.0
+ * @since Cubricks 1.0.0
  */
 get_header(); ?>
 

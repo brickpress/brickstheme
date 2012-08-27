@@ -1,6 +1,6 @@
 <?php
 /**
- * Class Bricks Theme Options
+ * Class Cubricks Theme Options
  *
  * Modeled after Bolts Theme Options by Alison Barrett <alison@themejack.net>
  * 
@@ -20,8 +20,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 
- * @package    Bricks
- * @subpackage Bricks Theme Options
+ * @package    Cubricks
+ * @subpackage Cubricks Theme Options
  * @author     Raphael Villanea <support@brickpress.us>
  * @copyright  Copyright (c) 2011, BrickPress
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
@@ -79,7 +79,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	 */
 	public function bricks_constants() {
 		
-		define( 'THEMENAME', 'Bricks' );
+		define( 'THEMENAME', 'Cubricks' );
 		define( 'SHORTNAME', 'bricks' );
 		define( 'BRICKS_VERSION', '1.0.0' );
 		define( 'THEME_DIR', get_template_directory() );
@@ -121,7 +121,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	 * Add help tab to the theme admin settings page.
 	 *
 	 * @return false if not on the theme options page
-	 * @since Bricks 1.0.0
+	 * @since Cubricks 1.0.0
 	 */
 	public function bricks_admin_help() {
 		
@@ -132,9 +132,9 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 			'id'		=> 'overview',
 			'title'		=> __( 'Overview', 'bricks' ),
 			'content'	=>
-				'<p><strong>' . __( 'Bricks Theme by <a href="http://cubrick.brickpress.us/" target="_blank">Raphael Villanea</a>', 'bricks' ) . '</strong></p>' .
-				'<p>' . __( 'Thank you for using Bricks theme. I hope you will have as much fun customizing your blog as I have building this theme. I believe that while knowledge can be taught, imagination and creativity can not - it can be inspired.', 'bricks' ) . '</p>' .
-				'<p>' . __( 'Bricks theme gives you control over your website\'s stylesheet and positioning of some HTML blocks such as the custom header, navigation menu and image slider.', 'bricks' ) . '</p>'
+				'<p><strong>' . __( 'Cubricks Theme by <a href="http://cubrick.brickpress.us/" target="_blank">Raphael Villanea</a>', 'bricks' ) . '</strong></p>' .
+				'<p>' . __( 'Thank you for using Cubricks theme. I hope you will have as much fun customizing your blog as I have building this theme. I believe that while knowledge can be taught, imagination and creativity can not - it can be inspired.', 'bricks' ) . '</p>' .
+				'<p>' . __( 'Cubricks theme gives you control over your website\'s stylesheet and positioning of some HTML blocks such as the custom header, navigation menu and image slider.', 'bricks' ) . '</p>'
 		) );
 
 		// Screen Content
@@ -144,7 +144,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 			'content'	=>
 				'<p>' . __( '<strong>General Section</strong> &mdash; sets the overall layout of your website and <strong><em>global</em></strong> styles. This section also sets HTML elements found on your content and your website\'s custom background.', 'bricks' ) . '</p>' .
 				'<p>' . __( '<strong>Header Section</strong> &mdash; sets site logo, site header and site description. This also sets your custom header.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Navigation Section</strong> &mdash; Bricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.', 'bricks' ) . '</p>' .
+				'<p>' . __( '<strong>Navigation Section</strong> &mdash; Cubricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.', 'bricks' ) . '</p>' .
 				'<p>' . __( '<strong>Content Section</strong> &mdash; sets the style for your content boxes.', 'bricks' ) . '</p>' .
 				'<p>' . __( '<strong>Sidebars Section</strong> &mdash; when setting an image as custom background, your primary sidebar text may not stand out, thus difficult to read. If so, you can try increase the primary widget background opacity or change it\'s color altogether. ', 'bricks' ) . '</p>' .
 				'<p>' . __( '<strong>Social Section</strong> &mdash; add your social network profiles. This also lets you add webmaster tools meta data if you haven\'t done so already.', 'bricks' ) . '</p>' .
@@ -156,8 +156,8 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		// Help Sidebar
 		$current_screen->set_help_sidebar(
 			'<p><strong>' . __( 'For more information:', 'bricks' ) . '</strong></p>' .
-			'<p><a href="http://brickstheme.brickpress.us/" target="_blank">' . __( 'Bricks Live Demo', 'bricks' ) . '</a></p>' .
-			'<p><a href="http://brickpress.us/" target="_blank">' . __( 'Bricks Support', 'bricks' ) . '</a></p>' .
+			'<p><a href="http://brickstheme.brickpress.us/" target="_blank">' . __( 'Cubricks Live Demo', 'bricks' ) . '</a></p>' .
+			'<p><a href="http://brickpress.us/" target="_blank">' . __( 'Cubricks Support', 'bricks' ) . '</a></p>' .
 			'<p><strong>' . __( 'For developers:', 'bricks' ) . '</strong></p>' .
 			'<p><a href="https://github.com/brickpress/bricks-theme/" target="_blank">' . __( 'Github Repository', 'bricks' ) . '</a></p>'
 		);
@@ -565,6 +565,6 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 			
 		$bricks_url = admin_url( 'themes.php?page=theme-options' );
 		
-		$wp_admin_bar->add_menu( array( 'id' => 'bricks-menu', 'title' => __( 'Bricks Theme', 'bricks' ), 'href'  => $bricks_url ) );
+		$wp_admin_bar->add_menu( array( 'id' => 'bricks-menu', 'title' => __( 'Cubricks Theme', 'bricks' ), 'href'  => $bricks_url ) );
 	}
 }

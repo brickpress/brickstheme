@@ -3,7 +3,7 @@
  * Custom Hooks
  *
  * @since 1.0.0
- * @package Bricks
+ * @package Cubricks
  * @subpackage Functions
  */
  
