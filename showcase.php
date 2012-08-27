@@ -12,9 +12,7 @@
  * @subpackage Page Templates
  * @since Bricks 1.0.0
  */
-get_header(); 
-
-$article_container = bricks_theme_option('article_container'); ?>
+get_header(); ?>
 
 		<div id="primary" class="showcase">
 			<div id="content" role="main">
@@ -42,8 +40,7 @@ $article_container = bricks_theme_option('article_container'); ?>
 					$more = 0;
 					
 			bricks_before_article(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class($article_container); ?> <?php if( $article_container == 'sharp-edges' ) {
-                echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                 <?php bricks_post_date_graphic(); ?>
                 

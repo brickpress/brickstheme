@@ -453,7 +453,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				color: <?php echo $button_text_color; ?>;
 			}
 			<?php $caption_background = bricks_theme_option('caption_background'); ?>
-			.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+			.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6,
+			.contact-form label.text, .contact-form label.textarea, .contact-form label.radio, .contact-form label.checkbox,
+			.contact-form label.select {
 				color: <?php echo bricks_theme_option('content_headings'); ?>;
 			}
 			.entry-content th, .comment-content th {
@@ -678,6 +680,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$headlines_color = bricks_theme_option('headlines_color');
 		$entry_title_color = bricks_theme_option('entry_title_color');
 		$linkformat_border = bricks_theme_option('linkformat_border');
+		$formfield_border = bricks_theme_option('formfield_border');
+		$formfield_background = bricks_theme_option('formfield_background');
 		if( $article_bg_color ) :
 		?>
         <style type="text/css">		
@@ -695,7 +699,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		.showcase-heading,
 		.archive-heading,
 		.search-heading,
-		 #content > .widgettitle,
+		#content > .widgettitle,
 		#content article.error404 > .widgettitle {
 			font-family: <?php echo bricks_theme_option('headlines_fontface'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($headlines_color) .','. bricks_theme_option('headlines_opacity'); ?>);
@@ -718,6 +722,22 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		.search .entry-title,
 		.search .entry-title a {
 			font-size: <?php echo bricks_theme_option('entry_title_size'); ?>px;
+		}
+		#content .contact-form input[type=text].name {
+			background: <?php echo $formfield_background; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'name.png' ); ?>) no-repeat 1% 50% scroll;
+			border-color: <?php echo $formfield_border; ?>;
+		}
+		#content .contact-form input[type=text].email {
+			background: <?php echo $formfield_background; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'email.png' ); ?>) no-repeat 1% 50% scroll;
+			border-color: <?php echo $formfield_border; ?>;
+		}
+		#content .contact-form input[type=text].url {
+			background: <?php echo $formfield_background; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'website.png' ); ?>) no-repeat 1% 50% scroll;
+			border-color: <?php echo $formfield_border; ?>;
+		}
+		#content .contact-form input[type=text], #content .contact-form textarea, #content .contact-form select {
+			background: <?php echo $formfield_background; ?>;
+			border-color: <?php echo $formfield_border; ?>;
 		}
 		<?php $content_shadow = bricks_theme_option('content_shadow'); ?>
 		#content > article,

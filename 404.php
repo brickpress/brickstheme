@@ -17,8 +17,7 @@ $article_container = bricks_theme_option('article_container'); ?>
         <?php bricks_search_header(); ?>
 
         <?php bricks_before_article(); ?>
-        <article id="post-0" class="post error404 not-found <?php echo $article_container; ?>" <?php if( $article_container == 'sharp-edges' ) {
-            echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
+        <article id="post-0" class="post error404 not-found <?php echo $article_container; ?>">
 
             <div class="entry-content">        
             	<?php bricks_no_posts(); ?>

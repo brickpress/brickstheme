@@ -5,9 +5,7 @@
  * @package Bricks
  * @since Bricks 1.0.0
  */
-get_header();
-
-$article_container = bricks_theme_option('article_container'); ?>
+get_header(); ?>
 
 		<div id="primary">
         

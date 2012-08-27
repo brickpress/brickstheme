@@ -6,9 +6,7 @@
  * @subpackage Page Templates
  * @since Bricks 1.0.0
  */
-get_header();
-
-$article_container = bricks_theme_option('article_container'); ?>
+get_header(); ?>
 
 	<div id="primary">
     
@@ -18,8 +16,7 @@ $article_container = bricks_theme_option('article_container'); ?>
 
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
          
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( $article_container == 'sharp-edges' ) {
-                echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                 <?php bricks_post_date_graphic(); ?>
                 

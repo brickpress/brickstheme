@@ -494,7 +494,43 @@ $this->settings['close-button-background-tab'] = array(
 			'type'     => 'no-data',
 			'class'    => 'close_controller_wrap',
 		);
+		
+	$this->settings['formfield-background'] = array(
+		'section'  => 'general',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Form Fields', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
 	
+	$this->settings['formfield_background'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Form Fields Background Color', 'bricks' ),
+		'desc'	  => __( 'text input, textarea', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped2',
+		'std'	  => '#F3F6F9'
+	);
+	
+	$this->settings['formfield_border'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Form Fields Border', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped2',
+		'std'	  => '#3e9400'
+	);
+	
+		$this->settings['close-formfield'] = array(
+			'section'  => 'general',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+		
 $this->settings['close-html-elements-tab'] = array(
 	'section'  => 'general',
 	'archtype' => 'structure',

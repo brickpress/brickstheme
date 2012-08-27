@@ -6,10 +6,6 @@
  * @subpackage Templates
  * @since Bricks 1.0.0
  */
-global $theme_options, $post;
-
-$article_container = bricks_theme_option('article_container');
-$singular_sidebar = bricks_theme_option( 'singular_sidebar' );
 $entry_date = bricks_theme_option('entry_date');
 
 get_header(); ?>
@@ -22,8 +18,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
 			<?php bricks_before_single(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( $article_container == 'sharp-edges' ) {
-                echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                 <?php if($entry_date == 'graphic') {
 					  	  bricks_post_date_graphic();

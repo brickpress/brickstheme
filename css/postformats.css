@@ -14,7 +14,10 @@
 #content > article.format-status .entry-content,
 .attachment #content > article .entry,
 .page-template-category-page-php #content > article.format-aside .entry-content {
-	margin: 2% 3% 0 3%;
+	margin: 0 3%;
+}
+.page-template-default #content > article .entry-content {
+	margin: 0;
 }
 #content > article.format-image .entry-content p > img + p,
 #content > article.format-video .entry-content p,
@@ -29,7 +32,7 @@
 #content > article.format-image .entry-content a.tumblr_blog {
 	margin: 0 3%;
 }
-.single #content > article .entry-content,
+.single.singular-sidebar #content > article .entry-content,
 .search.search-results #content > article.format-image .entry-content p {
 	margin: 0 3%;
 }
@@ -60,7 +63,7 @@ article > .audio-content {
 	width: 100%!important;
 }
 #content > article.format-status .entry-content {
-	margin-top: 2%;
+
 }
 article.format-standard > .entry-content object {
 	margin: 0 auto;
@@ -71,18 +74,18 @@ article.format-standard > .entry-content object {
 .one-column.page-template-default #content > article,
 .one-column.page-template-sidebar-page-php #content > article,
 .one-column.page-template-category-page-php #content > article.page {
-	padding: 2% 3%;
+	padding: 0 3% 2% 3%;
 }
 #content > article.format-image .entry-content,
 .single #content > article.format-image .entry-content,
 .single #content > article.format-video .entry-content p,
 .single #content > article.format-video .entry-content .sharedaddy,
 .one-column.single-post #content > article .entry-content,
-.page-template-default #content > article .entry-content,
 .one-column.page-template-sidebar-page-php #content > article .entry-content,
 .one-column.page-template-category-page-php #content > article .entry-content,
 .one-column.attachment #content > article .entry,
 .singular-fullwidth.attachment #content > article .entry,
+.single.singular-fullwidth. #content > article .entry-content,
 .page.attachment #content > article .entry {
 	margin: 0;
 }
@@ -101,6 +104,21 @@ article.format-standard > .entry-content object {
 .one-column.page-template-content-slider-php #content > article.format-video .entry-content {
 	margin: 0;
 	width: 100%;
+}
+
+/* Single post full width */
+.singular-fullwidth #content > article.format-aside .entry-content,
+.singular-fullwidth #content > article.format-audio .entry-content,
+.singular-fullwidth #content > article.format-chat .entry-content,
+.singular-fullwidth #content > article.format-gallery .entry-content,
+.singular-fullwidth #content > article.format-link .entry-content,
+.singular-fullwidth #content > article.format-quote .entry-content,
+.singular-fullwidth #content > article.format-standard .entry-content,
+.singular-fullwidth #content > article.format-status .entry-content,
+.singular-fullwidth.attachment #content > article .entry,
+.singular-fullwidth #content > article .sharedaddy,
+.singular-fullwidth #content > article.format-gallery .sharedaddy {
+	margin: 0;
 }
 
 /* Search results */

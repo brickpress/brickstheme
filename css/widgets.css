@@ -250,6 +250,18 @@ input[type=text] {
 	width: 92%;
 	margin-bottom: 1.6%;
 }
+#content .contact-form input[type=text],
+#content .contact-form input[type=text].name,
+#content .contact-form input[type=text].email,
+#content .contact-form input[type=text].url {
+	padding: 0 1.5% 0 7%;
+	width: 91.5%;
+}
+#content .contact-form input[type=text] {
+	background: #F3F6F9;
+	padding: 0 7% 0 1.5%;
+	clear: both;
+}
 #content .contact-form input[type=text].name {
 	background: #F3F6F9 url(../images/name.png) no-repeat 1% 50% scroll;
 }
@@ -261,6 +273,33 @@ input[type=text] {
 }
 #content .contact-form select {
 	width: 50%;
+	font-size: 100%;
+	height: 38px;
+	line-height: 1;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+	-moz-border-top-right-radius: 6px;
+	-moz-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+	-khtml-border-top-right-radius: 6px;
+	-khtml-border-top-left-radius: 6px;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.7);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+	border: 1px solid rgba(51, 102, 0, 0.7);
+}
+#content .contact-form div {
+	margin-bottom: 0.5%;
+}
+#content .contact-form label.checkbox,
+#content .contact-form label.radio {
+	width: 96%;
+}
+#content .contact-form input[type=radio],
+#content .contact-form input[type=checkbox] {
+	font-size: 100%;
+	margin: 0 1% 0.6%;
 }
 #content .contact-form textarea {
 	width: 98%;
@@ -285,7 +324,6 @@ input[type=text] {
 
 /* Post Password Form */
 .post-password-required #content input[type=text] {
-
 }
 .post-password-required #content input[type=submit] {
 	height: 42px;
@@ -444,7 +482,6 @@ input[type=text] {
 #secondary .widget p,
 #secondary .widget div.tagcloud,
 #secondary .widget form,
-#secondary .widget iframe,
 #secondary .widget-grofile h4 {
 	margin: 0 1.5%;
 }
@@ -508,6 +545,7 @@ input[type=text] {
 }
 .tagcloud,
 .textwidget {
+	margin: 1% auto;
 }
 .tagcloud a,
 #tab-tags a {
