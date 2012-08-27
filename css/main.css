@@ -278,7 +278,6 @@ p.attachment-image {
 }
 #content > article .entry-content a:hover img,
 #content > article .entry a:hover img {
-	background: url(../images/postformats/image-icon.png) no-repeat scroll 0% 90%;
 	opacity: 0.8;
 }
 
