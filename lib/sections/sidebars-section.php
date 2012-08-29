@@ -471,7 +471,7 @@ $this->settings['footer-sidebar'] = array(
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
-		'std'	  => '#1E598E'
+		'std'	  => '#E3EDF4'
 	);
 	
 	$this->settings['fwidget_text_opacity'] = array(
