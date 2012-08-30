@@ -14,10 +14,142 @@ $this->settings['footer-section-tab'] = array(
 	'type'     => 'no-data',
 	'class'    => 'subsectiontabs',
 	'choices'  => array(
+		'footer-widget-bg'  => __( 'Footer Sidebar Background', 'bricks' ),
 		'footer-background' => __( 'Footer Background', 'bricks' ),
 		'footer-text'		=> __( 'Footer Text', 'bricks' ),
 		'footer-extras'		=> __( 'Logo, Copyright, Ads', 'bricks' )
 	)
+);
+
+// Footer Sidebar Background
+$this->settings['footer-widget-bg'] = array(
+	'section'  => 'footer',
+	'archtype' => 'structure',
+	'type'     => 'no-data',
+	'class'    => 'open_subsection',
+);
+	
+	$this->settings['footer_sidebar_bg'] = array(
+		'section'  => 'footer',
+		'title'	   => __( 'Footer Widget Area Background', 'bricks' ),
+		'desc'     => __( '', 'bricks' ),
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'class'    => 'controller_wrap'
+	);
+
+	$this->settings['footer_sidebar_color'] = array(
+		'section' => 'footer',
+		'title'	  => __( 'Background Color', 'bricks' ),
+		'desc'	  => '',
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped2',
+		'std'     => '#E3EDF4'
+	);
+	
+	$this->settings['footer_sidebar_opacity'] = array(
+		'section' => 'footer',
+		'title'	  => __( 'Footer Background Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '0'
+	);
+	
+		$this->settings['close-footer-sidebar-bg'] = array(
+			'section'  => 'footer',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+	
+	$this->settings['footer_sidebar_image'] = array(
+		'section' => 'footer',
+		'title'	  => __( 'Background Image', 'bricks' ),
+		'desc'	  => __( 'Background image for footer.', 'bricks' ),
+		'type'	  => 'image',
+		'class'   => 'uploadimg',
+		'std'	  => ''
+	);
+	
+	$this->settings['footer_sidebar_pos'] = array(
+		'section'  => 'footer',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Background Position', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['footer_sidebar_xpos'] = array(
+		'section' => 'footer',
+		'title'   => __( 'Horizontal Position', 'bricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 100,
+		'step'    => 1,
+		'std'	  => '50'
+	);
+	
+	$this->settings['footer_sidebar_ypos'] = array(
+		'section' => 'footer',
+		'title'   => __( 'Vertical Position', 'bricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 100,
+		'step'    => 1,
+		'std'	  => '0'
+	);
+
+	$this->settings['footer_sidebar_repeat'] = array(
+		'section' => 'footer',
+		'title'   => __( 'Background Repeat', 'bricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
+		'std'     => 'repeat',
+		'choices' => array(
+			'no-repeat' => __( 'No Repeat', 'bricks' ),
+			'repeat' 	=> __( 'Tile', 'bricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+		)
+	);
+	
+	$this->settings['footer_sidebar_attachment'] = array(
+		'section' => 'footer',
+		'title'   => __( 'Background Attachment', 'bricks' ),
+		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
+		'std'     => 'scroll',
+		'choices' => array(
+			'scroll' => __( 'Scroll', 'bricks' ),
+			'fixed'  => __( 'Fixed', 'bricks' )
+		)
+	);
+	
+		$this->settings['close-footer-sidebar-pos'] = array(
+			'section'  => 'footer',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);	
+
+$this->settings['close-footer-widget-bg'] = array(
+	'section'  => 'footer',
+	'archtype' => 'structure',
+	'type'     => 'no-data',
+	'class'    => 'close_subsection',
 );
 
 // Footer Background
@@ -150,7 +282,8 @@ $this->settings['close-footer-background'] = array(
 	'type'     => 'no-data',
 	'class'    => 'close_subsection',
 );
-		
+	
+// Footer Text	
 $this->settings['footer-text'] = array(
 	'section'  => 'footer',
 	'archtype' => 'structure',
