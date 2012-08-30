@@ -808,10 +808,18 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		.tagcloud a:hover {
 			color: rgba(<?php echo $this->hex_to_rgb($widget_title_color) .','. bricks_theme_option('widget_title_opacity'); ?>);
 		}
-		#secondary .widget {
+		#secondary .widget,
+		#secondary #social-media-before-sidebar {
 			background: rgba(<?php echo $this->hex_to_rgb($widget_background_color) .','. bricks_theme_option('widget_background_opacity'); ?>);
 		}
-		<?php 
+		
+		<?php if( bricks_theme_option('hide_sidebar_divider') ) : ?>
+		#secondary, #content > .widget-area, .left-sidebar #secondary,
+		.error404.left-sidebar #secondary, .left-sidebar.page-template-sidebar-page-php #secondary {
+			background: none;
+		}
+		<?php endif;
+		
 		$fwidget_title_color = bricks_theme_option('fwidget_title_color');
 		$fwidget_title_shadow = bricks_theme_option('fwidget_title_shadow');
 		$fwidget_text_shadow = bricks_theme_option('fwidget_text_shadow');
@@ -833,14 +841,6 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			font-weight: <?php echo bricks_theme_option('fwidget_text_fontweight'); ?>;
 			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($fwidget_text_shadow) .','. bricks_theme_option('fwidget_text_opacity'); ?>);
 		}
-		#content nav a.page-numbers,
-		#content nav a.page-numbers:hover {
-			background: <?php echo $fwidget_bg_color; ?>; /* Show a solid color for older browsers */
-			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) );
-			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) );
-			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from( rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) ), to( rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) ) ); /* older webkit syntax */
-			background: -webkit-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($article_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>), rgba(<?php echo $this->hex_to_rgb($fwidget_bg_color) .','. bricks_theme_option('fwidget_bg_opacity'); ?>) );
-		}
 		<?php $widget_button1 = bricks_theme_option('widget_button1');
 			  $widget_button2 = bricks_theme_option('widget_button2');
 			  $widget_button_border = bricks_theme_option('widget_button_border');
@@ -859,8 +859,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		#subscribe-blog input[type=submit],
 		#content .searchform input[type=submit],
 		#content .pushbutton-wide,
-		.widget .searchform input[type=submit],
-		.widget input[type=submit] {
+		.module .searchform input[type=submit],
+		.widget input[type=submit],
+		.widget input[type=submit].submit {
 			background: <?php echo $widget_button1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) );
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) );
@@ -875,7 +876,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		?>		
 		#subscribe-blog input:hover[type=submit],
 		#supplementary input:hover[type=submit],
-		.widget .searchform input:hover[type=submit],
+		.module .searchform input:hover[type=submit],
+		.widget .searchform input:hover[type=submit].submit,
 		#content button.pushbutton-wide :hover {
 			background: <?php echo $widget_button_hover1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button_hover1) .','. bricks_theme_option('widget_button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button_hover2) .','. bricks_theme_option('widget_button_hover_opacity2'); ?>) );
@@ -920,13 +922,18 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: rgba(<?php echo $this->hex_to_rgb($footer_wrapper_color) .','. bricks_theme_option('footer_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('footer_wrapper_img'); ?>) <?php echo bricks_theme_option('footer_wrap_repeat').' '.bricks_theme_option('footer_wrap_attachment').' '.bricks_theme_option('footer_wrap_xpos') .'% '. bricks_theme_option('footer_wrap_ypos') .'%'; ?>;
         }
 		<?php 
+		$footer_sidebar_color = bricks_theme_option('footer_sidebar_color');
 		$footer_bg_color = bricks_theme_option('footer_bg_color');
 		$footer_text_color = bricks_theme_option('footer_text_color');
 		$footer_link_color = bricks_theme_option('footer_link_color');
 		?>
-		#colophon {
+		.inner-widget-footer {
+			background: <?php echo $footer_sidebar_color; ?>; /* Show a solid color for older browsers */
+			background: rgba(<?php echo $this->hex_to_rgb($footer_sidebar_color) .','. bricks_theme_option('footer_sidebar_opacity'); ?>) url(<?php echo bricks_theme_option('footer_sidebar_image'); ?>) <?php echo bricks_theme_option('footer_sidebar_repeat').' '.bricks_theme_option('footer_sidebar_attachment').' '.bricks_theme_option('footer_sidebar_xpos').'% '.bricks_theme_option('footer_sidebar_ypos') .'%'; ?>;
+		}
+		.inner-footer {
 			background: <?php echo $footer_bg_color; ?>; /* Show a solid color for older browsers */
-			background: rgba(<?php echo $this->hex_to_rgb($footer_bg_color) .','. bricks_theme_option('footer_bg_opacity'); ?>) url(<?php echo bricks_theme_option('footer_bg_image'); ?>) <?php echo bricks_theme_option('fwidget_bg_repeat').' '.bricks_theme_option('fwidget_bg_attachment').' '.bricks_theme_option('footer_bg_xpos').'% '.bricks_theme_option('footer_bg_ypos') .'%'; ?>;
+			background: rgba(<?php echo $this->hex_to_rgb($footer_bg_color) .','. bricks_theme_option('footer_bg_opacity'); ?>) url(<?php echo bricks_theme_option('footer_bg_image'); ?>) <?php echo bricks_theme_option('footer_bg_repeat').' '.bricks_theme_option('footer_bg_attachment').' '.bricks_theme_option('footer_bg_xpos').'% '.bricks_theme_option('footer_bg_ypos') .'%'; ?>;
 		}
 		#colophon #copyright-notice p,
 		#colophon #footer-ads,

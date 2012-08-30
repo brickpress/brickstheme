@@ -820,8 +820,8 @@ function bricks_social_media() {
       
         <?php if( bricks_theme_option('search_module') ) : ?>
         <div id="search-module">
-            <div class="widget widget_search">
-            <?php the_widget( 'Bricks_Search_Widget', array( 'search_text'   => 'Search', 'search_submit' => 'Search' ), array( 'widget_id' => 'Search' ) ); ?>
+            <div class="search_module_widget">
+            <?php the_widget( 'Bricks_Search_Widget', array( 'search_text'   => 'Search', 'search_submit' => 'Search' ), array( 'widget_id' => 'Search', 'before_widget' => '<div class="module search_widget">' ) ); ?>
             </div>
         </div>
         <?php endif; ?>

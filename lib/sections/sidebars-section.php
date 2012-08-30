@@ -27,6 +27,15 @@ $this->settings['primary-sidebar'] = array(
 	'class'    => 'open_subsection'
 );
 
+	$this->settings['hide_sidebar_divider'] = array(
+		'section' => 'sidebars',
+		'title'   => __( 'Hide Sidebar Divider', 'bricks' ),
+		'desc'    => __( 'Show/hide the divider between content and primary sidebar.', 'bricks' ),
+		'type'    => 'checkbox',
+		'std'     => 0,
+		'class'   => 'iphone_checkboxes'
+	);
+
 	$this->settings['widget_title'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',

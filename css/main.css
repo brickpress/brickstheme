@@ -40,6 +40,7 @@ body {
 #main,
 #headline-container {
 	margin: 0 auto;
+	padding: 0 0.5%;
 	max-width: 1024px;
 	min-width: 700px;
 }
@@ -696,8 +697,8 @@ p img,
 #social-media-before-sidebar {
 	display: block;
 	float: right;
-	margin: 10px 0;
-	width: 100%;
+	width: 96%;
+	padding: 2%;
 }
 #social-media-before-sidebar ul {
 	list-style: none;
@@ -1981,7 +1982,7 @@ p.comment-form-comment {
 	float: left;
 	list-style: none;
 	line-height: 1;
-	margin: 0 0 10px -0.5%;
+	margin: 0.5%;
 }
 #footer-navmenu li,
 #footer-navmenu a {
