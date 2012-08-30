@@ -519,11 +519,6 @@ blockquote cite {
 	float: left;
 	margin-bottom: 1.625em;
 }
-#content > article.format-status div.avatar + p {
-	display: inline-block;
-	float: left;
-	width: 80%;
-}
 .format-status img.avatar {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
