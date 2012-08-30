@@ -20,23 +20,21 @@ function bricks_featured_slider() {
 	$slider_items = bricks_theme_option( 'slider_items' );
 	$slider_effects = bricks_theme_option( 'slider_effects' );
 	
-	?>
-    <div id="bricks-slider-wrapper">
-    <input type="hidden" id="slider_timer" name="slider_timer" value="<?php if( $slider_timer ) { echo $slider_timer; } else { echo '5'; } ?>"/>
-
+	// Proceed only if sticky posts exist.
+	if ( ! empty( $sticky ) ) :
+		$featured_args = array(
+			'post__in' => $sticky,
+			'post_status' => 'publish',
+			'posts_per_page' => $slider_items,
+			'no_found_rows' => true,
+		); ?>
+            
+	<div id="bricks-slider-wrapper">
+    <input type="hidden" id="slider_timer" name="slider_timer" value="<?php if( $slider_timer ) { echo $slider_timer; } else { echo '5'; } ?>"/>	
         <div class="inner-slider">
             <div id="slider"><!-- nivoSlider -->
-            <?php // Proceed only if sticky posts exist.
-			
-                if ( ! empty( $sticky ) ) :
-                $featured_args = array(
-                    'post__in' => $sticky,
-                    'post_status' => 'publish',
-                    'posts_per_page' => $slider_items,
-                    'no_found_rows' => true,
-                );
-				
-                // The Featured Posts query.
+
+                <?php // The Featured Posts query.
                 $featured = new WP_Query( $featured_args );
 				
                 // Proceed only if published posts exist
@@ -61,8 +59,7 @@ function bricks_featured_slider() {
                 endwhile; ?>
                 
                 </div><!-- .nivoSlider -->
-                <?php endif; // End check for sticky posts. ?>       
-                        
+                                            
                 <script type="text/javascript">
 				<!--//--><![CDATA[//><!--
                 jQuery(window).load(function() {
@@ -78,5 +75,5 @@ function bricks_featured_slider() {
             <div class="clearfix"></div>
         </div><!-- .inner-slider -->
     </div><!-- #bricks-slider-wrapper -->
- 	<?php
+ 	<?php endif; // End check for sticky posts.
 }     
