@@ -13,6 +13,10 @@
 		</div><!-- .inner-content -->
 	</div>
 
+<?php // if footer widget area is empty, no need to call the container
+
+if( is_active_sidebar( 'sidebar-f1' ) || is_active_sidebar( 'sidebar-f2' ) || is_active_sidebar( 'sidebar-f3' ) || is_active_sidebar( 'sidebar-f4' ) || is_active_sidebar( 'sidebar-f5' ) || is_active_sidebar( 'sidebar-f6' ) ) : ?>
+
 <div id="footer-sidebar-wrapper">
     <div class="inner-widget-footer"> 
     <?php bricks_before_footer(); ?>
@@ -56,6 +60,7 @@
         </div><!-- #supplementary -->
     </div><!-- .footer-widget-inner -->
 </div><!-- #footer-sidebar-wrapper -->
+<?php endif; ?>       
         
         
 <div id="footer-wrapper">
