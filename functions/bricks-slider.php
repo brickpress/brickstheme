@@ -49,7 +49,7 @@ function bricks_featured_slider() {
 					
                    echo '<a href="' .esc_url( get_permalink() ). '" title="' .esc_attr( the_title_attribute('echo=0') ). '">';
 				   
-                   if( is_page_template('showcase.php') ) {
+                   if( is_page_template('showcase.php') || is_page_template('slider-homepage.php') ) {
 				       the_post_thumbnail('bricks-large-slider');
 				   } else {
 				       the_post_thumbnail('bricks-medium-slider');

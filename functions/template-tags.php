@@ -709,6 +709,46 @@ if( ! function_exists( 'bricks_footer_sidebar_class' ) ) :
 endif;
 
 
+/* 
+ * Slider Homepage sidebar class.
+ *
+ * Count the number of footer sidebars to enable dynamic classes for the slider homepage.
+ *
+ * @param     void
+ * @return    string $class
+ * 
+ * @since     1.0.1
+ */
+if( ! function_exists( 'slider_homepage_sidebar_class' ) ) :
+	function slider_homepage_sidebar_class() {
+		$count = 0;
+		
+		if ( is_active_sidebar( 'sidebar-2' ) )
+			$count++;
+		if ( is_active_sidebar( 'sidebar-3' ) )
+			$count++;
+		if ( is_active_sidebar( 'sidebar-4' ) )
+			$count++;
+		$class = '';
+		
+		switch ( $count ) {
+			case '1':
+				$class = 'one';
+				break;
+			case '2':
+				$class = 'two';
+				break;
+			case '3':
+				$class = 'three';
+				break;
+		}
+		if ( $class ) {
+			echo 'class="' . $class . '"';
+		}
+	}
+endif;
+
+
 add_action( 'bricks_after_footer_menu', 'bricks_copyright_notices' );
 /**
  * Displays a copyright notice or a Creative Commons license at the footer. 
