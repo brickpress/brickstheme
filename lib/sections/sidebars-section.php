@@ -16,6 +16,7 @@ $this->settings['sidebars-section-tab'] = array(
 	'choices' => array(
 		'primary-sidebar'	=> __( 'Main Sidebar', 'bricks' ),
 		'footer-sidebar'    => __( 'Footer Sidebar', 'bricks' ),
+		'homepage-sidebar'  => __( 'Homepage Sidebar', 'bricks' ),
 		'widget-buttons'    => __( 'Widget Buttons', 'bricks' )
 	)
 );
@@ -522,7 +523,245 @@ $this->settings['close-footer-text-sub'] = array(
 	'archtype' => 'structure',
 	'type'     => 'no-data',
 	'class'    => 'close_subsection',
-);	
+);
+
+$this->settings['homepage-sidebar'] = array(
+	'section'  => 'sidebars',
+	'archtype' => 'structure',
+	'type'     => 'no-data',
+	'class'    => 'open_subsection'
+);
+
+	$this->settings['homepage_widget'] = array(
+		'section'  => 'sidebars',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Widget Title', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['hwidget_title_color'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Font Color', 'bricks' ),
+		'desc'	  => '',
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#1E598E'
+	);
+	
+	$this->settings['hwidget_title_opacity'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Title Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '1'
+	);
+	
+	$this->settings['hwidget_title_fontface'] = array(
+		'section' => 'sidebars',
+		'title'   => __( 'Font Family', 'bricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'type'	  => 'select',
+		'class'   => 'font-face',
+		'family'  => '_wrapped3',
+		'std'	  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
+		'choices' => $fontfamily
+	);
+	
+	$this->settings['hwidget_title_size'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Font Size', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 5,
+		'max'	  => 36,
+		'step'    => 1,
+		'unit'	  => 'px',
+		'std'	  => '20'
+	);
+	
+	$this->settings['hwidget_title_transform'] = array(
+		'section' => 'sidebars',
+		'title'   => __( 'Text Transform', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'	  => 'radio',
+		'class'   => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'	  => 'none',
+		'choices' => array(
+			'none'     	 => __( 'None', 'bricks' ),
+			'capitalize' => __( 'Capitalize', 'bricks' ),
+			'uppercase'	 => __( 'Uppercase', 'bricks' )
+		)	
+	);
+	
+	$this->settings['hwidget_title_shadow'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Title Shadow', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
+		'std'	  => '#F9F9F9'
+	);
+	
+	$this->settings['hwidget_fontweight'] = array(
+		'section' => 'sidebars',
+		'title'   => __( 'Font Weight', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'     => 'normal',
+		'choices' => array(
+			'normal' => __( 'Normal', 'bricks' ),
+			'bold'   => __( 'Bold', 'bricks' )
+		)
+	);
+	
+		$this->settings['close-hwidget-title'] = array(
+			'section'  => 'sidebars',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+	
+	$this->settings['hwidget_text'] = array(
+		'section'  => 'sidebars',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Homepage Sidebar Widget Text', 'bricks' ),
+		'desc'	   => __( 'Widget items', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['hwidget_text_color'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Text Color', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
+		'std'	  => '#222'
+	);
+	
+	$this->settings['hwidget_text_opacity'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Text Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'class'   => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '1'
+	);
+	
+	$this->settings['hwidget_fontface'] = array(
+		'section' => 'sidebars',
+		'title'   => __( 'Font Family', 'bricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'type'	  => 'select',
+		'class'   => 'font-face',
+		'family'  => '_wrapped3',
+		'std'	  => '"Helvetica Neue", Helvetica, Arial, sans-serif',
+		'choices' => $fontfamily
+	);
+	
+	$this->settings['hwidget_text_shadow'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Text Shadow', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
+		'std'	  => '#F9F9F9'
+	);
+	
+	$this->settings['hwidget_shadow_opacity'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Shadow Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '1'
+	);
+	
+	$this->settings['hwidget_text_size'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Text Size', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 5,
+		'max'	  => 36,
+		'step'    => 1,
+		'unit'	  => 'px',
+		'std'	  => '16'
+	);
+	
+		$this->settings['close-hwidget-text'] = array(
+			'section'  => 'sidebars',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+
+	$this->settings['hwidget_background'] = array(
+		'section'  => 'sidebars',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Widget Background Color', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['hwidget_background_color'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Background Color', 'bricks' ),
+		'desc'	  => '',
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped2',
+		'class'   => 'pick-color',
+		'std'	  => '#F9F9F9'
+	);
+	
+	$this->settings['hwidget_background_opacity'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Background Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '0'
+	);
+	
+		$this->settings['close-hwidget-background'] = array(
+			'section'  => 'sidebars',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+
+$this->settings['close-homepage-sidebar'] = array(
+	'section'  => 'sidebars',
+	'archtype' => 'structure',
+	'type'     => 'no-data',
+	'class'    => 'close_subsection'
+);
 
 	$this->settings['widget-buttons'] = array(
 		'section'  => 'sidebars',

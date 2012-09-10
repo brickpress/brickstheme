@@ -51,11 +51,11 @@ $this->settings['quick-start'] = array(
 	$this->settings['content_width'] = array(
 		'section' => 'general',
 		'title'	  => __( 'Content Width', 'bricks' ),
-		'desc'	  => __( 'Sets the minimum width for the page container. Your theme will stop to resize if viewd on a screen with lower resolution than the content width.', 'bricks' ),
+		'desc'	  => __( 'Sets the minimum width for the page container and the page width for one column layout. Your theme will stop to resize if viewd on a screen with lower resolution than the content width.', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '640',
+		'std'	  => '700',
 		'unit'	  => 'px'
 	);
 	
@@ -69,7 +69,6 @@ $this->settings['quick-start'] = array(
 		'std'	  => '10',
 		'unit'	  => 'px'
 	);
-	
 		
 	$this->settings['sidebar_top_margin'] = array(
 		'section' => 'general',
@@ -559,7 +558,6 @@ $this->settings['custom-background'] = array(
 		'title'	  => __( 'Background Color', 'bricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
-		'subtype' => 'wp_theme_mod',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped2',
 		'std'     => '#F7F7F7'
@@ -589,9 +587,8 @@ $this->settings['custom-background'] = array(
 		'title'	  => __( 'Custom Body Background', 'bricks' ),
 		'desc'	  => __( 'Choose an image from your computer or from the media library to use as background. The image you set here can be overridden by the theme customizer.', 'bricks' ),
 		'type'	  => 'image',
-		'subtype' => 'wp_theme_mod',
 		'class'   => 'uploadimg',
-		'std'	  => trailingslashit( BRICKS_IMAGES ) . 'small-diagonals.png'
+		'std'	  => trailingslashit( BRICKS_IMAGES ) . 'background.jpg'
 	);
 	
 	$this->settings['body-background-image'] = array(

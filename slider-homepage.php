@@ -16,7 +16,7 @@ get_header(); ?>
 		 		<?php while ( have_posts() ) : the_post(); ?>
             
                 <div id="headline-container">
-                    <h1 class="headlines"><?php the_content(); ?></h1>
+                    <?php the_content(); ?>
                 </div>
             	<?php endwhile;
 			endif; ?>

@@ -18,7 +18,8 @@ $this->settings['content-section-tab'] = array(
 		'post-background'    => __( 'Article Background', 'bricks' ),
 		'post-formats' 	 	 => __( 'Post Formats', 'bricks' ),
 		'featured-slider' 	 => __( 'Featured Slider', 'bricks' ),
-		'slider-wrapper' 	 => __( 'Slider Wrapper', 'bricks' )
+		'slider-wrapper' 	 => __( 'Slider Wrapper', 'bricks' ),
+		'slider-homepage' 	 => __( 'Slider Homepage', 'bricks' )
 	)
 );
 
@@ -87,7 +88,7 @@ $this->settings['post-layout'] = array(
 			'class'    => 'close_controller_wrap'
 		);
 		
-	$this->settings['headlines'] = array(
+	$this->settings['headings'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
@@ -96,7 +97,7 @@ $this->settings['post-layout'] = array(
 		'class'    => 'controller_wrap'
 	);
 	
-	$this->settings['headlines_color'] = array(
+	$this->settings['headings_color'] = array(
 		'section' => 'content',
 		'title'	  => __( 'Font Color', 'bricks' ),
 		'desc'	  => '',
@@ -106,7 +107,7 @@ $this->settings['post-layout'] = array(
 		'std'	  => '#3e9400'
 	);
 	
-	$this->settings['headlines_opacity'] = array(
+	$this->settings['headings_opacity'] = array(
 		'section' => 'content',
 		'title'	  => __( 'Headlines Text Opacity', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
@@ -118,7 +119,7 @@ $this->settings['post-layout'] = array(
 		'std'	  => '1'
 	);
 	
-	$this->settings['headlines_fontface'] = array(
+	$this->settings['headings_fontface'] = array(
 		'section' => 'content',
 		'title'   => __( 'Font Family', 'bricks' ),
 		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
@@ -129,7 +130,7 @@ $this->settings['post-layout'] = array(
 		'choices' => $fontfamily
 	);
 
-	$this->settings['headlines_size'] = array(
+	$this->settings['headings_size'] = array(
 		'section' => 'content',
 		'title'	  => __( 'Font Size', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
@@ -142,7 +143,7 @@ $this->settings['post-layout'] = array(
 		'unit'    => 'px'
 	);
 	
-	$this->settings['headlines_fontweight'] = array(
+	$this->settings['headings_fontweight'] = array(
 		'section' => 'content',
 		'title'   => __( 'Font Weight', 'bricks' ),
 		'desc'    => __( '', 'bricks' ),
@@ -156,7 +157,7 @@ $this->settings['post-layout'] = array(
 		)
 	);
 	
-	$this->settings['headlines_text_transform'] = array(
+	$this->settings['headings_text_transform'] = array(
 		'section' => 'content',
 		'title'   => __( 'Text Transform', 'bricks' ),
 		'desc'    => __( '', 'bricks' ),
@@ -171,7 +172,7 @@ $this->settings['post-layout'] = array(
 		)	
 	);
 	
-		$this->settings['close-headlines'] = array(
+		$this->settings['close-headings'] = array(
 			'section'  => 'content',
 			'archtype' => 'structure',
 			'type'     => 'no-data',
@@ -715,13 +716,13 @@ $this->settings['featured-slider'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '685',
+		'std'	  => '690',
 		'unit'    => 'px'
 	);
 	
 	$this->settings['medium_feature_height'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Mediun Featured Image Height', 'bricks' ),
+		'title'	  => __( 'Medium Featured Image Height', 'bricks' ),
 		'desc'	  => __( 'This sets the height of the slider container for medium featured slider. The height of the slider image is set automatically to maintain image aspect ratio.', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
@@ -744,7 +745,7 @@ $this->settings['featured-slider'] = array(
 	$this->settings['large_feature_height'] = array(
 		'section' => 'content',
 		'title'	  => __( 'Large Featured Image Height', 'bricks' ),
-		'desc'	  => __( 'This sets the height of the slider container for large featured slider. The height of the slider image is set automatically to maintain image aspect ratio.', 'bricks' ),
+		'desc'	  => __( 'This sets the height of the slider container for large featured slider. The height of the slider image is set automatically to maintain image aspect ratio. If you need to adjust this value, please adjust the <strong>Slider Wrapper Height</strong> accordingly (found on the next tab). ', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
@@ -832,10 +833,52 @@ $this->settings['slider-wrapper'] = array(
 	'class'    => 'open_subsection',
 );
 
+	$this->settings['large_slider_margin'] = array(
+		'section'  => 'content',
+		'title'	   => __( 'Top and Bottom Margin for Large Slider', 'bricks' ),
+		'desc'     => __( '', 'bricks' ),
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['slider_top_padding'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Top Padding', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 150,
+		'step'    => 1,
+		'std'	  => '10',
+		'unit'    => 'px'
+	);
+	
+	$this->settings['slider_bottom_padding'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Bottom Padding', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 150,
+		'step'    => 1,
+		'std'	  => '0',
+		'unit'    => 'px'
+	);
+	
+		$this->settings['close-slider-margin'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+
 	$this->settings['slider_wrapper_bg'] = array(
 		'section'  => 'content',
-		'title'	   => __( 'Background for Large Featured Image Slider.', 'bricks' ),
-		'desc'     => __( 'Lower opacity if you wish to make the container transparent.', 'bricks' ),
+		'title'	   => __( 'Slider Wrapper Background', 'bricks' ),
+		'desc'     => __( '', 'bricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -872,8 +915,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_wrapper_image'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Custom Header Container Background Image', 'bricks' ),
-		'desc'	  => __( 'Background image for the custom header container.', 'bricks' ),
+		'title'	  => __( 'Background Image for Large Featured Image Slider', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -913,7 +956,7 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_wrapper_height'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Custom Header Container Height.', 'bricks' ),
+		'title'	  => __( 'Slider Wrapper Height', 'bricks' ),
 		'desc'	  => __( '', 'bricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
@@ -959,6 +1002,190 @@ $this->settings['slider-wrapper'] = array(
 			'class'    => 'close_controller_wrap',
 		);
 	
+	$this->settings['close-slider-wrapper'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'class'    => 'close_subsection',
+	);
+	
+	$this->settings['slider-homepage'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'class'    => 'open_subsection',
+	);
+	
+	$this->settings['toggle_homepage_menu'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['homepage_topbar'] = array(
+		'section' => 'content',
+		'title'   => __( 'Show Top Nav Menu on Homepage', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
+		'std'     => 'show_topbar',
+		'choices' => array(
+			'show_topbar'   => __( 'Show Topbar', 'bricks' ),
+			'hide_topbar'   => __( 'Hide Topbar', 'bricks' )
+		)
+	);
+	
+	$this->settings['homepage_navmenu'] = array(
+		'section' => 'content',
+		'title'   => __( 'Show Primary Nav Menu on Homepage', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped2',
+		'std'     => 'show_nav',
+		'choices' => array(
+			'show_nav'   => __( 'Show Nav', 'bricks' ),
+			'hide_nav'   => __( 'Hide Nav', 'bricks' )
+		)
+	);
+	
+		$this->settings['close-toggle-homepage-menu'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+	
+		$this->settings['headlines'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Homepage Headline', 'bricks' ),
+		'desc'	   => __( '', 'bricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['headlines_color'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Font Color', 'bricks' ),
+		'desc'	  => '',
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#3e9400'
+	);
+	
+	$this->settings['headlines_opacity'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Headlines Text Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '1'
+	);
+	
+	$this->settings['headlines_fontface'] = array(
+		'section' => 'content',
+		'title'   => __( 'Font Family', 'bricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'type'	  => 'select',
+		'class'   => 'font-face',
+		'family'  => '_wrapped3',
+		'std'	  => '"Times New Roman", Times, serif',
+		'choices' => $fontfamily
+	);
+	
+	$this->settings['headlines_shadow'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Headlines Text Shadow', 'bricks' ),
+		'desc'	  => '',
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#F9F9F9'
+	);
+	
+	$this->settings['headlines_shadow_opacity'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Headlines Shadow Opacity', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 0,
+		'max'	  => 1,
+		'step'    => 0.1,
+		'std'	  => '1'
+	);
+
+	$this->settings['headlines_size'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Font Size', 'bricks' ),
+		'desc'	  => __( '', 'bricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped3',
+		'min'	  => 5,
+		'max'	  => 50,
+		'step'    => 1,
+		'std'	  => '32',
+		'unit'    => 'px'
+	);
+	
+	$this->settings['headlines_fontweight'] = array(
+		'section' => 'content',
+		'title'   => __( 'Font Weight', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'     => 'normal',
+		'choices' => array(
+			'normal' => __( 'Normal', 'bricks' ),
+			'bold'   => __( 'Bold', 'bricks' )
+		)
+	);
+	
+	$this->settings['headlines_text_transform'] = array(
+		'section' => 'content',
+		'title'   => __( 'Text Transform', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'	  => 'radio',
+		'class'   => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'	  => 'none',
+		'choices' => array(
+			'none'     	 => __( 'None', 'bricks' ),
+			'capitalize' => __( 'Capitalize', 'bricks' ),
+			'uppercase'	 => __( 'Uppercase', 'bricks' )
+		)	
+	);
+	
+	$this->settings['headlines_text_align'] = array(
+		'section' => 'content',
+		'title'   => __( 'Text Align', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'	  => 'radio',
+		'class'   => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'	  => 'center',
+		'choices' => array(
+			'left'   => __( 'Left', 'bricks' ),
+			'center' => __( 'Center', 'bricks' ),
+			'right'	 => __( 'Right', 'bricks' )
+		)	
+	);
+	
+		$this->settings['close-headlines'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap'
+		);
+		
 $this->settings['close-content-tab'] = array(
 	'section'  => 'content',
 	'archtype' => 'structure',

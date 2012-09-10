@@ -25,6 +25,7 @@
 	height: 385px;
 }
 .nivoSlider {
+	background: #FFF url(../images/nivoSlider/loading.gif) no-repeat 50% 50%;
 	margin: 0 auto;
 	position: relative;
 	width: 100% !important;
@@ -117,7 +118,8 @@
 }
 
 /* Control nav styles */
-.page-template-showcase-php .nivo-controlNav {
+.page-template-showcase-php .nivo-controlNav,
+.page-template-slider-homepage-php .nivo-controlNav {
 	position: absolute;
 	top: 5%;
 	right: 5%;
@@ -148,19 +150,24 @@
 /* Direction nav styles (e.g. Next & Prev) */
 .nivo-directionNav a {
 	position: absolute;
-	top: 45%;
+	top: 35%;
 	z-index: 9;
 	cursor: pointer;
-	width: 50px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
 	text-indent:-9999px;
+	opacity: 0.5;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 .nivo-prevNav {
-	background :url(../images/nivoSlider/slide-next-prev.png) left no-repeat;
+	background :url(../images/nivoSlider/arrows.png) left no-repeat;
 	left: 15px;
 }
 .nivo-nextNav {
-	background: url(../images/nivoSlider/slide-next-prev.png) right no-repeat;
+	background: url(../images/nivoSlider/arrows.png) right no-repeat;
 	right: 15px;
 }
 
@@ -187,6 +194,10 @@
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	-khtml-border-radius: 6px;
+	-webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 .left-sidebar .nivo-caption {
 	right: 30px;

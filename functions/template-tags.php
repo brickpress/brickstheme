@@ -219,7 +219,7 @@ endif;
 if( ! function_exists('bricks_post_title') ) :
 function bricks_post_title() {
 	?>
-	<?php if( is_single() || is_page() ) { ?>
+	<?php if( is_single() ) { ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
     <?php } elseif( is_sticky() ) { ?>
 		<h1 class="entry-title">

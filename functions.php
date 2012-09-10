@@ -41,6 +41,7 @@ function bricks_theme_option( $option ) {
 /* Widgets */
 require_once( trailingslashit( BRICKS_DIR ) . 'bricks-category-posts-widget.php' );
 require_once( trailingslashit( BRICKS_DIR ) . 'bricks-search-widget.php' );
+require_once( trailingslashit( BRICKS_DIR ) . 'bricks-text-widget.php' );
 
 /* Theme setup class */
 require_once( trailingslashit( BRICKS_DIR ) . 'class.bricks-theme-setup.php' );

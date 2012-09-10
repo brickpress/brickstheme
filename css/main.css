@@ -33,19 +33,21 @@ body {
 .inner-header,
 .inner-navigation,
 .inner-content,
-.inner-slider,
 .inner-widget-footer,
 .inner-footer,
 #custom-header,
 #main,
-#headline-container {
+#headline-container,
+.homepage-widget-area {
 	margin: 0 auto;
 	padding: 0 0.5%;
 	max-width: 1024px;
-	min-width: 700px;
+	/*min-width: 700px;*/
 }
 .inner-slider {
-	background: black;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1024px;
 	overflow: hidden;
 }
 #topbar-wrapper,
@@ -124,16 +126,13 @@ article #post-0 {
 	bottom: -10px;
 	z-index: 2;
 }
-#custom-header-wrapper {
-	overflow: hidden;
-}
+#custom-header-wrapper,
 #bricks-slider-wrapper {
-	height: 400px;
 	overflow: hidden;
 }
 #headline-container {
 	padding: 0;
-	margin-bottom: -10px;
+	margin: 1.6% auto;
 	width: 100%;
 }
 #headline-container .page-title {
@@ -181,9 +180,6 @@ article #post-0 {
 .widget-title {
 	color: #E17009;
 }
-#secondary > .widget_image .widget-title {
-	margin-left: -10px;
-}
 
 /* =Right content
 ----------------------------------------------- */
@@ -215,7 +211,8 @@ article #post-0 {
 	margin: 0;
 }
 .page-template-default #primary #content,
-.left-sidebar.page-template-default #primary #content {
+.left-sidebar.page-template-default #primary #content,
+.page-template-slider-homepage-php #primary #content {
 	width: 100%;
 	margin: 0 auto;
 }
@@ -242,6 +239,10 @@ article #post-0 {
 	
 /* One column */
 .one-column #primary #content {
+	margin: 0 auto;
+	width: 100%;
+}
+.one-column #bricks-slider-wrapper {
 	margin: 0 auto;
 	width: 100%;
 }
@@ -342,21 +343,6 @@ p.attachment-image {
 .one-column .commentlist > li.comment .comment-content {
 	margin-right: 85px;
 }
-/*.one-column .commentlist .avatar {
-	background: transparent;
-	display: block;
-	padding: 0;
-	top: 1.6%;
-	left: auto;
-	right: 1.6%;
-}
-.one-column .commentlist .children .avatar {
-	background: none;
-	padding: 0;
-	position: absolute;
-	top: 2.2%;
-	left: 2.2%;
-}*/
 .one-column #respond {
 	width: auto;
 }
@@ -554,6 +540,10 @@ img.size-large {
 .entry-content .wp-caption {
 	max-width: 100%;
 }
+.attachment #content > article .attachment-image {
+	width: auto;
+	overflow: hidden;
+}
 p img,
 .wp-caption {
 	margin: 0 auto;
@@ -688,7 +678,7 @@ p img,
 /* =Social Icons
 -------------------------------------------------------------- */
 #social-media-header-right {
-	width: 30%;
+	min-width: 30%;
 	display: block;
 	float: right;
 	margin: 0 auto;
@@ -1967,6 +1957,7 @@ p.comment-form-comment {
 	min-width: 480px;
 	height: auto;
 	float: right;
+	margin-top: 1%;
 }
 
 /* Footer Navigation */

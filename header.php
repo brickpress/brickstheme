@@ -66,7 +66,7 @@
 	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'topnav' )
           bricks_featured_slider(); ?>
               
-    <?php if( bricks_theme_option('show_topbar_nav') ) : ?>
+    <?php if( ! is_page_template('slider-homepage.php') && bricks_theme_option('show_topbar_nav') || is_page_template('slider-homepage.php') && 'show_topbar' == bricks_theme_option('homepage_topbar') ) : ?>
 	<div id="topbar-wrapper">
     	<div class="inner-topbar">
        	<?php bricks_topbar(); ?>
@@ -74,7 +74,7 @@
     </div>
     <?php endif; ?>
     
-    <?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'before-header' )
+    <?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'before-header' || is_page_template('slider-homepage.php') && bricks_theme_option('slider_position') == 'before-header' )
 			  bricks_featured_slider(); ?>
 
 	<header id="branding" role="banner">
@@ -108,17 +108,19 @@
                   
         </div><!-- .inner-header -->
 	</header><!-- #branding -->
-    <?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-header' )
+    <?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-header' || is_page_template('slider-homepage.php') && bricks_theme_option('slider_position') == 'after-header' )
 			  bricks_featured_slider(); ?>
                 
-	<?php // Secondary navigation menu. ?>
+	<?php // Primary navigation menu. ?>
     <div id="nav-wrapper">
         <div class="inner-navigation">
-            <?php bricks_nav_menu(); ?>
+        	<?php // Disables primary navigation menu on Slider Homepage page templates
+			if( ! is_page_template('slider-homepage.php') || is_page_template('slider-homepage.php') && 'show_nav' == bricks_theme_option('homepage_navmenu') )
+				bricks_nav_menu(); ?>
         </div>
     </div>
  	
-	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-main-nav' )
+	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-main-nav' || is_page_template('slider-homepage.php') && bricks_theme_option('slider_position') == 'after-main-nav' )
               bricks_featured_slider(); ?>
               
     <div id="content-wrapper">

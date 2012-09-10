@@ -70,7 +70,7 @@ get_header(); ?>
 				'order'               => 'DESC',
 				'paged'               => $paged,
 				'posts_per_page'      => $post_per_page,
-				'offset'              => '-1',
+				//'offset'              => '-1',
 				'ignore_sticky_posts' => $do_not_show_stickies
 			);
 			

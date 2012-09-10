@@ -369,7 +369,7 @@ $this->settings['content-wrapper'] = array(
 		'min'	  => 0,
 		'max'	  => 1,
 		'step'    => 0.1,
-		'std'	  => '0.5'
+		'std'	  => '0'
 	);
 
 	$this->settings['close-content-wrap'] = array(
@@ -385,7 +385,7 @@ $this->settings['content-wrapper'] = array(
 		'desc'	  => __( 'Content Wrapper Image', 'bricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
-		'std'	  => trailingslashit( BRICKS_IMAGES ) . 'background.jpg'
+		'std'	  => ''
 	);
 
 	$this->settings['content-wrap-position'] = array(

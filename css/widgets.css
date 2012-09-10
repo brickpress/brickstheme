@@ -7,9 +7,6 @@
 .widget-area {
 	font-size: 12px;
 }
-#secondary .widget {
-	background: rgba(255,255,255,0.5);
-}
 #secondary .widget,
 #supplementary .widget {
 	/*background: url(../images/widget-bottom.png) repeat-x scroll 100% 100%;*/
@@ -65,6 +62,38 @@
 .widget a:focus,
 .widget a:active {
 	text-decoration: underline;
+}
+
+/* Slider Homepage widgets */
+.page-template-slider-homepage-php #content-wrapper {
+	padding-bottom: 2%;
+}
+#homepage-sidebar {
+	width: 100%;
+	margin: 0 auto;
+	padding: 2% 0;
+}
+.page-template-slider-homepage-php #homepage-sidebar .widget {
+	margin-bottom: 3%;
+}
+/* Two Footer Widget Areas */
+#homepage-sidebar.two .widget-area {
+	float: left;
+	margin-right: 2.6%;
+	width: 48.6%;
+}
+#homepage-sidebar.two .widget-area + .widget-area {
+	margin-right: 0;
+}
+
+/* Three Footer Widget Areas */
+#homepage-sidebar.three .widget-area {
+	float: left;
+	margin-right: 2%;
+	width: 32%;
+}
+#homepage-sidebar.three .widget-area + .widget-area + .widget-area {
+	margin-right: 0;
 }
 
 /* Widget Forms and Buttons */
@@ -422,8 +451,23 @@ input[type=text] {
 /* Widget Image */
 .widget_image img {
 	height: auto;
-	max-width: 97.5%;
+	max-width: 100%;
 	margin: 0 auto;
+}
+.widget_image .wp-caption {
+	width: 100% !important;
+}
+.widget_image .wp-caption {
+	background: none;
+	margin: 1% auto;
+}
+.widget_image .wp-caption-text {
+	margin: 1% auto;
+	padding: 0;
+}
+.widget_image .wp-caption .wp-caption-text:before {
+	color: #666;
+	content: '';
 }
 
 /* Calendar Widget */
