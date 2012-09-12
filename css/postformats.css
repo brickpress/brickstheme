@@ -1,0 +1,530 @@
+/*
+	Post format styling for Cubricks Theme.
+*/
+
+/* =Post Format Containers
+----------------------------------------------- */
+#content > article.format-aside .entry-content,
+#content > article.format-audio .entry-content,
+#content > article.format-chat .entry-content,
+#content > article.format-gallery .entry-content,
+#content > article.format-link .entry-content,
+#content > article.format-quote .entry-content,
+#content > article.format-standard .entry-content,
+#content > article.format-status .entry-content,
+.page-template-category-page-php #content > article.format-aside .entry-content {
+	margin: 0 3%;
+}
+.page-template-default #content > article .entry-content {
+	margin: 0;
+}
+#content > article.format-image .entry-content p > img + p,
+#content > article.format-video .entry-content p,
+#content > article.format-gallery .entry-content .sharedaddy,
+#content > article.format-image .entry-content .sharedaddy,
+#content > article.format-video .entry-content .sharedaddy {
+	margin: 0 3%;
+}
+#content > article div.fb-mentions.entry-meta,
+.single #content > article.format-audio .entry-content,
+.single #content > article.format-chat .entry-content,
+#content > article.format-image .entry-content a.tumblr_blog {
+	margin: 0 3%;
+}
+.single.singular-sidebar #content > article .entry-content,
+.search.search-results #content > article.format-image .entry-content p {
+	margin: 0 3%;
+}
+.search #content > article.not-found .entry-content,
+.error404 #content > article.not-found .entry-content {
+	margin: 2% 3%;
+}
+p.none-found {
+	padding-top: 2%;
+}
+.blog #content > article.format-video .entry-content p,
+#content > article div.attribution {
+	margin: 0 3% 1.6% 3%;
+}
+#content > article.format-aside .entry-content,
+#content > article.format-audio .entry-content,
+#content > article.format-quote .entry-content,
+#content > article.format-status .entry-content {
+	padding: 2.65% 0;
+}
+#content > article.format-video iframe,
+#content > article.format-image div.wp-caption,
+#content > article.format-image .entry-content img,
+article > .link-content,
+article > .audio-content {
+	padding: 0;
+	margin-bottom: 1.65%;
+	width: 100%!important;
+}
+#content > article.format-status .entry-content {
+
+}
+article.format-standard > .entry-content object {
+	margin: 0 auto;
+	width: 100%;
+}
+.page-template-default #content > article,
+.single.singular-fullwidth #content > article,
+.one-column.page-template-default #content > article,
+.one-column.page-template-sidebar-page-php #content > article,
+.one-column.page-template-category-page-php #content > article.page {
+	padding: 0 3% 2% 3%;
+}
+#content > article.format-image .entry-content,
+.single #content > article.format-image .entry-content,
+.single #content > article.format-video .entry-content p,
+.single #content > article.format-video .entry-content .sharedaddy,
+.one-column.single-post #content > article .entry-content,
+.one-column.page-template-sidebar-page-php #content > article .entry-content,
+.one-column.page-template-category-page-php #content > article .entry-content,
+.one-column.attachment #content > article .entry,
+.singular-fullwidth.attachment #content > article .entry,
+.single.singular-fullwidth. #content > article .entry-content,
+.page.attachment #content > article .entry {
+	margin: 0;
+}
+.page-template-showcase-php #content > article,
+.page-template-showcase-php #content > article .entry-content {
+	padding: 0 0 1%;
+}
+.one-column.page-template-showcase-php #content > article .entry-content,
+.one-column.page-template-content-slider-php #content > article .entry-content {
+	margin: 0 3%;
+	width: 94%;
+}
+.one-column.page-template-showcase-php #content > article.format-image .entry-content,
+.one-column.page-template-showcase-php #content > article.format-video .entry-content,
+.one-column.page-template-content-slider-php #content > article.format-image .entry-content,
+.one-column.page-template-content-slider-php #content > article.format-video .entry-content {
+	margin: 0;
+	width: 100%;
+}
+
+/* Single post full width */
+.singular-fullwidth #content > article.format-aside .entry-content,
+.singular-fullwidth #content > article.format-audio .entry-content,
+.singular-fullwidth #content > article.format-chat .entry-content,
+.singular-fullwidth #content > article.format-gallery .entry-content,
+.singular-fullwidth #content > article.format-link .entry-content,
+.singular-fullwidth #content > article.format-quote .entry-content,
+.singular-fullwidth #content > article.format-standard .entry-content,
+.singular-fullwidth #content > article.format-status .entry-content,
+.singular-fullwidth.attachment #content > article .entry,
+.singular-fullwidth #content > article .sharedaddy,
+.singular-fullwidth #content > article.format-gallery .sharedaddy {
+	margin: 0;
+}
+
+/* Search results */
+.search.search-results #content > article.format-audio .entry-content,
+.search.search-results #content > article.format-status .entry-content {
+	padding: 0;
+}
+.single-attachment #content > article .entry h5,
+.page.attachment #content > article .entry h5 {
+	margin: 2% auto;
+}
+#content > article .entry-content .pd-rating + p {
+	display: none;
+}
+.entry-content p > a + img {
+	padding: 0!important;
+	margin: 0!important;
+	width: 100%!important;
+}
+#content > article .entry-content .pd-rating {
+	margin: 0 3%;
+}
+
+/* =Post Format Icons
+----------------------------------------------- */
+.entry-format-standard,
+.entry-format-aside,
+.entry-format-image,
+.entry-format-gallery,
+.entry-format-video,
+.entry-format-audio,
+.entry-format-link,
+.entry-format-quote,
+.entry-format-chat,
+.entry-format-status,
+.entry-format-featured {
+	float: right;
+	margin: 10px;
+}
+.entry-format-standard {
+	background: url(../images/postformats/standard-icon.png) no-repeat scroll 50% 50%;
+	padding: 15px 15px;
+}
+.entry-format-aside {
+	background: url(../images/postformats/aside-icon.png) no-repeat scroll 50% 50%;
+	padding: 15px 15px;
+}
+.entry-format-audio {
+	background: url(../images/postformats/audio-icon.png) no-repeat scroll 0% 0%;
+	padding: 20px 15px;
+}
+.entry-format-chat {
+	background: url(../images/postformats/chat-icon.png) no-repeat scroll 70% 50%;
+	padding: 15px 15px;
+}
+.entry-format-featured {
+	background: url(../images/postformats/featured-icon.png) no-repeat scroll 0% 50%;
+	padding: 15px 15px;
+}
+.entry-format-gallery {
+	background: url(../images/postformats/gallery-icon.png) no-repeat scroll 50% 50%;
+	padding: 15px 15px;
+}
+.entry-format-image {
+	background: url(../images/postformats/image-icon.png) no-repeat scroll 50% 50%;
+	padding: 15px 15px;
+}
+.entry-format-link {
+	background: url(../images/postformats/link-icon.png) no-repeat scroll 70% 50%;
+	padding: 15px 15px;
+}
+.entry-format-quote {
+	background: url(../images/postformats/quote-icon.png) no-repeat scroll 70% 50%;
+	padding: 15px 15px;
+}
+.entry-format-status {
+	background: url(../images/postformats/status-icon.png) no-repeat scroll 50% 50%;
+	padding: 15px 15px;
+}
+.entry-format-video {
+	background: url(../images/postformats/video-icon.png) no-repeat scroll 50% 50%;
+	padding: 15px 15px;
+}
+
+
+
+/* =Footer Meta
+----------------------------------------------- */
+.by-author {
+	margin-right: 5px;
+}	
+.entry-meta .tags {
+	background: url(../images/postformats/tags.png) no-repeat scroll 0% 50%;
+	padding: 8px;
+}
+.entry-meta .category {
+	background: url(../images/postformats/tags.png) no-repeat scroll 0% 50%;
+	padding: 8px;
+}
+.entry-meta .comments-link {
+	background: url(../images/postformats/comment.png) no-repeat scroll 0% 50%;
+	padding: 8px 12px 8px 8px;
+}
+.entry-meta .edit-link,
+.comment-meta .edit-link {
+	margin-left: 5px;
+}
+.entry-meta .edit-link {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+.single .edit-link {
+	position: absolute;
+	top: 0.6%;
+	right: 2%;
+}
+.commentlist li.comment .edit-link,
+.commentlist .children li.comment .edit-link {
+	top: 1.6%;
+}
+.page-template-default .edit-link,
+.page-template-sidebar-page-php .edit-link {
+	position: absolute;
+	top: 1.6%;
+	right: 2%;
+}
+.entry-meta .edit-icon {
+	background: url(../images/postformats/edit.png) no-repeat scroll 0% 50%;
+	padding: 8px 12px;
+}
+.entry-meta .article-post {
+	background: url(../images/postformats/standard.png) no-repeat scroll 0% 50%;
+	padding: 8px 16px 8px 0;
+}
+.entry-meta .aside-post {
+	background: url(../images/postformats/aside.png) no-repeat scroll 0% 50%;
+	padding: 8px 16px 8px 0;
+}
+.entry-meta .audio-post {
+	background: url(../images/postformats/audio.png) no-repeat scroll 0% 50%;
+	padding: 8px;
+}
+.entry-meta .chat-post {
+	background: url(../images/postformats/chat.png) no-repeat scroll 0% 50%;
+	padding: 8px 22px 8px 0;
+}
+.entry-meta .gallery-post {
+	background: url(../images/postformats/gallery.png) no-repeat scroll 0% 50%;
+	padding: 8px 16px 8px 0;
+}
+.entry-meta .link-post {
+	background: url(../images/postformats/link.png) no-repeat scroll 0% 50%;
+	padding: 8px 16px 8px 0;
+}
+.entry-meta .image-post {
+	background: url(../images/postformats/image.png) no-repeat scroll 0% 50%;
+	padding: 8px 22px 8px 0;
+}
+.entry-meta .quote-post {
+	background: url(../images/postformats/quote.png) no-repeat scroll 0% 50%;
+	padding: 8px 22px 8px 0;
+}
+.entry-meta .status-post {
+	background: url(../images/postformats/status.png) no-repeat scroll 0% 50%;
+	padding: 8px 16px 8px 0;
+}
+.entry-meta .video-post {
+	background: url(../images/postformats/video.png) no-repeat scroll 0% 50%;
+	padding: 8px 16px 8px 0;
+}
+
+/* =Aside
+----------------------------------------------- */
+.singular .format-aside .entry-title {
+	display: block;
+}
+.format-aside .entry-content {
+	padding: 0;
+}
+.singular .format-aside .entry-content {
+	padding: 1.625em 0 0;
+}
+
+/* =Audio
+----------------------------------------------- */
+.format-audio .audio-icon {
+	float: left;
+	position: relative;
+}
+.format-audio .audio-icon + object { 
+	margin: 0;
+	width: 77.5%;
+	display: inline-block;
+}
+.single .audio-icon + object { 
+	margin: 0;
+	width: 76.5%;
+	display: inline-block;
+}
+.format-audio blockquote,
+.format-audio p {
+	clear: both;
+}
+
+/* =Chat
+----------------------------------------------- */
+.bricks-chat {
+	margin: 0;
+	list-style: none;
+	line-height: 1.825;
+	padding: 0 0 2% 0;
+}
+.bricks-chat li {
+	color: #373737;
+}
+.bricks-chat .chat-odd strong {
+	color: #398A00;
+}
+.bricks-chat .chat-even strong {
+	color: #1B8BE0;
+}
+
+/* =Gallery
+----------------------------------------------- */
+.format-gallery .gallery-thumb {
+	float: left;
+	display: block;
+	margin: .375em 1.625em 0 0;
+}
+#content .gallery {
+	margin: 0 auto 1.6%;
+}
+#content .gallery a img {
+	border: none;
+	width: 100% !important;
+	height: auto !important;
+}
+img#wpstats {
+	display: block;
+	margin: 0 auto 1.6%;
+}
+#content .gallery-columns-3 .gallery-item {
+	width: 31%;
+	padding: 0 1%;
+}
+#content .gallery-columns-4 .gallery-item {
+	width: 23%;
+	padding: 0 1%;
+}
+#content .gallery-columns-4 .gallery-item img {
+	width: 100%;
+	height: auto;
+}
+.format-gallery blockquote,
+.format-gallery p {
+	clear: both;
+}
+.attachment-nav-left {
+	float: left;
+}
+.attachment-nav-right {
+	float: right;
+}
+
+/* =Image
+----------------------------------------------- */
+#content > article.format-image .entry-content img[class*="wp-image-"],
+#content > article.format-image .entry-content img[class*="wp-image-"],
+#content > article.format-video span[class*="embed-"],
+#content > article.format-video div[class*="embed-"],
+#content > article.format-image .entry-content a + img,
+.widget .textwidget span[class*="embed-"] {
+	width: 100%!important;
+	margin: 0!important;
+	padding-bottom: 1%;
+}
+#content > article.format-image div.entry-content + p {
+	margin: 0 auto;
+}
+#content > article.format-image .entry-content p {
+	margin-bottom: 0;
+}
+.indexed.format-image .entry-header {
+	min-height: 61px; /* Prevent the comment icon from colliding with the image when there is no title */
+}
+
+/* =Link
+----------------------------------------------- */
+.link-content {
+	background: #398A00; /* Show solid color for older browsers */
+	background: -moz-linear-gradient(#58c908, #398A00) repeat scroll 0 0 transparent;
+	background: -o-linear-gradient(top, #58c908, #398A00);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#58c908), to(#398A00)); /* older webkit syntax */
+	background: -webkit-linear-gradient(top, #58c908, #398A00);
+	min-height: 45px;
+	height: auto;
+	width: 96%;
+	display: inline-block;
+	padding: 1% 2% 0 2%;
+	margin: 2% 0;
+}
+.link-content {
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-khtml-border-radius: 6px;
+}
+.author.archive #content > article.format-link .entry-content {
+	background: #FFFFFF;
+}
+.format-link .link-icon + p {
+	color: #ff6633;
+	font-family: "Georgia", Times, serif;
+	margin: 10px 0;
+	font-size: 150%;
+	text-shadow: 1px 1px 1px #ff6633;
+	vertical-align: middle;
+}
+.format-link .entry-content a {
+	color: #f0f0f0;
+	text-decoration: none;
+}
+.author.archive .format-link a {
+	color: #1E598E;
+	text-decoration: none;
+}
+.format-link .link-icon {
+	background: url(../images/postformats/chainlink.png) 0% 70% no-repeat scroll;
+	padding: 20px;
+	float: left;
+	position: relative;
+}
+.format-link .link-icon + p { 
+	margin: 0;
+	width: 77.5%;
+	float: left;
+}
+.format-link .entry-title,
+.format-link .entry-header .comments-link {
+}
+.singular .format-link .entry-title {
+	display: block;
+}
+.format-link .entry-content {
+	padding: 0;
+}
+.singular .format-link .entry-content {
+
+	padding: 1.625em 0 0;
+}
+
+/* =Quote
+----------------------------------------------- */
+.format-quote blockquote {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: url(../images/postformats/blockquote.png) 0% 10% no-repeat scroll;
+	color: #373737;
+	font-size: 18px;
+	font-style: italic;
+	margin: 0 2%;
+	padding: 20px 0 0 50px;
+	border-left: none;
+}
+.format-quote blockquote + p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #373737;
+	font-size: 14px;
+	text-align: left;
+	margin: 1.625em 2%;
+	padding: 0 0 0 50px;
+}
+.format-quote blockquote + p:before {
+	content: '\2014';
+	padding: 0 5px 10px 5px;
+}
+blockquote cite {
+	margin: 0 auto;
+}
+.format-quote span.lquote {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 500%;
+	color: #555;
+}
+.format-quote span.rquote {
+	font-family: Georgia,"Bitstream Charter",serif;
+	font-size: 500%;
+	color: #555;
+}
+
+/* =Status
+----------------------------------------------- */
+.singular .format-status .entry-title {
+	display: block;
+}
+#content > article.format-status div.avatar {
+	display: inline-block;
+	float: left;
+	margin-bottom: 1.625em;
+}
+.format-status img.avatar {
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 2px #ccc;
+	-moz-box-shadow: 0 1px 2px #ccc;
+	box-shadow: 0 1px 2px #ccc;
+	float: left;
+	margin: 4px 10px 2px 0;
+	padding: 0;
+}
