@@ -3,7 +3,7 @@
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
 Tested up to: 3.4.2
-Version: 1.0.1
+Version: 1.0.2
 
 == Description ==
 
@@ -47,4 +47,6 @@ Check out live demos of the theme: http://brickpress.us/
  
 30 August 2012 - version 1.0.1
  * added Slider Homepage Template - a page with a featured slider, headlines and sidebar. This can optionally be set as Front Page.
- 
+
+13 September 2012 - version 1.0.2
+ * changed Author URI and Theme URI

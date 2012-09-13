@@ -81,7 +81,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		
 		define( 'THEMENAME', 'Cubricks' );
 		define( 'SHORTNAME', 'bricks' );
-		define( 'BRICKS_VERSION', '1.0.1' );
+		define( 'BRICKS_VERSION', '1.0.2' );
 		define( 'THEME_DIR', get_template_directory() );
 		define( 'THEME_URI', get_template_directory_uri() );
 		define( 'BRICKS_DIR', trailingslashit( THEME_DIR ) . basename( dirname( __FILE__ ) ) );
@@ -126,9 +126,8 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	public function bricks_admin_help() {
 		
 		$current_screen = get_current_screen();
-		$theme_url = strip_tags('http://brickpress.us/');
+		$theme_url = strip_tags('http://cubrickstheme.brickpress.us/');
 		$author_url = strip_tags('http://cubrick.brickpress.us/');
-		$theme_demo = strip_tags('http://brickstheme.brickpress.us/');
 		$github_repo = strip_tags('https://github.com/brickpress/bricks-theme/');
 
 		// Overview
@@ -160,7 +159,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		// Help Sidebar
 		$current_screen->set_help_sidebar(
 			'<p><strong>' . __( 'For more information:', 'bricks' ) . '</strong></p>' .
-			'<p><a href="' .esc_url($theme_demo). '" target="_blank">' . __( 'Theme Documentation', 'bricks' ) . '</a></p>' .
+			'<p><a href="' .esc_url($theme_url). '" target="_blank">' . __( 'Theme Documentation', 'bricks' ) . '</a></p>' .
 			'<p><a href="' .esc_url($theme_url). '" target="_blank">' . __( 'Cubricks Support', 'bricks' ) . '</a></p>' .
 			'<p><strong>' . __( 'For developers:', 'bricks' ) . '</strong></p>' .
 			'<p><a href="' .esc_url($github_repo). '" target="_blank">' . __( 'Github Repository', 'bricks' ) . '</a></p>'
