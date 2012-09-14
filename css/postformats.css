@@ -12,7 +12,8 @@
 #content > article.format-quote .entry-content,
 #content > article.format-standard .entry-content,
 #content > article.format-status .entry-content,
-.page-template-category-page-php #content > article.format-aside .entry-content {
+.page-template-category-page-php #content > article.format-aside .entry-content,
+.singular-sidebar.attachment #content > article .entry {
 	margin: 0 3%;
 }
 .page-template-default #content > article .entry-content {
@@ -125,7 +126,7 @@ article.format-standard > .entry-content object {
 .search.search-results #content > article.format-status .entry-content {
 	padding: 0;
 }
-.single-attachment #content > article .entry h5,
+.singular-fullwidth.single-attachment #content > article .entry h5,
 .page.attachment #content > article .entry h5 {
 	margin: 2% auto;
 }

@@ -373,7 +373,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 					width: <?php echo bricks_theme_option('content_width'); ?>px;
 				<?php endif; ?>		 
 				max-width: <?php echo bricks_theme_option('page_width'); ?>px;
-				/*min-width: <?php //echo bricks_theme_option('content_width'); ?>px;*/
+				min-width: <?php echo bricks_theme_option('content_width'); ?>px;
 			}
 			#primary,
 			.left-sidebar #primary,

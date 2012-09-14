@@ -105,4 +105,7 @@ get_header(); ?>
 
     </div><!-- #primary -->
  
+<?php if( bricks_theme_option( 'singular_sidebar' ) == 'sidebar' ) {
+	      get_sidebar();
+	  } ?>
 <?php get_footer(); ?>
