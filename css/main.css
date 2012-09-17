@@ -1587,7 +1587,12 @@ nav.single-top {
 	margin: 26px 0;
 	text-align: center;
 }
-.commentlist {
+.page-template-sidebar-page-php .commentlist {
+	list-style: none;
+	margin: 11% 0 0 0;
+	width: 82.5%;
+}
+.page-template-default .commentlist {
 	list-style: none;
 	margin: 11% 0 0 17.5%;
 	width: 82.5%;
