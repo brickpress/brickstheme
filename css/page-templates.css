@@ -25,7 +25,7 @@
 	height: 385px;
 }
 .nivoSlider {
-	background: #FFF url(../images/nivoSlider/loading.gif) no-repeat 50% 50%;
+	background: none;
 	margin: 0 auto;
 	position: relative;
 	width: 100% !important;
