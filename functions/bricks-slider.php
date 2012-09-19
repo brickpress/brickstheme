@@ -60,7 +60,8 @@ function bricks_featured_slider() {
                 
                 </div><!-- .nivoSlider -->
                                             
-                <script type="text/javascript">
+                <?php if( $counter_slider++ > 1 ) : ?>
+				<script type="text/javascript">
 				<!--//--><![CDATA[//><!--
                 jQuery(window).load(function() {
                     jQuery('#slider').nivoSlider({ pauseTime: parseInt(jQuery('#slider_timer').val() * 1200), pauseOnHover: true, effect: '<?php echo $slider_effects; ?>', captionOpacity: 1, controlNav: true, controlNavThumbs:false, controlNavThumbsFromRel:true, boxCols:8, boxRows:4, manualAdvance: false, afterLoad: function(){ 
@@ -69,6 +70,7 @@ function bricks_featured_slider() {
                 });
 				//--><!]]>
                 </script>
+                <?php endif; ?>
             
             <?php endif; // End check for published posts. ?>
            
