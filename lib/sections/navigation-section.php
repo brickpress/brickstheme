@@ -179,6 +179,15 @@ $this->settings['primary-navigation'] = array(
 	'class'    => 'open_subsection',
 );
 
+	$this->settings['show_primary_nav'] = array(
+		'section' => 'navigation',
+		'title'   => __( 'Show Primary Navigation', 'bricks' ),
+		'desc'    => __( '', 'bricks' ),
+		'type'    => 'checkbox',
+		'std'     => 1,
+		'class'   => 'iphone_checkboxes',
+	);
+	
 	$this->settings['navmenu_bg'] = array(
 		'section'  => 'navigation',
 		'archtype' => 'structure',

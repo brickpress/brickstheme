@@ -530,13 +530,13 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			color: rgba(<?php echo $this->hex_to_rgb($site_title_color) .','. bricks_theme_option('site_title_opacity'); ?>);
 			font-family: <?php echo bricks_theme_option('site_title_fontface'); ?>;
 			font-size: <?php echo bricks_theme_option('site_title_size'); ?>px;
-			text-shadow: rgba(<?php echo $this->hex_to_rgb($site_title_shadow) .','. bricks_theme_option('site_title_shadow_opacity'); ?>);
+			text-shadow: 0 -1px 0 rgba(<?php echo $this->hex_to_rgb($site_title_shadow) .','. bricks_theme_option('site_title_shadow_opacity'); ?>);
 		}
 		#site-header span.site-description {
 			font-family: <?php echo bricks_theme_option('site_description_fontface'); ?>;
 			color: rgba(<?php echo $this->hex_to_rgb($site_description_color) .','. bricks_theme_option('site_description_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('site_description_size'); ?>px;
-			text-shadow: rgba(<?php echo $this->hex_to_rgb($site_title_shadow) .','. bricks_theme_option('site_title_shadow_opacity'); ?>);
+			text-shadow: 0 -1px 0 rgba(<?php echo $this->hex_to_rgb($site_title_shadow) .','. bricks_theme_option('site_title_shadow_opacity'); ?>);
 		}
 		<?php // Site Header Container //
 		$siteheader_color1 = bricks_theme_option('siteheader_color1');
@@ -731,7 +731,6 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			color: rgba(<?php echo $this->hex_to_rgb($headings_color) .','. bricks_theme_option('headings_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('headings_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('headings_fontweight'); ?>;
-			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($content_wrapper_color) .','. bricks_theme_option('headings_opacity'); ?>);
 			text-transform: <?php echo bricks_theme_option('headings_text_transform'); ?>;
 		}
 		.entry-title,
@@ -742,7 +741,6 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			color: rgba(<?php echo $this->hex_to_rgb($entry_title_color) .','. bricks_theme_option('entry_title_opacity'); ?>);
 			font-size: <?php echo bricks_theme_option('entry_title_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('entry_title_fontweight'); ?>;
-			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($content_wrapper_color) .','. bricks_theme_option('entry_title_opacity'); ?>);
 			text-transform: <?php echo bricks_theme_option('entry_title_text_transform'); ?>;
 		}
 		.search .entry-title,
@@ -766,6 +764,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			border-color: <?php echo $formfield_border; ?>;
 		}
 		<?php $content_shadow = bricks_theme_option('content_shadow'); ?>
+		<?php if( bricks_theme_option('article_container') != 'no-shadow' ) : ?>
 		#content > article,
 		#content > #comments,
 		#primary > #content .recent-posts,
@@ -774,6 +773,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			-moz-box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 			box-shadow: 0 1px 3px rgba(<?php echo $this->hex_to_rgb($content_shadow) .',0.3'; ?>);
 		}
+		<?php endif; ?>
 		<?php $slider_caption_bg   = bricks_theme_option('slider_caption_bg'); 
 			  $slider_caption_text = bricks_theme_option('slider_caption_text'); ?>
 	    .nivo-caption {

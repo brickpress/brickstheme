@@ -355,7 +355,8 @@ $this->settings['post-background'] = array(
 		'std'     => 'round-corners',
 		'choices' => array(
 			'round-corners' => __( 'Round Corners', 'bricks' ),
-			'sharp-edges'   => __( 'Sharp Edges', 'bricks' )
+			'sharp-edges'   => __( 'Sharp Edges', 'bricks' ),
+			'no-shadow'     => __( 'No Box Shadow', 'bricks' )
 		)
 	);
 	
