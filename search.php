@@ -37,14 +37,18 @@ get_header(); ?>
                 </div><!-- .entry-content -->
                 
                 <footer class="entry-meta">
-                    <?php bricks_post_footer(); ?>
-                    <?php bricks_comments_link(); ?>
+                    <?php //bricks_post_footer(); ?>
+                    <?php //bricks_comments_link(); ?>
                     <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer>
                 <div class="clearfix"></div>
                 
-    		<div class="left-post-shadow"></div>
-            <div class="right-post-shadow"></div> 
+				<?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
+                <div class="post-no-shadow"></div>
+                <?php else : ?>
+                <div class="left-post-shadow"></div>
+                <div class="right-post-shadow"></div>
+                <?php endif; ?>
             </article><!-- #post-<?php the_ID(); ?> -->
 			<?php bricks_after_article(); ?>
         

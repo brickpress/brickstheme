@@ -48,8 +48,12 @@ bricks_before_article(); ?>
                 <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
 			</footer>
 			<div class="clearfix"></div>
-       	
+       		
+            <?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
+            <div class="post-no-shadow"></div>
+            <?php else : ?>
             <div class="left-post-shadow"></div>
-            <div class="right-post-shadow"></div> 
+            <div class="right-post-shadow"></div>
+            <?php endif; ?>
 		</article><!-- #post-<?php the_ID(); ?> -->
         <?php bricks_after_article(); ?>

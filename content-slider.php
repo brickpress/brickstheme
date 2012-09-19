@@ -28,22 +28,18 @@ get_header(); ?>
             <?php
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
             $showcase_recent_posts = bricks_theme_option('showcase_recent_posts');
-            
-            $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-            $post_per_page = $showcase_recent_posts;
-            $do_not_show_stickies = 1;     // 0 to show stickies
-            
+           
             $args = array(
                 'orderby'             => 'date',
                 'order'               => 'DESC',
                 'paged'               => $paged,
                 'posts_per_page'      => $post_per_page,
-                'post__not_in' => get_option( 'sticky_posts' )
+                'post__not_in'        => get_option( 'sticky_posts' )
             );
             
             $temp = $wp_query;              // assign orginal query to temp variable for later use  
             $wp_query = null;
-            //$wp_query = new WP_Query($args); 
+
             // Our new query for the Recent Posts section.
             $wp_query = new WP_Query( $args );
 
@@ -63,7 +59,7 @@ get_header(); ?>
 					
             <?php endif; ?>
 
-			<?php $wp_query = $temp; //reset back to original query ?>
+			<?php $wp_query = $temp; 		//reset back to original query ?>
 
             </div><!-- #content -->
         <?php bricks_after_content(); ?>

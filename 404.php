@@ -48,8 +48,12 @@ $article_container = bricks_theme_option('article_container'); ?>
 
 			</div><!-- .entry-content -->
         
-        <div class="left-post-shadow"></div>
-        <div class="right-post-shadow"></div>    
+            <?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
+            <div class="post-no-shadow"></div>
+            <?php else : ?>
+            <div class="left-post-shadow"></div>
+            <div class="right-post-shadow"></div>
+            <?php endif; ?>  
         </article><!-- #post-0-->
         <?php bricks_after_article(); ?>
 

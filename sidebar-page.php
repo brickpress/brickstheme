@@ -48,8 +48,12 @@ get_header(); ?>
                 
                 <?php comments_template( '', true ); ?>
             
-            <div class="left-post-shadow"></div>
-            <div class="right-post-shadow"></div>    
+				<?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
+                <div class="post-no-shadow"></div>
+                <?php else : ?>
+                <div class="left-post-shadow"></div>
+                <div class="right-post-shadow"></div>
+                <?php endif; ?>    
             </article><!-- #post-<?php the_ID(); ?> -->
             
             <?php bricks_after_single(); ?>

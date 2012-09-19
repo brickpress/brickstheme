@@ -115,7 +115,7 @@
     <div id="nav-wrapper">
         <div class="inner-navigation">
         	<?php // Disables primary navigation menu on Slider Homepage page templates
-			if( ! is_page_template('slider-homepage.php') || is_page_template('slider-homepage.php') && 'show_nav' == bricks_theme_option('homepage_navmenu') )
+			if( ! is_page_template('slider-homepage.php') && bricks_theme_option('show_primary_nav') || is_page_template('slider-homepage.php') && 'show_nav' == bricks_theme_option('homepage_navmenu') )
 				bricks_nav_menu(); ?>
         </div>
     </div>
