@@ -175,3 +175,58 @@ function bricks_status_content() {
 	the_content();
 }
 endif;
+
+
+/**
+ * Returns content for gallery post format.
+ *
+ * @since 1.0.0
+ */
+function bricks_gallery_content() {
+	
+	global $post;
+	
+	$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
+	if ( $images ) :
+		$total_images = count( $images );
+		$image = array_shift( $images );
+		$image_img_tag = wp_get_attachment_image( $image->ID, 'full' );
+	?>
+	
+	<figure class="gallery-thumb">
+    <?php if ( has_post_thumbnail() ) : ?>
+    	<a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('full'); ?></a>
+    <?php else : ?>
+		<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
+    <?php endif; ?>
+	</figure><!-- .gallery-thumb -->
+	
+	<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'bricks' ),
+			'href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'bricks' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+			number_format_i18n( $total_images )
+		); ?></em></p>
+	<?php
+    endif;
+	
+	the_excerpt();
+}
+
+
+/**
+ * Returns content for image post format.
+ *
+ * @since 1.0.0
+ */
+function bricks_image_content() {
+	
+	global $post;
+	
+	$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image' ) );
+		$image = array_shift( $images );
+		$image_img_tag = wp_get_attachment_image( $image->ID, 'full' );
+	?>
+
+	<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
+	
+	<?php the_excerpt();
+}

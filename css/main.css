@@ -234,7 +234,7 @@ article #post-0 {
 	width: 100%;
 }
 .single.singular-fullwidth .entry-header {
-	margin: 0 auto;
+	margin: 2% auto;
 	width: 90%;
 }
 .single.singular-fullwidth #comments-title {
@@ -645,7 +645,7 @@ p img,
 	color: #eeeeee;
 	display: block;
 	font-size: 100%;
-	margin-top: -1%;
+	margin-top: -2%;
 	clear: both;
 }
 #site-header a {

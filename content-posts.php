@@ -10,7 +10,7 @@ bricks_before_article(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         
         <?php $post_format = strtolower( get_post_format() ); ?>
-        <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' ) : ?>
+        <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' || $post_format == 'audio' ) : ?>
 			<header class="entry-header">
             	<hgroup>
 					<?php bricks_post_title(); ?>
@@ -24,6 +24,10 @@ bricks_before_article(); ?>
 				
 					if( has_post_format('chat') ) {
 						echo bricks_chat_content();
+					} elseif( has_post_format('gallery') ) {
+						echo bricks_gallery_content();
+					} elseif( has_post_format('image') ) {
+						echo bricks_image_content();
 					} elseif( has_post_format('link') ) {
 						echo bricks_link_content();
 					} elseif(  has_post_format('quote') ) {

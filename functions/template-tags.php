@@ -70,8 +70,8 @@ if( ! function_exists('bricks_nav_menu') ) :
 					  'theme_location' => 'primary',
 					  'items_wrap'     => '<ul id="%1$s" class="sf-menu">%3$s</ul>'
 				      )
-				   ); ?>
-            <?php if( false == bricks_theme_option('show_topbar_nav') ) : ?>
+				   );
+			?>
 			<script type="text/javascript">
             <!--//--><![CDATA[//><!--
             jQuery(document).ready(function() { 
@@ -79,7 +79,6 @@ if( ! function_exists('bricks_nav_menu') ) :
             });
             //--><!]]>
             </script>
-            <?php endif; ?>
         </nav><!-- #access -->
 	<?php
 	}
@@ -605,7 +604,7 @@ if( ! function_exists('bricks_no_posts') ) :
 		?>
         </p>
 	<?php
-}
+	}
 endif;
 
 

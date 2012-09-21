@@ -20,7 +20,7 @@ get_header(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             
             <?php $post_format = strtolower( get_post_format() ); ?>
-            <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' ) : ?>
+            <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' || $post_format == 'audio' ) : ?>
             <header class="entry-header">
                 <hgroup>
                 <?php bricks_post_title(); ?>
@@ -31,14 +31,18 @@ get_header(); ?>
 
             <div class="entry-content">
                 <?php bricks_before_entry_content();
-  
-					if( $post_format == 'chat' ) {
+
+					if( has_post_format('chat') ) {
 						echo bricks_chat_content();
+					} elseif( has_post_format('gallery') ) {
+						echo bricks_gallery_content();
+					} elseif( has_post_format('image') ) {
+						echo bricks_image_content();
 					} elseif( has_post_format('link') ) {
 						echo bricks_link_content();
-					} elseif(  $post_format == 'quote' ) {
+					} elseif(  has_post_format('quote') ) {
 						echo bricks_quote_content();
-					} elseif(  $post_format == 'status' ) {
+					} elseif(  has_post_format('status') ) {
 						echo bricks_status_content();
 					} else {
 						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) );

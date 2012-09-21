@@ -56,11 +56,15 @@ p.none-found {
 #content > article.format-video iframe,
 #content > article.format-image div.wp-caption,
 #content > article.format-image .entry-content img,
+.format-audio span p object,
 article > .link-content,
 article > .audio-content {
 	padding: 0;
 	margin-bottom: 1.65%;
 	width: 100%!important;
+}
+#content > article.format-image .entry-content img {
+	height: auto;
 }
 #content > article.format-status .entry-content {
 
@@ -119,6 +123,12 @@ article.format-standard > .entry-content object {
 .singular-fullwidth #content > article .sharedaddy,
 .singular-fullwidth #content > article.format-gallery .sharedaddy {
 	margin: 0;
+}
+#watch-description-text {
+	margin: 0;
+	width: auto;
+	height: auto;
+	overflow: hidden;
 }
 
 /* Search results */
@@ -347,7 +357,8 @@ article.format-standard > .entry-content object {
 .format-gallery .gallery-thumb {
 	float: left;
 	display: block;
-	margin: .375em 1.625em 0 0;
+	margin: 1% 0;
+	width: 100%;
 }
 #content .gallery {
 	margin: 0 auto 1.6%;
@@ -365,11 +376,21 @@ img#wpstats {
 	width: 31%;
 	padding: 0 1%;
 }
-#content .gallery-columns-4 .gallery-item {
+#content .gallery-columns-4 .gallery-item,
+#content .gallery-columns-5 .gallery-item,
+#content .gallery-columns-6 .gallery-item,
+#content .gallery-columns-7 .gallery-item,
+#content .gallery-columns-8 .gallery-item,
+#content .gallery-columns-9 .gallery-item {
 	width: 23%;
 	padding: 0 1%;
 }
-#content .gallery-columns-4 .gallery-item img {
+#content .gallery-columns-4 .gallery-item img,
+#content .gallery-columns-5 .gallery-item img,
+#content .gallery-columns-6 .gallery-item img,
+#content .gallery-columns-7 .gallery-item img,
+#content .gallery-columns-8 .gallery-item img,
+#content .gallery-columns-9 .gallery-item img {
 	width: 100%;
 	height: auto;
 }
@@ -391,10 +412,16 @@ img#wpstats {
 #content > article.format-video span[class*="embed-"],
 #content > article.format-video div[class*="embed-"],
 #content > article.format-image .entry-content a + img,
+.gallery-thumb img,
 .widget .textwidget span[class*="embed-"] {
 	width: 100%!important;
 	margin: 0!important;
 	padding-bottom: 1%;
+}
+#content > article.format-image .entry-content img[class*="wp-image-"],
+#content > article.format-image .entry-content img[class*="wp-image-"],
+.gallery-thumb img {
+	height: auto!important;
 }
 #content > article.format-image div.entry-content + p {
 	margin: 0 auto;
