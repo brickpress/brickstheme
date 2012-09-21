@@ -228,5 +228,5 @@ function bricks_image_content() {
 
 	<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 	
-	<?php the_excerpt();
+	<?php
 }
