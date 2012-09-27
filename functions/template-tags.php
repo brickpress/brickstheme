@@ -759,16 +759,16 @@ function bricks_copyright_notices() {
 	
     $footer_ad_url = get_theme_mod('footer_ad_url'); ?>
 	<div id="copyright-notice"<?php if( '' == $footer_ad_url ) { echo 'style="width:100%;"'; } ?>>
-    	<?php if( '' != get_theme_mod('copyright_notices') ) : ?>	
-		<p><?php echo get_theme_mod('copyright_notices'); ?>
-        
+    	<p><?php if( '' != get_theme_mod('copyright_notices') ) : ?>	
+			   <?php echo get_theme_mod('copyright_notices'); ?>
+        	<?php endif; ?>
+            
 			<?php if( '' != get_theme_mod('cc_license_url') ) : ?>
-            <?php _e( 'Except where otherwise noted, content on this site is licensed under a ', 'bricks' ); ?>
+            	<?php _e( 'Except where otherwise noted, content on this site is licensed under a ', 'bricks' ); ?>
             <a rel="license" href="<?php echo esc_attr( get_theme_mod('cc_license_url') ); ?>"><?php echo esc_attr( get_theme_mod('cc_license_type') ); ?></a>.</p>
             
             <p><a rel="license" href="<?php echo esc_attr( get_theme_mod('cc_license_url') ); ?>"><img alt="Creative Commons License" style="border-width:0" src="<?php echo esc_attr( get_theme_mod('cc_license_img') ); ?>" /></a></p>
-            <?php endif; ?>
-        <?php endif; ?>
+            <?php endif; ?>  
 	</div>
     <?php
 }
