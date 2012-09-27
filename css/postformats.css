@@ -130,6 +130,9 @@ article.format-standard > .entry-content object {
 	height: auto;
 	overflow: hidden;
 }
+#content > article .entry-content {
+	overflow: hidden;
+}
 
 /* Search results */
 .search.search-results #content > article.format-audio .entry-content,

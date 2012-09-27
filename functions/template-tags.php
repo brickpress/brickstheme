@@ -786,7 +786,9 @@ function bricks_credits() { ?>
 	<div id="site-generator">
     	<p>	
 		<?php printf( __( 'Powered by ', 'bricks' ) ); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bricks' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'bricks' ); ?>"><?php printf( __( 'WordPress', 'bricks' ) ); ?></a>
+        <?php if( bricks_theme_option('show_theme_url') ) : ?>
 		<?php printf( __( ' | Designed by ', 'bricks' ) ); ?><a href="<?php echo esc_url( __( 'http://www.brickpress.us', 'bricks' ) ); ?>" title="<?php esc_attr_e( 'Author Homepage', 'bricks' ); ?>"><strong><?php printf( __( 'BrickPress', 'bricks' ) ); ?></strong></a>
+        <?php endif; ?>
         </p>
 	</div>
     <?php

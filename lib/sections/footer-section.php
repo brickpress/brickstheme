@@ -493,6 +493,15 @@ $this->settings['footer-extras'] = array(
 			'class'    => 'close_controller_wrap',
 		);
 		
+	$this->settings['show_theme_url'] = array(
+		'section' => 'footer',
+		'title'   => __( 'Show Theme URL', 'bricks' ),
+		'desc'    => __( 'Show link to theme website next to WordPress credits link.', 'bricks' ),
+		'type'    => 'checkbox',
+		'std'     => 1,
+		'class'   => 'iphone_checkboxes',
+	);
+		
 $this->settings['close-footer-tab'] = array(
 	'section'  => 'footer',
 	'archtype' => 'structure',
