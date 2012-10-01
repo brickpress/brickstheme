@@ -108,17 +108,20 @@ class Bricks_Category_Posts_Widget extends WP_Widget {
 	<p><!-- Category -->
 	    <label for="<?php echo $this->get_field_id('category_name'); ?>"><?php _e('Category: ', 'bricks'); ?></label>
 	    <select id="<?php echo $this->get_field_id('category_name'); ?>" name="<?php echo $this->get_field_name('category_name'); ?>">
-        	<option value="-1"<?php if(-1 == $category_name) { ?> selected="selected"<?php } ?>>Current category of post</option>
+        	<option value="-1"<?php if(-1 == $category_name) { ?> selected="selected"<?php } ?>>
+			<?php __('Current category of post', 'bricks'); ?>
+            </option>
         <?php
 		foreach($categories as $category) {
 		?>
-		    <option value="<?php echo $category->term_id; ?>"<?php if($category->term_id == $category_name) { ?> selected="selected"<?php } ?>><?php echo $category->name.' ('.$category->count.')'; ?></option>
+		    <option value="<?php echo $category->term_id; ?>"<?php if($category->term_id == $category_name) { ?> selected="selected"<?php } ?>>
+            <?php echo $category->name.' ('.$category->count.')'; ?>
+            </option>
 		    <?php
 		}
 		?>
 	    </select>
 	</p>
-    
 <?php
 	}
 }

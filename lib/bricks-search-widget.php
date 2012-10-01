@@ -15,7 +15,7 @@ class Bricks_Search_Widget extends WP_Widget {
 		/* Set up the widget options. */
 		$widget_options = array(
 			'classname' => 'search',
-			'description' => esc_html__( 'An advanced widget that gives you total control over the output of your search form.', 'bricks' )
+			'description' => __( 'An advanced widget that gives you total control over the output of your search form.', 'bricks' )
 		);
 
 		/* Create the widget. */
@@ -141,5 +141,4 @@ class Bricks_Search_Widget extends WP_Widget {
 	<?php
 	}
 }
-
 ?>

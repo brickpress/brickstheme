@@ -11,7 +11,7 @@ class Bricks_Text_Widget extends WP_Widget {
 		/* Set up the widget options. */
 		$widget_options = array(
 			'classname' => 'bricks_text',
-			'description' => esc_html__( 'Cubricks Arbitrary text or HTML ideal for the Slider Homepage Page Template.', 'bricks' )
+			'description' => __( 'Cubricks Arbitrary text or HTML ideal for the Slider Homepage Page Template.', 'bricks' )
 		);
 
 		/* Create the widget. */
