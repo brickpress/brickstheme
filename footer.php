@@ -88,11 +88,8 @@ if( is_active_sidebar( 'sidebar-f1' ) || is_active_sidebar( 'sidebar-f2' ) || is
 		</footer><!-- #colophon -->
         	
     </div><!-- .inner-footer -->
-    <?php wp_footer(); ?>
-
 </div><!-- #footer-wrapper -->
 
-<?php bricks_after_html(); ?>
-
+<?php wp_footer(); ?>
 </body>
 </html>
