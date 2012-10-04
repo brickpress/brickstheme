@@ -55,5 +55,4 @@ require_once( trailingslashit( get_template_directory() ) . 'functions/page-cate
 
 /* Justin Tadlock's Theme Hybid extensions */
 require_once( trailingslashit( get_template_directory() ) . 'functions/custom-hooks.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/cleaner-gallery.php' );
 require_once( trailingslashit( get_template_directory() ) . 'functions/get-the-image.php' );
