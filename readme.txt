@@ -3,19 +3,19 @@
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
 Tested up to: 3.4.2
-Version: 1.0.2
+Version: 1.0.3
 
 == Licenses and Copyright Info ==
 
 Cubricks Theme, Copyright 2012 brickpress.us
-Cubricks Theme is distributed under the terms of the GNU GPL
+Cubricks Theme is distributed under the terms of the GNU GPL v3
 
 Bundled Resources
 
-* Bolts Theme, Copyright (c) 2011 Themejack <alison@themejack.net>
+* Bolts Theme, Copyright (c) 2011 Themejack <alison@themejack.net>, distributed under the terms of the GNU GPL v3
 * TwentyEleven Theme, the WordPress team, GNU General Public License v2
 * Hybrid Core, Copyright (c) 2008 - 2011, Justin Tadlock
-* jQuery UI, Copyright 2012 jQuery Foundation and other contributors, http://jqueryui.com/
+* jQuery UI, Copyright 2012 jQuery Foundation and other contributors, http://jqueryui.com/, Dual licensed under the MIT or GPL Version 2 licenses
 * nivoSlider, Copyright (c) 2010-2012 Dev7studios
 * Color Picker - jQuery Plugin, Stefan Petre http://www.eyecon.ro, Dual licensed under the MIT and GPL licenses
 * Superfish v1.4.8 - jQuery menu widget, Copyright (c) 2008 Joel Birch
