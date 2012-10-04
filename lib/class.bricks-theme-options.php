@@ -362,6 +362,9 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	 */
 	public function render_theme_settings_page() {
 		
+		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == true )
+			echo '<div class="updated fade"><p>' . __( 'Theme options updated.', 'bricks' ) . '</p></div>';
+		
 		echo '<input type="hidden" name="current_tab" id="current_tab" value="#bricks_menu_general" />';
 		echo '<form action="options.php" method="post" enctype="multipart/form-data">';
 			
@@ -388,11 +391,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		</div>
         </li>';
         echo '<li style="border: 0; box-shadow: none;">
-		<div id="options-form-submit">
-        	<div class="default-state" onclick="jQuery(\'#save-theme-options\').click()"></div>
-			<input type="submit" id="save-theme-options" name="submit" style="display: none;" />
-			<div class="submit-button-text" onclick="jQuery(\'#save-theme-options\').click()">' .__( 'Save Changes', 'bricks' ). '</div>
-		</div>
+			<p class="submit"><input name="Submit" type="submit" class="button-primary" value="' . __( 'Save Changes', 'bricks' ) . '" /></p>	
         </li>
         </ul>
         </div><!-- #bricks_menu -->';
