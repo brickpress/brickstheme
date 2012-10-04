@@ -166,6 +166,9 @@ div#wpwrap {
 .clearfix {
 	clear: both;
 }
+.updated.fade {
+	width: 500px;
+}
 
 /* =Main Menu
 --------------------------- */
