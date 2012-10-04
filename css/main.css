@@ -519,15 +519,11 @@ a:hover {
 .widget img {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
-img[class*="align"],
-img[class*="wp-image-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-}
 #content > article.format-standard img[class*="align"],
 #content > article.format-standard img[class*="wp-image-"] {
 	border: 1px solid #DDD;
 	padding: 1%;
-	max-width: 98%;
+	max-width: 97.5%;
 }
 .entry-content img.alignleft,
 .entry-content .wp-caption.alignleft {
@@ -545,8 +541,10 @@ img[class*="wp-image-"] {
 	margin: 0 0 1.6% 1.6%;
 }
 img.size-full,
-img.size-large {
-	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+img.size-large,
+img[class*="align-"],
+img[class*="wp-image-"] {
+	height: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
 .entry-content .wp-caption {
 	max-width: 100%;
@@ -645,7 +643,7 @@ p img,
 	color: #eeeeee;
 	display: block;
 	font-size: 100%;
-	margin-top: -2%;
+	margin-top: -1%;
 	clear: both;
 }
 #site-header a {
@@ -1781,7 +1779,7 @@ li.bypostauthor a.comment-reply-link:active {
 	-webkit-border-radius: 3px;
 	-khtml-border-radius: 3px;
 	margin: 10px auto;
-	padding: 2% 3%;
+	padding: 3%;
 	position: relative;
 	width: 94%;
 }
@@ -1856,6 +1854,9 @@ li.bypostauthor a.comment-reply-link:active {
 }
 #respond input#submit {
 	background: #222;
+	float: right;
+	clear: both;
+	width: 90%;
 	border: none;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -1867,10 +1868,8 @@ li.bypostauthor a.comment-reply-link:active {
 	color: #eee;
 	cursor: pointer;
 	font-size: 15px;
-	margin: 20px 0;
-	padding: 5px 42px 5px 22px;
+	margin: 10px;
 	position: relative;
-	left: 30px;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
 }
 #respond input#submit:active {

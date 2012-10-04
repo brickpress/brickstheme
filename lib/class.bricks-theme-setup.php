@@ -444,7 +444,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			.entry-meta .edit-link a,
 			.single .edit-link a,
 			.page .edit-link a,
-			.submit-btn {
+			.submit-btn,
+			#content .form-submit #submit {
 				background: <?php echo $button_color1; ?>; /* Show a solid color for older browsers */
 				background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
 				background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_color1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_color2) .','. bricks_theme_option('button_opacity2'); ?>) );
@@ -466,7 +467,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			.single .edit-link a:hover,
 			.page .edit-link a:hover,
 			.comments-link a:hover,
-			.submit-btn:hover {
+			.submit-btn:hover,
+			#content .form-submit #submit:hover {
 				background: <?php echo $button_hover1; ?>; /* Show a solid color for older browsers */
 				background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );
 				background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($button_hover1) .','. bricks_theme_option('button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($button_hover2) .','. bricks_theme_option('button_hover_opacity2'); ?>) );

@@ -5,6 +5,24 @@ Requires at least: 3.1
 Tested up to: 3.4.2
 Version: 1.0.2
 
+== Licenses and Copyright Info ==
+
+Cubricks Theme, Copyright 2012 brickpress.us
+Cubricks Theme is distributed under the terms of the GNU GPL
+
+Bundled Resources
+
+* Bolts Theme, Copyright (c) 2011 Themejack <alison@themejack.net>
+* TwentyEleven Theme, the WordPress team, GNU General Public License v2
+* Hybrid Core, Copyright (c) 2008 - 2011, Justin Tadlock
+* jQuery UI, Copyright 2012 jQuery Foundation and other contributors, http://jqueryui.com/
+* nivoSlider, Copyright (c) 2010-2012 Dev7studios
+* Color Picker - jQuery Plugin, Stefan Petre http://www.eyecon.ro, Dual licensed under the MIT and GPL licenses
+* Superfish v1.4.8 - jQuery menu widget, Copyright (c) 2008 Joel Birch
+* jQuery Scroll to Top Control script- (c) Dynamic Drive DHTML code library: http://www.dynamicdrive.com, Copyright © 1998-2012 Dynamic Drive
+* HTML5 script, html5shiv MIT @rem remysharp.com/html5-enabling-script
+* iPhone-style Checkboxes jQuery plugin, Copyright Thomas Reynolds, licensed GPL & MIT
+
 == Description ==
 
 Cubricks is a clean, intuitive, flexible and responsive theme for WordPress. Inspired by LEGO and WordPress. 
@@ -50,3 +68,13 @@ Check out live demos of the theme: http://brickpress.us/
 
 13 September 2012 - version 1.0.2
  * changed Author URI and Theme URI
+ 
+4 October 2012 - version 1.0.3
+ * added option to exclude theme author credits link
+ * added copyright and license information for any bundled resources
+ * fixed editor-resized image
+ * fixed post comment background styling overlap
+ * fixed gallery alignment, removed cleaner-gallery.php
+ * fixed header call to stylesheet URI path
+ * fixed wp_footer()
+ * fixed theme options page Save button style
