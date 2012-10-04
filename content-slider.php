@@ -33,7 +33,6 @@ get_header(); ?>
                 'orderby'             => 'date',
                 'order'               => 'DESC',
                 'paged'               => $paged,
-                'posts_per_page'      => $post_per_page,
                 'post__not_in'        => get_option( 'sticky_posts' )
             );
             

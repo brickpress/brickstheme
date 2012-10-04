@@ -63,6 +63,12 @@ article > .audio-content {
 	margin-bottom: 1.65%;
 	width: 100%!important;
 }
+#content > article .entry-content embed,
+#content > article .entry-content iframe,
+#content > article .entry-content object,
+#content > article .entry-content video {
+	max-width: 100%!important;
+}
 #content > article.format-image .entry-content img {
 	height: auto;
 }
@@ -239,7 +245,7 @@ article.format-standard > .entry-content object {
 .comment-meta .edit-link {
 	margin-left: 5px;
 }
-.entry-meta .edit-link {
+/*.entry-meta .edit-link {
 	position: absolute;
 	right: 5px;
 	bottom: 5px;
@@ -248,16 +254,10 @@ article.format-standard > .entry-content object {
 	position: absolute;
 	top: 0.6%;
 	right: 2%;
-}
+}*/
 .commentlist li.comment .edit-link,
 .commentlist .children li.comment .edit-link {
 	top: 1.6%;
-}
-.page-template-default .edit-link,
-.page-template-sidebar-page-php .edit-link {
-	position: absolute;
-	top: 1.6%;
-	right: 2%;
 }
 .entry-meta .edit-icon {
 	background: url(../images/postformats/edit.png) no-repeat scroll 0% 50%;
@@ -411,10 +411,11 @@ img#wpstats {
 /* =Image
 ----------------------------------------------- */
 #content > article.format-image .entry-content img[class*="wp-image-"],
-#content > article.format-image .entry-content img[class*="wp-image-"],
+#content > article.format-image .entry-content div img[class*="wp-image-"],
 #content > article.format-video span[class*="embed-"],
 #content > article.format-video div[class*="embed-"],
 #content > article.format-image .entry-content a + img,
+#content > article.format-image .entry-content div[class*="wp-image-"],
 .gallery-thumb img,
 .widget .textwidget span[class*="embed-"] {
 	width: 100%!important;

@@ -152,7 +152,7 @@ function bricks_post_date_text() {
 	if( '' == $format )
 		$format = 'article';
 	
-	if( $author_avatar == 'hide_avatar') {
+	if( ! is_single() || is_single() && $author_avatar == 'hide_avatar' ) {
 		
 		$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%7$s" title="%8$s" rel="author">%9$s.</a></span></span>' );		
 	} else {

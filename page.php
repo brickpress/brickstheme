@@ -15,7 +15,6 @@ get_header(); ?>
 			<?php bricks_before_article(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 
-                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
                 <header class="entry-header">
                     <hgroup> 
                     <?php bricks_post_title(); ?>
@@ -30,6 +29,8 @@ get_header(); ?>
 				
                     if( $post_format == 'chat' ) {
 						echo bricks_chat_content();
+					} elseif( has_post_format('gallery') ) {
+						echo bricks_gallery_content();
 					} elseif( has_post_format('link') ) {
 						echo bricks_link_content();
 					} elseif(  $post_format == 'quote' ) {
@@ -43,6 +44,10 @@ get_header(); ?>
                     <?php wp_link_pages( bricks_link_pages_args() ); ?>
                 </div><!-- .entry-content -->
                 <div class="clearfix"></div>
+                
+                <footer class="entry-meta">
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                </footer><!-- .entry-meta -->
                 
                 <?php comments_template( '', true ); ?>
             

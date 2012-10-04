@@ -36,8 +36,6 @@ get_header(); ?>
 						echo bricks_chat_content();
 					} elseif( has_post_format('gallery') ) {
 						echo bricks_gallery_content();
-					} elseif( has_post_format('image') ) {
-						echo bricks_image_content();
 					} elseif( has_post_format('link') ) {
 						echo bricks_link_content();
 					} elseif(  has_post_format('quote') ) {

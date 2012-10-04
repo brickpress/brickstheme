@@ -23,9 +23,8 @@ get_header(); ?>
                 <?php if($entry_date == 'graphic') {
 					  	  bricks_post_date_graphic();
 					  }
-					  
-				edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
-                
+				?>	  
+   
                 <?php $post_format = strtolower( get_post_format() ); ?>
                 <header class="entry-header <?php echo $entry_date; ?>">
                     <hgroup> 
@@ -59,6 +58,7 @@ get_header(); ?>
                 
                 <footer class="entry-meta">
                     <?php bricks_post_footer(); ?>
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer><!-- .entry-meta -->
 				
                 <?php if( bricks_theme_option('author_avatar') == 'show_avatar' )

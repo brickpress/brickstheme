@@ -84,10 +84,6 @@ article #post-0 {
 	-khtml-border-radius: 0;
 	padding: 0 0 2% 0;
 }
-#content > article.format-image .entry-content,
-#content > article.format-video .entry-content {
-	padding: 0;
-}
 #content > article #comments {
 	margin: 0 3%;
 	width: 94%;
@@ -511,6 +507,34 @@ a:focus,
 a:active,
 a:hover {
 	text-decoration: underline;
+}
+
+/* Responsive images */
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+img.size-full,
+img.size-large,
+img.header-image,
+img.wp-post-image {
+	max-width: 100%;
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+embed,
+iframe,
+object,
+video {
+	max-width: 100%; /* Make sure videos and embeds fit their containers */
+}
+.entry-content .twitter-tweet-rendered {
+	max-width: 100% !important; /* Override the Twitter embed fixed width */
 }
 
 /* Images */
@@ -1160,11 +1184,13 @@ article .footer-meta-hr {
 article footer.entry-meta,
 .singular article .entry-meta,
 .one-column.page-template-showcase-php article .entry-meta,
-.one-column.page-template-content-slider-php article .entry-meta {
+.one-column.page-template-content-slider-php article .entry-meta,
+.page-template-category-page-php article .entry-meta {
 	padding: 1% 3%;
-	margin-bottom: 1%;
+	margin: 1%;
 }
-.singular-fullwidth article .entry-meta {
+.singular-fullwidth article .entry-meta,
+.page-template-default article .entry-meta {
 	padding: 1.5% 0;
 }
 .entry-title a:hover,
@@ -1721,7 +1747,7 @@ a.comment-reply-link {
 a.comment-reply-link:hover,
 a.comment-reply-link:focus,
 a.comment-reply-link:active {
-	background: #888;
+	background: #ddd;
 	color: #fff;
 }
 a.comment-reply-link > span {
@@ -1779,7 +1805,7 @@ li.bypostauthor a.comment-reply-link:active {
 	-webkit-border-radius: 3px;
 	-khtml-border-radius: 3px;
 	margin: 10px auto;
-	padding: 3%;
+	padding: 3% 3% 4.5% 3%;
 	position: relative;
 	width: 94%;
 }
@@ -1857,6 +1883,7 @@ li.bypostauthor a.comment-reply-link:active {
 	float: right;
 	clear: both;
 	width: 90%;
+	height: 32px;
 	border: none;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -1867,7 +1894,8 @@ li.bypostauthor a.comment-reply-link:active {
 	box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
 	color: #eee;
 	cursor: pointer;
-	font-size: 15px;
+	font-size: 14px;
+	font-weight: bold;
 	margin: 10px;
 	position: relative;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
