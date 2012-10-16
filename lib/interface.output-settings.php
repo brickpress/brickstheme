@@ -118,7 +118,7 @@
 					}
 				echo '</select>';
 				// Preview selected font family
-				echo '<div id="' .$id. '_sample" class="text-sample">' .__( 'Sample Text', 'bricks' ). '</div>';
+				echo '<div id="' .$id. '_sample" class="text-sample">' .__( 'Sample Text', 'cubricks' ). '</div>';
 				echo '<input class="' .$class. '" type="text" id="' . $id . '" value="' .esc_attr( $options[$id] ). '" style="width:60px; padding: 6px; display: none;" />';
 					
 				} else {
@@ -185,9 +185,9 @@
 				echo '<fieldset><legend class="screen-reader-text"><span>' .esc_attr( $id ). '</span></legend>';
 				echo '<input name="theme_options[' .$id. ']" id="' .$id. '" type="text" class="' .$class. '" placeholder="' .esc_attr(  $options[$id] ). '" value="' .esc_attr(  $options[$id] ). '" />';
 				echo '<div class="upload_buttons">
-						<input type="button" id="' .$id. '_remove" class="upload_image_remove" value="' .__('Remove Image', 'bricks'). '" />
-						<input type="button" id="' .$id. '_reset" class="upload_image_reset" value="' .__('Reset', 'bricks'). '" />
-						<input type="button" onclick="jQuery(\'#' . $id . '\').click()" value="' .__('Upload Image', 'bricks'). '" />
+						<input type="button" id="' .$id. '_remove" class="upload_image_remove" value="' .__('Remove Image', 'cubricks'). '" />
+						<input type="button" id="' .$id. '_reset" class="upload_image_reset" value="' .__('Reset', 'cubricks'). '" />
+						<input type="button" onclick="jQuery(\'#' . $id . '\').click()" value="' .__('Upload Image', 'cubricks'). '" />
 					  </div>';
 		
 				echo '<div class="preview-image">
@@ -227,7 +227,7 @@
 				echo '<fieldset><legend class="screen-reader-text"><span>' . esc_attr( $id ) . '</span></legend>';
 				echo '<input type="colorpicker" name="theme_options[' .$id. ']" id="' . $id . '" value="' .esc_attr( $options[$id] ). '" style="width:60px; padding: 6px; visibility: hidden;" class="' .$class. '" />';
 				echo '<div id="' . $id . '_bg" class="colorpicker_bg" onclick="jQuery(\'#' . $id . '\').click()" style="width:170px; background-color:' .esc_attr( $options[$id] ). ';" /></div><br />';
-				echo '<a id="default-color" href="#" class="pickcolor hide-if-no-js" style="background-color:' . $std . ';" /></a>'. __( 'Default Color: ', 'bricks' ) . '<span class="default-color">' . $std . '</span>';
+				echo '<a id="default-color" href="#" class="pickcolor hide-if-no-js" style="background-color:' . $std . ';" /></a>'. __( 'Default Color: ', 'cubricks' ) . '<span class="default-color">' . $std . '</span>';
 				echo '<div class="clearfix"></div>';
 				if( $subtype = 'wp_theme_mod' )
 					set_theme_mod( $id, $options[$id] );
@@ -245,7 +245,7 @@
 				if( '' != $options[$id] && $class == 'constant' )
 					set_theme_mod( $id, $options[$id] );
 				if( $class == 'constant' )
-					echo '<div class="upload_buttons"><input type="button" id="' .$id. '_remove" class="clear-field" value="' .__('Clear Field', 'bricks'). '" /></div>';
+					echo '<div class="upload_buttons"><input type="button" id="' .$id. '_remove" class="clear-field" value="' .__('Clear Field', 'cubricks'). '" /></div>';
 	
 				if ( $desc != '' )
 					echo '<span class="description">' .$desc. '</span>';

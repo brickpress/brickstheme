@@ -19,14 +19,14 @@ if ( 'no-sidebar' != $current_layout ) :
 			<?php if ( ! dynamic_sidebar( 'Main Sidebar' ) ) : ?>
 
 				<aside id="archives" class="widget">
-					<h3 class="widget-title"><?php _e( 'Archives', 'bricks' ); ?></h3>
+					<h3 class="widget-title"><?php _e( 'Archives', 'cubricks' ); ?></h3>
 					<ul>
 						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 					</ul>
 				</aside>
 
 				<aside id="meta" class="widget">
-					<h3 class="widget-title"><?php _e( 'Meta', 'bricks' ); ?></h3>
+					<h3 class="widget-title"><?php _e( 'Meta', 'cubricks' ); ?></h3>
 					<ul>
 						<?php wp_register(); ?>
 						<li><?php wp_loginout(); ?></li>

@@ -39,7 +39,7 @@ get_header(); ?>
                 <footer class="entry-meta">
                     <?php //bricks_post_footer(); ?>
                     <?php //bricks_comments_link(); ?>
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer>
                 <div class="clearfix"></div>
                 
@@ -72,7 +72,7 @@ get_header(); ?>
 				
                 <hr /><br/>
                 <div class="widget widget_categories">
-                    <h2 class="widgettitle"><?php _e( 'Most Used Categories', 'bricks' ); ?></h2>
+                    <h2 class="widgettitle"><?php _e( 'Most Used Categories', 'cubricks' ); ?></h2>
                     <ul>
                     <?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
                     </ul>
@@ -81,7 +81,7 @@ get_header(); ?>
                 
                 <?php
                 /* translators: %1$s: smilie */
-                $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'bricks' ), convert_smilies( ':)' ) ) . '</p>';
+                $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'cubricks' ), convert_smilies( ':)' ) ) . '</p>';
                 the_widget( 'WP_Widget_Archives', array('count' => 1 , 'dropdown' => 0 ), array( 'after_title' => '</h2>'.$archive_content ) );
                 ?>
 				<hr /><br/>

@@ -32,9 +32,9 @@ function bricks_post_format() {
 
 	$post_format = ucwords( get_post_format() );
 	if ( is_sticky() ) {
-		$post_format = __( 'Featured', 'bricks' );
+		$post_format = __( 'Featured', 'cubricks' );
 	} elseif ( $post_format == '' ) {
-		$post_format = __( 'Article', 'bricks' );
+		$post_format = __( 'Article', 'cubricks' );
 	}
 	$format = apply_filters( 'bricks_post_format', '<h3 class="entry-format">' . $post_format . '</h3>' );
 
@@ -53,9 +53,9 @@ function bricks_post_format_icon() {
 	$post_format = strtolower( get_post_format() );
 	
 	if ( is_sticky() ) {
-		$post_format = __( 'featured', 'bricks' );
+		$post_format = __( 'featured', 'cubricks' );
 	} elseif ( $post_format == '' ) {
-		$post_format = __( 'standard', 'bricks' );
+		$post_format = __( 'standard', 'cubricks' );
 	}
 	$format = apply_filters( 'bricks_post_format_icon', '<span class="entry-format-' .$post_format. '"></span>' );
 
@@ -201,8 +201,8 @@ function bricks_gallery_content() {
     <?php endif; ?>
 	</figure><!-- .gallery-thumb -->
 	
-	<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'bricks' ),
-			'href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'bricks' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+	<p><em><?php printf( _n( 'This gallery contains <a %1$s>%2$s photo</a>.', 'This gallery contains <a %1$s>%2$s photos</a>.', $total_images, 'cubricks' ),
+			'href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
 			number_format_i18n( $total_images )
 		); ?></em></p>
 	<?php

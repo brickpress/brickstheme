@@ -14,12 +14,12 @@ $this->settings['content-section-tab'] = array(
 	'type'    => 'no-data',
 	'class'   => 'subsectiontabs',
 	'choices' => array(
-		'post-layout'	     => __( 'Post Layout', 'bricks' ),
-		'post-background'    => __( 'Article Background', 'bricks' ),
-		'post-formats' 	 	 => __( 'Post Formats', 'bricks' ),
-		'featured-slider' 	 => __( 'Featured Slider', 'bricks' ),
-		'slider-wrapper' 	 => __( 'Slider Wrapper', 'bricks' ),
-		'slider-homepage' 	 => __( 'Slider Homepage', 'bricks' )
+		'post-layout'	     => __( 'Post Layout', 'cubricks' ),
+		'post-background'    => __( 'Article Background', 'cubricks' ),
+		'post-formats' 	 	 => __( 'Post Formats', 'cubricks' ),
+		'featured-slider' 	 => __( 'Featured Slider', 'cubricks' ),
+		'slider-wrapper' 	 => __( 'Slider Wrapper', 'cubricks' ),
+		'slider-homepage' 	 => __( 'Slider Homepage', 'cubricks' )
 	)
 );
 
@@ -34,50 +34,50 @@ $this->settings['post-layout'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( '', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( '', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['entry_date'] = array(
 		'section' => 'content',
-		'title'   => __( 'Entry Date Format', 'bricks' ),
-		'desc'    => __( 'Choose graphic if you want styled entry date on single post.', 'bricks' ),
+		'title'   => __( 'Entry Date Format', 'cubricks' ),
+		'desc'    => __( 'Choose graphic if you want styled entry date on single post.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'graphic',
 		'choices' => array(
-			'graphic' => __( 'Graphic', 'bricks' ),
-			'text'	  => __( 'Plain Text', 'bricks' )
+			'graphic' => __( 'Graphic', 'cubricks' ),
+			'text'	  => __( 'Plain Text', 'cubricks' )
 		)
 	);
 	
 	$this->settings['singular_sidebar'] = array(
 		'section' => 'content',
-		'title'   => __( 'Single Post Sidebar', 'bricks' ),
-		'desc'    => __( 'Show/hide primary sidebar on single posts while retaining your sidebar layout on blog posts, archives and search. <p><strong>TIP: </strong>Hide primary sidebar on single posts to have your readers dig right in your content.', 'bricks' ),
+		'title'   => __( 'Single Post Sidebar', 'cubricks' ),
+		'desc'    => __( 'Show/hide primary sidebar on single posts while retaining your sidebar layout on blog posts, archives and search. <p><strong>TIP: </strong>Hide primary sidebar on single posts to have your readers dig right in your content.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'sidebar',
 		'choices' => array(
-			'sidebar'   => __( 'Show Sidebar', 'bricks' ),
-			'fullwidth' => __( 'Full Width', 'bricks' )
+			'sidebar'   => __( 'Show Sidebar', 'cubricks' ),
+			'fullwidth' => __( 'Full Width', 'cubricks' )
 		)
 	);
 
 	$this->settings['author_avatar'] = array(
 		'section' => 'content',
-		'title'   => __( 'Author Avatar', 'bricks' ),
-		'desc'    => __( 'Display author avatar on single posts.', 'bricks' ),
+		'title'   => __( 'Author Avatar', 'cubricks' ),
+		'desc'    => __( 'Display author avatar on single posts.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'show_avatar',
 		'choices' => array(
-			'show_avatar' => __( 'Show avatar', 'bricks' ),
-			'hide_avatar' => __( 'Hide avatar', 'bricks' )
+			'show_avatar' => __( 'Show avatar', 'cubricks' ),
+			'hide_avatar' => __( 'Hide avatar', 'cubricks' )
 		)
 	);
 	
@@ -92,14 +92,14 @@ $this->settings['post-layout'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Headlines', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Headlines', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['headings_color'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Font Color', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -109,8 +109,8 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['headings_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Headlines Text Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Headlines Text Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -121,8 +121,8 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['headings_fontface'] = array(
 		'section' => 'content',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -132,8 +132,8 @@ $this->settings['post-layout'] = array(
 
 	$this->settings['headings_size'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -145,30 +145,30 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['headings_fontweight'] = array(
 		'section' => 'content',
-		'title'   => __( 'Font Weight', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Font Weight', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'normal',
 		'choices' => array(
-			'normal' => __( 'Normal', 'bricks' ),
-			'bold'   => __( 'Bold', 'bricks' )
+			'normal' => __( 'Normal', 'cubricks' ),
+			'bold'   => __( 'Bold', 'cubricks' )
 		)
 	);
 	
 	$this->settings['headings_text_transform'] = array(
 		'section' => 'content',
-		'title'   => __( 'Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'none',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
@@ -183,14 +183,14 @@ $this->settings['post-layout'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Post Title', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Post Title', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['entry_title_color'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Font Color', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -200,8 +200,8 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['entry_title_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Post Title Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Post Title Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -212,8 +212,8 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['entry_title_fontface'] = array(
 		'section' => 'content',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -223,8 +223,8 @@ $this->settings['post-layout'] = array(
 
 	$this->settings['entry_title_size'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -236,30 +236,30 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['entry_title_fontweight'] = array(
 		'section' => 'content',
-		'title'   => __( 'Font Weight', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Font Weight', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'bold',
 		'choices' => array(
-			'normal' => __( 'Normal', 'bricks' ),
-			'bold'   => __( 'Bold', 'bricks' )
+			'normal' => __( 'Normal', 'cubricks' ),
+			'bold'   => __( 'Bold', 'cubricks' )
 		)
 	);
 	
 	$this->settings['entry_title_text_transform'] = array(
 		'section' => 'content',
-		'title'   => __( 'Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'none',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
@@ -274,14 +274,14 @@ $this->settings['post-layout'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Post Content', 'bricks' ),
-		'desc'	   => __( 'Styles the content of posts and pages. Area affected: all text between post title and post meta.', 'bricks' ),
+		'title'	   => __( 'Post Content', 'cubricks' ),
+		'desc'	   => __( 'Styles the content of posts and pages. Area affected: all text between post title and post meta.', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['entry_content_color'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Font Color', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -291,8 +291,8 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['entry_content_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Post Content Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Post Content Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -303,8 +303,8 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['entry_content_fontface'] = array(
 		'section' => 'content',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -314,8 +314,8 @@ $this->settings['post-layout'] = array(
 	
 	$this->settings['entry_content_size'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -348,15 +348,15 @@ $this->settings['post-background'] = array(
 
 	$this->settings['article_container'] = array(
 		'section' => 'content',
-		'title'   => __( 'Article/Posts Container', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Article/Posts Container', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'std'     => 'round-corners',
 		'choices' => array(
-			'round-corners' => __( 'Round Corners', 'bricks' ),
-			'sharp-edges'   => __( 'Sharp Edges', 'bricks' ),
-			'no-shadow'     => __( 'No Box Shadow', 'bricks' )
+			'round-corners' => __( 'Round Corners', 'cubricks' ),
+			'sharp-edges'   => __( 'Sharp Edges', 'cubricks' ),
+			'no-shadow'     => __( 'No Box Shadow', 'cubricks' )
 		)
 	);
 	
@@ -364,14 +364,14 @@ $this->settings['post-background'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Post Background', 'bricks' ),
-		'desc'	   => __( 'Styles the post container. Includes container of all posts, pages, comments and attachment pages.', 'bricks' ),
+		'title'	   => __( 'Post Background', 'cubricks' ),
+		'desc'	   => __( 'Styles the post container. Includes container of all posts, pages, comments and attachment pages.', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['article_bg_color'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Post Background Color', 'bricks' ),
+		'title'	  => __( 'Post Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -381,8 +381,8 @@ $this->settings['post-background'] = array(
 	
 	$this->settings['article_bg_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -393,7 +393,7 @@ $this->settings['post-background'] = array(
 	
 	$this->settings['content_shadow'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Post Container Shadow', 'bricks' ),
+		'title'	  => __( 'Post Container Shadow', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -410,8 +410,8 @@ $this->settings['post-background'] = array(
 
 	$this->settings['article_bg_image'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Post Background Image', 'bricks' ),
-		'desc'	  => __( 'If you wish to use a large image, recommended width is 670px(default) or as wide as your post content, then set background repeat to <strong>No Repeat</strong>.', 'bricks' ),
+		'title'	  => __( 'Post Background Image', 'cubricks' ),
+		'desc'	  => __( 'If you wish to use a large image, recommended width is 670px(default) or as wide as your post content, then set background repeat to <strong>No Repeat</strong>.', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -421,14 +421,14 @@ $this->settings['post-background'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Background Position', 'bricks' ),
+		'title'	   => __( 'Background Position', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['article_bg_xpos'] = array(
 		'section' => 'content',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -439,8 +439,8 @@ $this->settings['post-background'] = array(
 	
 	$this->settings['article_bg_ypos'] = array(
 		'section' => 'content',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = middle | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = middle | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -451,31 +451,31 @@ $this->settings['post-background'] = array(
 	
 	$this->settings['article_bg_repeat'] = array(
 		'section' => 'content',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['article_bg_attachment'] = array(
 		'section' => 'content',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	
@@ -504,15 +504,15 @@ $this->settings['post-formats'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Chat Post Format Color', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Chat Post Format Color', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['bricks_chat_odd'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Odd Speaker Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Odd Speaker Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -521,8 +521,8 @@ $this->settings['post-formats'] = array(
 
 	$this->settings['bricks_chat_even'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Even Speaker Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Even Speaker Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -540,15 +540,15 @@ $this->settings['post-formats'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Link Post Format Background Color', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Link Post Format Background Color', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap',
 	);
 		
 	$this->settings['linkformat_color1'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Primary Color', 'bricks' ),
-		'desc'	  => __( 'Lighter color', 'bricks' ),
+		'title'	  => __( 'Primary Color', 'cubricks' ),
+		'desc'	  => __( 'Lighter color', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -557,8 +557,8 @@ $this->settings['post-formats'] = array(
 	
 	$this->settings['linkformat_color2'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Secondary Color', 'bricks' ),
-		'desc'	  => __( 'Darker color', 'bricks' ),
+		'title'	  => __( 'Secondary Color', 'cubricks' ),
+		'desc'	  => __( 'Darker color', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -567,8 +567,8 @@ $this->settings['post-formats'] = array(
 	
 	$this->settings['linkformat_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Primary Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Primary Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -603,22 +603,22 @@ $this->settings['featured-slider'] = array(
 		'archtype' => 'structure',
 	 	'type'     => 'no-data',
 		'class'    => 'headings',
-		'title'    => __( '', 'bricks' ),
-		'desc'	   => __( 'Set a featured image on your sticky post.', 'bricks' )
+		'title'    => __( '', 'cubricks' ),
+		'desc'	   => __( 'Set a featured image on your sticky post.', 'cubricks' )
 	);
 	
 	$this->settings['slider_position'] = array(
 		'section' => 'content',
-		'title'   => __( 'Featured Slider Position', 'bricks' ),
-		'desc'    => __( 'Choose where you want your full width featured slider.', 'bricks' ),
+		'title'   => __( 'Featured Slider Position', 'cubricks' ),
+		'desc'    => __( 'Choose where you want your full width featured slider.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'std'     => 'after-header',
 		'choices' => array(
-			'topnav' 		 => __( 'On top of the page', 'bricks' ),
-			'before-header'  => __( 'Before site header', 'bricks' ),
-			'after-header'   => __( 'After site header', 'bricks' ),
-			'after-main-nav' => __( 'After primary nav', 'bricks' ),
+			'topnav' 		 => __( 'On top of the page', 'cubricks' ),
+			'before-header'  => __( 'Before site header', 'cubricks' ),
+			'after-header'   => __( 'After site header', 'cubricks' ),
+			'after-main-nav' => __( 'After primary nav', 'cubricks' ),
 		)
 	);
 	
@@ -626,29 +626,29 @@ $this->settings['featured-slider'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( '', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( '', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap',
 	);
 		
 	$this->settings['slider_order'] = array(
 		'section' => 'content',
-		'title'   => __( 'Featured Posts Order', 'bricks' ),
-		'desc'    => __( 'Choose the arrangement of Featured Posts.', 'bricks' ),
+		'title'   => __( 'Featured Posts Order', 'cubricks' ),
+		'desc'    => __( 'Choose the arrangement of Featured Posts.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'DESC',
 		'choices' => array(
-			'ASC'  => __( 'Oldest First', 'bricks' ),
-			'DESC' => __( 'Newest First', 'bricks' )
+			'ASC'  => __( 'Oldest First', 'cubricks' ),
+			'DESC' => __( 'Newest First', 'cubricks' )
 		)
 	);
 	
 	$this->settings['slider_items'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Number of Featured Posts to Show', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Number of Featured Posts to Show', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 1,
@@ -659,8 +659,8 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['slider_timer'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Featured Slider Timer', 'bricks' ),
-		'desc'	  => __( 'Time interval (in seconds) between slides.', 'bricks' ),
+		'title'	  => __( 'Featured Slider Timer', 'cubricks' ),
+		'desc'	  => __( 'Time interval (in seconds) between slides.', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 1,
@@ -671,8 +671,8 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['slider_effects'] = array(
 		'section' => 'content',
-		'title'   => __( 'Featured Slider Effects', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Featured Slider Effects', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'select',
 		'family'  => '_wrapped2',
 		'std'	  => 'random',
@@ -705,15 +705,15 @@ $this->settings['featured-slider'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Featured Image Size', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Featured Image Size', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 
 	$this->settings['medium_feature_width'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Medium Featured Image Width', 'bricks' ),
-		'desc'	  => __( 'Sets the width for medium featured slider images.', 'bricks' ),
+		'title'	  => __( 'Medium Featured Image Width', 'cubricks' ),
+		'desc'	  => __( 'Sets the width for medium featured slider images.', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
@@ -723,8 +723,8 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['medium_feature_height'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Medium Featured Image Height', 'bricks' ),
-		'desc'	  => __( 'This sets the height of the slider container for medium featured slider. The height of the slider image is set automatically to maintain image aspect ratio.', 'bricks' ),
+		'title'	  => __( 'Medium Featured Image Height', 'cubricks' ),
+		'desc'	  => __( 'This sets the height of the slider container for medium featured slider. The height of the slider image is set automatically to maintain image aspect ratio.', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
@@ -734,8 +734,8 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['large_feature_width'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Large Featured Image Width', 'bricks' ),
-		'desc'	  => __( 'Sets the width for large featured slider images. This also sets the width of the slider container.', 'bricks' ),
+		'title'	  => __( 'Large Featured Image Width', 'cubricks' ),
+		'desc'	  => __( 'Sets the width for large featured slider images. This also sets the width of the slider container.', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
@@ -745,8 +745,8 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['large_feature_height'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Large Featured Image Height', 'bricks' ),
-		'desc'	  => __( 'This sets the height of the slider container for large featured slider. The height of the slider image is set automatically to maintain image aspect ratio. If you need to adjust this value, please adjust the <strong>Slider Wrapper Height</strong> accordingly (found on the next tab). ', 'bricks' ),
+		'title'	  => __( 'Large Featured Image Height', 'cubricks' ),
+		'desc'	  => __( 'This sets the height of the slider container for large featured slider. The height of the slider image is set automatically to maintain image aspect ratio. If you need to adjust this value, please adjust the <strong>Slider Wrapper Height</strong> accordingly (found on the next tab). ', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
@@ -763,8 +763,8 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['showcase_recent_posts'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Number of Recent Posts to Show', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Number of Recent Posts to Show', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'min'	  => 1,
 		'max'	  => 50,
@@ -776,15 +776,15 @@ $this->settings['featured-slider'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Slider Caption', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Slider Caption', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['slider_caption_bg'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Slider Caption Background Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Slider Caption Background Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -793,8 +793,8 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['slider_caption_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Slider Caption Background Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Slider Caption Background Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -805,8 +805,8 @@ $this->settings['featured-slider'] = array(
 	
 	$this->settings['slider_caption_text'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Slider Caption Text', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Slider Caption Text', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -836,8 +836,8 @@ $this->settings['slider-wrapper'] = array(
 
 	$this->settings['large_slider_margin'] = array(
 		'section'  => 'content',
-		'title'	   => __( 'Top and Bottom Margin for Large Slider', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Top and Bottom Margin for Large Slider', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -845,8 +845,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_top_padding'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Top Padding', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Top Padding', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -858,8 +858,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_bottom_padding'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Bottom Padding', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Bottom Padding', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -878,8 +878,8 @@ $this->settings['slider-wrapper'] = array(
 
 	$this->settings['slider_wrapper_bg'] = array(
 		'section'  => 'content',
-		'title'	   => __( 'Slider Wrapper Background', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Slider Wrapper Background', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -887,8 +887,8 @@ $this->settings['slider-wrapper'] = array(
 		
 	$this->settings['slider_wrapper_color'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Background Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped2',
@@ -897,8 +897,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_wrapper_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -916,8 +916,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_wrapper_image'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Background Image for Large Featured Image Slider', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Image for Large Featured Image Slider', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -927,14 +927,14 @@ $this->settings['slider-wrapper'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Background Position', 'bricks' ),
+		'title'	   => __( 'Background Position', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['slider_wrapper_xpos'] = array(
 		'section' => 'content',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -945,8 +945,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_wrapper_ypos'] = array(
 		'section' => 'content',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -957,8 +957,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_wrapper_height'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Slider Wrapper Height', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Slider Wrapper Height', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped3',
@@ -968,31 +968,31 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['slider_wrapper_repeat'] = array(
 		'section' => 'content',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['slider_wrapper_attachment'] = array(
 		'section' => 'content',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	
@@ -1026,29 +1026,29 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['homepage_topbar'] = array(
 		'section' => 'content',
-		'title'   => __( 'Show Top Nav Menu on Homepage', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Show Top Nav Menu on Homepage', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'show_topbar',
 		'choices' => array(
-			'show_topbar'   => __( 'Show Topbar', 'bricks' ),
-			'hide_topbar'   => __( 'Hide Topbar', 'bricks' )
+			'show_topbar'   => __( 'Show Topbar', 'cubricks' ),
+			'hide_topbar'   => __( 'Hide Topbar', 'cubricks' )
 		)
 	);
 	
 	$this->settings['homepage_navmenu'] = array(
 		'section' => 'content',
-		'title'   => __( 'Show Primary Nav Menu on Homepage', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Show Primary Nav Menu on Homepage', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'show_nav',
 		'choices' => array(
-			'show_nav'   => __( 'Show Nav', 'bricks' ),
-			'hide_nav'   => __( 'Hide Nav', 'bricks' )
+			'show_nav'   => __( 'Show Nav', 'cubricks' ),
+			'hide_nav'   => __( 'Hide Nav', 'cubricks' )
 		)
 	);
 	
@@ -1063,14 +1063,14 @@ $this->settings['slider-wrapper'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Homepage Headline', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Homepage Headline', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['headlines_color'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Font Color', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -1080,8 +1080,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['headlines_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Headlines Text Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Headlines Text Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -1092,8 +1092,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['headlines_fontface'] = array(
 		'section' => 'content',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -1103,7 +1103,7 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['headlines_shadow'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Headlines Text Shadow', 'bricks' ),
+		'title'	  => __( 'Headlines Text Shadow', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -1113,8 +1113,8 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['headlines_shadow_opacity'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Headlines Shadow Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Headlines Shadow Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -1125,8 +1125,8 @@ $this->settings['slider-wrapper'] = array(
 
 	$this->settings['headlines_size'] = array(
 		'section' => 'content',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -1138,45 +1138,45 @@ $this->settings['slider-wrapper'] = array(
 	
 	$this->settings['headlines_fontweight'] = array(
 		'section' => 'content',
-		'title'   => __( 'Font Weight', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Font Weight', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'normal',
 		'choices' => array(
-			'normal' => __( 'Normal', 'bricks' ),
-			'bold'   => __( 'Bold', 'bricks' )
+			'normal' => __( 'Normal', 'cubricks' ),
+			'bold'   => __( 'Bold', 'cubricks' )
 		)
 	);
 	
 	$this->settings['headlines_text_transform'] = array(
 		'section' => 'content',
-		'title'   => __( 'Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'none',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
 	$this->settings['headlines_text_align'] = array(
 		'section' => 'content',
-		'title'   => __( 'Text Align', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Align', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'center',
 		'choices' => array(
-			'left'   => __( 'Left', 'bricks' ),
-			'center' => __( 'Center', 'bricks' ),
-			'right'	 => __( 'Right', 'bricks' )
+			'left'   => __( 'Left', 'cubricks' ),
+			'center' => __( 'Center', 'cubricks' ),
+			'right'	 => __( 'Right', 'cubricks' )
 		)	
 	);
 	

@@ -14,9 +14,9 @@ $this->settings['navigation-section-tab'] = array(
 	'type'     => 'no-data',
 	'class'    => 'subsectiontabs',
 	'choices'  => array(
-		'topbar-navigation'  => __( 'Topbar Navigation', 'bricks' ),
-		'primary-navigation' => __( 'Primary Navigation', 'bricks' ),
-		'footer-navigation'	 => __( 'Footer Navigation', 'bricks' )
+		'topbar-navigation'  => __( 'Topbar Navigation', 'cubricks' ),
+		'primary-navigation' => __( 'Primary Navigation', 'cubricks' ),
+		'footer-navigation'	 => __( 'Footer Navigation', 'cubricks' )
 	)
 );
 
@@ -30,8 +30,8 @@ $this->settings['topbar-navigation'] = array(
 
 	$this->settings['show_topbar_nav'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Show Topbar Navigation', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Show Topbar Navigation', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'checkbox',
 		'std'     => 1,
 		'class'   => 'iphone_checkboxes',
@@ -41,15 +41,15 @@ $this->settings['topbar-navigation'] = array(
 		'section'  => 'navigation',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Navigation Menu Text', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Navigation Menu Text', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['topbar_text_color'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Font Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -58,8 +58,8 @@ $this->settings['topbar-navigation'] = array(
 	
 	$this->settings['topbar_text_opacity'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Text Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Text Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -70,8 +70,8 @@ $this->settings['topbar-navigation'] = array(
 		
 	$this->settings['topbar_fontface'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -81,8 +81,8 @@ $this->settings['topbar-navigation'] = array(
 	
 	$this->settings['topbar_text_size'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -94,30 +94,30 @@ $this->settings['topbar-navigation'] = array(
 
 	$this->settings['topbar_text_transform'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'none',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
 	$this->settings['topbar_fontweight'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Font Weight', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Font Weight', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'bold',
 		'choices' => array(
-			'normal'  => __( 'Normal', 'bricks' ),
-			'bold'    => __( 'Bold', 'bricks' )
+			'normal'  => __( 'Normal', 'cubricks' ),
+			'bold'    => __( 'Bold', 'cubricks' )
 		)	
 	);
 
@@ -132,15 +132,15 @@ $this->settings['topbar-navigation'] = array(
 		'section'  => 'navigation',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( '', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( '', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['topbar_text_current'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Current Menu Item Text Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Current Menu Item Text Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -149,8 +149,8 @@ $this->settings['topbar-navigation'] = array(
 	
 	$this->settings['topbar_bg_hover'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Menu Hover Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Menu Hover Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -181,8 +181,8 @@ $this->settings['primary-navigation'] = array(
 
 	$this->settings['show_primary_nav'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Show Primary Navigation', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Show Primary Navigation', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'checkbox',
 		'std'     => 1,
 		'class'   => 'iphone_checkboxes',
@@ -192,15 +192,15 @@ $this->settings['primary-navigation'] = array(
 		'section'  => 'navigation',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Primary Navigation', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Primary Navigation', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 
 	$this->settings['navmenu_text_color'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Font Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -209,8 +209,8 @@ $this->settings['primary-navigation'] = array(
 	
 	$this->settings['navmenu_text_opacity'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Text Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Text Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -221,8 +221,8 @@ $this->settings['primary-navigation'] = array(
 		
 	$this->settings['navmenu_fontface'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -232,8 +232,8 @@ $this->settings['primary-navigation'] = array(
 	
 	$this->settings['navmenu_text_shadow'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Text Shadow', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Text Shadow', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -242,8 +242,8 @@ $this->settings['primary-navigation'] = array(
 	
 	$this->settings['navmenu_text_size'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -255,30 +255,30 @@ $this->settings['primary-navigation'] = array(
 	
 	$this->settings['navmenu_text_transform'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'none',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
 	$this->settings['navmenu_fontweight'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Font Wieght', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Font Wieght', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'bold',
 		'choices' => array(
-			'normal'  => __( 'Normal', 'bricks' ),
-			'bold'    => __( 'Bold', 'bricks' )
+			'normal'  => __( 'Normal', 'cubricks' ),
+			'bold'    => __( 'Bold', 'cubricks' )
 		)	
 	);
 
@@ -293,15 +293,15 @@ $this->settings['primary-navigation'] = array(
 		'section'  => 'navigation',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( '', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( '', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['navmenu_text_current'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Current Menu Item Text Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Current Menu Item Text Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -310,8 +310,8 @@ $this->settings['primary-navigation'] = array(
 	
 	$this->settings['navmenu_bg_color'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Menu Item Background Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Menu Item Background Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -320,8 +320,8 @@ $this->settings['primary-navigation'] = array(
 	
 	$this->settings['navmenu_bg_hover'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Menu Hover Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Menu Hover Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -330,8 +330,8 @@ $this->settings['primary-navigation'] = array(
 	
 	$this->settings['navmenu_bg_border'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Menu Border Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Menu Border Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -361,8 +361,8 @@ $this->settings['footer-navigation'] = array(
 
 	$this->settings['show_footer_nav'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Show Footer Navigation', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Show Footer Navigation', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'checkbox',
 		'std'     => 1,
 		'class'   => 'iphone_checkboxes',
@@ -372,15 +372,15 @@ $this->settings['footer-navigation'] = array(
 		'section'  => 'navigation',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Navigation Menu Text', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Navigation Menu Text', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['footernav_text_color'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Font Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -389,8 +389,8 @@ $this->settings['footer-navigation'] = array(
 	
 	$this->settings['footernav_text_opacity'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Text Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Text Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -401,8 +401,8 @@ $this->settings['footer-navigation'] = array(
 		
 	$this->settings['footernav_fontface'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -412,8 +412,8 @@ $this->settings['footer-navigation'] = array(
 	
 	$this->settings['footernav_text_size'] = array(
 		'section' => 'navigation',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -425,44 +425,44 @@ $this->settings['footer-navigation'] = array(
 	
 	$this->settings['footernav_text_transform'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'uppercase',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
 	$this->settings['footernav_fontweight'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Font Weight', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Font Weight', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'bold',
 		'choices' => array(
-			'normal'  => __( 'Normal', 'bricks' ),
-			'bold'    => __( 'Bold', 'bricks' )
+			'normal'  => __( 'Normal', 'cubricks' ),
+			'bold'    => __( 'Bold', 'cubricks' )
 		)	
 	);
 
 	$this->settings['footernav_text_decoration'] = array(
 		'section' => 'navigation',
-		'title'   => __( 'Text Decoration', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Decoration', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'none',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'underline'  => __( 'Underline', 'bricks' ),
+			'none'     	 => __( 'None', 'cubricks' ),
+			'underline'  => __( 'Underline', 'cubricks' ),
 		)	
 	);
 	
@@ -472,6 +472,15 @@ $this->settings['footer-navigation'] = array(
 			'type'     => 'no-data',
 			'class'    => 'close_controller_wrap',
 		);
+		
+	$this->settings['footernav_link_hover'] = array(
+		'section' => 'navigation',
+		'title'	  => __( 'Link Hover Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'std'	  => '#F89100'
+	);
 		
 $this->settings['close-navigation-tab'] = array(
 	'section'  => 'navigation',

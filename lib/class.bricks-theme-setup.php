@@ -34,11 +34,12 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		
 		add_action( 'after_setup_theme', array( &$this, 'load_bricks_textdomain' ) );
 		add_action( 'after_setup_theme', array( &$this, 'bricks_theme_supports' ) );
+		add_action( 'wp_enqueue_scripts', array( &$this, 'bricks_enqueue_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( &$this, 'bricks_enqueue_styles' ) );
 
-		register_nav_menu( 'topbar', __( 'Top Bar Menu', 'bricks' ) );
-		register_nav_menu( 'primary', __( 'Primary Menu', 'bricks' ) );
-		register_nav_menu( 'footer',  __( 'Footer Menu', 'bricks' ) );
+		register_nav_menu( 'topbar', __( 'Top Bar Menu', 'cubricks' ) );
+		register_nav_menu( 'primary', __( 'Primary Menu', 'cubricks' ) );
+		register_nav_menu( 'footer',  __( 'Footer Menu', 'cubricks' ) );
 
 		$this->bricks_theme_supports();
 		$this->bricks_hooks_and_filters();
@@ -107,7 +108,6 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			'admin-preview-callback' => '',
 		) );
 		
-		add_theme_support( 'cleaner-gallery' );
 		add_theme_support( 'get-the-image' );
 		
 		$medium_feature_width = bricks_theme_option('medium_feature_width');
@@ -163,7 +163,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		register_widget( 'Bricks_Text_Widget' );
 				
 		register_sidebar( array(
-			'name' => __( 'Main Sidebar', 'bricks' ),
+			'name' => __( 'Main Sidebar', 'cubricks' ),
 			'id' => 'sidebar-1',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -172,7 +172,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 		
 		register_sidebar( array(
-			'name' => __( 'First Homepage Sidebar', 'bricks' ),
+			'name' => __( 'First Homepage Sidebar', 'cubricks' ),
 			'id' => 'sidebar-2',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -181,7 +181,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 		
 		register_sidebar( array(
-			'name' => __( 'Second Homepage Sidebar', 'bricks' ),
+			'name' => __( 'Second Homepage Sidebar', 'cubricks' ),
 			'id' => 'sidebar-3',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -190,7 +190,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 		
 		register_sidebar( array(
-			'name' => __( 'Third Homepage Sidebar', 'bricks' ),
+			'name' => __( 'Third Homepage Sidebar', 'cubricks' ),
 			'id' => 'sidebar-4',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -199,9 +199,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 	
 		register_sidebar( array(
-			'name' => __( 'Footer Area One', 'bricks' ),
+			'name' => __( 'Footer Area One', 'cubricks' ),
 			'id' => 'sidebar-f1',
-			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
+			'description' => __( 'An optional widget area for your site footer', 'cubricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
 			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
@@ -209,9 +209,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 	
 		register_sidebar( array(
-			'name' => __( 'Footer Area Two', 'bricks' ),
+			'name' => __( 'Footer Area Two', 'cubricks' ),
 			'id' => 'sidebar-f2',
-			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
+			'description' => __( 'An optional widget area for your site footer', 'cubricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
 			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
@@ -219,9 +219,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 	
 		register_sidebar( array(
-			'name' => __( 'Footer Area Three', 'bricks' ),
+			'name' => __( 'Footer Area Three', 'cubricks' ),
 			'id' => 'sidebar-f3',
-			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
+			'description' => __( 'An optional widget area for your site footer', 'cubricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
 			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
@@ -229,9 +229,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 		
 		register_sidebar( array(
-			'name' => __( 'Footer Area Four', 'bricks' ),
+			'name' => __( 'Footer Area Four', 'cubricks' ),
 			'id' => 'sidebar-f4',
-			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
+			'description' => __( 'An optional widget area for your site footer', 'cubricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
 			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
@@ -239,9 +239,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 		
 		register_sidebar( array(
-			'name' => __( 'Footer Area Five', 'bricks' ),
+			'name' => __( 'Footer Area Five', 'cubricks' ),
 			'id' => 'sidebar-f5',
-			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
+			'description' => __( 'An optional widget area for your site footer', 'cubricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
 			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
@@ -249,9 +249,9 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		) );
 		
 		register_sidebar( array(
-			'name' => __( 'Footer Area Six', 'bricks' ),
+			'name' => __( 'Footer Area Six', 'cubricks' ),
 			'id' => 'sidebar-f6',
-			'description' => __( 'An optional widget area for your site footer', 'bricks' ),
+			'description' => __( 'An optional widget area for your site footer', 'cubricks' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
 			'before_title' => '<div class="widget-title-bg"><h3 class="widget-title">',
@@ -261,11 +261,11 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	
 	
 	/**
-	 * Enqueue the styles for the current color scheme.
+	 * Enqueue the scripts used by our theme.
 	 *
 	 * @since Cubricks 1.0.0
 	 */
-	public function bricks_enqueue_styles() {
+	public function bricks_enqueue_scripts() {
 		
 		wp_enqueue_script( 'scroll-to-top', trailingslashit( BRICKS_JS ) . 'scrolltopcontrol.js', array( 'jquery' ), BRICKS_VERSION );
 		wp_enqueue_script( 'superfish', trailingslashit( BRICKS_JS ) . 'superfish.js', array( 'jquery' ), BRICKS_VERSION );
@@ -275,11 +275,22 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			wp_enqueue_script( 'nivo-slider', trailingslashit( BRICKS_JS ) . 'jquery.nivo.slider.js', array( 'jquery' ), BRICKS_VERSION );		
 			wp_enqueue_style( 'page-templates', trailingslashit( BRICKS_CSS ) . 'page-templates.css' );
 		}
+	}
+	
+	
+	/**
+	 * Enqueue the styles used by our theme.
+	 *
+	 * @since Cubricks 1.0.4
+	 */
+	public function bricks_enqueue_styles() {
+		
+		wp_register_style( 'main-stylesheet', trailingslashit( THEME_URI ) . 'style.css' );
+		wp_enqueue_style( 'main-stylesheet' );
 		
 		add_editor_style( trailingslashit( BRICKS_CSS ) . 'tinyMCE/editor-style.css' );
 		add_editor_style( trailingslashit( BRICKS_CSS ) . 'tinyMCE/editor-style-rtl.css' );
 	}
-	
 	
 	/**
 	 * Adds two classes to the array of body classes.
@@ -675,7 +686,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			border-top: 1px solid rgba(<?php echo $this->hex_to_rgb($nav_border_top) .','. bricks_theme_option('nav_border_opacity'); ?>);
 			border-bottom: inset 1px solid rgba(<?php echo $this->hex_to_rgb($nav_border_bottom) .','. bricks_theme_option('nav_border_opacity'); ?>);
         }
-		<?php $footernav_text_color = bricks_theme_option('footernav_text_color'); ?>
+		<?php $footernav_text_color = bricks_theme_option('footernav_text_color'); 
+			  $footernav_link_hover = bricks_theme_option('footernav_link_hover'); ?>
 		#footer-navmenu li,
 		#footer-navmenu a {
 			font-family: <?php echo bricks_theme_option('footernav_fontface'); ?>;
@@ -683,6 +695,10 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			font-size: <?php echo bricks_theme_option('footernav_text_size'); ?>px;
 			font-weight: <?php echo bricks_theme_option('footernav_fontweight'); ?>;
 			text-transform: <?php echo bricks_theme_option('footernav_text_transform'); ?>;
+		}
+		#footer-navmenu a:hover,
+		#footer-navmenu a:active {
+			color: rgba(<?php echo $this->hex_to_rgb($footernav_link_hover) .','. bricks_theme_option('footernav_text_opacity'); ?>);
 		}
 		</style>
         <?php endif;
@@ -927,7 +943,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		textarea {
 			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('widget_button_opacity2'); ?>);
 		}
-		#supplementary .widget.search input[type=text] {
+		#supplementary .widget.search input[type=text],
+		#supplementary .widget.widget_search input[type=text] {
 			border-right: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('widget_button_opacity2'); ?>);
 		}
 		#subscribe-blog input[type=submit],

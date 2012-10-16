@@ -14,7 +14,7 @@ $this->settings['reset-section-tab'] = array(
 	'type'     => 'no-data',
 	'class'    => 'subsectiontabs',
 	'choices'  => array(
-		'reset-options'	 => __( 'Reset Theme Options', 'bricks' )
+		'reset-options'	 => __( 'Reset Theme Options', 'cubricks' )
 	)
 );
 
@@ -27,11 +27,11 @@ $this->settings['reset-options'] = array(
 
 	$this->settings['reset_theme'] = array(
 		'section' => 'reset',
-		'title'   => __( 'Reset theme', 'bricks' ),
+		'title'   => __( 'Reset theme', 'cubricks' ),
 		'type'    => 'checkbox',
 		'std'     => 0,
 		'class'   => 'iphone_checkboxes',
-		'desc'    => __( 'Check this box and click on <strong>Save Changes</strong> to reset theme options to their defaults. <p><strong>', 'bricks' )
+		'desc'    => __( 'Check this box and click on <strong>Save Changes</strong> to reset theme options to their defaults. <p><strong>', 'cubricks' )
 	);
 
 $this->settings['close-reset-tab'] = array(

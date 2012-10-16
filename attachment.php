@@ -17,7 +17,7 @@ get_header(); ?>
 			<?php bricks_before_article(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     			
-                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                 <header class="entry-header">
                     <hgroup>
                     <h1 class="entry-title"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title( $post->post_parent ); ?>&raquo; <?php the_title(); ?></a>
@@ -49,10 +49,10 @@ get_header(); ?>
                     }
 
                     $metadata = wp_get_attachment_metadata();
-                    printf( '<h5>'. __( 'Full size is %s pixels', 'bricks' ). '</h5>',
+                    printf( '<h5>'. __( 'Full size is %s pixels', 'cubricks' ). '</h5>',
                         sprintf( '<a href="%1$s" title="%2$s">%3$s &times; %4$s</a>',
                             wp_get_attachment_url(),
-                            esc_attr( __( 'Link to full-size image', 'bricks' ) ),
+                            esc_attr( __( 'Link to full-size image', 'cubricks' ) ),
                             $metadata['width'],
                             $metadata['height']
                         )
@@ -74,8 +74,8 @@ get_header(); ?>
     
                     <?php else : ?>
                     
-                        <p><?php _e( 'View file:', 'bricks' ); ?> <a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a></p>
-                        <?php the_content( __( '(More ...)' , 'bricks' ) ); ?>
+                        <p><?php _e( 'View file:', 'cubricks' ); ?> <a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a></p>
+                        <?php the_content( __( '(More ...)' , 'cubricks' ) ); ?>
                         
                         <?php wp_link_pages( bricks_link_pages_args() ); ?>
                         

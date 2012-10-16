@@ -15,13 +15,13 @@ class Bricks_Search_Widget extends WP_Widget {
 		/* Set up the widget options. */
 		$widget_options = array(
 			'classname' => 'search',
-			'description' => __( 'An advanced widget that gives you total control over the output of your search form.', 'bricks' )
+			'description' => __( 'An advanced widget that gives you total control over the output of your search form.', 'cubricks' )
 		);
 
 		/* Create the widget. */
 		$this->WP_Widget(
 			'bricks-search',					// $this->id_base
-			__( 'Cubricks Search', 'bricks' ),	// $this->name
+			__( 'Cubricks Search', 'cubricks' ),	// $this->name
 			$widget_options						// $this->widget_options
 		);
 	}
@@ -102,11 +102,11 @@ class Bricks_Search_Widget extends WP_Widget {
 
 		/* Set up the default form values. */
 		$defaults = array(
-			'title' => esc_attr__( 'Search', 'bricks' ),
+			'title' => esc_attr__( 'Search', 'cubricks' ),
 			'theme_search' => false,
 			'search_label' => '',
 			'search_text' => '',
-			'search_submit' => esc_attr__( 'Search', 'bricks' )
+			'search_submit' => esc_attr__( 'Search', 'cubricks' )
 		);
 
 		/* Merge the user-selected arguments with the defaults. */
@@ -114,27 +114,27 @@ class Bricks_Search_Widget extends WP_Widget {
 
 		<div class="hybrid-widget-controls columns-2">
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'bricks' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'cubricks' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'search_label' ); ?>"><?php _e( 'Search Label:', 'bricks' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'search_label' ); ?>"><?php _e( 'Search Label:', 'cubricks' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'search_label' ); ?>" name="<?php echo $this->get_field_name( 'search_label' ); ?>" value="<?php echo esc_attr( $instance['search_label'] ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'search_text' ); ?>"><?php _e( 'Search Text:', 'bricks' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'search_text' ); ?>"><?php _e( 'Search Text:', 'cubricks' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'search_text' ); ?>" name="<?php echo $this->get_field_name( 'search_text' ); ?>" value="<?php echo esc_attr( $instance['search_text'] ); ?>" />
 		</p>
 		</div>
 
 		<div class="hybrid-widget-controls columns-2 column-last">
 		<p>
-			<label for="<?php echo $this->get_field_id( 'search_submit' ); ?>"><?php _e( 'Search Submit:', 'bricks' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'search_submit' ); ?>"><?php _e( 'Search Submit:', 'cubricks' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'search_submit' ); ?>" name="<?php echo $this->get_field_name( 'search_submit' ); ?>" value="<?php echo esc_attr( $instance['search_submit'] ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'theme_search' ); ?>">
-			<input class="checkbox" type="checkbox" <?php checked( $instance['theme_search'], true ); ?> id="<?php echo $this->get_field_id( 'theme_search' ); ?>" name="<?php echo $this->get_field_name( 'theme_search' ); ?>" /> <?php _e( 'Use theme\'s <code>searchform.php</code>?', 'bricks' ); ?></label>
+			<input class="checkbox" type="checkbox" <?php checked( $instance['theme_search'], true ); ?> id="<?php echo $this->get_field_id( 'theme_search' ); ?>" name="<?php echo $this->get_field_name( 'theme_search' ); ?>" /> <?php _e( 'Use theme\'s <code>searchform.php</code>?', 'cubricks' ); ?></label>
 		</p>
 		</div>
 		<div style="clear:both;">&nbsp;</div>

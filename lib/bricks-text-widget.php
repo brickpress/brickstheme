@@ -11,13 +11,13 @@ class Bricks_Text_Widget extends WP_Widget {
 		/* Set up the widget options. */
 		$widget_options = array(
 			'classname' => 'bricks_text',
-			'description' => __( 'Cubricks Arbitrary text or HTML ideal for the Slider Homepage Page Template.', 'bricks' )
+			'description' => __( 'Cubricks Arbitrary text or HTML ideal for the Slider Homepage Page Template.', 'cubricks' )
 		);
 
 		/* Create the widget. */
 		$this->WP_Widget(
 			'bricks-text',					    // $this->id_base
-			__( 'Cubricks Text', 'bricks' ),	// $this->name
+			__( 'Cubricks Text', 'cubricks' ),	// $this->name
 			$widget_options						// $this->widget_options
 		);
 	}
@@ -34,7 +34,7 @@ class Bricks_Text_Widget extends WP_Widget {
 			<?php echo !empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?>
             	<div class="clearfix"></div>
             <?php if( !empty( $post_link ) ) {
-				echo '<a class="post-link" href="'. esc_url($post_link) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'bricks' ) . '</a>';
+				echo '<a class="post-link" href="'. esc_url($post_link) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cubricks' ) . '</a>';
 			} ?> 
             </div>
 		<?php
@@ -59,16 +59,16 @@ class Bricks_Text_Widget extends WP_Widget {
 		$text = esc_textarea($instance['text']);
 		$post_link = strip_tags($instance['post_link']);
 ?>
-		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'bricks'); ?></label>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'cubricks'); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 
 		<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
 
-		<p><input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked(isset($instance['filter']) ? $instance['filter'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e('Automatically add paragraphs', 'bricks'); ?></label></p>
+		<p><input id="<?php echo $this->get_field_id('filter'); ?>" name="<?php echo $this->get_field_name('filter'); ?>" type="checkbox" <?php checked(isset($instance['filter']) ? $instance['filter'] : 0); ?> />&nbsp;<label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e('Automatically add paragraphs', 'cubricks'); ?></label></p>
         
-        <p><label for="<?php echo $this->get_field_id('post_link'); ?>"><?php _e('Link to Post:', 'bricks'); ?></label>
+        <p><label for="<?php echo $this->get_field_id('post_link'); ?>"><?php _e('Link to Post:', 'cubricks'); ?></label>
         <input class="widefat" id="<?php echo $this->get_field_id('post_link'); ?>" name="<?php echo $this->get_field_name('post_link'); ?>" type="text" value="<?php echo esc_url($post_link); ?>" /></p>
-        <p><?php _e('Adds a <strong><em>Continue Reading</em></strong> link to post/page if a URL is provided.', 'bricks'); ?></p>
+        <p><?php _e('Adds a <strong><em>Continue Reading</em></strong> link to post/page if a URL is provided.', 'cubricks'); ?></p>
 <?php
 	}
 }

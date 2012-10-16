@@ -39,7 +39,7 @@ get_header(); ?>
                     // If a user has filled out their description, show a bio on their entries.
                     if ( get_the_author_meta( 'description' ) ) : ?>
 					<div id="author-description">
-						<h2><?php printf( __( 'About %s', 'bricks' ), get_the_author() ); ?></h2>
+						<h2><?php printf( __( 'About %s', 'cubricks' ), get_the_author() ); ?></h2>
 						<?php the_author_meta( 'description' ); ?>
 					</div><!-- #author-description	-->
                     <?php endif; ?>
@@ -74,7 +74,7 @@ get_header(); ?>
                 <footer class="entry-meta">
                     <?php bricks_post_footer(); ?>
                     <?php bricks_comments_link(); ?>
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer>
                 <div class="clearfix"></div>
                 

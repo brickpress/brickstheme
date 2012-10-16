@@ -58,7 +58,7 @@ get_header(); ?>
                 
                 <footer class="entry-meta">
                     <?php bricks_post_footer(); ?>
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer><!-- .entry-meta -->
 				
                 <?php if( bricks_theme_option('author_avatar') == 'show_avatar' )
@@ -80,8 +80,8 @@ get_header(); ?>
         <?php endwhile; ?>
     	
 			<nav class="pagination single">
-			<span class="previous"><?php previous_post_link( '%link', sprintf( __( '%s Previous Post', 'bricks' ), '&larr;' ) ); ?></span>
-			<span class="next"><?php next_post_link( '%link', sprintf( __( 'Next Post %s', 'bricks' ), '&rarr;' ) ); ?></span>
+			<span class="previous"><?php previous_post_link( '%link', sprintf( __( '%s Previous Post', 'cubricks' ), '&larr;' ) ); ?></span>
+			<span class="next"><?php next_post_link( '%link', sprintf( __( 'Next Post %s', 'cubricks' ), '&rarr;' ) ); ?></span>
 			</nav>
 
 	<?php else : ?>

@@ -47,15 +47,15 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		
 		$this->bricks_constants();
 		$this->sections = array(
-							'general'     	=> __( 'General Settings', 'bricks' ),
-							'header'		=> __( 'Header', 'bricks' ),
-							'navigation'	=> __( 'Navigation', 'bricks' ),
-							'content'		=> __( 'Content', 'bricks' ),
-							'sidebars'		=> __( 'Sidebars', 'bricks' ),
-							'social' 		=> __( 'Social', 'bricks' ),
-							'footer' 		=> __( 'Footer', 'bricks' ),
-							'layout' 		=> __( 'Layout', 'bricks' ),
-							'reset'         => __( 'Reset to Defaults', 'bricks' )
+							'general'     	=> __( 'General Settings', 'cubricks' ),
+							'header'		=> __( 'Header', 'cubricks' ),
+							'navigation'	=> __( 'Navigation', 'cubricks' ),
+							'content'		=> __( 'Content', 'cubricks' ),
+							'sidebars'		=> __( 'Sidebars', 'cubricks' ),
+							'social' 		=> __( 'Social', 'cubricks' ),
+							'footer' 		=> __( 'Footer', 'cubricks' ),
+							'layout' 		=> __( 'Layout', 'cubricks' ),
+							'reset'         => __( 'Reset to Defaults', 'cubricks' )
 						);
 		
 		$this->checkboxes = array();
@@ -80,7 +80,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	public function bricks_constants() {
 		
 		define( 'THEMENAME', 'Cubricks' );
-		define( 'SHORTNAME', 'bricks' );
+		define( 'SHORTNAME', 'cubricks' );
 		define( 'BRICKS_VERSION', '1.0.2' );
 		define( 'THEME_DIR', get_template_directory() );
 		define( 'THEME_URI', get_template_directory_uri() );
@@ -102,8 +102,8 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	public function add_admin_panel_pages() {
 				
 		$admin_page = add_theme_page(
-			__( 'Theme Options', 'bricks' ),
-			__( 'Theme Options', 'bricks' ),							
+			__( 'Theme Options', 'cubricks' ),
+			__( 'Theme Options', 'cubricks' ),							
 			'edit_theme_options',						    
 			'theme-options',								
 			array( &$this, 'render_theme_settings_page' ) );
@@ -127,42 +127,43 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		
 		$current_screen = get_current_screen();
 		$theme_url = strip_tags('http://cubrickstheme.brickpress.us/');
+		$theme_contact = strip_tags('http://cubrickstheme.brickpress.us/contact/');
 		$author_url = strip_tags('http://cubrick.brickpress.us/');
 		$github_repo = strip_tags('https://github.com/brickpress/bricks-theme/');
 
 		// Overview
 		$current_screen->add_help_tab( array(
 			'id'		=> 'overview',
-			'title'		=> __( 'Overview', 'bricks' ),
+			'title'		=> __( 'Overview', 'cubricks' ),
 			'content'	=>
-				'<p><strong>' . __( 'Cubricks Theme by ', 'bricks' ) . '<a href="' .esc_url($author_url). '" target="_blank">Raphael Villanea</a></strong></p>' .
-				'<p>' . __( 'Thank you for using Cubricks theme. I hope you will have as much fun in customizing your blog as I have in building this theme; believing that while knowledge can be taught, imagination and creativity can not - it can be inspired.', 'bricks' ) . '</p>' .
-				'<p>' . __( 'Cubricks theme gives you control over your website\'s look stylesheet and positioning of some HTML blocks such as the custom header, navigation menu and image slider.', 'bricks' ) . '</p>'
+				'<p><strong>' . __( 'Cubricks Theme by ', 'cubricks' ) . '<a href="' .esc_url($author_url). '" target="_blank">Raphael Villanea</a></strong></p>' .
+				'<p>' . __( 'Thank you for using Cubricks theme. I hope you will have as much fun in customizing your blog as I have in building this theme; believing that while knowledge can be taught, imagination and creativity can not - it can be inspired.', 'cubricks' ) . '</p>' .
+				'<p>' . __( 'Cubricks theme gives you control over your website\'s look stylesheet and positioning of some HTML blocks such as the custom header, navigation menu and image slider.', 'cubricks' ) . '</p>'
 		) );
 
 		// Screen Content
 		$current_screen->add_help_tab( array(
 			'id'		=> 'sections',
-			'title'		=> __( 'Sections', 'bricks' ),
+			'title'		=> __( 'Sections', 'cubricks' ),
 			'content'	=>
-				'<p>' . __( '<strong>General Section</strong> &mdash; sets the overall layout of your website and <strong><em>global</em></strong> styles. This section also sets HTML elements found on your content and your website\'s custom background.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Header Section</strong> &mdash; sets site logo, site header and site description. This also sets your custom header.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Navigation Section</strong> &mdash; Cubricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Content Section</strong> &mdash; sets the style for your content boxes.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Sidebars Section</strong> &mdash; when setting an image as custom background, your primary sidebar text may not stand out, thus difficult to read. If so, you can try increase the primary widget background opacity or change it\'s color altogether. ', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Social Section</strong> &mdash; add your social network profiles. This also lets you add webmaster tools meta data if you haven\'t done so already.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Footer Section</strong> &mdash; sets footer logo, copyright notice and a site badge or a wide ad banner.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Layout Section</strong> &mdash; exlpore advanced styling options. Try setting background images for sections with wrappers, manipulate opacity to reveal images in the background, or just about anything you can imagine.', 'bricks' ) . '</p>' .
-				'<p>' . __( '<strong>Reset Section</strong> &mdash; resets theme settings to defaults. This does not reset text entries such as copyright notice, Creative Commons license, and footer ads. This does not reset social media entries and webmaster tools entries as well. To remove the aforementioned entries, click on the the <strong>Clear Field</strong> button found at the bottom of each entry field.', 'bricks' ) . '</p>'
+				'<p>' . __( '<strong>General Section</strong> &mdash; sets the overall layout of your website and <strong><em>global</em></strong> styles. This section also sets HTML elements found on your content and your website\'s custom background.', 'cubricks' ) . '</p>' .
+				'<p>' . __( '<strong>Header Section</strong> &mdash; sets site logo, site header and site description. This also sets your custom header.', 'cubricks' ) . '</p>' .
+				'<p>' . __( '<strong>Navigation Section</strong> &mdash; Cubricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.', 'cubricks' ) . '</p>' .
+				'<p>' . __( '<strong>Content Section</strong> &mdash; sets the style for your content boxes.', 'cubricks' ) . '</p>' .
+				'<p>' . __( '<strong>Sidebars Section</strong> &mdash; when setting an image as custom background, your primary sidebar text may not stand out, thus difficult to read. If so, you can try increase the primary widget background opacity or change it\'s color altogether. ', 'cubricks' ) . '</p>' .
+				'<p>' . __( '<strong>Social Section</strong> &mdash; add your social network profiles. This also lets you add webmaster tools meta data if you haven\'t done so already.', 'cubricks' ) . '</p>' .
+				'<p>' . __( '<strong>Footer Section</strong> &mdash; sets footer logo, copyright notice and a site badge or a wide ad banner.', 'cubricks' ) . '</p>' .
+				'<p>' . __( '<strong>Layout Section</strong> &mdash; exlpore advanced styling options. Try setting background images for sections with wrappers, manipulate opacity to reveal images in the background, or just about anything you can imagine.', 'cubricks' ) . '</p>' .
+				'<p>' . __( '<strong>Reset Section</strong> &mdash; resets theme settings to defaults. This does not reset text entries such as copyright notice, Creative Commons license, and footer ads. This does not reset social media entries and webmaster tools entries as well. To remove the aforementioned entries, click on the the <strong>Clear Field</strong> button found at the bottom of each entry field.', 'cubricks' ) . '</p>'
 		) );
 
 		// Help Sidebar
 		$current_screen->set_help_sidebar(
-			'<p><strong>' . __( 'For more information:', 'bricks' ) . '</strong></p>' .
-			'<p><a href="' .esc_url($theme_url). '" target="_blank">' . __( 'Theme Documentation', 'bricks' ) . '</a></p>' .
-			'<p><a href="' .esc_url($theme_url). '" target="_blank">' . __( 'Cubricks Support', 'bricks' ) . '</a></p>' .
-			'<p><strong>' . __( 'For developers:', 'bricks' ) . '</strong></p>' .
-			'<p><a href="' .esc_url($github_repo). '" target="_blank">' . __( 'Github Repository', 'bricks' ) . '</a></p>'
+			'<p><strong>' . __( 'For more information:', 'cubricks' ) . '</strong></p>' .
+			'<p><a href="' .esc_url($theme_url). '" target="_blank">' . __( 'Theme Documentation', 'cubricks' ) . '</a></p>' .
+			'<p><a href="' .esc_url($theme_contact). '" target="_blank">' . __( 'Cubricks Support', 'cubricks' ) . '</a></p>' .
+			'<p><strong>' . __( 'For developers:', 'cubricks' ) . '</strong></p>' .
+			'<p><a href="' .esc_url($github_repo). '" target="_blank">' . __( 'Github Repository', 'cubricks' ) . '</a></p>'
 		);
 	}
 	
@@ -363,7 +364,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 	public function render_theme_settings_page() {
 		
 		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == true )
-			echo '<div class="updated fade"><p>' . __( 'Theme options updated.', 'bricks' ) . '</p></div>';
+			echo '<div class="updated fade"><p>' . __( 'Theme options updated.', 'cubricks' ) . '</p></div>';
 		
 		echo '<input type="hidden" name="current_tab" id="current_tab" value="#bricks_menu_general" />';
 		echo '<form action="options.php" method="post" enctype="multipart/form-data">';
@@ -386,12 +387,12 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
         echo '<li style="border: 0; box-shadow: none;">
 		<div id="toggle-sections" class="default-state" onclick="jQuery(\'#collapse-menu-button\').click()">
         	<div class="default-state"></div>';
-		echo '<div class="toggle-button-text">' .__( 'Collapse Menu', 'bricks' ). '</div>';
+		echo '<div class="toggle-button-text">' .__( 'Collapse Menu', 'cubricks' ). '</div>';
         echo '<input type="button" id="collapse-menu-button" style="display: none;" />
 		</div>
         </li>';
         echo '<li style="border: 0; box-shadow: none;">
-			<p class="submit"><input name="Submit" type="submit" class="button-primary" value="' . __( 'Save Changes', 'bricks' ) . '" /></p>	
+			<p class="submit"><input name="Submit" type="submit" class="button-primary" value="' . __( 'Save Changes', 'cubricks' ) . '" /></p>	
         </li>
         </ul>
         </div><!-- #bricks_menu -->';
@@ -567,6 +568,6 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 			
 		$bricks_url = admin_url( 'themes.php?page=theme-options' );
 		
-		$wp_admin_bar->add_menu( array( 'id' => 'bricks-menu', 'title' => __( 'Cubricks Theme', 'bricks' ), 'href'  => $bricks_url ) );
+		$wp_admin_bar->add_menu( array( 'id' => 'bricks-menu', 'title' => __( 'Cubricks Theme', 'cubricks' ), 'href'  => $bricks_url ) );
 	}
 }

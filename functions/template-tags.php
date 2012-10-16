@@ -29,10 +29,10 @@ if( ! function_exists('bricks_topbar') ) :
     	global $page, $paged, $theme_options; ?>
 		
         <nav id="topbar" role="navigation">
-            <h3 class="assistive-text"><?php _e( 'Main menu', 'bricks' ); ?></h3>
+            <h3 class="assistive-text"><?php _e( 'Main menu', 'cubricks' ); ?></h3>
             <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-            <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'bricks' ); ?>"><?php _e( 'Skip to primary content', 'bricks' ); ?></a></div>
-            <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'bricks' ); ?>"><?php _e( 'Skip to secondary content', 'bricks' ); ?></a></div>
+            <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'cubricks' ); ?>"><?php _e( 'Skip to primary content', 'cubricks' ); ?></a></div>
+            <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'cubricks' ); ?>"><?php _e( 'Skip to secondary content', 'cubricks' ); ?></a></div>
             <?php wp_nav_menu( array(
 				'theme_location' => 'topbar',
 				'items_wrap'     => '<ul id="%1$s" class="sf-menu">%3$s</ul>' ) ); ?>
@@ -169,7 +169,7 @@ function bricks_post_date_text() {
 		esc_attr( get_the_date( 'c' ) ),													// [5]
 		esc_html( get_the_date() ),															// [6]
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),						// [7]
-		esc_attr( sprintf( __( 'View all posts by %s', 'bricks' ), get_the_author() ) ),	// [8]
+		esc_attr( sprintf( __( 'View all posts by %s', 'cubricks' ), get_the_author() ) ),	// [8]
 		get_the_author()																	// [9]																		
 	);
 }
@@ -226,7 +226,7 @@ function bricks_post_title() {
         </h1>
 	<?php } else { ?>
 		<h1 class="entry-title">
-		<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'bricks' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+		<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
         </h1><?php
 	}
 }
@@ -244,37 +244,37 @@ function bricks_archive_header() {
     $format = get_post_format(); ?>
     <h1 class="archive-heading">
 		<?php if ( is_day() ) {
-            printf( __( 'Daily Archives: %s', 'bricks' ), '<span>' . get_the_date() . '</span>' );
+            printf( __( 'Daily Archives: %s', 'cubricks' ), '<span>' . get_the_date() . '</span>' );
         } elseif ( is_month() ) {
-            printf( __( 'Monthly Archives: %s', 'bricks' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); 
+            printf( __( 'Monthly Archives: %s', 'cubricks' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); 
         } elseif ( is_year() ) {
-            printf( __( 'Yearly Archives: %s', 'bricks' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+            printf( __( 'Yearly Archives: %s', 'cubricks' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
         } elseif ( is_category() ) {
-            printf( __( 'Category Archives: %s', 'bricks' ), single_cat_title( '', false ) );
+            printf( __( 'Category Archives: %s', 'cubricks' ), single_cat_title( '', false ) );
         } elseif ( is_tag() ) {
-            printf( __( 'Tag Archives: %s', 'bricks' ), single_tag_title( '', false ) );
+            printf( __( 'Tag Archives: %s', 'cubricks' ), single_tag_title( '', false ) );
         } elseif ( is_author() ) {
-            printf( __( 'Author Archives: %s', 'bricks' ) );
+            printf( __( 'Author Archives: %s', 'cubricks' ) );
         } elseif ( has_post_format('aside') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('audio') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('chat') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('gallery') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('image') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('link') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('quote') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('status') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('video') ) {
-            printf( __( 'Post Format Archives: %s', 'bricks' ), ucwords( $format ) );
+            printf( __( 'Post Format Archives: %s', 'cubricks' ), ucwords( $format ) );
         } else {
-            _e( 'Blog Archives', 'bricks' );
+            _e( 'Blog Archives', 'cubricks' );
         } ?>
     </h1>
 	<?php
@@ -293,11 +293,11 @@ function bricks_search_header() { ?>
     <h1 class="search-heading">
 		<?php 
         if ( is_search() && have_posts() ) {
-            printf( __( 'Search Results for: %s', 'bricks' ), '<span>' . get_search_query() . '</span>' );
+            printf( __( 'Search Results for: %s', 'cubricks' ), '<span>' . get_search_query() . '</span>' );
         } elseif ( is_404() ) {
-            _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'bricks' );
+            _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'cubricks' );
         } else {
-            _e( 'Nothing Found', 'bricks' );
+            _e( 'Nothing Found', 'cubricks' );
         } ?>
     </h1>
 	<?php
@@ -314,7 +314,7 @@ if( ! function_exists('bricks_comment_link') ) :
 function bricks_comments_link() {
 	
 	if( comments_open() && ! post_password_required() ) {
-		comments_popup_link( '<span class="comments-link"></span>' . __( 'Leave a Comment. ', 'bricks' ), '<span class="comments-link"></span>' . _x( '1 Comment ', 'comments number', 'bricks' ), '<span class="comments-link"></span>' . _x( '% Comments ', 'comments number', 'bricks' ) );
+		comments_popup_link( '<span class="comments-link"></span>' . __( 'Leave a Comment. ', 'cubricks' ), '<span class="comments-link"></span>' . _x( '1 Comment ', 'comments number', 'cubricks' ), '<span class="comments-link"></span>' . _x( '% Comments ', 'comments number', 'cubricks' ) );
 	}
 }
 endif;
@@ -336,7 +336,7 @@ function bricks_comments($comment, $args, $depth) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'bricks' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'cubricks' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -353,22 +353,22 @@ function bricks_comments($comment, $args, $depth) {
 						echo get_avatar( $comment, $avatar_size );
 
 						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s on %2$s <span class="says"></span>', 'bricks' ),
+						printf( __( '%1$s on %2$s <span class="says"></span>', 'cubricks' ),
 							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
 							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s at %2$s', 'bricks' ), get_comment_date(), get_comment_time() )
+								sprintf( __( '%1$s at %2$s', 'cubricks' ), get_comment_date(), get_comment_time() )
 							)
 						);
 					?>
 
-					<?php edit_comment_link( __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'bricks' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'cubricks' ); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -377,7 +377,7 @@ function bricks_comments($comment, $args, $depth) {
 			<div class="comment-content"><?php comment_text(); ?></div>
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'bricks' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'cubricks' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 
@@ -407,7 +407,7 @@ add_filter( 'excerpt_length', 'bricks_excerpt_length' );
  * @since 1.0.0
  */
 function bricks_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'bricks' ) . '</a>';
+	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cubricks' ) . '</a>';
 }
 
 
@@ -448,7 +448,7 @@ add_filter( 'get_the_excerpt', 'bricks_custom_excerpt_more' );
 function bricks_link_pages_args() {
 	
 	$args = array(
-			  'before'         => '<div class="pagination"><span class="page-link-meta">' . __( 'Pages:', 'bricks' ) . '</span>',
+			  'before'         => '<div class="pagination"><span class="page-link-meta">' . __( 'Pages:', 'cubricks' ) . '</span>',
 			  'after'          => '</div>',
 			  'next_or_number' => 'number',
 			  'link_before'    => '<span>',
@@ -569,11 +569,11 @@ function bricks_author_meta() {
 		</div><!-- #author-avatar -->
 		
 		<div id="author-description">
-			<h2><?php printf( esc_attr__( 'About %s', 'bricks' ), get_the_author() ); ?></h2>
+			<h2><?php printf( esc_attr__( 'About %s', 'cubricks' ), get_the_author() ); ?></h2>
 			<?php the_author_meta( 'description' ); ?>
 			<div id="author-link">
 				<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-					<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'bricks' ), get_the_author() ); ?>
+					<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'cubricks' ), get_the_author() ); ?>
 				</a>
 			</div><!-- #author-link	-->
 		</div><!-- #author-description -->
@@ -594,10 +594,10 @@ if( ! function_exists('bricks_no_posts') ) :
 		
 		<p class="none-found">
 		<?php if( is_search() ) {
-				  $message = _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'bricks' );
+				  $message = _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'cubricks' );
 		
 			  } elseif( is_404() ) {
-				  $message = _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.', 'bricks' );
+				  $message = _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help.', 'cubricks' );
 			  }
 			  
 			echo apply_filters( 'bricks_no_posts', $message );
@@ -622,28 +622,28 @@ if ( ! function_exists( 'bricks_post_footer' ) ) :
 			$format = 'article';
 			
 		/* translators: used between list items, there is a space after the comma */
-		$tag_list = get_the_tag_list( '', __( ', ', 'bricks' ) );
+		$tag_list = get_the_tag_list( '', __( ', ', 'cubricks' ) );
 		
 		/* Footer entry meta for single post */
 		if ( is_single() ) {
 			if( '' != $tag_list ) {
-				$utility_text = __( '<span class="%1$s-post"></span>%2$s posted in %3$s and tagged %4$s.', 'bricks' );
+				$utility_text = __( '<span class="%1$s-post"></span>%2$s posted in %3$s and tagged %4$s.', 'cubricks' );
 			} else {
-				$utility_text = __( '<span class="%1$s-post"></span>%2$s posted in %3$s.', 'bricks' );
+				$utility_text = __( '<span class="%1$s-post"></span>%2$s posted in %3$s.', 'cubricks' );
 			}	
 		/* Footer entry meta for posts, archives */	
 		} else {
 			if( '' != $tag_list ) {
-				$utility_text = __( '<span class="category"></span> %3$s. <span class="tags"></span> %4$s.', 'bricks' );
+				$utility_text = __( '<span class="category"></span> %3$s. <span class="tags"></span> %4$s.', 'cubricks' );
 			} else {
-				$utility_text = __( '<span class="category"></span> %3$s.', 'bricks' );
+				$utility_text = __( '<span class="category"></span> %3$s.', 'cubricks' );
 			}
 		}
 		printf(
 			$utility_text,																		// [0]
 			$post_icon = strtolower( $format ),													// [1]
 			$post_format = ucwords( $format ),													// [2]
-			get_the_category_list( __( ', ', 'bricks' ) ),										// [3]
+			get_the_category_list( __( ', ', 'cubricks' ) ),										// [3]
 			$tag_list																			// [4]
 		);
 	}
@@ -764,7 +764,7 @@ function bricks_copyright_notices() {
         	<?php endif; ?>
             
 			<?php if( '' != get_theme_mod('cc_license_url') ) : ?>
-            	<?php _e( 'Except where otherwise noted, content on this site is licensed under a ', 'bricks' ); ?>
+            	<?php _e( 'Except where otherwise noted, content on this site is licensed under a ', 'cubricks' ); ?>
             <a rel="license" href="<?php echo esc_attr( get_theme_mod('cc_license_url') ); ?>"><?php echo esc_attr( get_theme_mod('cc_license_type') ); ?></a>.</p>
             
             <p><a rel="license" href="<?php echo esc_attr( get_theme_mod('cc_license_url') ); ?>"><img alt="Creative Commons License" style="border-width:0" src="<?php echo esc_attr( get_theme_mod('cc_license_img') ); ?>" /></a></p>
@@ -785,9 +785,9 @@ function bricks_credits() { ?>
 
 	<div id="site-generator">
     	<p>	
-		<?php printf( __( 'Powered by ', 'bricks' ) ); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bricks' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'bricks' ); ?>"><?php printf( __( 'WordPress', 'bricks' ) ); ?></a>
+		<?php printf( __( 'Powered by ', 'cubricks' ) ); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cubricks' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'cubricks' ); ?>"><?php printf( __( 'WordPress', 'cubricks' ) ); ?></a>
         <?php if( bricks_theme_option('show_theme_url') ) : ?>
-		<?php printf( __( ' | Designed by ', 'bricks' ) ); ?><a href="<?php echo esc_url( __( 'http://www.brickpress.us', 'bricks' ) ); ?>" title="<?php esc_attr_e( 'Author Homepage', 'bricks' ); ?>"><strong><?php printf( __( 'BrickPress', 'bricks' ) ); ?></strong></a>
+		<?php printf( __( ' | Design by ', 'cubricks' ) ); ?><a href="<?php echo esc_url( __( 'http://cubrickstheme.brickpress.us', 'cubricks' ) ); ?>" title="<?php esc_attr_e( 'Theme Homepage', 'cubricks' ); ?>"><strong><?php printf( __( 'Cubricks', 'cubricks' ) ); ?></strong></a>
         <?php endif; ?>
         </p>
 	</div>
@@ -813,7 +813,7 @@ function bricks_social_media() {
 	if( bricks_theme_option('social_module') == 'before-sidebar' ) : ?>
     	<div class="widget-title-bg">
         	<h3 class="widget-title">
-            <?php printf(__( '%1$s', 'bricks' ), $social_icons_label); ?>
+            <?php printf(__( '%1$s', 'cubricks' ), $social_icons_label); ?>
             </h3>
         </div>   
     <?php endif; ?>
@@ -827,34 +827,34 @@ function bricks_social_media() {
               $tumblr_id = get_theme_mod( 'tumblr_id' );
 			  $youtube_id = get_theme_mod( 'youtube_id' ); ?>
               
-        <li class="rss-feed"><a href="<?php echo esc_url( home_url( '/feed/' ) ); ?>" title="<?php _e( 'Syndicate this site using RSS 2.0', 'bricks' ); ?>"></a></li>
+        <li class="rss-feed"><a href="<?php echo esc_url( home_url( '/feed/' ) ); ?>" title="<?php _e( 'Syndicate this site using RSS 2.0', 'cubricks' ); ?>"></a></li>
              
         <?php if( '' != $facebook_page ) : ?>     
-    	<li class="facebook"><a href="<?php echo esc_url( 'http://www.facebook.com/' . esc_attr($facebook_page) ); ?>" title="<?php _e( 'Like my page on Facebook', 'bricks' ); ?>" target="_blank"></a></li>
+    	<li class="facebook"><a href="<?php echo esc_url( 'http://www.facebook.com/' . esc_attr($facebook_page) ); ?>" title="<?php _e( 'Like my page on Facebook', 'cubricks' ); ?>" target="_blank"></a></li>
 		<?php endif; ?>
         
         <?php if( '' != $twitter_id ) : ?>
-        <li class="twitter"><a href="<?php echo esc_url( 'http://www.twitter.com/' . $twitter_id ); ?>" title="<?php _e( 'Follow me on Twitter', 'bricks' ); ?>" target="_blank"></a></li>
+        <li class="twitter"><a href="<?php echo esc_url( 'http://www.twitter.com/' . $twitter_id ); ?>" title="<?php _e( 'Follow me on Twitter', 'cubricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
           
         <?php if( '' != $google_profile ) : ?>
-        <li class="google"><a href="<?php echo esc_url( 'http://plus.google.com/' . $google_profile ); ?>" title="<?php _e( 'Add me to your Google+ Circles', 'bricks' ); ?>" target="_blank"></a></li>
+        <li class="google"><a href="<?php echo esc_url( 'http://plus.google.com/' . $google_profile ); ?>" title="<?php _e( 'Add me to your Google+ Circles', 'cubricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
         
         <?php if( '' != $google_page ) : ?>
-        <li class="google"><a href="<?php echo esc_url( 'http://plus.google.com/' . $google_page ); ?>" title="<?php _e( 'Add my Google+ page to your Circles', 'bricks' ); ?>" target="_blank"></a></li>
+        <li class="google"><a href="<?php echo esc_url( 'http://plus.google.com/' . $google_page ); ?>" title="<?php _e( 'Add my Google+ page to your Circles', 'cubricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
         
         <?php if( '' != $tumblr_id ) : ?>
-        <li class="tumblr"><a href="<?php echo esc_url( 'http://' .$tumblr_id. '.tumblr.com/' ); ?>" title="<?php _e( 'Follow me on Tumblr', 'bricks' ); ?>" target="_blank"></a></li>
+        <li class="tumblr"><a href="<?php echo esc_url( 'http://' .$tumblr_id. '.tumblr.com/' ); ?>" title="<?php _e( 'Follow me on Tumblr', 'cubricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
         
         <?php if( '' != $flickr_id ) : ?>
-        <li class="flickr"><a href="<?php echo esc_url( 'http://www.flickr.com/photos/' .$flickr_id ); ?>" title="<?php _e( 'Check out my Flickr photostream', 'bricks' ); ?>" target="_blank"></a></li>
+        <li class="flickr"><a href="<?php echo esc_url( 'http://www.flickr.com/photos/' .$flickr_id ); ?>" title="<?php _e( 'Check out my Flickr photostream', 'cubricks' ); ?>" target="_blank"></a></li>
         <?php endif; ?>
         
         <?php if( '' != $youtube_id ) : ?>     
-    	<li class="youtube"><a href="<?php echo esc_url( 'http://www.youtube.com/user/' . $youtube_id ); ?>" title="<?php _e( 'Subscribe to my channel on Youtube', 'bricks' ); ?>" target="_blank"></a></li>
+    	<li class="youtube"><a href="<?php echo esc_url( 'http://www.youtube.com/user/' . $youtube_id ); ?>" title="<?php _e( 'Subscribe to my channel on Youtube', 'cubricks' ); ?>" target="_blank"></a></li>
 		<?php endif; ?>
       </ul>
       <div class="clearfix"></div>

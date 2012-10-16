@@ -7,10 +7,10 @@
 class Bricks_Category_Posts_Widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget_category_posts', 'description' => __( "Show posts in a category.", 'bricks' ) );
+		$widget_ops = array('classname' => 'widget_category_posts', 'description' => __( "Show posts in a category.", 'cubricks' ) );
 		
 		/* Create the widget. */
-		parent::__construct('category-posts', __('Cubricks Category Posts', 'bricks'), $widget_ops );
+		parent::__construct('category-posts', __('Cubricks Category Posts', 'cubricks'), $widget_ops );
 		$this->alt_option_name = 'widget_category_posts';
 
 		add_action( 'save_post', array(&$this, 'flush_widget_cache') );
@@ -37,7 +37,7 @@ class Bricks_Category_Posts_Widget extends WP_Widget {
 		ob_start();
 		extract($args);
 
-		$title = apply_filters('widget_title', empty($instance['category_name']) ? __('Category Posts', 'bricks') : $instance['title'], $instance, $this->id_base);
+		$title = apply_filters('widget_title', empty($instance['category_name']) ? __('Category Posts', 'cubricks') : $instance['title'], $instance, $this->id_base);
 		if ( empty( $instance['numposts'] ) || ! $numposts = absint( $instance['numposts'] ) )
  			$numposts = 10;
 			
@@ -96,20 +96,20 @@ class Bricks_Category_Posts_Widget extends WP_Widget {
 ?>
 
 	<p>
-    	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'bricks'); ?></label>
+    	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'cubricks'); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
     </p>
 
 	<p>
-    	<label for="<?php echo $this->get_field_id('numposts'); ?>"><?php _e('Number of posts to show:', 'bricks'); ?></label>
+    	<label for="<?php echo $this->get_field_id('numposts'); ?>"><?php _e('Number of posts to show:', 'cubricks'); ?></label>
 		<input id="<?php echo $this->get_field_id('numposts'); ?>" name="<?php echo $this->get_field_name('numposts'); ?>" type="text" value="<?php echo $numposts; ?>" size="3" />
     </p>
         
 	<p><!-- Category -->
-	    <label for="<?php echo $this->get_field_id('category_name'); ?>"><?php _e('Category: ', 'bricks'); ?></label>
+	    <label for="<?php echo $this->get_field_id('category_name'); ?>"><?php _e('Category: ', 'cubricks'); ?></label>
 	    <select id="<?php echo $this->get_field_id('category_name'); ?>" name="<?php echo $this->get_field_name('category_name'); ?>">
         	<option value="-1"<?php if(-1 == $category_name) { ?> selected="selected"<?php } ?>>
-			<?php __('Current category of post', 'bricks'); ?>
+			<?php __('Current category of post', 'cubricks'); ?>
             </option>
         <?php
 		foreach($categories as $category) {

@@ -9,11 +9,20 @@ bricks_before_article(); ?>
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         
+			<?php $entry_date = bricks_theme_option('entry_date');
+				  if( is_page_template('showcase.php') && $entry_date == 'graphic' ) {
+                      bricks_post_date_graphic();
+                  }
+            ?>
+                
         <?php $post_format = strtolower( get_post_format() ); ?>
         <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' || $post_format == 'audio' ) : ?>
 			<header class="entry-header">
             	<hgroup>
 					<?php bricks_post_title(); ?>
+                    <?php if( is_page_template('showcase.php') && $entry_date == 'text' ) {
+					  	      bricks_post_date_text();
+					      } ?>
 				</hgroup>       
 			</header>
         <?php endif; ?>
@@ -47,7 +56,7 @@ bricks_before_article(); ?>
                 <?php bricks_comments_link(); ?>
                 <br />
                 <?php bricks_post_footer(); ?>
-                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
 			</footer>
 			<div class="clearfix"></div>
        		

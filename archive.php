@@ -54,7 +54,7 @@ get_header(); ?>
                 <?php bricks_comments_link(); ?>
                 <br />
                 <?php bricks_post_footer(); ?>
-                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
             </footer>
          
             <?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>

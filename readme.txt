@@ -3,7 +3,7 @@
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
 Tested up to: 3.4.2
-Version: 1.0.3
+Version: 1.0.4
 
 == Licenses and Copyright Info ==
 
@@ -78,3 +78,9 @@ Check out live demos of the theme: http://brickpress.us/
  * fixed header call to stylesheet URI path
  * fixed wp_footer()
  * fixed theme options page Save button style
+ 
+16 October 2012 - version 1.0.4
+ * changed "bricks" to "cubricks" as textdomain for translation
+ * fixed footer widgets width issue
+ * changed credit link in footer to theme URI
+ * main stylesheet enqueued in class.bricks-theme-setup.php, hard coded stylesheet link removed from header.php

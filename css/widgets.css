@@ -54,6 +54,7 @@
 .widget ul li {
 	color: #777;
 	font-size: 13px;
+	overflow: hidden;
 }
 .widget a {
 	text-decoration: none;
@@ -205,6 +206,12 @@ input[type=text] {
 .widget .searchform input:focus[type=text] {
 	background-color: #FFFFFF;
 }
+#supplementary .widget.widget_search form {
+	width: 100%;
+}
+#supplementary .widget.widget_search input[type=submit] {
+	display: none;
+}
 
 /* Search Page */
 #content .searchform {
@@ -290,7 +297,7 @@ input[type=text] {
 #content .contact-form input[type=text].email,
 #content .contact-form input[type=text].url {
 	padding: 0 1.5% 0 7%;
-	width: 91.5%;
+	width: 91%;
 }
 #content .contact-form input[type=text] {
 	background: #F3F6F9;
@@ -337,7 +344,7 @@ input[type=text] {
 	margin: 0 1% 0.6%;
 }
 #content .contact-form textarea {
-	width: 98%;
+	width: 97%;
 	padding: 1% 1%;
 }
 #content .contact-form p.contact-submit {
@@ -403,7 +410,8 @@ input[type=text] {
 #subscribe-blog input[type=text],
 #subscribe-blog input[type=submit],
 #content p.contact-submit > input[type=submit],
-#supplementary .searchform input[type=text] {
+#supplementary .searchform input[type=text],
+#supplementary .widget.widget_search input[type=text] {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;

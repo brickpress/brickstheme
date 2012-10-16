@@ -38,7 +38,7 @@ get_header(); ?>
                     <?php comments_template( '', true ); ?>
                     
                     <footer class="entry-meta">
-                        <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                        <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                     </footer>
                     <div class="clearfix"></div>
                 

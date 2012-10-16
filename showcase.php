@@ -16,16 +16,16 @@ get_header(); ?>
 
 		<div id="primary" class="showcase">
 			<div id="content" role="main">
-				<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'bricks' ); ?></h1>
+				<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'cubricks' ); ?></h1>
 
 				<?php
 				$showcase_recent_posts = bricks_theme_option('showcase_recent_posts');
-				// Display our recent posts, showing full content for the very latest, ignoring Aside posts.
+				// Display our recent posts, showing full content for the very latest.
 				$recent_args = array(
 					'order' => 'DESC',
 					'posts_per_page' => $showcase_recent_posts,
 					'post__not_in' => get_option( 'sticky_posts' ),
-					'no_found_rows' => true,
+					'no_found_rows' => true
 				);
 
 				// Our new query for the Recent Posts section.
@@ -33,6 +33,10 @@ get_header(); ?>
 
 				// The first Recent post is displayed normally
 				if ( $recent->have_posts() ) : $recent->the_post();
+				
+					get_template_part( 'content', 'posts' );
+				
+				endif;
 
 				while ( $recent->have_posts() ) : $recent->the_post();
 					// Set $more to 0 in order to only get the first part of the post.
@@ -63,7 +67,7 @@ get_header(); ?>
                 <footer class="entry-meta">
                     <?php bricks_post_footer(); ?>
                     <?php bricks_comments_link(); ?>
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'bricks' ), '<span class="edit-link">', '</span>' ); ?>
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer>
                 <div class="clearfix"></div>
                 
@@ -80,8 +84,6 @@ get_header(); ?>
             
             <?php bricks_content_nav(); ?>
                 
-            <?php endif; ?>
-
             </div><!-- #content -->
         <?php bricks_after_content(); ?>
     

@@ -23,7 +23,7 @@ get_header(); ?>
             
 			<?php bricks_featured_slider(); ?>
             
-            <h1 class="showcase-heading"><?php _e( 'Recent Posts', 'bricks' ); ?></h1>
+            <h1 class="showcase-heading"><?php _e( 'Recent Posts', 'cubricks' ); ?></h1>
 
             <?php
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;

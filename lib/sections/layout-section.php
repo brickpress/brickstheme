@@ -14,11 +14,11 @@ $this->settings['layout-section-tab'] = array(
 	'type'    => 'no-data',
 	'class'   => 'subsectiontabs',
 	'choices' => array(
-		'topbar-wrapper'	      => __( 'Topbar Wrapper', 'bricks' ),
-		'primary-nav-wrapper'     => __( 'Navigation Wrapper', 'bricks' ),
-	    'content-wrapper'	      => __( 'Content Wrapper', 'bricks' ),
-		'footer-sidebar-wrapper'  => __( 'Footer Sidebar Wrapper', 'bricks' ),
-		'footer-wrapper'	 	  => __( 'Footer Wrapper', 'bricks' )
+		'topbar-wrapper'	      => __( 'Topbar Wrapper', 'cubricks' ),
+		'primary-nav-wrapper'     => __( 'Navigation Wrapper', 'cubricks' ),
+	    'content-wrapper'	      => __( 'Content Wrapper', 'cubricks' ),
+		'footer-sidebar-wrapper'  => __( 'Footer Sidebar Wrapper', 'cubricks' ),
+		'footer-wrapper'	 	  => __( 'Footer Wrapper', 'cubricks' )
 	)
 );
 
@@ -32,8 +32,8 @@ $this->settings['topbar-wrapper'] = array(
 
 	$this->settings['topbar_wrapper'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Topbar Wrapper', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Topbar Wrapper', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -41,7 +41,7 @@ $this->settings['topbar-wrapper'] = array(
 
 	$this->settings['topbar_wrapper_color'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Color', 'bricks' ),
+		'title'	  => __( 'Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -51,8 +51,8 @@ $this->settings['topbar-wrapper'] = array(
 	
 	$this->settings['topbar_wrapper_opacity'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -70,8 +70,8 @@ $this->settings['topbar-wrapper'] = array(
 	
 	$this->settings['topbar_wrapper_img'] = array(
 		'section' => 'layout',
-		'title'	  => __( '', 'bricks' ),
-		'desc'	  => __( 'Topbar Wrapper Image', 'bricks' ),
+		'title'	  => __( '', 'cubricks' ),
+		'desc'	  => __( 'Topbar Wrapper Image', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -79,8 +79,8 @@ $this->settings['topbar-wrapper'] = array(
 	
 	$this->settings['topbar-wrap-position'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Background Image Position', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Background Image Position', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -88,8 +88,8 @@ $this->settings['topbar-wrapper'] = array(
 	
 	$this->settings['topbar_wrap_xpos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -100,8 +100,8 @@ $this->settings['topbar-wrapper'] = array(
 	
 	$this->settings['topbar_wrap_ypos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -112,31 +112,31 @@ $this->settings['topbar-wrapper'] = array(
 	
 	$this->settings['topbar_wrap_repeat'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'no-repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['topbar_wrap_attachment'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	
@@ -164,8 +164,8 @@ $this->settings['primary-nav-wrapper'] = array(
 
 	$this->settings['nav_wrapper'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Primary Navigation Wrapper', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Primary Navigation Wrapper', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -173,7 +173,7 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav_wrapper_color'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Color', 'bricks' ),
+		'title'	  => __( 'Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -183,8 +183,8 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav_wrapper_opacity'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -202,8 +202,8 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav_wrapper_img'] = array(
 		'section' => 'layout',
-		'title'	  => __( '', 'bricks' ),
-		'desc'	  => __( 'Primary Navigation Wrapper Image', 'bricks' ),
+		'title'	  => __( '', 'cubricks' ),
+		'desc'	  => __( 'Primary Navigation Wrapper Image', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -211,8 +211,8 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav-wrap-position'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Background Image Position', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Background Image Position', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -220,8 +220,8 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav_wrap_xpos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -232,8 +232,8 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav_wrap_ypos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -244,31 +244,31 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav_wrap_repeat'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'no-repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['nav_wrap_attachment'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	
@@ -283,14 +283,14 @@ $this->settings['primary-nav-wrapper'] = array(
 		'section'  => 'layout',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( '', 'bricks' ),
+		'title'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap',
 	);
 	
 	$this->settings['nav_border_top'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Top Border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Top Border', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -299,8 +299,8 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav_border_bottom'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Bottom Border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Bottom Border', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -309,8 +309,8 @@ $this->settings['primary-nav-wrapper'] = array(
 	
 	$this->settings['nav_border_opacity'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Border Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Border Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -343,8 +343,8 @@ $this->settings['content-wrapper'] = array(
 
 	$this->settings['content_wrapper'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Content Wrapper', 'bricks' ),
-		'desc'     => __( 'This is the area between the header and footer.', 'bricks' ),
+		'title'	   => __( 'Content Wrapper', 'cubricks' ),
+		'desc'     => __( 'This is the area between the header and footer.', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -352,7 +352,7 @@ $this->settings['content-wrapper'] = array(
 	
 	$this->settings['content_wrapper_color'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Color', 'bricks' ),
+		'title'	  => __( 'Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -362,8 +362,8 @@ $this->settings['content-wrapper'] = array(
 	
 	$this->settings['content_wrapper_opacity'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -381,8 +381,8 @@ $this->settings['content-wrapper'] = array(
 		
 	$this->settings['content_wrapper_img'] = array(
 		'section' => 'layout',
-		'title'	  => __( '', 'bricks' ),
-		'desc'	  => __( 'Content Wrapper Image', 'bricks' ),
+		'title'	  => __( '', 'cubricks' ),
+		'desc'	  => __( 'Content Wrapper Image', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -390,8 +390,8 @@ $this->settings['content-wrapper'] = array(
 
 	$this->settings['content-wrap-position'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Background Image Position', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Background Image Position', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -399,8 +399,8 @@ $this->settings['content-wrapper'] = array(
 	
 	$this->settings['content_wrap_xpos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -411,8 +411,8 @@ $this->settings['content-wrapper'] = array(
 	
 	$this->settings['content_wrap_ypos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -423,31 +423,31 @@ $this->settings['content-wrapper'] = array(
 	
 	$this->settings['content_wrap_repeat'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['content_wrap_attachment'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	
@@ -475,8 +475,8 @@ $this->settings['footer-sidebar-wrapper'] = array(
 
 	$this->settings['fwidget_bg'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Footer Widget Area Background', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Footer Widget Area Background', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -484,7 +484,7 @@ $this->settings['footer-sidebar-wrapper'] = array(
 
 	$this->settings['fwidget_bg_color'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Widget Area Background Color', 'bricks' ),
+		'title'	  => __( 'Widget Area Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -494,8 +494,8 @@ $this->settings['footer-sidebar-wrapper'] = array(
 	
 	$this->settings['fwidget_bg_opacity'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Widget Area Background Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Area Background Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -513,8 +513,8 @@ $this->settings['footer-sidebar-wrapper'] = array(
 	
 	$this->settings['fwidget_bg_image'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Image', 'bricks' ),
-		'desc'	  => __( 'Background image for footer widget area.', 'bricks' ),
+		'title'	  => __( 'Background Image', 'cubricks' ),
+		'desc'	  => __( 'Background image for footer widget area.', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -524,14 +524,14 @@ $this->settings['footer-sidebar-wrapper'] = array(
 		'section'  => 'layout',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Background Position', 'bricks' ),
+		'title'	   => __( 'Background Position', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['fwidget_bg_xpos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -542,8 +542,8 @@ $this->settings['footer-sidebar-wrapper'] = array(
 	
 	$this->settings['fwidget_bg_ypos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -554,31 +554,31 @@ $this->settings['footer-sidebar-wrapper'] = array(
 	
 	$this->settings['fwidget_bg_repeat'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['fwidget_bg_attachment'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	
@@ -593,14 +593,14 @@ $this->settings['footer-sidebar-wrapper'] = array(
 		'section'  => 'layout',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Footer Widet Area Borders', 'bricks' ),
+		'title'	   => __( 'Footer Widet Area Borders', 'cubricks' ),
 		'class'    => 'controller_wrap',
 	);
 	
 	$this->settings['fwidget_border_top'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Top Border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Top Border', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -609,8 +609,8 @@ $this->settings['footer-sidebar-wrapper'] = array(
 	
 	$this->settings['fwidget_border_bottom'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Bottom Border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Bottom Border', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -619,8 +619,8 @@ $this->settings['footer-sidebar-wrapper'] = array(
 	
 	$this->settings['fwidget_border_opacity'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Border Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Border Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -631,8 +631,8 @@ $this->settings['footer-sidebar-wrapper'] = array(
 	
 	$this->settings['fwidget_border_width'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Top Border Width', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Top Border Width', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -665,8 +665,8 @@ $this->settings['footer-wrapper'] = array(
 
 	$this->settings['footer_wrapper'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Footer Wrapper', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Footer Wrapper', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -674,7 +674,7 @@ $this->settings['footer-wrapper'] = array(
 	
 	$this->settings['footer_wrapper_color'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Color', 'bricks' ),
+		'title'	  => __( 'Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -684,8 +684,8 @@ $this->settings['footer-wrapper'] = array(
 	
 	$this->settings['footer_wrapper_opacity'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -703,8 +703,8 @@ $this->settings['footer-wrapper'] = array(
 		
 	$this->settings['footer_wrapper_img'] = array(
 		'section' => 'layout',
-		'title'	  => __( 'Footer Wrapper Image', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Footer Wrapper Image', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -712,8 +712,8 @@ $this->settings['footer-wrapper'] = array(
 
 	$this->settings['footer-wrap-position'] = array(
 		'section'  => 'layout',
-		'title'	   => __( 'Background Image Position', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Background Image Position', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -721,8 +721,8 @@ $this->settings['footer-wrapper'] = array(
 	
 	$this->settings['footer_wrap_xpos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -733,8 +733,8 @@ $this->settings['footer-wrapper'] = array(
 	
 	$this->settings['footer_wrap_ypos'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -745,31 +745,31 @@ $this->settings['footer-wrapper'] = array(
 	
 	$this->settings['footer_wrap_repeat'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'no-repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['footer_wrap_attachment'] = array(
 		'section' => 'layout',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	

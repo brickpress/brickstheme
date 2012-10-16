@@ -14,9 +14,9 @@ $this->settings['header-section-tab'] = array(
 	'type'     => 'no-data',
 	'class'    => 'subsectiontabs',
 	'choices'  => array(
-		'header-text'	        => __( 'Header Text', 'bricks' ),
-		'header-background'     => __( 'Header Background', 'bricks' ),
-		'custom-header'	        => __( 'Custom Header', 'bricks' ),
+		'header-text'	        => __( 'Header Text', 'cubricks' ),
+		'header-background'     => __( 'Header Background', 'cubricks' ),
+		'custom-header'	        => __( 'Custom Header', 'cubricks' ),
 	)
 );
 
@@ -31,15 +31,15 @@ $this->settings['header-text'] = array(
 		'section'  => 'header',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( '', 'bricks' ),
+		'title'	   => __( '', 'cubricks' ),
 		'desc'	   => '',
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['show_site_title'] = array(
 		'section' => 'header',
-		'title'   => __( 'Show Site Title', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Show Site Title', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'checkbox',
 		'std'     => 1,
 		'class'   => 'iphone_checkboxes',
@@ -48,8 +48,8 @@ $this->settings['header-text'] = array(
 	
 	$this->settings['show_site_description'] = array(
 		'section' => 'header',
-		'title'   => __( 'Show Site Description', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Show Site Description', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'checkbox',
 		'std'     => 1,
 		'class'   => 'iphone_checkboxes',
@@ -65,8 +65,8 @@ $this->settings['header-text'] = array(
 		
 	$this->settings['site_logo'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Site Logo', 'bricks' ),
-		'desc'	  => __( 'Choose an image from your computer or from your media library.', 'bricks' ),
+		'title'	  => __( 'Site Logo', 'cubricks' ),
+		'desc'	  => __( 'Choose an image from your computer or from your media library.', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -76,15 +76,15 @@ $this->settings['header-text'] = array(
 		'section'  => 'header',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Site Title', 'bricks' ),
+		'title'	   => __( 'Site Title', 'cubricks' ),
 		'desc'	   => '',
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['site_title_color'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Font Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -93,8 +93,8 @@ $this->settings['header-text'] = array(
 
 	$this->settings['site_title_opacity'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Site Title Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Site Title Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -105,8 +105,8 @@ $this->settings['header-text'] = array(
 	
 	$this->settings['site_title_fontface'] = array(
 		'section' => 'header',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -116,9 +116,9 @@ $this->settings['header-text'] = array(
 	
 	$this->settings['site_title_size'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -130,8 +130,8 @@ $this->settings['header-text'] = array(
 	
 	$this->settings['site_title_shadow'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Text Shadow', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Text Shadow', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -140,8 +140,8 @@ $this->settings['header-text'] = array(
 
 	$this->settings['site_title_shadow_opacity'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Text Shadow Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Text Shadow Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -161,14 +161,14 @@ $this->settings['header-text'] = array(
 		'section'  => 'header',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __('Site Description', 'bricks'),
-		'desc'	   => __( '', 'bricks'),
+		'title'	   => __('Site Description', 'cubricks'),
+		'desc'	   => __( '', 'cubricks'),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['site_description_color'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Font Color', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -178,8 +178,8 @@ $this->settings['header-text'] = array(
 	
 	$this->settings['site_description_opacity'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Site Description Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Site Description Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -190,8 +190,8 @@ $this->settings['header-text'] = array(
 	
 	$this->settings['site_description_fontface'] = array(
 		'section' => 'header',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -201,8 +201,8 @@ $this->settings['header-text'] = array(
 	
 	$this->settings['site_description_size'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -238,14 +238,14 @@ $this->settings['header-background'] = array(
 		'section'  => 'header',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Site Header Background', 'bricks' ),
+		'title'	   => __( 'Site Header Background', 'cubricks' ),
 		'class'    => 'controller_wrap',
 	);
 		
 	$this->settings['siteheader_color1'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Primary Color', 'bricks' ),
-		'desc'	  => __( 'top gradient', 'bricks' ),
+		'title'	  => __( 'Primary Color', 'cubricks' ),
+		'desc'	  => __( 'top gradient', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -254,8 +254,8 @@ $this->settings['header-background'] = array(
 	
 	$this->settings['siteheader_color2'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Secondary Color', 'bricks' ),
-		'desc'	  => __( 'bottom gradient', 'bricks' ),
+		'title'	  => __( 'Secondary Color', 'cubricks' ),
+		'desc'	  => __( 'bottom gradient', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -264,8 +264,8 @@ $this->settings['header-background'] = array(
 	
 	$this->settings['siteheader_opacity1'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Primary Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Primary Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -276,8 +276,8 @@ $this->settings['header-background'] = array(
 
 	$this->settings['siteheader_opacity2'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Secondary Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Secondary Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -297,14 +297,14 @@ $this->settings['header-background'] = array(
 		'section'  => 'header',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Site Header Borders', 'bricks' ),
+		'title'	   => __( 'Site Header Borders', 'cubricks' ),
 		'class'    => 'controller_wrap',
 	);
 	
 	$this->settings['siteheader_border_top'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Site Header Top Border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Site Header Top Border', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -313,8 +313,8 @@ $this->settings['header-background'] = array(
 	
 	$this->settings['siteheader_border_bottom'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Site Header Bottom Border', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Site Header Bottom Border', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -323,8 +323,8 @@ $this->settings['header-background'] = array(
 	
 	$this->settings['siteheader_border_opacity'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Site Header Border Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Site Header Border Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -342,8 +342,8 @@ $this->settings['header-background'] = array(
 		
 	$this->settings['header_background_img'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Header Background Image', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Header Background Image', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -351,8 +351,8 @@ $this->settings['header-background'] = array(
 
 	$this->settings['header-background-position'] = array(
 		'section'  => 'header',
-		'title'	   => __( 'Background Image Position', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Background Image Position', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -360,8 +360,8 @@ $this->settings['header-background'] = array(
 	
 	$this->settings['header_background_xpos'] = array(
 		'section' => 'header',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -372,8 +372,8 @@ $this->settings['header-background'] = array(
 	
 	$this->settings['header_background_ypos'] = array(
 		'section' => 'header',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -384,31 +384,31 @@ $this->settings['header-background'] = array(
 	
 	$this->settings['header_background_repeat'] = array(
 		'section' => 'header',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'no-repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['header_background_attachment'] = array(
 		'section' => 'header',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	
@@ -435,8 +435,8 @@ $this->settings['custom-header'] = array(
 	
 	$this->settings['enable_custom_header'] = array(
 		'section' => 'header',
-		'title'   => __( 'Enable Custom Header', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Enable Custom Header', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'checkbox',
 		'std'     => 0,
 		'class'   => 'iphone_checkboxes',
@@ -444,8 +444,8 @@ $this->settings['custom-header'] = array(
 	
 	$this->settings['custom_header_adjust'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Adjust Custom Header Vertical Position', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Adjust Custom Header Vertical Position', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'min'	  => 0,
 		'max'	  => 500,
@@ -456,8 +456,8 @@ $this->settings['custom-header'] = array(
 
 	$this->settings['custom_header'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Custom Header Image', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Custom Header Image', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => '',
@@ -467,14 +467,14 @@ $this->settings['custom-header'] = array(
 		'section'  => 'header',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Custom Header Size', 'bricks' ),
+		'title'	   => __( 'Custom Header Size', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['header_image_width'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Header Image Width', 'bricks' ),
-		'desc'	  => __( 'Set the width of your custom header image lower or equal to the value you set here. Larger images will be cropped to maintain aspect ratio.', 'bricks' ),
+		'title'	  => __( 'Header Image Width', 'cubricks' ),
+		'desc'	  => __( 'Set the width of your custom header image lower or equal to the value you set here. Larger images will be cropped to maintain aspect ratio.', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
@@ -483,8 +483,8 @@ $this->settings['custom-header'] = array(
 	
 	$this->settings['header_image_height'] = array(
 		'section' => 'header',
-		'title'	  => __( 'Header Image Height', 'bricks' ),
-		'desc'	  => __( 'Set the height of your custom header image lower or equal to the value you set here. Larger images will be cropped to maintain aspect ratio.', 'bricks' ),
+		'title'	  => __( 'Header Image Height', 'cubricks' ),
+		'desc'	  => __( 'Set the height of your custom header image lower or equal to the value you set here. Larger images will be cropped to maintain aspect ratio.', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',

@@ -14,10 +14,10 @@ $this->settings['sidebars-section-tab'] = array(
 	'type'    => 'no-data',
 	'class'   => 'subsectiontabs',
 	'choices' => array(
-		'primary-sidebar'	=> __( 'Main Sidebar', 'bricks' ),
-		'footer-sidebar'    => __( 'Footer Sidebar', 'bricks' ),
-		'homepage-sidebar'  => __( 'Homepage Sidebar', 'bricks' ),
-		'widget-buttons'    => __( 'Widget Buttons', 'bricks' )
+		'primary-sidebar'	=> __( 'Main Sidebar', 'cubricks' ),
+		'footer-sidebar'    => __( 'Footer Sidebar', 'cubricks' ),
+		'homepage-sidebar'  => __( 'Homepage Sidebar', 'cubricks' ),
+		'widget-buttons'    => __( 'Widget Buttons', 'cubricks' )
 	)
 );
 
@@ -30,8 +30,8 @@ $this->settings['primary-sidebar'] = array(
 
 	$this->settings['hide_sidebar_divider'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Hide Sidebar Divider', 'bricks' ),
-		'desc'    => __( 'Show/hide the divider between content and primary sidebar.', 'bricks' ),
+		'title'   => __( 'Hide Sidebar Divider', 'cubricks' ),
+		'desc'    => __( 'Show/hide the divider between content and primary sidebar.', 'cubricks' ),
 		'type'    => 'checkbox',
 		'std'     => 0,
 		'class'   => 'iphone_checkboxes'
@@ -41,14 +41,14 @@ $this->settings['primary-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Widget Title', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Widget Title', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['widget_title_color'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Font Color', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -58,8 +58,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_title_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Title Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Title Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -70,8 +70,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_title_fontface'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -81,8 +81,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_title_size'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -94,23 +94,23 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_title_transform'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'capitalize',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
 	$this->settings['widget_title_shadow'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Title Shadow', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Title Shadow', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
@@ -119,15 +119,15 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_title_fontweight'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Font Weight', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Font Weight', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'normal',
 		'choices' => array(
-			'normal' => __( 'Normal', 'bricks' ),
-			'bold'   => __( 'Bold', 'bricks' )
+			'normal' => __( 'Normal', 'cubricks' ),
+			'bold'   => __( 'Bold', 'cubricks' )
 		)
 	);
 	
@@ -143,15 +143,15 @@ $this->settings['primary-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Primary Sidebar Widget Text', 'bricks' ),
-		'desc'	   => __( 'Widget items', 'bricks' ),
+		'title'	   => __( 'Primary Sidebar Widget Text', 'cubricks' ),
+		'desc'	   => __( 'Widget items', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['widget_text_color'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped2',
@@ -160,8 +160,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_text_shadow'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Shadow', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Shadow', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped2',
@@ -170,8 +170,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_text_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'class'   => 'jslider',
 		'family'  => '_wrapped2',
@@ -183,8 +183,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_shadow_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Shadow Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Shadow Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -204,14 +204,14 @@ $this->settings['primary-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Widget Background Color', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Widget Background Color', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['widget_background_color'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Background Color', 'bricks' ),
+		'title'	  => __( 'Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
@@ -221,8 +221,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_background_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Background Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Background Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -240,8 +240,8 @@ $this->settings['primary-sidebar'] = array(
 			
 	$this->settings['widget-title-bg'] = array(
 		'section'  => 'sidebars',
-		'title'	   => __( 'Widget Title Background', 'bricks' ),
-		'desc'     => __( '', 'bricks' ),
+		'title'	   => __( 'Widget Title Background', 'cubricks' ),
+		'desc'     => __( '', 'cubricks' ),
 		'archtype' => 'structure',
 		'type'     => 'no-data',
 		'class'    => 'controller_wrap'
@@ -249,7 +249,7 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_title_bg'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Background Color', 'bricks' ),
+		'title'	  => __( 'Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
@@ -259,8 +259,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_titlebg_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Background Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Background Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -278,8 +278,8 @@ $this->settings['primary-sidebar'] = array(
 		
 	$this->settings['widget_title_image'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Background Image', 'bricks' ),
-		'desc'	  => __( 'Background image for primary widget title.', 'bricks' ),
+		'title'	  => __( 'Background Image', 'cubricks' ),
+		'desc'	  => __( 'Background image for primary widget title.', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
 		'std'	  => ''
@@ -289,14 +289,14 @@ $this->settings['primary-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Background Image Position', 'bricks' ),
+		'title'	   => __( 'Background Image Position', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['widget_title_xpos'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Horizontal Position', 'bricks' ),
-		'desc'    => __( '0 = left | 50 = center | 100 = right', 'bricks' ),
+		'title'   => __( 'Horizontal Position', 'cubricks' ),
+		'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -307,8 +307,8 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_title_ypos'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Vertical Position', 'bricks' ),
-		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'bricks' ),
+		'title'   => __( 'Vertical Position', 'cubricks' ),
+		'desc'    => __( '0 = top | 50 = center | 100 = bottom', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -319,31 +319,31 @@ $this->settings['primary-sidebar'] = array(
 	
 	$this->settings['widget_titlebg_repeat'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Background Repeat', 'bricks' ),
-		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'bricks' ),
+		'title'   => __( 'Background Repeat', 'cubricks' ),
+		'desc'    => __( 'Sets how a background image will be repeated. By default, a background image is repeated both vertically and horizontally.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'repeat',
 		'choices' => array(
-			'no-repeat' => __( 'No Repeat', 'bricks' ),
-			'repeat' 	=> __( 'Tile', 'bricks' ),
-			'repeat-x'  => __( 'Tile Horizontally', 'bricks' ),
-			'repeat-y'  => __( 'Tile Vertically', 'bricks' )
+			'no-repeat' => __( 'No Repeat', 'cubricks' ),
+			'repeat' 	=> __( 'Tile', 'cubricks' ),
+			'repeat-x'  => __( 'Tile Horizontally', 'cubricks' ),
+			'repeat-y'  => __( 'Tile Vertically', 'cubricks' )
 		)
 	);
 	
 	$this->settings['widget_titlebg_attachment'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Background Attachment', 'bricks' ),
-		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'bricks' ),
+		'title'   => __( 'Background Attachment', 'cubricks' ),
+		'desc'    => __( 'Sets whether a background image is fixed or scrolls with the rest of the page.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
 		'std'     => 'scroll',
 		'choices' => array(
-			'scroll' => __( 'Scroll', 'bricks' ),
-			'fixed'  => __( 'Fixed', 'bricks' )
+			'scroll' => __( 'Scroll', 'cubricks' ),
+			'fixed'  => __( 'Fixed', 'cubricks' )
 		)
 	);
 	
@@ -372,14 +372,14 @@ $this->settings['footer-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Footer Widget Title', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Footer Widget Title', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['fwidget_title_color'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Footer Font Color', 'bricks' ),
+		'title'	  => __( 'Footer Font Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -389,8 +389,8 @@ $this->settings['footer-sidebar'] = array(
 	
 	$this->settings['fwidget_title_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Footer Widget Title Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Footer Widget Title Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -401,8 +401,8 @@ $this->settings['footer-sidebar'] = array(
 	
 	$this->settings['fwidget_title_fontface'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Footer Widget Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Footer Widget Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -412,7 +412,7 @@ $this->settings['footer-sidebar'] = array(
 	
 	$this->settings['fwidget_title_shadow'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Shadow Color', 'bricks' ),
+		'title'	  => __( 'Shadow Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -422,8 +422,8 @@ $this->settings['footer-sidebar'] = array(
 	
 	$this->settings['fwidget_title_size'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Footer Widget Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Footer Widget Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -435,16 +435,16 @@ $this->settings['footer-sidebar'] = array(
 	
 	$this->settings['fwidget_title_transform'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Footer Widget Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Footer Widget Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'capitalize',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
@@ -459,15 +459,15 @@ $this->settings['footer-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Footer Widget Text', 'bricks' ),
-		'desc'	   => __( 'Widget items', 'bricks' ),
+		'title'	   => __( 'Footer Widget Text', 'cubricks' ),
+		'desc'	   => __( 'Widget items', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['fwidget_text_color'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
@@ -476,8 +476,8 @@ $this->settings['footer-sidebar'] = array(
 	
 	$this->settings['fwidget_text_shadow'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Shadow', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Shadow', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
@@ -486,8 +486,8 @@ $this->settings['footer-sidebar'] = array(
 	
 	$this->settings['fwidget_text_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'class'   => 'jslider',
 		'family'  => '_wrapped3',
@@ -499,15 +499,15 @@ $this->settings['footer-sidebar'] = array(
 	
 	$this->settings['fwidget_text_fontweight'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Footer Widget Text Font Weight', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Footer Widget Text Font Weight', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'bold',
 		'choices' => array(
-			'normal' => __( 'Normal', 'bricks' ),
-			'bold'   => __( 'Bold', 'bricks' )
+			'normal' => __( 'Normal', 'cubricks' ),
+			'bold'   => __( 'Bold', 'cubricks' )
 		)	
 	);
 	
@@ -536,14 +536,14 @@ $this->settings['homepage-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Widget Title', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Widget Title', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['hwidget_title_color'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Font Color', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
@@ -553,8 +553,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_title_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Title Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Title Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -565,8 +565,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_title_fontface'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -576,8 +576,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_title_size'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Font Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -589,23 +589,23 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_title_transform'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Text Transform', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Text Transform', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'radio',
 		'class'   => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'	  => 'none',
 		'choices' => array(
-			'none'     	 => __( 'None', 'bricks' ),
-			'capitalize' => __( 'Capitalize', 'bricks' ),
-			'uppercase'	 => __( 'Uppercase', 'bricks' )
+			'none'     	 => __( 'None', 'cubricks' ),
+			'capitalize' => __( 'Capitalize', 'cubricks' ),
+			'uppercase'	 => __( 'Uppercase', 'cubricks' )
 		)	
 	);
 	
 	$this->settings['hwidget_title_shadow'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Title Shadow', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Title Shadow', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
@@ -614,15 +614,15 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_fontweight'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Font Weight', 'bricks' ),
-		'desc'    => __( '', 'bricks' ),
+		'title'   => __( 'Font Weight', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
 		'family'  => '_wrapped3',
 		'std'     => 'normal',
 		'choices' => array(
-			'normal' => __( 'Normal', 'bricks' ),
-			'bold'   => __( 'Bold', 'bricks' )
+			'normal' => __( 'Normal', 'cubricks' ),
+			'bold'   => __( 'Bold', 'cubricks' )
 		)
 	);
 	
@@ -637,15 +637,15 @@ $this->settings['homepage-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Homepage Sidebar Widget Text', 'bricks' ),
-		'desc'	   => __( 'Widget items', 'bricks' ),
+		'title'	   => __( 'Homepage Sidebar Widget Text', 'cubricks' ),
+		'desc'	   => __( 'Widget items', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['hwidget_text_color'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
@@ -654,8 +654,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_text_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'class'   => 'jslider',
 		'family'  => '_wrapped3',
@@ -667,8 +667,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_fontface'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
@@ -678,8 +678,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_text_shadow'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Shadow', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Shadow', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
@@ -688,8 +688,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_shadow_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Shadow Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Shadow Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -700,8 +700,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_text_size'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Text Size', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Text Size', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
@@ -722,14 +722,14 @@ $this->settings['homepage-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Widget Background Color', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Widget Background Color', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['hwidget_background_color'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Background Color', 'bricks' ),
+		'title'	  => __( 'Background Color', 'cubricks' ),
 		'desc'	  => '',
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
@@ -739,8 +739,8 @@ $this->settings['homepage-sidebar'] = array(
 	
 	$this->settings['hwidget_background_opacity'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Background Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Background Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -774,15 +774,15 @@ $this->settings['close-homepage-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Widget Buttons Background Color', 'bricks' ),
-		'desc'	   => __( 'Sidebar Widget Buttons', 'bricks' ),
+		'title'	   => __( 'Widget Buttons Background Color', 'cubricks' ),
+		'desc'	   => __( 'Sidebar Widget Buttons', 'cubricks' ),
 		'class'    => 'controller_wrap',
 	);
 		
 	$this->settings['widget_button1'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Primary Color', 'bricks' ),
-		'desc'	  => __( 'Top gradient', 'bricks' ),
+		'title'	  => __( 'Primary Color', 'cubricks' ),
+		'desc'	  => __( 'Top gradient', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -791,8 +791,8 @@ $this->settings['close-homepage-sidebar'] = array(
 	
 	$this->settings['widget_button2'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Secondary Color', 'bricks' ),
-		'desc'	  => __( 'Bottom gradient', 'bricks' ),
+		'title'	  => __( 'Secondary Color', 'cubricks' ),
+		'desc'	  => __( 'Bottom gradient', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -801,8 +801,8 @@ $this->settings['close-homepage-sidebar'] = array(
 	
 	$this->settings['widget_button_opacity1'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Primary Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Primary Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -813,8 +813,8 @@ $this->settings['close-homepage-sidebar'] = array(
 	
 	$this->settings['widget_button_opacity2'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Secondary Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Secondary Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -834,14 +834,14 @@ $this->settings['close-homepage-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Link Background Color on Hover', 'bricks' ),
+		'title'	   => __( 'Link Background Color on Hover', 'cubricks' ),
 		'class'    => 'controller_wrap',
 	);
 			
 	$this->settings['widget_button_hover1'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Primary Color', 'bricks' ),
-		'desc'	  => __( 'Bottom gradient', 'bricks' ),
+		'title'	  => __( 'Primary Color', 'cubricks' ),
+		'desc'	  => __( 'Bottom gradient', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -850,8 +850,8 @@ $this->settings['close-homepage-sidebar'] = array(
 	
 	$this->settings['widget_button_hover2'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Secondary Color', 'bricks' ),
-		'desc'	  => __( 'Top gradient', 'bricks' ),
+		'title'	  => __( 'Secondary Color', 'cubricks' ),
+		'desc'	  => __( 'Top gradient', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
@@ -860,8 +860,8 @@ $this->settings['close-homepage-sidebar'] = array(
 	
 	$this->settings['widget_button_hover_opacity1'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Primary Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Primary Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 0,
@@ -872,8 +872,8 @@ $this->settings['close-homepage-sidebar'] = array(
 
 	$this->settings['widget_button_hover_opacity2'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Secondary Color Opacity', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Secondary Color Opacity', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 0,
@@ -893,15 +893,15 @@ $this->settings['close-homepage-sidebar'] = array(
 		'section'  => 'sidebars',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
-		'title'	   => __( 'Widget Button Text', 'bricks' ),
-		'desc'	   => __( '', 'bricks' ),
+		'title'	   => __( 'Widget Button Text', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
 		'class'    => 'controller_wrap'
 	);
 	
 	$this->settings['widget_button_text'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Font Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Font Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
 		'family'  => '_wrapped3',
@@ -910,8 +910,8 @@ $this->settings['close-homepage-sidebar'] = array(
 	
 	$this->settings['widget_button_border'] = array(
 		'section' => 'sidebars',
-		'title'	  => __( 'Widget Button Border Color', 'bricks' ),
-		'desc'	  => __( '', 'bricks' ),
+		'title'	  => __( 'Widget Button Border Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
@@ -920,8 +920,8 @@ $this->settings['close-homepage-sidebar'] = array(
 	
 	$this->settings['widget_button_fontface'] = array(
 		'section' => 'sidebars',
-		'title'   => __( 'Font Family', 'bricks' ),
-		'desc'    => __( 'Web Safe Font Combinations.', 'bricks' ),
+		'title'   => __( 'Font Family', 'cubricks' ),
+		'desc'    => __( 'Web Safe Font Combinations.', 'cubricks' ),
 		'type'	  => 'select',
 		'class'   => 'font-face',
 		'family'  => '_wrapped3',
