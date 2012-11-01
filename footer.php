@@ -60,6 +60,7 @@ if( is_active_sidebar( 'sidebar-f1' ) || is_active_sidebar( 'sidebar-f2' ) || is
         </div><!-- #supplementary -->
     </div><!-- .footer-widget-inner -->
 </div><!-- #footer-sidebar-wrapper -->
+
 <?php endif; ?>       
         
         
@@ -81,7 +82,7 @@ if( is_active_sidebar( 'sidebar-f1' ) || is_active_sidebar( 'sidebar-f2' ) || is
             <?php bricks_copyright_notices(); ?> 
             <?php bricks_footer_ads(); ?>
 		</div><!-- #main -->
-        <?php if( bricks_theme_option('show_footer_nav') ) {
+        <?php if( bricks_theme_option('footer_nav') == 'show' ) {
         	    bricks_footer_menu();
 			  } ?>
 		<?php bricks_credits(); ?>

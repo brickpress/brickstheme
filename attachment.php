@@ -17,7 +17,6 @@ get_header(); ?>
 			<?php bricks_before_article(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     			
-                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                 <header class="entry-header">
                     <hgroup>
                     <h1 class="entry-title"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title( $post->post_parent ); ?>&raquo; <?php the_title(); ?></a>
@@ -87,6 +86,10 @@ get_header(); ?>
 				
                 <?php if( bricks_theme_option('author_avatar') == 'show_avatar' )
 						  bricks_author_meta(); ?>
+                
+                <footer class="entry-meta">
+                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
+                </footer><!-- .entry-meta -->
                 
                 <?php comments_template( '', true ); ?>
             

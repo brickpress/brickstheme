@@ -317,7 +317,7 @@ $this->settings['footer-text'] = array(
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
-		'max'	  => 36,
+		'max'	  => 50,
 		'step'    => 1,
 		'unit'	  => 'px',
 		'std'	  => '12'
@@ -392,6 +392,17 @@ $this->settings['footer-extras'] = array(
 		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
+		'family'  => '_wrapped2',
+		'std'	  => '',
+	);
+	
+	$this->settings['footer_logo_alt'] = array(
+		'section' => 'footer',
+		'title'	  => __( 'Alt attribute for the footer logo.', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'text',
+		'class'   => 'constant',
+		'family'  => '_wrapped2',
 		'std'	  => '',
 	);
 	
@@ -419,6 +430,7 @@ $this->settings['footer-extras'] = array(
 		'desc'	  => __( 'Please enter your Creative Commons License.<br />(e.g)Attribution-NonCommercial-ShareAlike 3.0 United States (CC BY-NC-SA 3.0)', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
+		'family'  => '_wrapped3',
 		'std'	  => ''
 	);
 	
@@ -428,6 +440,7 @@ $this->settings['footer-extras'] = array(
 		'desc'	  => __( 'Please enter your Creative Commons License URL.', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
+		'family'  => '_wrapped3',
 		'std'	  => ''
 	);
 	
@@ -437,6 +450,7 @@ $this->settings['footer-extras'] = array(
 		'desc'	  => __( 'Please enter your Creative Commons License image URL.', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
+		'family'  => '_wrapped3',
 		'std'	  => ''
 	);
 	

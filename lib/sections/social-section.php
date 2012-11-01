@@ -14,8 +14,7 @@ $this->settings['social-section-tab'] = array(
 	'type'     => 'no-data',
 	'class'    => 'subsectiontabs',
 	'choices'  => array(
-		'social-buttons' => __( 'Social Buttons', 'cubricks' ),
-		'webmaster-tools' => __( 'Webmaster Tools', 'cubricks' )
+		'social-buttons' => __( 'Social Buttons', 'cubricks' )
 	)
 );
 
@@ -44,12 +43,28 @@ $this->settings['social-buttons'] = array(
 		'section' => 'social',
 		'title'   => __( 'Show Search', 'cubricks' ),
 		'desc'    => __( 'Display search bar below social media icons.', 'cubricks' ),
-		'type'    => 'checkbox',
-		'std'     => 1,
-		'class'   => 'iphone_checkboxes',
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
 		'family'  => '_wrapped2',
+		'std'     => 'show-search',
+		'choices' => array(
+			'show-search' => __( 'Show Search', 'cubricks' ),
+			'hide-search' => __( 'Hide Search', 'cubricks' )
+		)
 	);
 	
+	$this->settings['social_icons_style'] = array(
+		'section' => 'social',
+		'title'   => __( 'Social Icons', 'cubricks' ),
+		'desc'    => __( 'Choose from dark or light social icons.', 'cubricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-image',
+		'std'     => 'social-dark',
+		'choices' => array(
+			'social-dark'  => __( 'Dark Icons', 'cubricks' ),
+			'social-light' => __( 'Light Icons', 'cubricks' )
+		)
+	);
 	
 	$this->settings['social-buttons-heading'] = array(
 		'section'  => 'social',
@@ -120,6 +135,7 @@ $this->settings['social-buttons'] = array(
 		'desc'	  => __( 'example: <strong>Username</strong>.twitter.com', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
+		'family'  => '_wrapped2',
 		'std'	  => '',
 	);
 	
@@ -129,6 +145,7 @@ $this->settings['social-buttons'] = array(
 		'desc'	  => __( 'example: <strong>Username</strong>.tumblr.com', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
+		'family'  => '_wrapped2',
 		'std'	  => '',
 	);
 	
@@ -138,6 +155,7 @@ $this->settings['social-buttons'] = array(
 		'desc'	  => __( 'example: http://www.flickr.com/photos/<strong>Username</strong>', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
+		'family'  => '_wrapped2',
 		'std'	  => '',
 	);
 	
@@ -147,56 +165,7 @@ $this->settings['social-buttons'] = array(
 		'desc'	  => __( 'example: http://www.youtube.com/user/<strong>Username</strong>', 'cubricks' ),
 		'type'	  => 'text',
 		'class'   => 'constant',
-		'std'	  => '',
-	);
-
-$this->settings['close-social-buttons'] = array(
-	'section'  => 'social',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'close_subsection',
-);
-
-
-$this->settings['webmaster-tools'] = array(
-	'section'  => 'social',
-	'archtype' => 'structure',
-	'type'     => 'no-data',
-	'class'    => 'open_subsection',
-);
-
-	$this->settings['site-verify-heading'] = array(
-		'section'  => 'social',
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'class'    => 'headings',
-		'desc'	  => __( 'If your website is already verified you may forget about these. Enter the meta tags for the following:', 'cubricks' ),
-	);
-
-	$this->settings['google_verify'] = array(
-		'section' => 'social',
-		'title'	  => __( 'Google Site Verification', 'cubricks' ),
-		'desc'	  => __( 'Enter your Google Webmaster Tools site verification meta tag. ', 'cubricks' ),
-		'type'	  => 'text',
-		'class'   => 'constant',
-		'std'	  => '',
-	);
-	
-	$this->settings['bing_verify'] = array(
-		'section' => 'social',
-		'title'	  => __( 'Bing Site Verification', 'cubricks' ),
-		'desc'	  => __( 'Enter your Bing Webmaster Tools site verification meta tag. ', 'cubricks' ),
-		'type'	  => 'text',
-		'class'   => 'constant',
-		'std'	  => '',
-	);
-	
-	$this->settings['alexa_verify'] = array(
-		'section' => 'social',
-		'title'	  => __( 'Alexa Site Verification', 'cubricks' ),
-		'desc'	  => __( 'Enter your Alexa site verification meta tag. ', 'cubricks' ),
-		'type'	  => 'text',
-		'class'   => 'constant',
+		'family'  => '_wrapped2',
 		'std'	  => '',
 	);
 	

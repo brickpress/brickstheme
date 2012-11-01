@@ -6,7 +6,9 @@
  * @subpackage Page Templates
  * @since Cubricks 1.0.0
  */
-get_header(); ?>
+get_header();
+
+$article_container = bricks_theme_option('article_container'); ?>
 
 	<div id="primary">
     

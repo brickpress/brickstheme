@@ -9,7 +9,7 @@
  * 
  * @package    Cubricks Theme
  * @author     Raphael Villanea <support@brickpress.us>
- * @copyright  Copyright (c) 2011, BrickPress
+ * @copyright  Copyright (c) 2012, Raphael Villanea
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
  * @since      1.0.0
  */
@@ -123,10 +123,6 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 
 
 	public function bricks_hooks_and_filters() {
-		
-		if( bricks_theme_option('show_adminbar') == false ) {
-			add_filter( 'show_admin_bar', '__return_false' );
-		}
 
 		add_action( 'widgets_init', array( &$this, 'bricks_widgets_init' ) );
 		
@@ -141,6 +137,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		add_action( 'wp_head', array( &$this, 'bricks_sidebars_print_style' ) );
 		add_action( 'wp_head', array( &$this, 'bricks_footer_print_style' ) );
 		add_action( 'wp_head', array( &$this, 'bricks_post_format_style' ) );
+		add_action( 'wp_head', array( &$this, 'bricks_social_icons_style' ) );
 		
 		add_filter( 'wp_list_categories', array( &$this, 'valid_category_list_rel' ) );
 		add_filter( 'the_category',  array( &$this, 'valid_category_list_rel' ) );
@@ -511,7 +508,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 				background: <?php echo bricks_theme_option('preformat_background'); ?>;
 				color: <?php echo bricks_theme_option('preformat_text'); ?>;	
 			}
-			.page-template-showcase-php .inner-slider {
+			.page-template-showcase-php .inner-slider,
+			.page-template-slider-homepage-php .inner-slider {
 				max-width: <?php echo bricks_theme_option('large_feature_width'); ?>px;
 			}
 		</style>
@@ -643,9 +641,12 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			  $navmenu_text_color = bricks_theme_option('navmenu_text_color');
 			  $navmenu_text_shadow = bricks_theme_option('navmenu_text_shadow');
 			  $navmenu_text_current = bricks_theme_option('navmenu_text_current');
+			  $nav_wrapper_color = bricks_theme_option('nav_wrapper_color');
+			  $nav_border_top = bricks_theme_option('nav_border_top');
+			  $nav_border_bottom = bricks_theme_option('nav_border_bottom');
 		?>
 		#access ul ul {
-			background: <?php echo $navmenu_bg_color; ?>; /* Show a solid color for older browsers */
+			background: <?php echo ('#E3EDF4' != $navmenu_bg_color) ? $navmenu_bg_color : $nav_wrapper_color; ?>; /* Show a solid color for older browsers */
 			border-bottom: inset 8px solid rgba(<?php echo $this->hex_to_rgb($navmenu_text_color) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 		}
 		#access a {
@@ -676,16 +677,15 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			color: rgba(<?php echo $this->hex_to_rgb($navmenu_text_current) .','. bricks_theme_option('navmenu_text_opacity'); ?>);
 			text-shadow: 1px 1px rgba(<?php echo $this->hex_to_rgb($navmenu_bg_color) .','. bricks_theme_option('navmenu_text_opacity')/2; ?>);
 		}
-		<?php
-		$nav_wrapper_color = bricks_theme_option('nav_wrapper_color');
-		$nav_border_top = bricks_theme_option('nav_border_top');
-		$nav_border_bottom = bricks_theme_option('nav_border_bottom');
-		?>
-		#nav-wrapper {
-			background: rgba(<?php echo $this->hex_to_rgb($nav_wrapper_color) .','. bricks_theme_option('nav_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('nav_wrapper_img'); ?>) <?php echo bricks_theme_option('nav_wrap_attachment').' '.bricks_theme_option('nav_wrap_repeat').' '.bricks_theme_option('nav_wrap_xpos').'% '. bricks_theme_option('nav_wrap_ypos') .'%'?>;
-			border-top: 1px solid rgba(<?php echo $this->hex_to_rgb($nav_border_top) .','. bricks_theme_option('nav_border_opacity'); ?>);
-			border-bottom: inset 1px solid rgba(<?php echo $this->hex_to_rgb($nav_border_bottom) .','. bricks_theme_option('nav_border_opacity'); ?>);
-        }
+		<?php if( !is_page_template('slider-homepage.php') && bricks_theme_option('primary_nav') == 'show' || is_page_template('slider-homepage.php') && bricks_theme_option('homepage_navmenu') == 'show_nav' ) : ?>
+		
+			#nav-wrapper {	
+				background: rgba(<?php echo $this->hex_to_rgb($nav_wrapper_color) .','. bricks_theme_option('nav_wrapper_opacity'); ?>) url(<?php echo bricks_theme_option('nav_wrapper_img'); ?>) <?php echo bricks_theme_option('nav_wrap_attachment').' '.bricks_theme_option('nav_wrap_repeat').' '.bricks_theme_option('nav_wrap_xpos').'% '. bricks_theme_option('nav_wrap_ypos') .'%'?>;
+				border-top: 1px solid rgba(<?php echo $this->hex_to_rgb($nav_border_top) .','. bricks_theme_option('nav_border_opacity'); ?>);
+				border-bottom: inset 1px solid rgba(<?php echo $this->hex_to_rgb($nav_border_bottom) .','. bricks_theme_option('nav_border_opacity'); ?>);
+			}
+		<?php endif; ?>
+		
 		<?php $footernav_text_color = bricks_theme_option('footernav_text_color'); 
 			  $footernav_link_hover = bricks_theme_option('footernav_link_hover'); ?>
 		#footer-navmenu li,
@@ -726,6 +726,7 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		$linkformat_border = bricks_theme_option('linkformat_border');
 		$formfield_border = bricks_theme_option('formfield_border');
 		$formfield_background = bricks_theme_option('formfield_background');
+		$formfield_focus = bricks_theme_option('formfield_focus');
 		if( $article_bg_color ) :
 		?>
         <style type="text/css">		
@@ -769,17 +770,30 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			background: <?php echo $formfield_background; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'name.png' ); ?>) no-repeat 1% 50% scroll;
 			border-color: <?php echo $formfield_border; ?>;
 		}
-		#content .contact-form input[type=text].email {
+		#content .contact-form input:focus[type=text].name {
+			background: <?php echo $formfield_focus; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'name.png' ); ?>) no-repeat 1% 50% scroll;
+		}
+		#content .contact-form input[type=text].email,
+		#content .contact-form input[type=email].email {
 			background: <?php echo $formfield_background; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'email.png' ); ?>) no-repeat 1% 50% scroll;
 			border-color: <?php echo $formfield_border; ?>;
+		}
+		#content .contact-form input:focus[type=email].email {
+			background: <?php echo $formfield_focus; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'email.png' ); ?>) no-repeat 1% 50% scroll;
 		}
 		#content .contact-form input[type=text].url {
 			background: <?php echo $formfield_background; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'website.png' ); ?>) no-repeat 1% 50% scroll;
 			border-color: <?php echo $formfield_border; ?>;
 		}
+		#content .contact-form input:focus[type=text].url {
+			background: <?php echo $formfield_focus; ?> url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'website.png' ); ?>) no-repeat 1% 50% scroll;
+		}
 		#content .contact-form input[type=text], #content .contact-form textarea, #content .contact-form select {
 			background: <?php echo $formfield_background; ?>;
 			border-color: <?php echo $formfield_border; ?>;
+		}
+		#content .contact-form input:focus[type=text], #content .contact-form textarea:focus, #content .contact-form select:focus {
+			background: <?php echo $formfield_focus; ?>;
 		}
 		<?php $content_shadow = bricks_theme_option('content_shadow'); ?>
 		<?php if( bricks_theme_option('article_container') != 'no-shadow' ) : ?>
@@ -797,6 +811,8 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 	    .nivo-caption {
 			background: rgba(<?php echo $this->hex_to_rgb($slider_caption_bg) .','. bricks_theme_option('slider_caption_opacity'); ?>);
 			color: <?php echo $slider_caption_text; ?>;
+			left: <?php echo bricks_theme_option('h-caption-position'); ?>%;
+			top: <?php echo bricks_theme_option('v-caption-position'); ?>%;
 		}
 		<?php $bricks_chat_odd  = bricks_theme_option('bricks_chat_odd'); 
 			  $bricks_chat_even = bricks_theme_option('bricks_chat_even'); ?>
@@ -822,6 +838,27 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			text-transform: <?php echo bricks_theme_option('headlines_text_transform'); ?>;
 			text-align: <?php echo bricks_theme_option('headlines_text_align'); ?>;
 		}
+		<?php if( '' != bricks_theme_option('slider_nav_left') && '' != bricks_theme_option('slider_nav_right') ) : ?>
+		.nivo-directionNav a {
+			width: <?php echo bricks_theme_option('slider_nav_width'); ?>px;
+			height: <?php echo bricks_theme_option('slider_nav_height'); ?>px;
+		}
+		.nivo-prevNav {
+			background: url(<?php echo bricks_theme_option('slider_nav_left'); ?>) left no-repeat;
+	  	}
+	    .nivo-nextNav {
+			background: url(<?php echo bricks_theme_option('slider_nav_right'); ?>) right no-repeat;
+	    }
+		<?php endif; ?>
+		.nivo-directionNav a {
+			top: <?php echo bricks_theme_option('v-slidernav-position'); ?>%;
+		}
+		.nivo-prevNav {
+			left: -<?php echo bricks_theme_option('h-slidernav-position'); ?>%;
+	  	}
+	    .nivo-nextNav {
+			right: -<?php echo bricks_theme_option('h-slidernav-position'); ?>%;
+	    }
 		</style>
         <?php endif;
 	}
@@ -935,24 +972,24 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 			  $widget_button2 = bricks_theme_option('widget_button2');
 			  $widget_button_border = bricks_theme_option('widget_button_border');
 			  $widget_button_text = bricks_theme_option('widget_button_text');
+			  $widget_field_border = bricks_theme_option('widget_field_border');
 		?>
 		.widget .searchform input[type=text],
 		.widget input.field,
 		.widget .search-field input[type=text],
 		input[type=text],
-		textarea {
-			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('widget_button_opacity2'); ?>);
-		}
+		textarea,
 		#supplementary .widget.search input[type=text],
 		#supplementary .widget.widget_search input[type=text] {
-			border-right: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_button_border) .','. bricks_theme_option('widget_button_opacity2'); ?>);
+			border: 1px solid rgba(<?php echo $this->hex_to_rgb($widget_field_border) .','. bricks_theme_option('widget_button_opacity2'); ?>);
 		}
 		#subscribe-blog input[type=submit],
-		#content .searchform input[type=submit],
-		#content .pushbutton-wide,
 		.module .searchform input[type=submit],
 		.widget input[type=submit],
-		.widget input[type=submit].submit {
+		.widget input[type=submit].submit,
+		#content input[type=submit],
+		#content input[type=submit].pushbutton-wide, 
+		#content .searchform input[type=submit] {
 			background: <?php echo $widget_button1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) );
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button1) .','. bricks_theme_option('button_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button2) .','. bricks_theme_option('button_opacity2'); ?>) );
@@ -968,8 +1005,11 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		#subscribe-blog input:hover[type=submit],
 		#supplementary input:hover[type=submit],
 		.module .searchform input:hover[type=submit],
-		.widget .searchform input:hover[type=submit].submit,
-		#content button.pushbutton-wide :hover {
+		.widget .searchform input:hover[type=submit],
+		.widget input:hover[type=submit].submit,
+		#content input:hover[type=submit],
+		#content input:hover[type=submit].pushbutton-wide,
+		#content .searchform input:hover[type=submit] {
 			background: <?php echo $widget_button_hover1; ?>; /* Show a solid color for older browsers */
 			background: -moz-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button_hover1) .','. bricks_theme_option('widget_button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button_hover2) .','. bricks_theme_option('widget_button_hover_opacity2'); ?>) );
 			background: -o-linear-gradient( top, rgba(<?php echo $this->hex_to_rgb($widget_button_hover1) .','. bricks_theme_option('widget_button_hover_opacity1'); ?>), rgba(<?php echo $this->hex_to_rgb($widget_button_hover2) .','. bricks_theme_option('widget_button_hover_opacity2'); ?>) );
@@ -1087,6 +1127,47 @@ class Bricks_Theme_Setup extends Bricks_Theme_Options {
 		}
 		</style>
         <?php endif;
+	}
+	
+	/**
+	 * Cubricks social icons options.
+	 * 
+	 * Choose from light and dark social icons.
+	 * 
+	 * @param     void
+	 * @return    string	$theme_options
+	 * 
+	 * @access    public
+	 * @since     1.0.5
+	 */
+	public function bricks_social_icons_style() {
+		
+		if( bricks_theme_option('social_icons_style') == 'social-light' ) : ?>
+        
+			<style type="text/css">
+            li.facebook a, li.facebook a:hover {
+                background: url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'icons/social/facebook.png' ); ?>) no-repeat scroll;
+            }
+            li.twitter a, li.twitter a:hover {
+                background: url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'icons/social/twitter.png' ); ?>) no-repeat scroll;
+            }
+            li.flickr a, li.flickr a:hover {
+                background: url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'icons/social/flickr.png' ); ?>) no-repeat scroll;
+            }
+            li.google a, li.google a:hover {
+                background: url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'icons/social/google.png' ); ?>) no-repeat scroll;
+            }
+            li.tumblr a, li.tumblr a:hover {
+                background: url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'icons/social/tumblr.png' ); ?>) no-repeat scroll;
+            }
+            li.youtube a, li.youtube a:hover {
+                background: url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'icons/social/youtube.png' ); ?>) no-repeat scroll;
+            }
+            li.rss-feed a, li.rss-feed a:hover {
+                background: url(<?php echo esc_url( trailingslashit( BRICKS_IMAGES ) . 'icons/social/rss-feed.png' ); ?>) no-repeat scroll;
+            }
+            </style><?php
+		endif;
 	}
 	
 	

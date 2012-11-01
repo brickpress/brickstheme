@@ -28,13 +28,17 @@ $this->settings['topbar-navigation'] = array(
 	'class'    => 'open_subsection',
 );
 
-	$this->settings['show_topbar_nav'] = array(
+	$this->settings['topbar_nav'] = array(
 		'section' => 'navigation',
 		'title'   => __( 'Show Topbar Navigation', 'cubricks' ),
 		'desc'    => __( '', 'cubricks' ),
-		'type'    => 'checkbox',
-		'std'     => 1,
-		'class'   => 'iphone_checkboxes',
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'std'     => 'show',
+		'choices' => array(
+			'show' => __( 'Show', 'cubricks' ),
+			'hide' => __( 'Hide', 'cubricks' )
+		)
 	);
 	
 	$this->settings['topbar_text'] = array(
@@ -178,14 +182,18 @@ $this->settings['primary-navigation'] = array(
 	'type'     => 'no-data',
 	'class'    => 'open_subsection',
 );
-
-	$this->settings['show_primary_nav'] = array(
+	
+	$this->settings['primary_nav'] = array(
 		'section' => 'navigation',
 		'title'   => __( 'Show Primary Navigation', 'cubricks' ),
 		'desc'    => __( '', 'cubricks' ),
-		'type'    => 'checkbox',
-		'std'     => 1,
-		'class'   => 'iphone_checkboxes',
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'std'     => 'show',
+		'choices' => array(
+			'show' => __( 'Show', 'cubricks' ),
+			'hide' => __( 'Hide', 'cubricks' )
+		)
 	);
 	
 	$this->settings['navmenu_bg'] = array(
@@ -359,13 +367,17 @@ $this->settings['footer-navigation'] = array(
 	'class'    => 'open_subsection',
 );
 
-	$this->settings['show_footer_nav'] = array(
+	$this->settings['footer_nav'] = array(
 		'section' => 'navigation',
 		'title'   => __( 'Show Footer Navigation', 'cubricks' ),
 		'desc'    => __( '', 'cubricks' ),
-		'type'    => 'checkbox',
-		'std'     => 1,
-		'class'   => 'iphone_checkboxes',
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'std'     => 'show',
+		'choices' => array(
+			'show' => __( 'Show', 'cubricks' ),
+			'hide' => __( 'Hide', 'cubricks' )
+		)
 	);
 
 	$this->settings['footernav_text'] = array(

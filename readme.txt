@@ -3,11 +3,11 @@
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
 Tested up to: 3.4.2
-Version: 1.0.4
+Version: 1.0.5
 
 == Licenses and Copyright Info ==
 
-Cubricks Theme, Copyright 2012 brickpress.us
+Cubricks Theme, Copyright 2012 cubrick.brickpress.us
 Cubricks Theme is distributed under the terms of the GNU GPL v3
 
 Bundled Resources
@@ -84,3 +84,8 @@ Check out live demos of the theme: http://brickpress.us/
  * fixed footer widgets width issue
  * changed credit link in footer to theme URI
  * main stylesheet enqueued in class.bricks-theme-setup.php, hard coded stylesheet link removed from header.php
+ 
+26 October 2012 - version 1.0.5
+ * removed webmaster tools
+ * added option to choose social icons
+ * added option to hide footer widget area on slider homepage page template

@@ -18,7 +18,7 @@
  * @package    Cubricks
  * @subpackage Cubricks Theme Functions
  * @author     Raphael Villanea <support@brickpress.us>
- * @copyright  Copyright (c) 2011, BrickPress
+ * @copyright  Copyright (c) 2012, Raphael Villanea
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
  * @since      1.0.0
  */

@@ -319,7 +319,7 @@ $this->settings['post-layout'] = array(
 		'type'	  => 'jslider',
 		'family'  => '_wrapped3',
 		'min'	  => 5,
-		'max'	  => 36,
+		'max'	  => 50,
 		'step'    => 1,
 		'std'	  => '32',
 		'unit'    => 'px'
@@ -613,7 +613,7 @@ $this->settings['featured-slider'] = array(
 		'desc'    => __( 'Choose where you want your full width featured slider.', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
-		'std'     => 'after-header',
+		'std'     => 'after-main-nav',
 		'choices' => array(
 			'topnav' 		 => __( 'On top of the page', 'cubricks' ),
 			'before-header'  => __( 'Before site header', 'cubricks' ),
@@ -675,7 +675,7 @@ $this->settings['featured-slider'] = array(
 		'desc'    => __( '', 'cubricks' ),
 		'type'	  => 'select',
 		'family'  => '_wrapped2',
-		'std'	  => 'random',
+		'std'	  => 'fade',
 		'choices' => array(
 			'sliceDownRight'  => 'sliceDownRight',
 			'sliceDownLeft'   => 'sliceDownLeft',
@@ -820,6 +820,132 @@ $this->settings['featured-slider'] = array(
 			'class'    => 'close_controller_wrap',
 		);
 		
+	$this->settings['caption-position'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Slider Caption Position', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['h-caption-position'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Horizontal Caption Position', 'cubricks' ),
+		'desc'	  => __( '0 = left | 50 = middle | 100 = right', 'cubricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 100,
+		'step'    => 1,
+		'std'	  => '15',
+		'unit'	  => '%'
+	);
+	
+	$this->settings['v-caption-position'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Vertical Caption Position', 'cubricks' ),
+		'desc'	  => __( '0 = top | 50 = middle | 100 = bottom', 'cubricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 100,
+		'step'    => 1,
+		'std'	  => '80',
+		'unit'	  => '%',
+	);
+
+		$this->settings['close-caption-position'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
+		
+	$this->settings['slider_nav'] = array(
+		'section'  => 'content',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Slider Navigation Image', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['slider_nav_left'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Slider Left Nav', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'image',
+		'class'   => 'uploadimg',
+		'family'  => '_wrapped2',
+		'std'	  => ''
+	);
+	
+	$this->settings['slider_nav_right'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Slider Right Nav', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'image',
+		'class'   => 'uploadimg',
+		'family'  => '_wrapped2',
+		'std'	  => ''
+	);
+	
+		$this->settings['close-slider-nav'] = array(
+			'section'  => 'content',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap'
+		);
+		
+	$this->settings['slider_nav_width'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Slider Nav Icon Width', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'text',
+		'class'   => 'regular-text',
+		'family'  => '_wrapped2',
+		'std'	  => '79',
+		'unit'    => 'px'
+	);
+	
+	$this->settings['slider_nav_height'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Slider Nav Icon Height', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'text',
+		'class'   => 'regular-text',
+		'family'  => '_wrapped2',
+		'std'	  => '82',
+		'unit'    => 'px'
+	);		
+		
+	$this->settings['h-slidernav-position'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Horizontal Nav Position', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 100,
+		'step'    => 1,
+		'std'	  => '0',
+		'unit'	  => '%'
+	);
+	
+	$this->settings['v-slidernav-position'] = array(
+		'section' => 'content',
+		'title'	  => __( 'Vertical Nav Position', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'jslider',
+		'family'  => '_wrapped2',
+		'min'	  => 0,
+		'max'	  => 100,
+		'step'    => 1,
+		'std'	  => '40',
+		'unit'	  => '%'
+	);
+		
 $this->settings['close-featured-slider'] = array(
 	'section'  => 'content',
 	'archtype' => 'structure',
@@ -852,7 +978,7 @@ $this->settings['slider-wrapper'] = array(
 		'min'	  => 0,
 		'max'	  => 150,
 		'step'    => 1,
-		'std'	  => '10',
+		'std'	  => '0',
 		'unit'    => 'px'
 	);
 	
@@ -962,7 +1088,7 @@ $this->settings['slider-wrapper'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped3',
-		'std'	  => '576',
+		'std'	  => '550',
 		'unit'	  => 'px'
 	);
 	
@@ -1030,7 +1156,7 @@ $this->settings['slider-wrapper'] = array(
 		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
-		'family'  => '_wrapped2',
+		'family'  => '_wrapped3',
 		'std'     => 'show_topbar',
 		'choices' => array(
 			'show_topbar'   => __( 'Show Topbar', 'cubricks' ),
@@ -1044,11 +1170,25 @@ $this->settings['slider-wrapper'] = array(
 		'desc'    => __( '', 'cubricks' ),
 		'type'    => 'radio',
 		'class'	  => 'radio-button',
-		'family'  => '_wrapped2',
+		'family'  => '_wrapped3',
 		'std'     => 'show_nav',
 		'choices' => array(
-			'show_nav'   => __( 'Show Nav', 'cubricks' ),
-			'hide_nav'   => __( 'Hide Nav', 'cubricks' )
+			'show_nav'   => __( 'Show Main Nav', 'cubricks' ),
+			'hide_nav'   => __( 'Hide Main Nav', 'cubricks' )
+		)
+	);
+	
+	$this->settings['homepage_footer_sidebar'] = array(
+		'section' => 'content',
+		'title'   => __( 'Show Footer Widgets on Homepage', 'cubricks' ),
+		'desc'    => __( '', 'cubricks' ),
+		'type'    => 'radio',
+		'class'	  => 'radio-button',
+		'family'  => '_wrapped3',
+		'std'     => 'show_fwidget',
+		'choices' => array(
+			'show_fwidget'   => __( 'Show Footer Widgets', 'cubricks' ),
+			'hide_fwidget'   => __( 'Hide Footer Widgets', 'cubricks' )
 		)
 	);
 	
@@ -1059,7 +1199,7 @@ $this->settings['slider-wrapper'] = array(
 			'class'    => 'close_controller_wrap',
 		);
 	
-		$this->settings['headlines'] = array(
+	$this->settings['headlines'] = array(
 		'section'  => 'content',
 		'archtype' => 'structure',
 		'type'     => 'no-data',
@@ -1174,9 +1314,10 @@ $this->settings['slider-wrapper'] = array(
 		'family'  => '_wrapped3',
 		'std'	  => 'center',
 		'choices' => array(
-			'left'   => __( 'Left', 'cubricks' ),
-			'center' => __( 'Center', 'cubricks' ),
-			'right'	 => __( 'Right', 'cubricks' )
+			'left'    => __( 'Left', 'cubricks' ),
+			'center'  => __( 'Center', 'cubricks' ),
+			'right'	  => __( 'Right', 'cubricks' ),
+			'justify' => __( 'Justify', 'cubricks' ),
 		)	
 	);
 	

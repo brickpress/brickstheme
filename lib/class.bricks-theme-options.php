@@ -23,7 +23,7 @@
  * @package    Cubricks
  * @subpackage Cubricks Theme Options
  * @author     Raphael Villanea <support@brickpress.us>
- * @copyright  Copyright (c) 2011, BrickPress
+ * @copyright  Copyright (c) 2012, Raphael Villanea
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
  * @since      1.0.0
  */
@@ -81,7 +81,7 @@ class Bricks_Theme_Options implements IDisplay_Options_Settings {
 		
 		define( 'THEMENAME', 'Cubricks' );
 		define( 'SHORTNAME', 'cubricks' );
-		define( 'BRICKS_VERSION', '1.0.2' );
+		define( 'BRICKS_VERSION', '1.0.5' );
 		define( 'THEME_DIR', get_template_directory() );
 		define( 'THEME_URI', get_template_directory_uri() );
 		define( 'BRICKS_DIR', trailingslashit( THEME_DIR ) . basename( dirname( __FILE__ ) ) );

@@ -26,4 +26,8 @@ get_header(); ?>
         </div><!-- #primary -->
 
 <?php get_sidebar('homepage'); ?>
-<?php get_footer(); ?>
+<?php if( bricks_theme_option('homepage_footer_sidebar') == 'show_fwidget' ) {
+		get_footer();
+	  } else {
+		get_footer( 'homepage' );
+	  } ?>

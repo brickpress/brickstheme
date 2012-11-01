@@ -786,7 +786,7 @@ $this->settings['close-homepage-sidebar'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#FF9900'
+		'std'	  => '#58c908'
 	);
 	
 	$this->settings['widget_button2'] = array(
@@ -796,7 +796,7 @@ $this->settings['close-homepage-sidebar'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#F89100'
+		'std'	  => '#3a8a00'
 	);
 	
 	$this->settings['widget_button_opacity1'] = array(
@@ -845,7 +845,7 @@ $this->settings['close-homepage-sidebar'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#F89100'
+		'std'	  => '#3a8a00'
 	);
 	
 	$this->settings['widget_button_hover2'] = array(
@@ -855,7 +855,7 @@ $this->settings['close-homepage-sidebar'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped2',
 		'class'   => 'pick-color',
-		'std'	  => '#FF9900'
+		'std'	  => '#58c908'
 	);
 	
 	$this->settings['widget_button_hover_opacity1'] = array(
@@ -915,7 +915,17 @@ $this->settings['close-homepage-sidebar'] = array(
 		'type'	  => 'colorpicker',
 		'family'  => '_wrapped3',
 		'class'   => 'pick-color',
-		'std'	  => '#FF9900'
+		'std'	  => '#336601'
+	);
+	
+	$this->settings['widget_field_border'] = array(
+		'section' => 'sidebars',
+		'title'	  => __( 'Widget Form Fields Border Color', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'colorpicker',
+		'family'  => '_wrapped3',
+		'class'   => 'pick-color',
+		'std'	  => '#c0c0c0'
 	);
 	
 	$this->settings['widget_button_fontface'] = array(

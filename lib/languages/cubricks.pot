@@ -2,10 +2,10 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Cubricks 1.0.3\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/brickpress-bricks-theme-"
-"cb14853\n"
-"POT-Creation-Date: 2012-10-04 18:50:09+00:00\n"
+"Project-Id-Version: Cubricks 1.0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/brickpress-bricks-"
+"theme-8f9d26e\n"
+"POT-Creation-Date: 2012-10-31 23:45:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,24 +13,24 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: 404.php:33 search.php:75
+#: 404.php:33 search.php:77
 msgid "Most Used Categories"
 msgstr ""
 
 #. translators: %1$s: smilie
-#: 404.php:42 search.php:84
+#: 404.php:42 search.php:86
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive.php:48 content-posts.php:38 functions/template-tags.php:410
-#: lib/bricks-text-widget.php:37 single.php:52
+#: archive.php:46 content-posts.php:45 functions/template-tags.php:410
+#: lib/bricks-text-widget.php:37 single.php:51
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: archive.php:59 attachment.php:20 author.php:77 category-page.php:41
-#: content-posts.php:52 functions/template-tags.php:339
-#: functions/template-tags.php:367 page.php:18 search.php:42 showcase.php:66
-#: sidebar-page.php:20 single.php:27
+#: archive.php:57 attachment.php:20 author.php:77 category-page.php:41
+#: content-posts.php:59 functions/template-tags.php:339
+#: functions/template-tags.php:367 page.php:49 search.php:44 showcase.php:70
+#: sidebar-page.php:51 single.php:61
 msgid "Edit"
 msgstr ""
 
@@ -295,19 +295,21 @@ msgid "WordPress"
 msgstr ""
 
 #: functions/template-tags.php:790
-msgid " | Designed by "
+msgid " | Design by "
 msgstr ""
 
 #: functions/template-tags.php:790
-msgid "http://www.brickpress.us"
+msgid "http://cubrickstheme.brickpress.us"
 msgstr ""
 
 #: functions/template-tags.php:790
-msgid "Author Homepage"
+msgid "Theme Homepage"
 msgstr ""
 
+#. #-#-#-#-#  brickpress-bricks-theme-8f9d26e.pot (Cubricks 1.0.5)  #-#-#-#-#
+#. Theme Name of the plugin/theme
 #: functions/template-tags.php:790
-msgid "BrickPress"
+msgid "Cubricks"
 msgstr ""
 
 #: functions/template-tags.php:816
@@ -437,7 +439,7 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:51 lib/sections/social-section.php:38
+#: lib/class.bricks-theme-options.php:51 lib/sections/social-section.php:37
 msgid "Header"
 msgstr ""
 
@@ -474,15 +476,15 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:136
+#: lib/class.bricks-theme-options.php:137
 msgid "Overview"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:138
+#: lib/class.bricks-theme-options.php:139
 msgid "Cubricks Theme by "
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:139
+#: lib/class.bricks-theme-options.php:140
 msgid ""
 "Thank you for using Cubricks theme. I hope you will have as much fun in "
 "customizing your blog as I have in building this theme; believing that while "
@@ -490,43 +492,43 @@ msgid ""
 "inspired."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:140
+#: lib/class.bricks-theme-options.php:141
 msgid ""
 "Cubricks theme gives you control over your website's look stylesheet and "
 "positioning of some HTML blocks such as the custom header, navigation menu "
 "and image slider."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:146
+#: lib/class.bricks-theme-options.php:147
 msgid "Sections"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:148
+#: lib/class.bricks-theme-options.php:149
 msgid ""
 "<strong>General Section</strong> &mdash; sets the overall layout of your "
 "website and <strong><em>global</em></strong> styles. This section also sets "
 "HTML elements found on your content and your website's custom background."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:149
+#: lib/class.bricks-theme-options.php:150
 msgid ""
 "<strong>Header Section</strong> &mdash; sets site logo, site header and site "
 "description. This also sets your custom header."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:150
+#: lib/class.bricks-theme-options.php:151
 msgid ""
 "<strong>Navigation Section</strong> &mdash; Cubricks theme comes with three "
 "navigation menus. You may choose to disable topbar and footer navigation."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:151
+#: lib/class.bricks-theme-options.php:152
 msgid ""
 "<strong>Content Section</strong> &mdash; sets the style for your content "
 "boxes."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:152
+#: lib/class.bricks-theme-options.php:153
 msgid ""
 "<strong>Sidebars Section</strong> &mdash; when setting an image as custom "
 "background, your primary sidebar text may not stand out, thus difficult to "
@@ -534,27 +536,27 @@ msgid ""
 "change it's color altogether. "
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:153
+#: lib/class.bricks-theme-options.php:154
 msgid ""
 "<strong>Social Section</strong> &mdash; add your social network profiles. "
 "This also lets you add webmaster tools meta data if you haven't done so "
 "already."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:154
+#: lib/class.bricks-theme-options.php:155
 msgid ""
 "<strong>Footer Section</strong> &mdash; sets footer logo, copyright notice "
 "and a site badge or a wide ad banner."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:155
+#: lib/class.bricks-theme-options.php:156
 msgid ""
 "<strong>Layout Section</strong> &mdash; exlpore advanced styling options. "
 "Try setting background images for sections with wrappers, manipulate opacity "
 "to reveal images in the background, or just about anything you can imagine."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:156
+#: lib/class.bricks-theme-options.php:157
 msgid ""
 "<strong>Reset Section</strong> &mdash; resets theme settings to defaults. "
 "This does not reset text entries such as copyright notice, Creative Commons "
@@ -564,97 +566,97 @@ msgid ""
 "entry field."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:161
+#: lib/class.bricks-theme-options.php:162
 msgid "For more information:"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:162
+#: lib/class.bricks-theme-options.php:163
 msgid "Theme Documentation"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:163
+#: lib/class.bricks-theme-options.php:164
 msgid "Cubricks Support"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:164
+#: lib/class.bricks-theme-options.php:165
 msgid "For developers:"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:165
+#: lib/class.bricks-theme-options.php:166
 msgid "Github Repository"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:366
+#: lib/class.bricks-theme-options.php:367
 msgid "Theme options updated."
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:389
+#: lib/class.bricks-theme-options.php:390
 msgid "Collapse Menu"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:394
+#: lib/class.bricks-theme-options.php:395
 msgid "Save Changes"
 msgstr ""
 
-#: lib/class.bricks-theme-options.php:570
+#: lib/class.bricks-theme-options.php:571
 msgid "Cubricks Theme"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:39
+#: lib/class.bricks-theme-setup.php:40
 msgid "Top Bar Menu"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:40
+#: lib/class.bricks-theme-setup.php:41
 msgid "Primary Menu"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:41
+#: lib/class.bricks-theme-setup.php:42
 msgid "Footer Menu"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:166 lib/sections/sidebars-section.php:17
+#: lib/class.bricks-theme-setup.php:163 lib/sections/sidebars-section.php:17
 msgid "Main Sidebar"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:175
+#: lib/class.bricks-theme-setup.php:172
 msgid "First Homepage Sidebar"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:184
+#: lib/class.bricks-theme-setup.php:181
 msgid "Second Homepage Sidebar"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:193
+#: lib/class.bricks-theme-setup.php:190
 msgid "Third Homepage Sidebar"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:202
+#: lib/class.bricks-theme-setup.php:199
 msgid "Footer Area One"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:204 lib/class.bricks-theme-setup.php:214
-#: lib/class.bricks-theme-setup.php:224 lib/class.bricks-theme-setup.php:234
-#: lib/class.bricks-theme-setup.php:244 lib/class.bricks-theme-setup.php:254
+#: lib/class.bricks-theme-setup.php:201 lib/class.bricks-theme-setup.php:211
+#: lib/class.bricks-theme-setup.php:221 lib/class.bricks-theme-setup.php:231
+#: lib/class.bricks-theme-setup.php:241 lib/class.bricks-theme-setup.php:251
 msgid "An optional widget area for your site footer"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:212
+#: lib/class.bricks-theme-setup.php:209
 msgid "Footer Area Two"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:222
+#: lib/class.bricks-theme-setup.php:219
 msgid "Footer Area Three"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:232
+#: lib/class.bricks-theme-setup.php:229
 msgid "Footer Area Four"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:242
+#: lib/class.bricks-theme-setup.php:239
 msgid "Footer Area Five"
 msgstr ""
 
-#: lib/class.bricks-theme-setup.php:252
+#: lib/class.bricks-theme-setup.php:249
 msgid "Footer Area Six"
 msgstr ""
 
@@ -763,40 +765,40 @@ msgid "Headlines"
 msgstr ""
 
 #: lib/sections/content-section.php:102 lib/sections/content-section.php:193
-#: lib/sections/content-section.php:284 lib/sections/content-section.php:1073
-#: lib/sections/footer-section.php:305 lib/sections/general-section.php:125
-#: lib/sections/general-section.php:371 lib/sections/header-section.php:86
-#: lib/sections/header-section.php:171 lib/sections/navigation-section.php:51
-#: lib/sections/navigation-section.php:202
-#: lib/sections/navigation-section.php:382
+#: lib/sections/content-section.php:284 lib/sections/content-section.php:1129
+#: lib/sections/footer-section.php:305 lib/sections/general-section.php:116
+#: lib/sections/general-section.php:362 lib/sections/header-section.php:86
+#: lib/sections/header-section.php:171 lib/sections/navigation-section.php:55
+#: lib/sections/navigation-section.php:210
+#: lib/sections/navigation-section.php:394
 #: lib/sections/sidebars-section.php:51 lib/sections/sidebars-section.php:546
 #: lib/sections/sidebars-section.php:903
 msgid "Font Color"
 msgstr ""
 
-#: lib/sections/content-section.php:112 lib/sections/content-section.php:1083
+#: lib/sections/content-section.php:112 lib/sections/content-section.php:1139
 msgid "Headlines Text Opacity"
 msgstr ""
 
 #: lib/sections/content-section.php:124 lib/sections/content-section.php:215
-#: lib/sections/content-section.php:306 lib/sections/content-section.php:1095
-#: lib/sections/footer-section.php:328 lib/sections/general-section.php:148
-#: lib/sections/general-section.php:391 lib/sections/header-section.php:108
-#: lib/sections/header-section.php:193 lib/sections/navigation-section.php:73
-#: lib/sections/navigation-section.php:224
-#: lib/sections/navigation-section.php:404
+#: lib/sections/content-section.php:306 lib/sections/content-section.php:1151
+#: lib/sections/footer-section.php:328 lib/sections/general-section.php:139
+#: lib/sections/general-section.php:382 lib/sections/header-section.php:108
+#: lib/sections/header-section.php:193 lib/sections/navigation-section.php:77
+#: lib/sections/navigation-section.php:232
+#: lib/sections/navigation-section.php:416
 #: lib/sections/sidebars-section.php:73 lib/sections/sidebars-section.php:568
 #: lib/sections/sidebars-section.php:670 lib/sections/sidebars-section.php:923
 msgid "Font Family"
 msgstr ""
 
 #: lib/sections/content-section.php:125 lib/sections/content-section.php:216
-#: lib/sections/content-section.php:307 lib/sections/content-section.php:1096
-#: lib/sections/footer-section.php:329 lib/sections/general-section.php:149
-#: lib/sections/general-section.php:392 lib/sections/header-section.php:109
-#: lib/sections/header-section.php:194 lib/sections/navigation-section.php:74
-#: lib/sections/navigation-section.php:225
-#: lib/sections/navigation-section.php:405
+#: lib/sections/content-section.php:307 lib/sections/content-section.php:1152
+#: lib/sections/footer-section.php:329 lib/sections/general-section.php:140
+#: lib/sections/general-section.php:383 lib/sections/header-section.php:109
+#: lib/sections/header-section.php:194 lib/sections/navigation-section.php:78
+#: lib/sections/navigation-section.php:233
+#: lib/sections/navigation-section.php:417
 #: lib/sections/sidebars-section.php:74 lib/sections/sidebars-section.php:405
 #: lib/sections/sidebars-section.php:569 lib/sections/sidebars-section.php:671
 #: lib/sections/sidebars-section.php:924
@@ -804,80 +806,80 @@ msgid "Web Safe Font Combinations."
 msgstr ""
 
 #: lib/sections/content-section.php:135 lib/sections/content-section.php:226
-#: lib/sections/content-section.php:317 lib/sections/content-section.php:1128
-#: lib/sections/footer-section.php:315 lib/sections/general-section.php:169
-#: lib/sections/general-section.php:402 lib/sections/header-section.php:119
+#: lib/sections/content-section.php:317 lib/sections/content-section.php:1184
+#: lib/sections/footer-section.php:315 lib/sections/general-section.php:160
+#: lib/sections/general-section.php:393 lib/sections/header-section.php:119
 #: lib/sections/header-section.php:120 lib/sections/header-section.php:204
-#: lib/sections/navigation-section.php:84
-#: lib/sections/navigation-section.php:245
-#: lib/sections/navigation-section.php:415
+#: lib/sections/navigation-section.php:88
+#: lib/sections/navigation-section.php:253
+#: lib/sections/navigation-section.php:427
 #: lib/sections/sidebars-section.php:84 lib/sections/sidebars-section.php:579
 msgid "Font Size"
 msgstr ""
 
 #: lib/sections/content-section.php:148 lib/sections/content-section.php:239
-#: lib/sections/content-section.php:1141
-#: lib/sections/navigation-section.php:112
-#: lib/sections/navigation-section.php:443
+#: lib/sections/content-section.php:1197
+#: lib/sections/navigation-section.php:116
+#: lib/sections/navigation-section.php:455
 #: lib/sections/sidebars-section.php:122 lib/sections/sidebars-section.php:617
 msgid "Font Weight"
 msgstr ""
 
 #: lib/sections/content-section.php:155 lib/sections/content-section.php:246
-#: lib/sections/content-section.php:1148
-#: lib/sections/navigation-section.php:119
-#: lib/sections/navigation-section.php:280
-#: lib/sections/navigation-section.php:450
+#: lib/sections/content-section.php:1204
+#: lib/sections/navigation-section.php:123
+#: lib/sections/navigation-section.php:288
+#: lib/sections/navigation-section.php:462
 #: lib/sections/sidebars-section.php:129 lib/sections/sidebars-section.php:509
 #: lib/sections/sidebars-section.php:624
 msgid "Normal"
 msgstr ""
 
 #: lib/sections/content-section.php:156 lib/sections/content-section.php:247
-#: lib/sections/content-section.php:1149
-#: lib/sections/navigation-section.php:120
-#: lib/sections/navigation-section.php:281
-#: lib/sections/navigation-section.php:451
+#: lib/sections/content-section.php:1205
+#: lib/sections/navigation-section.php:124
+#: lib/sections/navigation-section.php:289
+#: lib/sections/navigation-section.php:463
 #: lib/sections/sidebars-section.php:130 lib/sections/sidebars-section.php:510
 #: lib/sections/sidebars-section.php:625
 msgid "Bold"
 msgstr ""
 
 #: lib/sections/content-section.php:162 lib/sections/content-section.php:253
-#: lib/sections/content-section.php:1155
-#: lib/sections/navigation-section.php:97
-#: lib/sections/navigation-section.php:258
-#: lib/sections/navigation-section.php:428
+#: lib/sections/content-section.php:1211
+#: lib/sections/navigation-section.php:101
+#: lib/sections/navigation-section.php:266
+#: lib/sections/navigation-section.php:440
 #: lib/sections/sidebars-section.php:97 lib/sections/sidebars-section.php:592
 msgid "Text Transform"
 msgstr ""
 
 #: lib/sections/content-section.php:169 lib/sections/content-section.php:260
-#: lib/sections/content-section.php:1162
-#: lib/sections/navigation-section.php:104
-#: lib/sections/navigation-section.php:265
-#: lib/sections/navigation-section.php:435
-#: lib/sections/navigation-section.php:464
+#: lib/sections/content-section.php:1218
+#: lib/sections/navigation-section.php:108
+#: lib/sections/navigation-section.php:273
+#: lib/sections/navigation-section.php:447
+#: lib/sections/navigation-section.php:476
 #: lib/sections/sidebars-section.php:104 lib/sections/sidebars-section.php:445
 #: lib/sections/sidebars-section.php:599
 msgid "None"
 msgstr ""
 
 #: lib/sections/content-section.php:170 lib/sections/content-section.php:261
-#: lib/sections/content-section.php:1163
-#: lib/sections/navigation-section.php:105
-#: lib/sections/navigation-section.php:266
-#: lib/sections/navigation-section.php:436
+#: lib/sections/content-section.php:1219
+#: lib/sections/navigation-section.php:109
+#: lib/sections/navigation-section.php:274
+#: lib/sections/navigation-section.php:448
 #: lib/sections/sidebars-section.php:105 lib/sections/sidebars-section.php:446
 #: lib/sections/sidebars-section.php:600
 msgid "Capitalize"
 msgstr ""
 
 #: lib/sections/content-section.php:171 lib/sections/content-section.php:262
-#: lib/sections/content-section.php:1164
-#: lib/sections/navigation-section.php:106
-#: lib/sections/navigation-section.php:267
-#: lib/sections/navigation-section.php:437
+#: lib/sections/content-section.php:1220
+#: lib/sections/navigation-section.php:110
+#: lib/sections/navigation-section.php:275
+#: lib/sections/navigation-section.php:449
 #: lib/sections/sidebars-section.php:106 lib/sections/sidebars-section.php:447
 #: lib/sections/sidebars-section.php:601
 msgid "Uppercase"
@@ -935,8 +937,8 @@ msgstr ""
 msgid "Post Background Color"
 msgstr ""
 
-#: lib/sections/content-section.php:384 lib/sections/content-section.php:900
-#: lib/sections/general-section.php:568 lib/sections/layout-section.php:54
+#: lib/sections/content-section.php:384 lib/sections/content-section.php:942
+#: lib/sections/general-section.php:559 lib/sections/layout-section.php:54
 #: lib/sections/layout-section.php:186 lib/sections/layout-section.php:365
 #: lib/sections/layout-section.php:687 lib/sections/sidebars-section.php:262
 msgid "Background Color Opacity"
@@ -957,55 +959,55 @@ msgid ""
 "strong>."
 msgstr ""
 
-#: lib/sections/content-section.php:424 lib/sections/content-section.php:930
+#: lib/sections/content-section.php:424 lib/sections/content-section.php:972
 #: lib/sections/footer-section.php:83 lib/sections/footer-section.php:214
 #: lib/sections/layout-section.php:527
 msgid "Background Position"
 msgstr ""
 
-#: lib/sections/content-section.php:430 lib/sections/content-section.php:936
+#: lib/sections/content-section.php:430 lib/sections/content-section.php:978
 #: lib/sections/footer-section.php:89 lib/sections/footer-section.php:220
-#: lib/sections/general-section.php:605 lib/sections/header-section.php:363
+#: lib/sections/general-section.php:596 lib/sections/header-section.php:363
 #: lib/sections/layout-section.php:91 lib/sections/layout-section.php:223
 #: lib/sections/layout-section.php:402 lib/sections/layout-section.php:533
 #: lib/sections/layout-section.php:724 lib/sections/sidebars-section.php:298
 msgid "Horizontal Position"
 msgstr ""
 
-#: lib/sections/content-section.php:431 lib/sections/content-section.php:937
+#: lib/sections/content-section.php:431 lib/sections/content-section.php:979
 #: lib/sections/footer-section.php:90 lib/sections/footer-section.php:221
-#: lib/sections/general-section.php:606 lib/sections/header-section.php:364
+#: lib/sections/general-section.php:597 lib/sections/header-section.php:364
 #: lib/sections/layout-section.php:92 lib/sections/layout-section.php:224
 #: lib/sections/layout-section.php:403 lib/sections/layout-section.php:534
 #: lib/sections/layout-section.php:725 lib/sections/sidebars-section.php:299
 msgid "0 = left | 50 = center | 100 = right"
 msgstr ""
 
-#: lib/sections/content-section.php:442 lib/sections/content-section.php:948
+#: lib/sections/content-section.php:442 lib/sections/content-section.php:990
 #: lib/sections/footer-section.php:101 lib/sections/footer-section.php:232
-#: lib/sections/general-section.php:617 lib/sections/header-section.php:375
+#: lib/sections/general-section.php:608 lib/sections/header-section.php:375
 #: lib/sections/layout-section.php:103 lib/sections/layout-section.php:235
 #: lib/sections/layout-section.php:414 lib/sections/layout-section.php:545
 #: lib/sections/layout-section.php:736 lib/sections/sidebars-section.php:310
 msgid "Vertical Position"
 msgstr ""
 
-#: lib/sections/content-section.php:443
+#: lib/sections/content-section.php:443 lib/sections/content-section.php:848
 msgid "0 = top | 50 = middle | 100 = bottom"
 msgstr ""
 
-#: lib/sections/content-section.php:454 lib/sections/content-section.php:971
+#: lib/sections/content-section.php:454 lib/sections/content-section.php:1013
 #: lib/sections/footer-section.php:113 lib/sections/footer-section.php:244
-#: lib/sections/general-section.php:629 lib/sections/header-section.php:387
+#: lib/sections/general-section.php:620 lib/sections/header-section.php:387
 #: lib/sections/layout-section.php:115 lib/sections/layout-section.php:247
 #: lib/sections/layout-section.php:426 lib/sections/layout-section.php:557
 #: lib/sections/layout-section.php:748 lib/sections/sidebars-section.php:322
 msgid "Background Repeat"
 msgstr ""
 
-#: lib/sections/content-section.php:455 lib/sections/content-section.php:972
+#: lib/sections/content-section.php:455 lib/sections/content-section.php:1014
 #: lib/sections/footer-section.php:114 lib/sections/footer-section.php:245
-#: lib/sections/general-section.php:630 lib/sections/header-section.php:388
+#: lib/sections/general-section.php:621 lib/sections/header-section.php:388
 #: lib/sections/layout-section.php:116 lib/sections/layout-section.php:248
 #: lib/sections/layout-section.php:427 lib/sections/layout-section.php:558
 #: lib/sections/layout-section.php:749 lib/sections/sidebars-section.php:323
@@ -1014,72 +1016,72 @@ msgid ""
 "is repeated both vertically and horizontally."
 msgstr ""
 
-#: lib/sections/content-section.php:461 lib/sections/content-section.php:978
+#: lib/sections/content-section.php:461 lib/sections/content-section.php:1020
 #: lib/sections/footer-section.php:120 lib/sections/footer-section.php:251
-#: lib/sections/general-section.php:636 lib/sections/header-section.php:394
+#: lib/sections/general-section.php:627 lib/sections/header-section.php:394
 #: lib/sections/layout-section.php:122 lib/sections/layout-section.php:254
 #: lib/sections/layout-section.php:433 lib/sections/layout-section.php:564
 #: lib/sections/layout-section.php:755 lib/sections/sidebars-section.php:329
 msgid "No Repeat"
 msgstr ""
 
-#: lib/sections/content-section.php:462 lib/sections/content-section.php:979
+#: lib/sections/content-section.php:462 lib/sections/content-section.php:1021
 #: lib/sections/footer-section.php:121 lib/sections/footer-section.php:252
-#: lib/sections/general-section.php:637 lib/sections/header-section.php:395
+#: lib/sections/general-section.php:628 lib/sections/header-section.php:395
 #: lib/sections/layout-section.php:123 lib/sections/layout-section.php:255
 #: lib/sections/layout-section.php:434 lib/sections/layout-section.php:565
 #: lib/sections/layout-section.php:756 lib/sections/sidebars-section.php:330
 msgid "Tile"
 msgstr ""
 
-#: lib/sections/content-section.php:463 lib/sections/content-section.php:980
+#: lib/sections/content-section.php:463 lib/sections/content-section.php:1022
 #: lib/sections/footer-section.php:122 lib/sections/footer-section.php:253
-#: lib/sections/general-section.php:638 lib/sections/header-section.php:396
+#: lib/sections/general-section.php:629 lib/sections/header-section.php:396
 #: lib/sections/layout-section.php:124 lib/sections/layout-section.php:256
 #: lib/sections/layout-section.php:435 lib/sections/layout-section.php:566
 #: lib/sections/layout-section.php:757 lib/sections/sidebars-section.php:331
 msgid "Tile Horizontally"
 msgstr ""
 
-#: lib/sections/content-section.php:464 lib/sections/content-section.php:981
+#: lib/sections/content-section.php:464 lib/sections/content-section.php:1023
 #: lib/sections/footer-section.php:123 lib/sections/footer-section.php:254
-#: lib/sections/general-section.php:639 lib/sections/header-section.php:397
+#: lib/sections/general-section.php:630 lib/sections/header-section.php:397
 #: lib/sections/layout-section.php:125 lib/sections/layout-section.php:257
 #: lib/sections/layout-section.php:436 lib/sections/layout-section.php:567
 #: lib/sections/layout-section.php:758 lib/sections/sidebars-section.php:332
 msgid "Tile Vertically"
 msgstr ""
 
-#: lib/sections/content-section.php:470 lib/sections/content-section.php:987
+#: lib/sections/content-section.php:470 lib/sections/content-section.php:1029
 #: lib/sections/footer-section.php:129 lib/sections/footer-section.php:260
-#: lib/sections/general-section.php:645 lib/sections/header-section.php:403
+#: lib/sections/general-section.php:636 lib/sections/header-section.php:403
 #: lib/sections/layout-section.php:131 lib/sections/layout-section.php:263
 #: lib/sections/layout-section.php:442 lib/sections/layout-section.php:573
 #: lib/sections/layout-section.php:764 lib/sections/sidebars-section.php:338
 msgid "Background Attachment"
 msgstr ""
 
-#: lib/sections/content-section.php:471 lib/sections/content-section.php:988
+#: lib/sections/content-section.php:471 lib/sections/content-section.php:1030
 #: lib/sections/footer-section.php:130 lib/sections/footer-section.php:261
-#: lib/sections/general-section.php:646 lib/sections/layout-section.php:574
+#: lib/sections/general-section.php:637 lib/sections/layout-section.php:574
 #: lib/sections/sidebars-section.php:339
 msgid ""
 "Sets whether a background image is fixed or scrolls with the rest of the "
 "page."
 msgstr ""
 
-#: lib/sections/content-section.php:477 lib/sections/content-section.php:994
+#: lib/sections/content-section.php:477 lib/sections/content-section.php:1036
 #: lib/sections/footer-section.php:136 lib/sections/footer-section.php:267
-#: lib/sections/general-section.php:652 lib/sections/header-section.php:410
+#: lib/sections/general-section.php:643 lib/sections/header-section.php:410
 #: lib/sections/layout-section.php:138 lib/sections/layout-section.php:270
 #: lib/sections/layout-section.php:449 lib/sections/layout-section.php:580
 #: lib/sections/layout-section.php:771 lib/sections/sidebars-section.php:345
 msgid "Scroll"
 msgstr ""
 
-#: lib/sections/content-section.php:478 lib/sections/content-section.php:995
+#: lib/sections/content-section.php:478 lib/sections/content-section.php:1037
 #: lib/sections/footer-section.php:137 lib/sections/footer-section.php:268
-#: lib/sections/general-section.php:653 lib/sections/header-section.php:411
+#: lib/sections/general-section.php:644 lib/sections/header-section.php:411
 #: lib/sections/layout-section.php:139 lib/sections/layout-section.php:271
 #: lib/sections/layout-section.php:450 lib/sections/layout-section.php:581
 #: lib/sections/layout-section.php:772 lib/sections/sidebars-section.php:346
@@ -1102,8 +1104,8 @@ msgstr ""
 msgid "Link Post Format Background Color"
 msgstr ""
 
-#: lib/sections/content-section.php:550 lib/sections/general-section.php:252
-#: lib/sections/general-section.php:311 lib/sections/header-section.php:247
+#: lib/sections/content-section.php:550 lib/sections/general-section.php:243
+#: lib/sections/general-section.php:302 lib/sections/header-section.php:247
 #: lib/sections/sidebars-section.php:784 lib/sections/sidebars-section.php:843
 msgid "Primary Color"
 msgstr ""
@@ -1112,8 +1114,8 @@ msgstr ""
 msgid "Lighter color"
 msgstr ""
 
-#: lib/sections/content-section.php:560 lib/sections/general-section.php:262
-#: lib/sections/general-section.php:321 lib/sections/header-section.php:257
+#: lib/sections/content-section.php:560 lib/sections/general-section.php:253
+#: lib/sections/general-section.php:312 lib/sections/header-section.php:257
 #: lib/sections/sidebars-section.php:794 lib/sections/sidebars-section.php:853
 msgid "Secondary Color"
 msgstr ""
@@ -1122,8 +1124,8 @@ msgstr ""
 msgid "Darker color"
 msgstr ""
 
-#: lib/sections/content-section.php:570 lib/sections/general-section.php:272
-#: lib/sections/general-section.php:331 lib/sections/header-section.php:267
+#: lib/sections/content-section.php:570 lib/sections/general-section.php:263
+#: lib/sections/general-section.php:322 lib/sections/header-section.php:267
 #: lib/sections/sidebars-section.php:804 lib/sections/sidebars-section.php:863
 msgid "Primary Color Opacity"
 msgstr ""
@@ -1253,24 +1255,40 @@ msgstr ""
 msgid "Slider Caption Text"
 msgstr ""
 
-#: lib/sections/content-section.php:839
-msgid "Top and Bottom Margin for Large Slider"
+#: lib/sections/content-section.php:827
+msgid "Slider Caption Position"
 msgstr ""
 
-#: lib/sections/content-section.php:848
-msgid "Top Padding"
+#: lib/sections/content-section.php:834
+msgid "Horizontal Caption Position"
 msgstr ""
 
-#: lib/sections/content-section.php:861
-msgid "Bottom Padding"
+#: lib/sections/content-section.php:835
+msgid "0 = left | 50 = middle | 100 = right"
+msgstr ""
+
+#: lib/sections/content-section.php:847
+msgid "Vertical Caption Position"
 msgstr ""
 
 #: lib/sections/content-section.php:881
+msgid "Top and Bottom Margin for Large Slider"
+msgstr ""
+
+#: lib/sections/content-section.php:890
+msgid "Top Padding"
+msgstr ""
+
+#: lib/sections/content-section.php:903
+msgid "Bottom Padding"
+msgstr ""
+
+#: lib/sections/content-section.php:923
 msgid "Slider Wrapper Background"
 msgstr ""
 
-#: lib/sections/content-section.php:890 lib/sections/footer-section.php:43
-#: lib/sections/footer-section.php:174 lib/sections/general-section.php:558
+#: lib/sections/content-section.php:932 lib/sections/footer-section.php:43
+#: lib/sections/footer-section.php:174 lib/sections/general-section.php:549
 #: lib/sections/layout-section.php:44 lib/sections/layout-section.php:176
 #: lib/sections/layout-section.php:355 lib/sections/layout-section.php:677
 #: lib/sections/sidebars-section.php:214 lib/sections/sidebars-section.php:252
@@ -1278,12 +1296,12 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: lib/sections/content-section.php:919
+#: lib/sections/content-section.php:961
 msgid "Background Image for Large Featured Image Slider"
 msgstr ""
 
-#: lib/sections/content-section.php:949 lib/sections/footer-section.php:102
-#: lib/sections/footer-section.php:233 lib/sections/general-section.php:618
+#: lib/sections/content-section.php:991 lib/sections/footer-section.php:102
+#: lib/sections/footer-section.php:233 lib/sections/general-section.php:609
 #: lib/sections/header-section.php:376 lib/sections/layout-section.php:104
 #: lib/sections/layout-section.php:236 lib/sections/layout-section.php:415
 #: lib/sections/layout-section.php:546 lib/sections/layout-section.php:737
@@ -1291,59 +1309,71 @@ msgstr ""
 msgid "0 = top | 50 = center | 100 = bottom"
 msgstr ""
 
-#: lib/sections/content-section.php:960
+#: lib/sections/content-section.php:1002
 msgid "Slider Wrapper Height"
 msgstr ""
 
-#: lib/sections/content-section.php:1029
+#: lib/sections/content-section.php:1071
 msgid "Show Top Nav Menu on Homepage"
 msgstr ""
 
-#: lib/sections/content-section.php:1036
+#: lib/sections/content-section.php:1078
 msgid "Show Topbar"
 msgstr ""
 
-#: lib/sections/content-section.php:1037
+#: lib/sections/content-section.php:1079
 msgid "Hide Topbar"
 msgstr ""
 
-#: lib/sections/content-section.php:1043
+#: lib/sections/content-section.php:1085
 msgid "Show Primary Nav Menu on Homepage"
 msgstr ""
 
-#: lib/sections/content-section.php:1050
-msgid "Show Nav"
+#: lib/sections/content-section.php:1092
+msgid "Show Main Nav"
 msgstr ""
 
-#: lib/sections/content-section.php:1051
-msgid "Hide Nav"
+#: lib/sections/content-section.php:1093
+msgid "Hide Main Nav"
 msgstr ""
 
-#: lib/sections/content-section.php:1066
-msgid "Homepage Headline"
+#: lib/sections/content-section.php:1099
+msgid "Show Footer Widgets on Homepage"
 msgstr ""
 
 #: lib/sections/content-section.php:1106
+msgid "Show Footer Widgets"
+msgstr ""
+
+#: lib/sections/content-section.php:1107
+msgid "Hide Footer Widgets"
+msgstr ""
+
+#: lib/sections/content-section.php:1122
+msgid "Homepage Headline"
+msgstr ""
+
+#: lib/sections/content-section.php:1162
 msgid "Headlines Text Shadow"
 msgstr ""
 
-#: lib/sections/content-section.php:1116
+#: lib/sections/content-section.php:1172
 msgid "Headlines Shadow Opacity"
 msgstr ""
 
-#: lib/sections/content-section.php:1170
+#: lib/sections/content-section.php:1226
 msgid "Text Align"
 msgstr ""
 
-#: lib/sections/content-section.php:1177
+#: lib/sections/content-section.php:1233
 msgid "Left"
 msgstr ""
 
-#: lib/sections/content-section.php:1178
+#: lib/sections/content-section.php:1234
 msgid "Center"
 msgstr ""
 
-#: lib/sections/content-section.php:1179
+#: lib/sections/content-section.php:1235
 msgid "Right"
 msgstr ""
 
@@ -1514,151 +1544,143 @@ msgid "Main Sidebar Top Margin"
 msgstr ""
 
 #: lib/sections/general-section.php:93
-msgid "Show Admin Bar"
-msgstr ""
-
-#: lib/sections/general-section.php:94
-msgid "Toggles admin bar on/off."
-msgstr ""
-
-#: lib/sections/general-section.php:102
 msgid "Sidebar Layout"
 msgstr ""
 
-#: lib/sections/general-section.php:103
+#: lib/sections/general-section.php:94
 msgid "Sidebar layout options for our theme."
 msgstr ""
 
-#: lib/sections/general-section.php:108
+#: lib/sections/general-section.php:99
 msgid "Content on left."
 msgstr ""
 
-#: lib/sections/general-section.php:109
+#: lib/sections/general-section.php:100
 msgid "Content on right."
 msgstr ""
 
-#: lib/sections/general-section.php:110
+#: lib/sections/general-section.php:101
 msgid "One column, no sidebars"
 msgstr ""
 
-#: lib/sections/general-section.php:118
+#: lib/sections/general-section.php:109
 msgid "Body Text"
 msgstr ""
 
-#: lib/sections/general-section.php:119
+#: lib/sections/general-section.php:110
 msgid "Global font settings"
 msgstr ""
 
-#: lib/sections/general-section.php:135
+#: lib/sections/general-section.php:126
 msgid "Body Text Opacity"
 msgstr ""
 
-#: lib/sections/general-section.php:159
+#: lib/sections/general-section.php:150
 msgid "Link Color"
 msgstr ""
 
-#: lib/sections/general-section.php:192
+#: lib/sections/general-section.php:183
 msgid "Secondary Text"
 msgstr ""
 
-#: lib/sections/general-section.php:193
+#: lib/sections/general-section.php:184
 msgid ""
 "Widget items, Entry meta (e.g. This entry was posted in...), copyright text, "
 "credits text, form fields."
 msgstr ""
 
-#: lib/sections/general-section.php:199
+#: lib/sections/general-section.php:190
 msgid "Secondary Text Color"
 msgstr ""
 
-#: lib/sections/general-section.php:209
+#: lib/sections/general-section.php:200
 msgid "Secondary Text Opacity"
 msgstr ""
 
-#: lib/sections/general-section.php:245
+#: lib/sections/general-section.php:236
 msgid "Button Color"
 msgstr ""
 
-#: lib/sections/general-section.php:246
+#: lib/sections/general-section.php:237
 msgid "Styles buttons used at the header and primary content area."
 msgstr ""
 
-#: lib/sections/general-section.php:253 lib/sections/general-section.php:312
+#: lib/sections/general-section.php:244 lib/sections/general-section.php:303
 #: lib/sections/sidebars-section.php:785 lib/sections/sidebars-section.php:854
 msgid "Top gradient"
 msgstr ""
 
-#: lib/sections/general-section.php:263 lib/sections/general-section.php:322
+#: lib/sections/general-section.php:254 lib/sections/general-section.php:313
 #: lib/sections/sidebars-section.php:795 lib/sections/sidebars-section.php:844
 msgid "Bottom gradient"
 msgstr ""
 
-#: lib/sections/general-section.php:284 lib/sections/header-section.php:279
+#: lib/sections/general-section.php:275 lib/sections/header-section.php:279
 #: lib/sections/sidebars-section.php:816 lib/sections/sidebars-section.php:875
 msgid "Secondary Color Opacity"
 msgstr ""
 
-#: lib/sections/general-section.php:364
+#: lib/sections/general-section.php:355
 msgid "Button Text Color"
 msgstr ""
 
-#: lib/sections/general-section.php:381
+#: lib/sections/general-section.php:372
 msgid "Button border"
 msgstr ""
 
-#: lib/sections/general-section.php:436
+#: lib/sections/general-section.php:427
 msgid "Headings Color"
 msgstr ""
 
-#: lib/sections/general-section.php:437
+#: lib/sections/general-section.php:428
 msgid "h1, h2, h3, h4, h5, h6"
 msgstr ""
 
-#: lib/sections/general-section.php:445
+#: lib/sections/general-section.php:436
 msgid "Table Header Color"
 msgstr ""
 
-#: lib/sections/general-section.php:454
+#: lib/sections/general-section.php:445
 msgid "Caption Background Color"
 msgstr ""
 
-#: lib/sections/general-section.php:465
+#: lib/sections/general-section.php:456
 msgid "Preformatted Text"
 msgstr ""
 
-#: lib/sections/general-section.php:472
+#: lib/sections/general-section.php:463
 msgid "Preformatted Text Color"
 msgstr ""
 
-#: lib/sections/general-section.php:482
+#: lib/sections/general-section.php:473
 msgid "Preformatted Background Color"
 msgstr ""
 
-#: lib/sections/general-section.php:501
+#: lib/sections/general-section.php:492
 msgid "Form Fields"
 msgstr ""
 
-#: lib/sections/general-section.php:508
+#: lib/sections/general-section.php:499
 msgid "Form Fields Background Color"
 msgstr ""
 
-#: lib/sections/general-section.php:509
+#: lib/sections/general-section.php:500
 msgid "text input, textarea"
 msgstr ""
 
-#: lib/sections/general-section.php:518
+#: lib/sections/general-section.php:509
 msgid "Form Fields Border"
 msgstr ""
 
-#: lib/sections/general-section.php:549
+#: lib/sections/general-section.php:540
 msgid "Body Background"
 msgstr ""
 
-#: lib/sections/general-section.php:587
+#: lib/sections/general-section.php:578
 msgid "Custom Body Background"
 msgstr ""
 
-#: lib/sections/general-section.php:588
+#: lib/sections/general-section.php:579
 msgid ""
 "Choose an image from your computer or from the media library to use as "
 "background. The image you set here can be overridden by the theme customizer."
@@ -1696,7 +1718,7 @@ msgstr ""
 msgid "Site Title Opacity"
 msgstr ""
 
-#: lib/sections/header-section.php:133 lib/sections/navigation-section.php:235
+#: lib/sections/header-section.php:133 lib/sections/navigation-section.php:243
 msgid "Text Shadow"
 msgstr ""
 
@@ -1867,7 +1889,7 @@ msgid "Topbar Navigation"
 msgstr ""
 
 #: lib/sections/navigation-section.php:18
-#: lib/sections/navigation-section.php:195
+#: lib/sections/navigation-section.php:203
 msgid "Primary Navigation"
 msgstr ""
 
@@ -1879,53 +1901,69 @@ msgstr ""
 msgid "Show Topbar Navigation"
 msgstr ""
 
-#: lib/sections/navigation-section.php:44
-#: lib/sections/navigation-section.php:375
+#: lib/sections/navigation-section.php:39
+#: lib/sections/navigation-section.php:194
+#: lib/sections/navigation-section.php:378
+msgid "Show"
+msgstr ""
+
+#: lib/sections/navigation-section.php:40
+#: lib/sections/navigation-section.php:195
+#: lib/sections/navigation-section.php:379
+msgid "Hide"
+msgstr ""
+
+#: lib/sections/navigation-section.php:48
+#: lib/sections/navigation-section.php:387
 msgid "Navigation Menu Text"
 msgstr ""
 
-#: lib/sections/navigation-section.php:61
-#: lib/sections/navigation-section.php:212
-#: lib/sections/navigation-section.php:392
+#: lib/sections/navigation-section.php:65
+#: lib/sections/navigation-section.php:220
+#: lib/sections/navigation-section.php:404
 msgid "Text Opacity"
 msgstr ""
 
-#: lib/sections/navigation-section.php:142
-#: lib/sections/navigation-section.php:303
+#: lib/sections/navigation-section.php:146
+#: lib/sections/navigation-section.php:311
 msgid "Current Menu Item Text Color"
 msgstr ""
 
-#: lib/sections/navigation-section.php:152
-#: lib/sections/navigation-section.php:323
+#: lib/sections/navigation-section.php:156
+#: lib/sections/navigation-section.php:331
 msgid "Menu Hover Color"
 msgstr ""
 
-#: lib/sections/navigation-section.php:184
+#: lib/sections/navigation-section.php:188
 msgid "Show Primary Navigation"
 msgstr ""
 
-#: lib/sections/navigation-section.php:273
+#: lib/sections/navigation-section.php:281
 msgid "Font Wieght"
 msgstr ""
 
-#: lib/sections/navigation-section.php:313
+#: lib/sections/navigation-section.php:321
 msgid "Menu Item Background Color"
 msgstr ""
 
-#: lib/sections/navigation-section.php:333
+#: lib/sections/navigation-section.php:341
 msgid "Menu Border Color"
 msgstr ""
 
-#: lib/sections/navigation-section.php:364
+#: lib/sections/navigation-section.php:372
 msgid "Show Footer Navigation"
 msgstr ""
 
-#: lib/sections/navigation-section.php:457
+#: lib/sections/navigation-section.php:469
 msgid "Text Decoration"
 msgstr ""
 
-#: lib/sections/navigation-section.php:465
+#: lib/sections/navigation-section.php:477
 msgid "Underline"
+msgstr ""
+
+#: lib/sections/navigation-section.php:490
+msgid "Link Hover Color"
 msgstr ""
 
 #: lib/sections/reset-section.php:17
@@ -2086,31 +2124,43 @@ msgstr ""
 msgid "Social Buttons"
 msgstr ""
 
-#: lib/sections/social-section.php:18
-msgid "Webmaster Tools"
-msgstr ""
-
-#: lib/sections/social-section.php:31
+#: lib/sections/social-section.php:30
 msgid "Social Media"
 msgstr ""
 
-#: lib/sections/social-section.php:32
+#: lib/sections/social-section.php:31
 msgid "Choose where you want your social media icons to appear."
 msgstr ""
 
-#: lib/sections/social-section.php:39
+#: lib/sections/social-section.php:38
 msgid "Primary Sidebar"
 msgstr ""
 
-#: lib/sections/social-section.php:45
+#: lib/sections/social-section.php:44
 msgid "Show Search"
 msgstr ""
 
-#: lib/sections/social-section.php:46
+#: lib/sections/social-section.php:45
 msgid "Display search bar below social media icons."
 msgstr ""
 
-#: lib/sections/social-section.php:59
+#: lib/sections/social-section.php:54
+msgid "Social Icons"
+msgstr ""
+
+#: lib/sections/social-section.php:55
+msgid "Choose from dark or light social icons."
+msgstr ""
+
+#: lib/sections/social-section.php:60
+msgid "Dark Icons"
+msgstr ""
+
+#: lib/sections/social-section.php:61
+msgid "Light Icons"
+msgstr ""
+
+#: lib/sections/social-section.php:70
 msgid ""
 "Resetting the theme does not affect the values you put here. If you wish to "
 "replace old values with new ones, just key in or paste the new values then "
@@ -2118,114 +2168,84 @@ msgid ""
 "button and click <strong>Save Changes</strong>."
 msgstr ""
 
-#: lib/sections/social-section.php:64
+#: lib/sections/social-section.php:75
 msgid "Social Media Label"
 msgstr ""
 
-#: lib/sections/social-section.php:65
+#: lib/sections/social-section.php:76
 msgid ""
 "The widget title if you choose to place your social media icons before the "
 "primary sidebar. "
 msgstr ""
 
-#: lib/sections/social-section.php:68
+#: lib/sections/social-section.php:79
 msgid "Connect with "
 msgstr ""
 
-#: lib/sections/social-section.php:73
+#: lib/sections/social-section.php:84
 msgid "Facebook Page"
 msgstr ""
 
-#: lib/sections/social-section.php:74
+#: lib/sections/social-section.php:85
 msgid ""
 "Username for your Facebook Page. You may use your Facebook profile username "
 "if you don't have a page."
 msgstr ""
 
-#: lib/sections/social-section.php:83
+#: lib/sections/social-section.php:94
 msgid "Google"
 msgstr ""
 
-#: lib/sections/social-section.php:92
+#: lib/sections/social-section.php:103
 msgid "Google+ Profile"
 msgstr ""
 
-#: lib/sections/social-section.php:93
+#: lib/sections/social-section.php:104
 msgid ""
 "example: https://plus.google.com/u/0/<strong>012345678901234567890</strong>"
 msgstr ""
 
-#: lib/sections/social-section.php:102
+#: lib/sections/social-section.php:113
 msgid "Google+ Page ID"
 msgstr ""
 
-#: lib/sections/social-section.php:103
+#: lib/sections/social-section.php:114
 msgid ""
 "If you have a Google+ Page please enter your Google+ Page ID here. <br /"
 ">example: https://plus.google.com/u/0/b/<strong>012345678901234567890</"
 "strong>"
 msgstr ""
 
-#: lib/sections/social-section.php:119
+#: lib/sections/social-section.php:130
 msgid "Twitter Username"
 msgstr ""
 
-#: lib/sections/social-section.php:120
+#: lib/sections/social-section.php:131
 msgid "example: <strong>Username</strong>.twitter.com"
 msgstr ""
 
-#: lib/sections/social-section.php:128
+#: lib/sections/social-section.php:139
 msgid "Tumblr Username"
 msgstr ""
 
-#: lib/sections/social-section.php:129
+#: lib/sections/social-section.php:140
 msgid "example: <strong>Username</strong>.tumblr.com"
 msgstr ""
 
-#: lib/sections/social-section.php:137
+#: lib/sections/social-section.php:148
 msgid "Flickr Username"
 msgstr ""
 
-#: lib/sections/social-section.php:138
+#: lib/sections/social-section.php:149
 msgid "example: http://www.flickr.com/photos/<strong>Username</strong>"
 msgstr ""
 
-#: lib/sections/social-section.php:146
+#: lib/sections/social-section.php:157
 msgid "YouTube Username"
 msgstr ""
 
-#: lib/sections/social-section.php:147
+#: lib/sections/social-section.php:158
 msgid "example: http://www.youtube.com/user/<strong>Username</strong>"
-msgstr ""
-
-#: lib/sections/social-section.php:173
-msgid ""
-"If your website is already verified you may forget about these. Enter the "
-"meta tags for the following:"
-msgstr ""
-
-#: lib/sections/social-section.php:178
-msgid "Google Site Verification"
-msgstr ""
-
-#: lib/sections/social-section.php:179
-msgid "Enter your Google Webmaster Tools site verification meta tag. "
-msgstr ""
-
-#: lib/sections/social-section.php:187
-msgid "Bing Site Verification"
-msgstr ""
-
-#: lib/sections/social-section.php:188
-msgid "Enter your Bing Webmaster Tools site verification meta tag. "
-msgstr ""
-
-#: lib/sections/social-section.php:196
-msgid "Alexa Site Verification"
-msgstr ""
-
-#: lib/sections/social-section.php:197
-msgid "Enter your Alexa site verification meta tag. "
 msgstr ""
 
 #: sidebar.php:22
@@ -2242,10 +2262,6 @@ msgstr ""
 
 #: single.php:84
 msgid "Next Post %s"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Cubricks"
 msgstr ""
 
 #. Theme URI of the plugin/theme

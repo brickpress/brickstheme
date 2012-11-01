@@ -48,7 +48,7 @@ body {
 	margin: 0 auto;
 	padding: 0;
 	max-width: 1024px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 #topbar-wrapper,
 #content-wrapper,
@@ -754,16 +754,16 @@ li.facebook a {
 li.twitter a {
 	background: url(../images/icons/social/twitter_dark.png) no-repeat scroll;
 }
-li.flickr {
+li.flickr a {
 	background: url(../images/icons/social/flickr_dark.png) no-repeat scroll;
 }
-li.google {
+li.google a {
 	background: url(../images/icons/social/google_dark.png) no-repeat scroll;
 }
-li.tumblr {
+li.tumblr a {
 	background: url(../images/icons/social/tumblr_dark.png) no-repeat scroll;
 }
-li.youtube {
+li.youtube a {
 	background: url(../images/icons/social/youtube_dark.png) no-repeat scroll;
 }
 li.rss-feed a {
@@ -864,6 +864,7 @@ li.rss-feed a:hover {
 	white-space: nowrap;
 	width: 152px;
 	font-weight: normal;
+	overflow: hidden;
 }
 #topbar li:hover > a,
 #topbar a:focus {
@@ -1873,6 +1874,7 @@ li.bypostauthor a.comment-reply-link:active {
 }
 #respond p {
 	margin: 10px 0;
+	clear: both;
 }
 #respond .form-submit {
 	float: right;

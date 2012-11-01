@@ -55,7 +55,7 @@ $this->settings['quick-start'] = array(
 		'type'	  => 'text',
 		'class'   => 'regular-text',
 		'family'  => '_wrapped2',
-		'std'	  => '700',
+		'std'	  => '680',
 		'unit'	  => 'px'
 	);
 	
@@ -87,15 +87,6 @@ $this->settings['quick-start'] = array(
 			'type'     => 'no-data',
 			'class'    => 'close_controller_wrap',
 		);
-	
-	$this->settings['show_adminbar'] = array(
-		'section' => 'general',
-		'title'   => __( 'Show Admin Bar', 'cubricks' ),
-		'desc'    => __( 'Toggles admin bar on/off.', 'cubricks' ),
-		'type'    => 'checkbox',
-		'std'     => 1,
-		'class'   => 'iphone_checkboxes'
-	);
 	
 	$this->settings['sidebar_layout'] = array(
 		'section' => 'general',
@@ -404,7 +395,7 @@ $this->settings['close-quick-start-tab'] = array(
 		'type'	  => 'jslider',
 		'family'  => '_wrapped2',
 		'min'	  => 5,
-		'max'	  => 32,
+		'max'	  => 50,
 		'step'    => 1,
 		'unit'	  => 'px',
 		'std'	  => '14'
@@ -437,6 +428,7 @@ $this->settings['close-button-background-tab'] = array(
 		'desc'	  => __( 'h1, h2, h3, h4, h5, h6', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
 		'std'	  => '#1e5a8e'
 	);
 	
@@ -446,6 +438,7 @@ $this->settings['close-button-background-tab'] = array(
 		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
 		'std'	  => '#3e9400'
 	);
 	
@@ -455,8 +448,55 @@ $this->settings['close-button-background-tab'] = array(
 		'desc'	  => __( '', 'cubricks' ),
 		'type'	  => 'colorpicker',
 		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
 		'std'	  => '#DFF1C4'
 	);
+		
+	$this->settings['formfield-background'] = array(
+		'section'  => 'general',
+		'archtype' => 'structure',
+		'type'     => 'no-data',
+		'title'	   => __( 'Form Fields', 'cubricks' ),
+		'desc'	   => __( '', 'cubricks' ),
+		'class'    => 'controller_wrap'
+	);
+	
+	$this->settings['formfield_background'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Form Fields Background Color', 'cubricks' ),
+		'desc'	  => __( 'text input, textarea', 'cubricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
+		'std'	  => '#F3F6F9'
+	);
+	
+	$this->settings['formfield_focus'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Form Fields Focus Background', 'cubricks' ),
+		'desc'	  => __( 'text input, textarea', 'cubricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
+		'std'	  => '#FFFFFF'
+	);
+	
+	$this->settings['formfield_border'] = array(
+		'section' => 'general',
+		'title'	  => __( 'Form Fields Border', 'cubricks' ),
+		'desc'	  => __( '', 'cubricks' ),
+		'type'	  => 'colorpicker',
+		'class'   => 'pick-color',
+		'family'  => '_wrapped3',
+		'std'	  => '#3e9400'
+	);
+	
+		$this->settings['close-formfield'] = array(
+			'section'  => 'general',
+			'archtype' => 'structure',
+			'type'     => 'no-data',
+			'class'    => 'close_controller_wrap',
+		);
 	
 	$this->settings['preformatted-text'] = array(
 		'section'  => 'general',
@@ -488,42 +528,6 @@ $this->settings['close-button-background-tab'] = array(
 	);
 	
 		$this->settings['close-preformatted'] = array(
-			'section'  => 'general',
-			'archtype' => 'structure',
-			'type'     => 'no-data',
-			'class'    => 'close_controller_wrap',
-		);
-		
-	$this->settings['formfield-background'] = array(
-		'section'  => 'general',
-		'archtype' => 'structure',
-		'type'     => 'no-data',
-		'title'	   => __( 'Form Fields', 'cubricks' ),
-		'desc'	   => __( '', 'cubricks' ),
-		'class'    => 'controller_wrap'
-	);
-	
-	$this->settings['formfield_background'] = array(
-		'section' => 'general',
-		'title'	  => __( 'Form Fields Background Color', 'cubricks' ),
-		'desc'	  => __( 'text input, textarea', 'cubricks' ),
-		'type'	  => 'colorpicker',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
-		'std'	  => '#F3F6F9'
-	);
-	
-	$this->settings['formfield_border'] = array(
-		'section' => 'general',
-		'title'	  => __( 'Form Fields Border', 'cubricks' ),
-		'desc'	  => __( '', 'cubricks' ),
-		'type'	  => 'colorpicker',
-		'class'   => 'pick-color',
-		'family'  => '_wrapped2',
-		'std'	  => '#3e9400'
-	);
-	
-		$this->settings['close-formfield'] = array(
 			'section'  => 'general',
 			'archtype' => 'structure',
 			'type'     => 'no-data',

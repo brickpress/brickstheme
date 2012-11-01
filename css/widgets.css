@@ -100,6 +100,7 @@
 /* Widget Forms and Buttons */
 /* Forms */
 input[type=text],
+input[type=email],
 input[type=password],
 textarea {
 	background: #fafafa;
@@ -180,6 +181,10 @@ input[type=text] {
 	display: inline-block;
 	float: left;
 }
+#supplementary .widget input[type=text],
+#supplementary .widget .searchform input[type=text] {
+	width: 70%;
+}
 .widget .searchform input[type=submit],
 .module .searchform input[type=submit],
 .widget .search-field input[type=submit],
@@ -203,7 +208,9 @@ input[type=text] {
 	float: left;
 	font-weight: 500;
 }
-.widget .searchform input:focus[type=text] {
+.widget input:focus[type=text],
+.widget .searchform input:focus[type=text],
+#subscribe-blog input:focus[type=text] {
 	background-color: #FFFFFF;
 }
 #supplementary .widget.widget_search form {
@@ -219,6 +226,7 @@ input[type=text] {
 }
 #content .searchform input[type=text],
 #content .entry-content input[type=text],
+#content .entry-content input[type=email],
 .post-password-required input[type=password] {
 	background: #F3F6F9 url(../images/search-big.png)  no-repeat scroll 2% 50%;
 	width: 60%;
@@ -283,6 +291,7 @@ input[type=text] {
 	padding: 0;
 }
 #content .contact-form input[type=text],
+#content .contact-form input[type=email],
 #content .contact-form textarea {
 	border: 1px solid rgba(51, 102, 0, 0.7);
 	border-radius: 6px;
@@ -295,11 +304,14 @@ input[type=text] {
 #content .contact-form input[type=text],
 #content .contact-form input[type=text].name,
 #content .contact-form input[type=text].email,
+#content .contact-form input[type=email].email,
 #content .contact-form input[type=text].url {
 	padding: 0 1.5% 0 7%;
 	width: 91%;
 }
-#content .contact-form input[type=text] {
+#content .contact-form input[type=text],
+#content .contact-form input[type=email],
+#subscribe-blog input[type=text] {
 	background: #F3F6F9;
 	padding: 0 7% 0 1.5%;
 	clear: both;
@@ -318,14 +330,14 @@ input[type=text] {
 	font-size: 100%;
 	height: 38px;
 	line-height: 1;
-	border-top-right-radius: 6px;
 	border-top-left-radius: 6px;
-	-moz-border-top-right-radius: 6px;
+	border-bottom-left-radius: 6px;
 	-moz-border-top-left-radius: 6px;
-	-webkit-border-top-right-radius: 6px;
+	-moz-border-bottom-left-radius: 6px;
 	-webkit-border-top-left-radius: 6px;
-	-khtml-border-top-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;	
 	-khtml-border-top-left-radius: 6px;
+	-khtml-border-bottom-left-radius: 6px;
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
 	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.7);
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);

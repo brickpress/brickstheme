@@ -35,8 +35,6 @@ get_header(); ?>
                     </div><!-- .entry-content -->
                     <div class="clearfix"></div>
                     
-                    <?php comments_template( '', true ); ?>
-                    
                     <footer class="entry-meta">
                         <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                     </footer>

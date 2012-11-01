@@ -18,7 +18,7 @@
  * @package    Cubricks
  * @subpackage Cubricks Theme Functions
  * @author     Raphael Villanea <support@brickpress.us>
- * @copyright  Copyright (c) 2011, BrickPress
+ * @copyright  Copyright (c) 2012, Raphael Villanea
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
  * @since      1.0.0
  */
@@ -859,7 +859,7 @@ function bricks_social_media() {
       </ul>
       <div class="clearfix"></div>
       
-        <?php if( bricks_theme_option('search_module') ) : ?>
+        <?php if( 'show-search' == bricks_theme_option('search_module') ) : ?>
         <div id="search-module">
             <div class="search_module_widget">
             <?php the_widget( 'Bricks_Search_Widget', array( 'search_text'   => 'Search', 'search_submit' => 'Search' ), array( 'widget_id' => 'Search', 'before_widget' => '<div class="module search_widget">' ) ); ?>
@@ -870,52 +870,7 @@ function bricks_social_media() {
 	<?php
 }
 endif;
-
-
-add_action( 'wp_head', 'bricks_site_verification' );
-/**
- * Adds social media icons at the header.
- *
- * @uses bricks_theme_options
- * @uses get_theme_mod
- *
- * @since 1.0.0 
- */
-if( !function_exists('bricks_site_verification') ) :
-function bricks_site_verification() {
-	
-	global $wp_query;
-	
-	if ( is_home() ) {
-		
-		$google_meta = get_theme_mod('google_verify');
-		if ( !empty( $google_meta ) ) {
-			
-			if ( strpos( $google_meta, 'content' ) ) {
-				preg_match( '/content="([^"]+)"/', $google_meta, $match );
-				$google_meta = $match[1];
-			}
-			echo "<meta name=\"google-site-verification\" content=\"$google_meta\" />\n";
-		}
-  		
-		$bing_meta = get_theme_mod('bing_verify');
-		if ( !empty( $bing_meta ) ) {
-			
-			if ( strpos( $bing_meta, 'content' ) ) {
-				preg_match( '/content="([^"]+)"/', $bing_meta, $match );
-				$bing_meta = $match[1];
-			}
-			echo "<meta name=\"msvalidate.01\" content=\"$bing_meta\" />\n";
-		}
-  		
-		$alexa_meta = get_theme_mod('alexa_verify');
-		if ( !empty( $alexa_meta ) ) {
-			echo "<meta name=\"alexaVerifyID\" content=\"" . esc_attr( $alexa_meta ) . "\" />\n";
-		}
-	}	
-}
-endif;       
-
+  
 
 /**
  * Adds an ad banner at the footer.

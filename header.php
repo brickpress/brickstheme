@@ -63,7 +63,7 @@
 	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'topnav' )
           bricks_featured_slider(); ?>
               
-    <?php if( ! is_page_template('slider-homepage.php') && bricks_theme_option('show_topbar_nav') || is_page_template('slider-homepage.php') && 'show_topbar' == bricks_theme_option('homepage_topbar') ) : ?>
+    <?php if( ! is_page_template('slider-homepage.php') && bricks_theme_option('topbar_nav') == 'show' || is_page_template('slider-homepage.php') && 'show_topbar' == bricks_theme_option('homepage_topbar') ) : ?>
 	<div id="topbar-wrapper">
     	<div class="inner-topbar">
        	<?php bricks_topbar(); ?>
@@ -109,14 +109,15 @@
 			  bricks_featured_slider(); ?>
                 
 	<?php // Primary navigation menu. ?>
+	<?php // Disables primary navigation menu on Slider Homepage page templates
+        if( ! is_page_template('slider-homepage.php') && bricks_theme_option('primary_nav') == 'show' || is_page_template('slider-homepage.php') && 'show_nav' == bricks_theme_option('homepage_navmenu') ) : ?>
     <div id="nav-wrapper">
         <div class="inner-navigation">
-        	<?php // Disables primary navigation menu on Slider Homepage page templates
-			if( ! is_page_template('slider-homepage.php') && bricks_theme_option('show_primary_nav') || is_page_template('slider-homepage.php') && 'show_nav' == bricks_theme_option('homepage_navmenu') )
-				bricks_nav_menu(); ?>
+			<?php bricks_nav_menu(); ?>
         </div>
     </div>
- 	
+ 	<?php endif; ?>
+    
 	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-main-nav' || is_page_template('slider-homepage.php') && bricks_theme_option('slider_position') == 'after-main-nav' )
               bricks_featured_slider(); ?>
               
