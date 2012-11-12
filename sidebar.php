@@ -1,41 +1,17 @@
 <?php
 /**
- * The Sidebar containing the main widget area.
+ * The sidebar containing the main widget area.
  *
- * @package Cubricks
+ * If no active widgets in sidebar, let's hide it completely.
+ *
+ * @package WordPress
+ * @subpackage Cubricks
  * @since Cubricks 1.0.0
  */
-$current_layout = bricks_theme_option('sidebar_layout');
-
-if ( 'no-sidebar' != $current_layout ) :
 ?>
-		<?php bricks_before_primary_sidebar(); ?>
+
+	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div id="secondary" class="widget-area" role="complementary">
-        <span class="sbar-top"></span>
-        	<?php if( bricks_theme_option('social_module') == 'before-sidebar' )
-                      bricks_social_media();
-            	  ?>
-        	
-			<?php if ( ! dynamic_sidebar( 'Main Sidebar' ) ) : ?>
-
-				<aside id="archives" class="widget">
-					<h3 class="widget-title"><?php _e( 'Archives', 'cubricks' ); ?></h3>
-					<ul>
-						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
-
-				<aside id="meta" class="widget">
-					<h3 class="widget-title"><?php _e( 'Meta', 'cubricks' ); ?></h3>
-					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
-					</ul>
-				</aside>
-
-			<?php endif; // end sidebar widget area ?>
-            
-        <span class="sbar-bottom"></span>
-		</div><!-- #secondary .widget-area -->
-<?php endif; ?>
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		</div><!-- #secondary -->
+	<?php endif; ?>

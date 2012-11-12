@@ -1,6 +1,6 @@
 <?php
 /** 
- * Cubricks Slider Template
+ * cubricks Slider Template
  *
  * Uses nivoSlider by Dev7studios.
  *
@@ -32,18 +32,18 @@
  */
 
 /** 
- * Cubricks theme content slider powered by nivoSlider.
+ * cubricks theme content slider powered by nivoSlider.
  *
  * @since 1.0.0
  */
-function bricks_featured_slider() {
+function cubricks_featured_slider() {
 	
 	global $theme_options, $post;
 	
 	$sticky = get_option( 'sticky_posts' );
-	$slider_timer = bricks_theme_option( 'slider_timer' );
-	$slider_items = bricks_theme_option( 'slider_items' );
-	$slider_effects = bricks_theme_option( 'slider_effects' );
+	$slider_timer = cubricks_theme_option( 'slider_timer' );
+	$slider_items = cubricks_theme_option( 'slider_items' );
+	$slider_effects = cubricks_theme_option( 'slider_effects' );
 	
 	// Proceed only if sticky posts exist.
 	if ( ! empty( $sticky ) ) :
@@ -54,7 +54,7 @@ function bricks_featured_slider() {
 			'no_found_rows' => true,
 		); ?>
             
-	<div id="bricks-slider-wrapper">
+	<div id="cubricks-slider-wrapper">
     <input type="hidden" id="slider_timer" name="slider_timer" value="<?php if( $slider_timer ) { echo $slider_timer; } else { echo '5'; } ?>"/>	
         <div class="inner-slider">
             <div id="slider"><!-- nivoSlider -->
@@ -75,9 +75,9 @@ function bricks_featured_slider() {
                    echo '<a href="' .esc_url( get_permalink() ). '" title="' .esc_attr( the_title_attribute('echo=0') ). '">';
 				   
                    if( is_page_template('showcase.php') || is_page_template('slider-homepage.php') ) {
-				       the_post_thumbnail('bricks-large-slider');
+				       the_post_thumbnail('cubricks-large-slider');
 				   } else {
-				       the_post_thumbnail('bricks-medium-slider');
+				       the_post_thumbnail('cubricks-medium-slider');
 				   }
                    echo '</a>';
                 }
@@ -103,6 +103,6 @@ function bricks_featured_slider() {
            
             <div class="clearfix"></div>
         </div><!-- .inner-slider -->
-    </div><!-- #bricks-slider-wrapper -->
+    </div><!-- #cubricks-slider-wrapper -->
  	<?php endif; // End check for sticky posts.
 }     

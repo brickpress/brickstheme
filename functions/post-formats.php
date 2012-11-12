@@ -27,8 +27,8 @@
  * Displays the current post's format.
  * @since 1.0.0
  */
-if( ! function_exists('bricks_post_format') ) :
-function bricks_post_format() {
+if( ! function_exists('cubricks_post_format') ) :
+function cubricks_post_format() {
 
 	$post_format = ucwords( get_post_format() );
 	if ( is_sticky() ) {
@@ -36,7 +36,7 @@ function bricks_post_format() {
 	} elseif ( $post_format == '' ) {
 		$post_format = __( 'Article', 'cubricks' );
 	}
-	$format = apply_filters( 'bricks_post_format', '<h3 class="entry-format">' . $post_format . '</h3>' );
+	$format = apply_filters( 'cubricks_post_format', '<h3 class="entry-format">' . $post_format . '</h3>' );
 
 	echo $format;	
 }
@@ -47,8 +47,8 @@ endif;
  * Display an icon representing the current post's format.
  * @since 1.0.0
  */
-if( ! function_exists('bricks_post_format_icon') ) :
-function bricks_post_format_icon() {
+if( ! function_exists('cubricks_post_format_icon') ) :
+function cubricks_post_format_icon() {
 	
 	$post_format = strtolower( get_post_format() );
 	
@@ -57,7 +57,7 @@ function bricks_post_format_icon() {
 	} elseif ( $post_format == '' ) {
 		$post_format = __( 'standard', 'cubricks' );
 	}
-	$format = apply_filters( 'bricks_post_format_icon', '<span class="entry-format-' .$post_format. '"></span>' );
+	$format = apply_filters( 'cubricks_post_format_icon', '<span class="entry-format-' .$post_format. '"></span>' );
 
 	echo $format;	
 }
@@ -69,11 +69,11 @@ endif;
  *
  * @since 1.0.0
  */
-function bricks_chat_content() {
+function cubricks_chat_content() {
 	
 	global $post;
 	
-	$output = '<ul class="bricks-chat">';
+	$output = '<ul class="cubricks-chat">';
 	
 	$lines = preg_split( "/(\r*?\n)+/", $post->post_content );
 	
@@ -94,7 +94,7 @@ function bricks_chat_content() {
 			
 		}
 		else {
-			$output .= '</ul>' . $line . '<ul class="bricks-chat">';
+			$output .= '</ul>' . $line . '<ul class="cubricks-chat">';
 		}
 		
 	endforeach;
@@ -102,7 +102,7 @@ function bricks_chat_content() {
 	$output .= '</ul>';
 	
 	// Remove any empty definition lists
-	$output = str_replace( '<ul class="bricks-chat"></ul>', '', $output );
+	$output = str_replace( '<ul class="cubricks-chat"></ul>', '', $output );
 	
 	return apply_filters( 'the_content', $output );
 }
@@ -113,11 +113,11 @@ function bricks_chat_content() {
  *
  * @since 1.0.0
  */
-function bricks_link_content() {
+function cubricks_link_content() {
 	
 	$output = '<div class="link-content"><div class="link-icon"></div>';
 	
-	$link = bricks_first_link();
+	$link = cubricks_first_link();
 	
 	$output .= '<a href="' .esc_url( $link['url'] ). '" title="' .esc_attr( $link['title_attr'] ). '">' .esc_attr( $link['title'] ). '</a>';
 
@@ -136,7 +136,7 @@ function bricks_link_content() {
  *
  * @since 1.0.0
  */
-function bricks_quote_content() {
+function cubricks_quote_content() {
 
 	global $post;
 	
@@ -158,8 +158,8 @@ function bricks_quote_content() {
  *
  * @since 1.0.0
  */
-if( ! function_exists('bricks_status_content') ) :
-function bricks_status_content() {
+if( ! function_exists('cubricks_status_content') ) :
+function cubricks_status_content() {
 		
 	global $post;
 	
@@ -168,7 +168,7 @@ function bricks_status_content() {
 	
 	if( ! is_author() && $post_format == 'status' ) { ?>
 		<div class="avatar">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'bricks_status_avatar', '65' ) ); ?>
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'cubricks_status_avatar', '65' ) ); ?>
 		</div>
 	<?php
 	}
@@ -182,7 +182,7 @@ endif;
  *
  * @since 1.0.0
  */
-function bricks_gallery_content() {
+function cubricks_gallery_content() {
 	
 	global $post;
 	
@@ -217,7 +217,7 @@ function bricks_gallery_content() {
  *
  * @since 1.0.0
  */
-function bricks_image_content() {
+function cubricks_image_content() {
 	
 	global $post;
 	

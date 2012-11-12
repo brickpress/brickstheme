@@ -19,7 +19,7 @@ get_header(); ?>
 				<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'cubricks' ); ?></h1>
 
 				<?php
-				$showcase_recent_posts = bricks_theme_option('showcase_recent_posts');
+				$showcase_recent_posts = cubricks_theme_option('showcase_recent_posts');
 				// Display our recent posts, showing full content for the very latest.
 				$recent_args = array(
 					'order' => 'DESC',
@@ -43,49 +43,49 @@ get_header(); ?>
 					global $more;
 					$more = 0;
 					
-			bricks_before_article(); ?>
+			cubricks_before_article(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                <?php bricks_post_date_graphic(); ?>
+                <?php cubricks_post_date_graphic(); ?>
                 
                 <header class="entry-header">
                     <hgroup> 
-                    <?php bricks_post_title(); ?>
+                    <?php cubricks_post_title(); ?>
                     </hgroup>          
                 </header>
                 
-                <?php bricks_post_format_icon(); ?>
+                <?php cubricks_post_format_icon(); ?>
                 
                 <div class="clearfix"></div>
       
                 <div class="entry-content">
-                    <?php bricks_before_entry_content(); ?>
+                    <?php cubricks_before_entry_content(); ?>
                     <?php the_excerpt(); ?>
-                    <?php bricks_after_entry_content(); ?>
+                    <?php cubricks_after_entry_content(); ?>
                 </div><!-- .entry-content -->
                 
                 <footer class="entry-meta">
-                    <?php bricks_post_footer(); ?>
-                    <?php bricks_comments_link(); ?>
+                    <?php cubricks_post_footer(); ?>
+                    <?php cubricks_comments_link(); ?>
                     <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer>
                 <div class="clearfix"></div>
                 
-				<?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
+				<?php if( cubricks_theme_option('article_container') == 'no-shadow' ) : ?>
                 <div class="post-no-shadow"></div>
                 <?php else : ?>
                 <div class="left-post-shadow"></div>
                 <div class="right-post-shadow"></div>
                 <?php endif; ?>
             </article><!-- #post-<?php the_ID(); ?> -->
-			<?php bricks_after_article(); ?>
+			<?php cubricks_after_article(); ?>
             
             <?php endwhile; ?>
             
-            <?php bricks_content_nav(); ?>
+            <?php cubricks_content_nav(); ?>
                 
             </div><!-- #content -->
-        <?php bricks_after_content(); ?>
+        <?php cubricks_after_content(); ?>
     
         </div><!-- #primary -->
 

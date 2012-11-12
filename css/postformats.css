@@ -339,19 +339,19 @@ article.format-standard > .entry-content object {
 
 /* =Chat
 ----------------------------------------------- */
-.bricks-chat {
+.cubricks-chat {
 	margin: 0;
 	list-style: none;
 	line-height: 1.825;
 	padding: 0 0 2% 0;
 }
-.bricks-chat li {
+.cubricks-chat li {
 	color: #373737;
 }
-.bricks-chat .chat-odd strong {
+.cubricks-chat .chat-odd strong {
 	color: #398A00;
 }
-.bricks-chat .chat-even strong {
+.cubricks-chat .chat-even strong {
 	color: #1B8BE0;
 }
 

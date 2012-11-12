@@ -21,13 +21,13 @@ get_header(); ?>
 		<div id="primary">
 			<div id="content" role="main">
             
-			<?php bricks_featured_slider(); ?>
+			<?php cubricks_featured_slider(); ?>
             
             <h1 class="showcase-heading"><?php _e( 'Recent Posts', 'cubricks' ); ?></h1>
 
             <?php
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-            $showcase_recent_posts = bricks_theme_option('showcase_recent_posts');
+            $showcase_recent_posts = cubricks_theme_option('showcase_recent_posts');
            
             $args = array(
                 'orderby'             => 'date',
@@ -54,14 +54,14 @@ get_header(); ?>
             
             	<?php endwhile; ?>
             
-            <?php bricks_content_nav(); ?>
+            <?php cubricks_content_nav(); ?>
 					
             <?php endif; ?>
 
 			<?php $wp_query = $temp; 		//reset back to original query ?>
 
             </div><!-- #content -->
-        <?php bricks_after_content(); ?>
+        <?php cubricks_after_content(); ?>
     
         </div><!-- #primary -->
 

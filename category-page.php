@@ -16,22 +16,22 @@ get_header(); ?>
             
 				<?php while ( have_posts() ) : the_post(); ?>
                 
-                <?php bricks_before_article(); ?>
+                <?php cubricks_before_article(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class('intro'); ?>>
                     
                     <header class="entry-header">
                         <hgroup> 
-                        <?php bricks_post_title(); ?>
+                        <?php cubricks_post_title(); ?>
                         </hgroup>          
                     </header>
                     <div class="clearfix"></div>
     
                     <div class="entry-content">
-                    <?php bricks_before_entry_content(); ?>
+                    <?php cubricks_before_entry_content(); ?>
                     
                     <?php the_content(); ?>
     
-                    <?php wp_link_pages( bricks_link_pages_args() ); ?>
+                    <?php wp_link_pages( cubricks_link_pages_args() ); ?>
                     </div><!-- .entry-content -->
                     <div class="clearfix"></div>
                     
@@ -40,7 +40,7 @@ get_header(); ?>
                     </footer>
                     <div class="clearfix"></div>
                 
-					<?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
+					<?php if( cubricks_theme_option('article_container') == 'no-shadow' ) : ?>
                     <div class="post-no-shadow"></div>
                     <?php else : ?>
                     <div class="left-post-shadow"></div>
@@ -88,14 +88,14 @@ get_header(); ?>
             
             	<?php endwhile; ?>
             
-            	<?php bricks_content_nav(); ?>
+            	<?php cubricks_content_nav(); ?>
           
             <?php endif; ?>
             
 			<?php $wp_query = $temp; //reset back to original query ?>
 	
 			</div><!-- #content -->
-       		<?php bricks_after_content(); ?>
+       		<?php cubricks_after_content(); ?>
 
 		</div><!-- #primary -->
 

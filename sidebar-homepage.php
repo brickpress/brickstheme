@@ -1,31 +1,35 @@
 <?php
 /**
- * The Sidebar containing the widget areas for the Slider Homepage.
+ * The sidebar containing the front page widget areas.
  *
- * @package Cubricks
- * @since Cubricks 1.0.1
+ * If no active widgets in either sidebar, they will be hidden completely.
+ *
+ * @package WordPress
+ * @subpackage Cubricks
+ * @since Cubricks 1.0.0
  */
- 
-if ( ! is_active_sidebar( 2 ) && ! is_active_sidebar( 3 ) && ! is_active_sidebar( 4 ) )
+
+/*
+ * The front page widget area is triggered if any of the areas
+ * have widgets. So let's check that first.
+ *
+ * If none of the sidebars have widgets, then let's bail early.
+ */
+if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) )
 	return;
-		
-bricks_before_primary_sidebar(); ?>
-<div id="homepage-sidebar" <?php slider_homepage_sidebar_class(); ?> role="complementary">
-	<?php if ( is_active_sidebar( 2 ) ) : ?>
-	<div class="widget-area">
+
+// If we get this far, we have widgets. Let do this.
+?>
+<div id="secondary" class="widget-area" role="complementary">
+	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+	<div class="first front-widgets">
 		<?php dynamic_sidebar( 'sidebar-2' ); ?>
-	</div><!-- .first .homepage-widgets -->
+	</div><!-- .first -->
 	<?php endif; ?>
 
-	<?php if ( is_active_sidebar( 3 ) ) : ?>
-	<div class="widget-area">
+	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+	<div class="second front-widgets">
 		<?php dynamic_sidebar( 'sidebar-3' ); ?>
-	</div><!-- .second .homepage-widgets -->
-    <?php endif; ?>
-    
-    <?php if ( is_active_sidebar( 4 ) ) : ?>
-	<div class="widget-area">
-		<?php dynamic_sidebar( 'sidebar-4' ); ?>
-	</div><!-- .third .homepage-widgets -->
+	</div><!-- .second -->
 	<?php endif; ?>
-</div><!-- #secondary .widget-area -->
+</div><!-- #secondary -->

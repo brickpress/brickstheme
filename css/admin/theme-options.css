@@ -26,7 +26,7 @@ div#wpwrap {
 #admin-page-header .default-state {
 	width: 885px;
 }
-#bricks-icon {
+#cubricks-icon {
 	margin: -5px 0 0 0;
 	width: 64px;
 	height: 64px;
@@ -45,13 +45,13 @@ div#wpwrap {
 	font: 24px/35px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
 	text-shadow: 0pt 1px 0pt rgba(255, 255, 255, 0.4);
 }
-#theme-title .bricks-author {
+#theme-title .cubricks-author {
 	font-size: 14px;
 	margin: 0 0;
 	display: block;
 }
-.bricks-author a,
-.bricks-author a:link {
+.cubricks-author a,
+.cubricks-author a:link {
 	text-decoration: none;
 	color: rgba(255, 255, 255, 1);
 }
@@ -172,7 +172,7 @@ div#wpwrap {
 
 /* =Main Menu
 --------------------------- */
-#bricks_menu {
+#cubricks_menu {
 	background: url(../../images/admin/menu-shadow.png) no-repeat center right scroll;
 	background-color: #777;
 	margin: 60px 0 0 0;
@@ -194,22 +194,22 @@ div#wpwrap {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
-#bricks_menu .default-state {
+#cubricks_menu .default-state {
 	width: 188px;
 }
-#bricks_menu ul.collapsed {
+#cubricks_menu ul.collapsed {
 	width: 43px;
 }
-#bricks_menu ul.collapsed li {
+#cubricks_menu ul.collapsed li {
 	width: 40px;
 	margin: 0 0 0 2px;
 }
-#bricks_menu ul.default-state li {
+#cubricks_menu ul.default-state li {
 	display: block;
 	margin: 0 0 0 10px;
 	line-height: 0.5em;
 }
-#bricks_menu ul li a.nav-tab {
+#cubricks_menu ul li a.nav-tab {
 	background: url(../../images/admin/menu-shadow.png) no-repeat center right scroll;
 	background-color: #dee3e7;
 	color: #666;
@@ -233,16 +233,16 @@ div#wpwrap {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
-#bricks_menu ul li a.nav-tab-active,
-#bricks_menu ul li a.nav-tab:hover {
+#cubricks_menu ul li a.nav-tab-active,
+#cubricks_menu ul li a.nav-tab:hover {
 	background-color: #fcfdfd;
 	color: #61798f;
 	padding: 2px 2px 2px 5px;
 	clear: both;
 	text-shadow: 1px 1px 1px #fff;
 }
-#bricks_menu ul.default-state li div.section-nav-icon,
-#bricks_menu ul.collapsed li div.section-nav-icon {
+#cubricks_menu ul.default-state li div.section-nav-icon,
+#cubricks_menu ul.collapsed li div.section-nav-icon {
 	float: left;
 	background-repeat: no-repeat;
 	background-attachment: scroll;
@@ -252,11 +252,11 @@ div#wpwrap {
 	height: 25px;
 	margin: 5px 0 0 0;
 }
-#bricks_menu ul.collapsed li div.section-nav-icon {
+#cubricks_menu ul.collapsed li div.section-nav-icon {
 	margin: 5px 0 0 -2px;
 	padding: 2px 2px 2px 5px;
 }
-#bricks_menu ul.default-state li div.section-nav-text {
+#cubricks_menu ul.default-state li div.section-nav-text {
 	visibility: visible;
 	float: left;
 	background-repeat: no-repeat;
@@ -267,7 +267,7 @@ div#wpwrap {
 	height: 25px;
 	margin: 10px 0 0 5px;
 }
-#bricks_menu ul.collapsed li div.section-nav-text {
+#cubricks_menu ul.collapsed li div.section-nav-text {
 	display: none;
 }
 

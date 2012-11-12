@@ -14,36 +14,36 @@ get_header(); ?>
 			<div id="content" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php bricks_before_article(); ?>
+			<?php cubricks_before_article(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 
                 <header class="entry-header">
                     <hgroup> 
-                    <?php bricks_post_title(); ?>
+                    <?php cubricks_post_title(); ?>
                     </hgroup>          
                 </header>
                 <div class="clearfix"></div>
     
                 <div class="entry-content">
-                <?php bricks_before_entry_content();
+                <?php cubricks_before_entry_content();
 				
 				$post_format = strtolower( get_post_format() );
 				
                     if( $post_format == 'chat' ) {
-						echo bricks_chat_content();
+						echo cubricks_chat_content();
 					} elseif( has_post_format('gallery') ) {
-						echo bricks_gallery_content();
+						echo cubricks_gallery_content();
 					} elseif( has_post_format('link') ) {
-						echo bricks_link_content();
+						echo cubricks_link_content();
 					} elseif(  $post_format == 'quote' ) {
-						echo bricks_quote_content();
+						echo cubricks_quote_content();
 					} elseif(  $post_format == 'status' ) {
-						echo bricks_status_content();
+						echo cubricks_status_content();
 					} else {	
 						the_content();
 					} ?>
 
-                    <?php wp_link_pages( bricks_link_pages_args() ); ?>
+                    <?php wp_link_pages( cubricks_link_pages_args() ); ?>
                 </div><!-- .entry-content -->
                 <div class="clearfix"></div>
                 
@@ -53,7 +53,7 @@ get_header(); ?>
                 
                 <?php comments_template( '', true ); ?>
             
-				<?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
+				<?php if( cubricks_theme_option('article_container') == 'no-shadow' ) : ?>
                 <div class="post-no-shadow"></div>
                 <?php else : ?>
                 <div class="left-post-shadow"></div>
@@ -61,7 +61,7 @@ get_header(); ?>
                 <?php endif; ?>    
             </article><!-- #post-<?php the_ID(); ?> -->
             
-            <?php bricks_after_single(); ?>
+            <?php cubricks_after_single(); ?>
                 
             <div class="clearfix"></div>
                 

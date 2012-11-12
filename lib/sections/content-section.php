@@ -509,7 +509,7 @@ $this->settings['post-formats'] = array(
 		'class'    => 'controller_wrap'
 	);
 	
-	$this->settings['bricks_chat_odd'] = array(
+	$this->settings['cubricks_chat_odd'] = array(
 		'section' => 'content',
 		'title'	  => __( 'Odd Speaker Color', 'cubricks' ),
 		'desc'	  => __( '', 'cubricks' ),
@@ -519,7 +519,7 @@ $this->settings['post-formats'] = array(
 		'std'	  => '#398A00'
 	);
 
-	$this->settings['bricks_chat_even'] = array(
+	$this->settings['cubricks_chat_even'] = array(
 		'section' => 'content',
 		'title'	  => __( 'Even Speaker Color', 'cubricks' ),
 		'desc'	  => __( '', 'cubricks' ),

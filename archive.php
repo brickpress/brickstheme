@@ -1,85 +1,63 @@
 <?php
 /**
- * Displays the post archives in reverse chronological order.
+ * The template for displaying Archive pages.
  *
- * @package Cubricks
- * @since 1.0.0
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each specific one. For example, Cubricks already
+ * has tag.php for Tag archives, category.php for Category archives, and
+ * author.php for Author archives.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Cubricks
+ * @since Cubricks 1.0.0
  */
+
 get_header(); ?>
 
-	<div id="primary">
+	<section id="primary" class="site-content">
+		<div id="content" role="main">
 
-        <?php bricks_before_content(); ?>
-        
-        <div id="content" role="main">
-        <?php bricks_archive_header(); ?>
+		<?php if ( have_posts() ) : ?>
+			<header class="archive-header">
+				<h1 class="archive-title"><?php
+					if ( is_day() ) :
+						printf( __( 'Daily Archives: %s', 'cubricks' ), '<span>' . get_the_date() . '</span>' );
+					elseif ( is_month() ) :
+						printf( __( 'Monthly Archives: %s', 'cubricks' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'cubricks' ) ) . '</span>' );
+					elseif ( is_year() ) :
+						printf( __( 'Yearly Archives: %s', 'cubricks' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'cubricks' ) ) . '</span>' );
+					else :
+						_e( 'Archives', 'cubricks' );
+					endif;
+				?></h1>
+			</header><!-- .archive-header -->
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        
-        <?php bricks_before_article(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            
-            <?php $post_format = strtolower( get_post_format() ); ?>
-            <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' || $post_format == 'audio' ) : ?>
-            <header class="entry-header">
-                <hgroup>
-                <?php bricks_post_title(); ?>
-                </hgroup>
-            </header>
-            <?php endif; ?>
-            <div class="clearfix"></div>
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-            <div class="entry-content">
-                <?php bricks_before_entry_content();
+				/* Include the post format-specific template for the content. If you want to
+				 * this in a child theme then include a file called called content-___.php
+				 * (where ___ is the post format) and that will be used instead.
+				 */
+				get_template_part( 'content', get_post_format() );
 
-					if( has_post_format('chat') ) {
-						echo bricks_chat_content();
-					} elseif( has_post_format('gallery') ) {
-						echo bricks_gallery_content();
-					} elseif( has_post_format('link') ) {
-						echo bricks_link_content();
-					} elseif(  has_post_format('quote') ) {
-						echo bricks_quote_content();
-					} elseif(  has_post_format('status') ) {
-						echo bricks_status_content();
-					} else {
-						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) );
-					} ?>
-			  
-                <?php bricks_after_entry_content(); ?>
-            </div><!-- .entry-content -->
-            
-            <footer class="entry-meta">
-                <?php bricks_post_date_text(); ?>
-                <?php bricks_comments_link(); ?>
-                <br />
-                <?php bricks_post_footer(); ?>
-                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
-            </footer>
-         
-            <?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
-            <div class="post-no-shadow"></div>
-            <?php else : ?>
-            <div class="left-post-shadow"></div>
-            <div class="right-post-shadow"></div>
-            <?php endif; ?>   
-        </article><!-- #post-<?php the_ID(); ?> -->
-        <?php bricks_after_article(); ?>
-        
-        <?php endwhile; ?>
-        
-        <?php bricks_content_nav(); ?>
-          
-        <?php else : ?>
-        
-        <?php bricks_no_posts(); ?>
-            
-        <?php endif; ?>
-    
-        </div><!-- #content -->
-    <?php bricks_after_content(); ?>
+			endwhile;
 
-    </div><!-- #primary -->
+			cubricks_content_nav( 'nav-below' );
+			?>
+
+		<?php else : ?>
+			<?php get_template_part( 'content', 'none' ); ?>
+		<?php endif; ?>
+
+		</div><!-- #content -->
+	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

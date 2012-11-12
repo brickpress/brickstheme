@@ -1,7 +1,7 @@
 jQuery(document).ready(function()
 {
-	jQuery('#bricks_menu a').click(function(){
-		jQuery('#bricks_menu a').removeClass('nav-tab-active');
+	jQuery('#cubricks_menu a').click(function(){
+		jQuery('#cubricks_menu a').removeClass('nav-tab-active');
 		jQuery(this).addClass('nav-tab-active');
 		
 		jQuery('.settings-section').css('display', 'none');
@@ -16,7 +16,7 @@ jQuery(document).ready(function()
 	
 	if(self.document.location.hash == '')
 	{
-		jQuery('#bricks_menu_general_a').click();
+		jQuery('#cubricks_menu_general_a').click();
 	}
 	else
 	{

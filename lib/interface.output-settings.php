@@ -142,7 +142,7 @@
 					foreach ( $choices as $value => $label ) {
 						echo '<label id="' . $value . '" class="' . $class . '">';
 						echo '<input type="radio" class="' . $class . '" name="theme_options[' . $id . ']" id="' . $id . '" value="' . esc_attr( $value ) . '" ' . checked( $options[$id], $value, false ) . ' style="display: none;" />';
-						echo '<span class="' . $class . '"><img onclick="jQuery(\'#' . $value . '\').click()" class="' . $class . '" src="' . esc_url( trailingslashit( BRICKS_IMAGES ) ) . 'admin/' . esc_attr( $value ) . '.png' . '" width="125" height="125" alt="' .$label. '" />' .$label. '</span><span id="' .$value. '" class="overlay"></span></label>';	
+						echo '<span class="' . $class . '"><img onclick="jQuery(\'#' . $value . '\').click()" class="' . $class . '" src="' . esc_url( trailingslashit( CUBRICKS_IMAGES ) ) . 'admin/' . esc_attr( $value ) . '.png' . '" width="125" height="125" alt="' .$label. '" />' .$label. '</span><span id="' .$value. '" class="overlay"></span></label>';	
 					}
 					
 				} elseif( $class == 'radio-button' ) {

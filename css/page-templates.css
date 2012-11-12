@@ -11,9 +11,9 @@
 
 /* =Nivo Slider
 ------------------------------------------ */
-.page-template-content-slider-php #bricks-slider-wrapper,
-.page-template-slider-homepage-php #bricks-slider-wrapper,
-.page-template-showcase-php #bricks-slider-wrapper {
+.page-template-content-slider-php #cubricks-slider-wrapper,
+.page-template-slider-homepage-php #cubricks-slider-wrapper,
+.page-template-showcase-php #cubricks-slider-wrapper {
 	margin: 0 auto;
 	width: 100%
 }

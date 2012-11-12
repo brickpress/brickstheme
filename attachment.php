@@ -9,12 +9,12 @@ get_header(); ?>
 
         <div id="primary">
     
-            <?php bricks_before_content(); ?>
+            <?php cubricks_before_content(); ?>
             <div id="content" role="main">
             
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
-			<?php bricks_before_article(); ?>
+			<?php cubricks_before_article(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     			
                 <header class="entry-header">
@@ -29,7 +29,7 @@ get_header(); ?>
 
 				<?php if ( wp_attachment_is_image() ) :
                 
-                    $content_width = bricks_theme_option('content_width');
+                    $content_width = cubricks_theme_option('content_width');
 
                     $attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
                     foreach ( $attachments as $k => $attachment ) {
@@ -57,7 +57,7 @@ get_header(); ?>
                         )
                     );
 
-                    wp_link_pages( bricks_link_pages_args() ); ?>
+                    wp_link_pages( cubricks_link_pages_args() ); ?>
 
                     <div class="attachment-image">
                         <p class="attachment-image"><a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo wp_get_attachment_image( $post->ID, array( $content_width, 700 ) ); ?></a></p>
@@ -76,7 +76,7 @@ get_header(); ?>
                         <p><?php _e( 'View file:', 'cubricks' ); ?> <a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a></p>
                         <?php the_content( __( '(More ...)' , 'cubricks' ) ); ?>
                         
-                        <?php wp_link_pages( bricks_link_pages_args() ); ?>
+                        <?php wp_link_pages( cubricks_link_pages_args() ); ?>
                         
                         <?php endif; ?>
     
@@ -84,8 +84,8 @@ get_header(); ?>
                     <div class="clearfix"></div>
                 </div><!-- .entry -->
 				
-                <?php if( bricks_theme_option('author_avatar') == 'show_avatar' )
-						  bricks_author_meta(); ?>
+                <?php if( cubricks_theme_option('author_avatar') == 'show_avatar' )
+						  cubricks_author_meta(); ?>
                 
                 <footer class="entry-meta">
                     <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
@@ -93,7 +93,7 @@ get_header(); ?>
                 
                 <?php comments_template( '', true ); ?>
             
-            <?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
+            <?php if( cubricks_theme_option('article_container') == 'no-shadow' ) : ?>
             <div class="post-no-shadow"></div>
             <?php else : ?>
             <div class="left-post-shadow"></div>
@@ -101,18 +101,18 @@ get_header(); ?>
             <?php endif; ?>   
             </article><!-- #post-<?php the_ID(); ?> -->
             
-            <?php bricks_after_single(); ?>
+            <?php cubricks_after_single(); ?>
                 
             <div class="clearfix"></div>
         <?php endwhile; ?>
         <?php endif; ?>
 
         </div><!-- #content -->
-    <?php bricks_after_content(); ?>
+    <?php cubricks_after_content(); ?>
 
     </div><!-- #primary -->
  
-<?php if( bricks_theme_option( 'singular_sidebar' ) == 'sidebar' ) {
+<?php if( cubricks_theme_option( 'singular_sidebar' ) == 'sidebar' ) {
 	      get_sidebar();
 	  } ?>
 <?php get_footer(); ?>

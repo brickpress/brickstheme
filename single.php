@@ -1,101 +1,37 @@
 <?php
 /**
- * The template for displaying content in the single.php template
+ * The Template for displaying all single posts.
  *
- * @package Cubricks
- * @subpackage Templates
+ * @package WordPress
+ * @subpackage Cubricks
  * @since Cubricks 1.0.0
  */
-$entry_date = bricks_theme_option('entry_date');
 
 get_header(); ?>
 
-		<div id="primary">
-  
-        	<?php bricks_before_content(); ?>
-			<div id="content" role="main">
-			
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-           
-			<?php bricks_before_single(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
 
-                <?php if($entry_date == 'graphic') {
-					  	  bricks_post_date_graphic();
-					  }
-				?>	  
-   
-                <?php $post_format = strtolower( get_post_format() ); ?>
-                <header class="entry-header <?php echo $entry_date; ?>">
-                    <hgroup> 
-                    <?php bricks_post_title(); ?>
-                    <?php if($entry_date == 'text') {
-					  	      bricks_post_date_text();
-					      } ?>
-                    </hgroup>          
-                </header>
-                <div class="clearfix"></div>
-                  
-                <div class="entry-content">
-                    <?php bricks_before_entry_content(); ?>
-                    
-                    <?php if( $post_format == 'chat' ) {
-							  echo bricks_chat_content();
-						  } elseif( has_post_format('link') ) {
-                   			  echo bricks_link_content();
-						  } elseif(  $post_format == 'quote' ) {
-							  echo bricks_quote_content();
-						  } elseif(  $post_format == 'status' ) {
-							  echo bricks_status_content();
-						  } else {
-							  the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) );
-						  } ?>
-                    
-                    <?php wp_link_pages( bricks_link_pages_args() ); ?>
-                    
-                    <?php bricks_after_entry_content(); ?>
-                </div><!-- .entry-content -->
-                
-                <footer class="entry-meta">
-                    <?php bricks_post_footer(); ?>
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
-                </footer><!-- .entry-meta -->
-				
-                <?php if( bricks_theme_option('author_avatar') == 'show_avatar' )
-						  bricks_author_meta(); ?>
-                
-                <?php comments_template( '', true ); ?>
-            
-				<?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
-                <div class="post-no-shadow"></div>
-                <?php else : ?>
-                <div class="left-post-shadow"></div>
-                <div class="right-post-shadow"></div>
-                <?php endif; ?>  
-            </article><!-- #post-<?php the_ID(); ?> -->
-            
-            <?php bricks_after_single(); ?>
-                
-            <div class="clearfix"></div>
-        <?php endwhile; ?>
-    	
-			<nav class="pagination single">
-			<span class="previous"><?php previous_post_link( '%link', sprintf( __( '%s Previous Post', 'cubricks' ), '&larr;' ) ); ?></span>
-			<span class="next"><?php next_post_link( '%link', sprintf( __( 'Next Post %s', 'cubricks' ), '&rarr;' ) ); ?></span>
-			</nav>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-	<?php else : ?>
-	
-		<?php bricks_no_posts(); ?>
-		
-	<?php endif; ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
 
-			</div><!-- #content -->
-        <?php bricks_after_content(); ?>
+				<nav class="nav-single">
+					<h3 class="assistive-text"><?php _e( 'Post navigation', 'cubricks' ); ?></h3>
+					<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'cubricks' ) . '</span> %title' ); ?></span>
+					<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'cubricks' ) . '</span>' ); ?></span>
+				</nav><!-- .nav-single -->
 
-		</div><!-- #primary -->
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() )
+						comments_template( '', true );
+				?>
 
-<?php if( bricks_theme_option( 'singular_sidebar' ) == 'sidebar' ) {
-	      get_sidebar();
-	  } ?>
+			<?php endwhile; // end of the loop. ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

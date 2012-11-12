@@ -20,17 +20,24 @@
  * @copyright  Copyright (c) 2012, BrickPress
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
  */
-require( trailingslashit( dirname( __FILE__ ) ) . 'lib/class.bricks-theme-options.php' );
-$theme_options = new Bricks_Theme_Options();
 
-global $theme_options, $bricks_theme_setup;
+/* Theme options class */
+require_once( trailingslashit( get_template_directory() ) . 'lib/class.cubricks-theme-options.php' );
+$cubricks_options = new Cubricks_Theme_Options();
+
+
+/* Theme setup class */
+require_once( trailingslashit( get_template_directory() ) . 'lib/class.cubricks-theme-setup.php' );
+$cubricks_setup = new Cubricks_Theme_Setup();
+
+global $theme_options, $cubricks_theme_setup;
 
 /**
  * Retrieves an option from our array of theme options.
  *
  * @since	1.0.0
  */
-function bricks_theme_option( $option ) {
+function cubricks_theme_option( $option ) {
 	$options = get_option( 'theme_options' );
 	if ( isset( $options[ $option ] ) )
 		return $options[ $option ];
@@ -38,21 +45,48 @@ function bricks_theme_option( $option ) {
 		return false;
 }
 
-/* Widgets */
-require_once( trailingslashit( BRICKS_DIR ) . 'bricks-category-posts-widget.php' );
-require_once( trailingslashit( BRICKS_DIR ) . 'bricks-search-widget.php' );
-require_once( trailingslashit( BRICKS_DIR ) . 'bricks-text-widget.php' );
+/* Adds support for a custom header image. */
+//require( trailingslashit( get_template_directory() ) . 'inc/custom-header.php' );
 
-/* Theme setup class */
-require_once( trailingslashit( BRICKS_DIR ) . 'class.bricks-theme-setup.php' );
-$bricks_theme_setup = new Bricks_Theme_Setup();
+require( trailingslashit( get_template_directory() ) . 'functions/template-tags.php' );
 
-/* Theme functions */
-require_once( trailingslashit( get_template_directory() ) . 'functions/template-tags.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/post-formats.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/bricks-slider.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/page-category-field.php' );
 
-/* Justin Tadlock's Theme Hybid extensions */
-require_once( trailingslashit( get_template_directory() ) . 'functions/custom-hooks.php' );
-require_once( trailingslashit( get_template_directory() ) . 'functions/get-the-image.php' );
+/**
+ * Adjusts content_width value for full-width and single image attachment
+ * templates, and when there are no active widgets in the sidebar.
+ *
+ * @since Cubricks 1.0.0
+ */
+function cubricks_content_width() {
+	if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
+		global $content_width;
+		$content_width = 960;
+	}
+}
+add_action( 'template_redirect', 'cubricks_content_width' );
+
+
+/**
+ * Add postMessage support for site title and description for the Theme Customizer.
+ *
+ * @since Cubricks 1.0.0
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ * @return void
+ */
+function cubricks_customize_register( $wp_customize ) {
+	
+	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->cubricks_theme_option( 'link_color' )->transport = 'postMessage';
+}
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @since Cubricks 1.0.0
+ */
+function cubricks_customize_preview_js() {
+	wp_enqueue_script( 'cubricks-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), 'CUCUBRICKS_VERSION', true );
+}
+add_action( 'customize_preview_init', 'cubricks_customize_preview_js' );

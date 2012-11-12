@@ -1,4 +1,4 @@
-== CUBRICKS THEME FOR WORDPRESS ==
+== CUCUBRICKS THEME FOR WORDPRESS ==
 
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
@@ -80,10 +80,10 @@ Check out live demos of the theme: http://brickpress.us/
  * fixed theme options page Save button style
  
 16 October 2012 - version 1.0.4
- * changed "bricks" to "cubricks" as textdomain for translation
+ * changed "cubricks" to "cubricks" as textdomain for translation
  * fixed footer widgets width issue
  * changed credit link in footer to theme URI
- * main stylesheet enqueued in class.bricks-theme-setup.php, hard coded stylesheet link removed from header.php
+ * main stylesheet enqueued in class.cubricks-theme-setup.php, hard coded stylesheet link removed from header.php
  
 26 October 2012 - version 1.0.5
  * removed webmaster tools

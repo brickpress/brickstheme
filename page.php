@@ -1,70 +1,29 @@
 <?php
 /**
- * The default template for displaying all pages.
+ * The template for displaying all pages.
  *
- * @package Cubricks
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package WordPress
  * @subpackage Cubricks
  * @since Cubricks 1.0.0
  */
+
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content" role="main">
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
 			<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php bricks_before_article(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                
-                <header class="entry-header">
-                    <hgroup> 
-                    <?php bricks_post_title(); ?>
-                    </hgroup>          
-                </header>
-                <div class="clearfix"></div>
-    
-                <div class="entry-content">
-                <?php bricks_before_entry_content();
-				
-				$post_format = strtolower( get_post_format() );
-				
-                    if( $post_format == 'chat' ) {
-						echo bricks_chat_content();
-					} elseif( has_post_format('gallery') ) {
-						echo bricks_gallery_content();
-					} elseif( has_post_format('link') ) {
-						echo bricks_link_content();
-					} elseif(  $post_format == 'quote' ) {
-						echo bricks_quote_content();
-					} elseif(  $post_format == 'status' ) {
-						echo bricks_status_content();
-					} else {	
-						the_content();
-					} ?>
-
-                    <?php wp_link_pages( bricks_link_pages_args() ); ?>
-                </div><!-- .entry-content -->
-                <div class="clearfix"></div>
-                
-                <footer class="entry-meta">
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
-                </footer><!-- .entry-meta -->
-                
-                <?php comments_template( '', true ); ?>
-            
-				<?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
-                <div class="post-no-shadow"></div>
-                <?php else : ?>
-                <div class="left-post-shadow"></div>
-                <div class="right-post-shadow"></div>
-                <?php endif; ?>   
-            </article><!-- #post-<?php the_ID(); ?> -->
-            
-            <?php bricks_after_single(); ?>
-                
-            <div class="clearfix"></div>
-                
+				<?php get_template_part( 'content', 'page' ); ?>
+				<?php comments_template( '', true ); ?>
 			<?php endwhile; // end of the loop. ?>
-			</div><!-- #content -->
-		</div><!-- #primary -->
 
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

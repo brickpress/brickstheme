@@ -18,7 +18,7 @@
     <div class="inner-footer">
 		<footer id="colophon" role="contentinfo">
 
-        <?php $footer_logo = bricks_theme_option('footer_logo');
+        <?php $footer_logo = cubricks_theme_option('footer_logo');
 		      $footer_logo_url = get_theme_mod('footer_logo_url');
 			  
 		if( $footer_logo ) { ?>
@@ -29,13 +29,13 @@
 		<?php } ?>
         
 		<div id="footer-main" role="contentinfo">			
-            <?php bricks_copyright_notices(); ?> 
-            <?php bricks_footer_ads(); ?>
+            <?php cubricks_copyright_notices(); ?> 
+            <?php cubricks_footer_ads(); ?>
 		</div><!-- #main -->
-        <?php if( bricks_theme_option('footer_nav') == 'show' ) {
-        	    bricks_footer_menu();
+        <?php if( cubricks_theme_option('footer_nav') == 'show' ) {
+        	    cubricks_footer_menu();
 			  } ?>
-		<?php bricks_credits(); ?>
+		<?php cubricks_credits(); ?>
 		</footer><!-- #colophon -->
         	
     </div><!-- .inner-footer -->

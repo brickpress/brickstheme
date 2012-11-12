@@ -4,125 +4,48 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package Cubricks
+ * @package WordPress
+ * @subpackage Cubricks
  * @since Cubricks 1.0.0
  */
 ?><!DOCTYPE html>
-<!--[if IE 6]>
-<html id="ie6" <?php language_attributes(); ?>>
+<!--[if IE 7 | IE 8]>
+<html class="ie" <?php language_attributes(); ?>>
 <![endif]-->
-<!--[if IE 7]>
-<html id="ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html id="ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php
-	/*
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	global $page, $paged, $theme_options;
-
-	wp_title( '|', true, 'right' );
-
-	// Add the blog name.
-	bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		echo " | $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'cubricks' ), max( $paged, $page ) );
-	?>
-</title>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-
-<?php
-	if ( is_singular() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-?>
 <?php wp_head(); ?>
 </head>
 
-<?php bricks_before_html(); ?>
 <body <?php body_class(); ?>>
-	
-	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'topnav' )
-          bricks_featured_slider(); ?>
-              
-    <?php if( ! is_page_template('slider-homepage.php') && bricks_theme_option('topbar_nav') == 'show' || is_page_template('slider-homepage.php') && 'show_topbar' == bricks_theme_option('homepage_topbar') ) : ?>
-	<div id="topbar-wrapper">
-    	<div class="inner-topbar">
-       	<?php bricks_topbar(); ?>
-        </div>
-    </div>
-    <?php endif; ?>
-    
-    <?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'before-header' || is_page_template('slider-homepage.php') && bricks_theme_option('slider_position') == 'before-header' )
-			  bricks_featured_slider(); ?>
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</hgroup>
 
-	<header id="branding" role="banner">
-    	<div class="inner-header">
-            <div id="site-header">
-			<?php $site_logo = bricks_theme_option('site_logo');
-                  if( $site_logo ) : ?>
-                <div class="header-logo">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $site_logo ); ?>" /></a>
-                </div>	
-            <?php endif; ?>
-            
-                <ul>
-                    <li>
-                    <?php if( bricks_theme_option( 'show_site_title' ) ) : ?>
-                    <span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-                    <?php endif; ?>
-                    
-                    <?php if( bricks_theme_option( 'show_site_description' ) ) : ?>
-                    <span class="site-description"><?php bloginfo( 'description' ); ?></span> 
-                    <?php endif; ?>
-                    </li>
-                </ul>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<h3 class="menu-toggle"><?php _e( 'Menu', 'cubricks' ); ?></h3>
+			<div class="skip-link assistive-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'cubricks' ); ?>"><?php _e( 'Skip to content', 'cubricks' ); ?></a></div>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
 
-        	<?php if( bricks_theme_option('social_module') == 'header-right' )
-					  bricks_social_media(); ?>    
-            </div><!-- #site-header -->
-            
-            <?php if( ! is_page_template('showcase.php') && bricks_theme_option('enable_custom_header') )
-				  bricks_custom_header(); ?>
-                  
-        </div><!-- .inner-header -->
-	</header><!-- #branding -->
-    <?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-header' || is_page_template('slider-homepage.php') && bricks_theme_option('slider_position') == 'after-header' )
-			  bricks_featured_slider(); ?>
-                
-	<?php // Primary navigation menu. ?>
-	<?php // Disables primary navigation menu on Slider Homepage page templates
-        if( ! is_page_template('slider-homepage.php') && bricks_theme_option('primary_nav') == 'show' || is_page_template('slider-homepage.php') && 'show_nav' == bricks_theme_option('homepage_navmenu') ) : ?>
-    <div id="nav-wrapper">
-        <div class="inner-navigation">
-			<?php bricks_nav_menu(); ?>
-        </div>
-    </div>
- 	<?php endif; ?>
-    
-	<?php if( is_page_template('showcase.php') && bricks_theme_option('slider_position') == 'after-main-nav' || is_page_template('slider-homepage.php') && bricks_theme_option('slider_position') == 'after-main-nav' )
-              bricks_featured_slider(); ?>
-              
-    <div id="content-wrapper">
-    	<div class="inner-content">
+		<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) : ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+		<?php endif; ?>
+	</header><!-- #masthead -->
 
-            <?php bricks_before_main(); ?>
-            <div id="main">
+	<div id="main" class="wrapper">

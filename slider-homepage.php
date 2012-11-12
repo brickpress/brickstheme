@@ -22,11 +22,11 @@ get_header(); ?>
 			endif; ?>
             
             </div><!-- #content -->
-        <?php bricks_after_content(); ?>
+        <?php cubricks_after_content(); ?>
         </div><!-- #primary -->
 
 <?php get_sidebar('homepage'); ?>
-<?php if( bricks_theme_option('homepage_footer_sidebar') == 'show_fwidget' ) {
+<?php if( cubricks_theme_option('homepage_footer_sidebar') == 'show_fwidget' ) {
 		get_footer();
 	  } else {
 		get_footer( 'homepage' );

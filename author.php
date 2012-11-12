@@ -2,107 +2,73 @@
 /**
  * The template for displaying Author Archive pages.
  *
- * @package Cubricks
+ * Used to display archive-type pages for posts by an author.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Cubricks
  * @since Cubricks 1.0.0
  */
+
 get_header(); ?>
 
-		<div id="primary">
-        
-        <?php bricks_before_content(); ?>
-			<div id="content" role="main">
-			
-			<?php if ( have_posts() ) : ?>
+	<section id="primary" class="site-content">
+		<div id="content" role="main">
 
-				<?php
-					/* Queue the first post, that way we know
-					 * what author we're dealing with (if that is the case).
-					 *
-					 * We reset this later so we can run the loop
-					 * properly with a call to rewind_posts().
-					 */
-					the_post();
+		<?php if ( have_posts() ) : ?>
 
-					/* Since we called the_post() above, we need to
-					 * rewind the loop back to the beginning that way
-					 * we can run the loop properly, in full.
-					 */
-					rewind_posts();
-				?>
-                
-				<div id="author-info">
-					<div id="author-avatar">
-						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'bricks_author_bio_avatar_size', 100 ) ); ?>
-					</div><!-- #author-avatar -->
-                    
-					<?php
-                    // If a user has filled out their description, show a bio on their entries.
-                    if ( get_the_author_meta( 'description' ) ) : ?>
-					<div id="author-description">
-						<h2><?php printf( __( 'About %s', 'cubricks' ), get_the_author() ); ?></h2>
-						<?php the_author_meta( 'description' ); ?>
-					</div><!-- #author-description	-->
-                    <?php endif; ?>
-                    
-				</div><!-- #entry-author-info -->
-				
+			<?php
+				/* Queue the first post, that way we know
+				 * what author we're dealing with (if that is the case).
+				 *
+				 * We reset this later so we can run the loop
+				 * properly with a call to rewind_posts().
+				 */
+				the_post();
+			?>
 
-            <?php while ( have_posts() ) : the_post(); ?>
-             
-			<?php bricks_before_article(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( $article_container == 'sharp-edges' ) {
-                echo 'style="padding: 0; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; -khtml-border-radius: 0;"'; } ?>>
+			<header class="archive-header">
+				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'cubricks' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
+			</header><!-- .archive-header -->
 
-                <?php bricks_post_date_graphic(); ?>
-                
-                <header class="entry-header">
-                    <hgroup> 
-                    <?php bricks_post_title(); ?>
-                    </hgroup>          
-                </header>
-                
-                <?php bricks_post_format_icon(); ?>
-                
-                <div class="clearfix"></div>
-      
-                <div class="entry-content">
-                    <?php bricks_before_entry_content(); ?>
-                    <?php the_excerpt(); ?>
-                    <?php bricks_after_entry_content(); ?>
-                </div><!-- .entry-content -->
-                
-                <footer class="entry-meta">
-                    <?php bricks_post_footer(); ?>
-                    <?php bricks_comments_link(); ?>
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
-                </footer>
-                <div class="clearfix"></div>
-                
-				<?php if( bricks_theme_option('article_container') == 'no-shadow' ) : ?>
-                <div class="post-no-shadow"></div>
-                <?php else : ?>
-                <div class="left-post-shadow"></div>
-                <div class="right-post-shadow"></div>
-                <?php endif; ?>
-            </article><!-- #post-<?php the_ID(); ?> -->
-			<?php bricks_after_article(); ?>
-            
-            <?php endwhile; ?>
-            
-            <?php bricks_content_nav();  ?>
-              
-            <?php else : ?>
-            
-            <?php bricks_no_posts(); ?>
-                
-            <?php endif; ?>
-        
-			</div><!-- #content -->
-        <?php bricks_after_content(); ?>
+			<?php
+				/* Since we called the_post() above, we need to
+				 * rewind the loop back to the beginning that way
+				 * we can run the loop properly, in full.
+				 */
+				rewind_posts();
+			?>
 
-		</div><!-- #primary -->
+			<?php cubricks_content_nav( 'nav-above' ); ?>
 
-<?php if( bricks_theme_option( 'singular_sidebar' ) == 'show' ) {
-	      get_sidebar();
-	  } ?>
+			<?php
+			// If a user has filled out their description, show a bio on their entries.
+			if ( get_the_author_meta( 'description' ) ) : ?>
+			<div class="author-info">
+				<div class="author-avatar">
+					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'cubricks_author_bio_avatar_size', 60 ) ); ?>
+				</div><!-- .author-avatar -->
+				<div class="author-description">
+					<h2><?php printf( __( 'About %s', 'cubricks' ), get_the_author() ); ?></h2>
+					<p><?php the_author_meta( 'description' ); ?></p>
+				</div><!-- .author-description	-->
+			</div><!-- .author-info -->
+			<?php endif; ?>
+
+			<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php endwhile; ?>
+
+			<?php cubricks_content_nav( 'nav-below' ); ?>
+
+		<?php else : ?>
+			<?php get_template_part( 'content', 'none' ); ?>
+		<?php endif; ?>
+
+		</div><!-- #content -->
+	</section><!-- #primary -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

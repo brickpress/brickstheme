@@ -592,7 +592,7 @@ $this->settings['custom-background'] = array(
 		'desc'	  => __( 'Choose an image from your computer or from the media library to use as background. The image you set here can be overridden by the theme customizer.', 'cubricks' ),
 		'type'	  => 'image',
 		'class'   => 'uploadimg',
-		'std'	  => trailingslashit( BRICKS_IMAGES ) . 'background.jpg'
+		'std'	  => trailingslashit( CUBRICKS_IMAGES ) . 'background.jpg'
 	);
 	
 	$this->settings['body-background-image'] = array(
