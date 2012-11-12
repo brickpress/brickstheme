@@ -69,7 +69,6 @@ body {
 #content > #comments,
 #primary > #content .recent-posts,
 article #post-0 {
-	background: rgba(255,255,255,1);
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
@@ -177,7 +176,6 @@ article #post-0 {
 }
 #secondary > .widget-area,
 #primary > #content .widget-area {
-	background: rgba(255,255,255,1);
 	border-radius: 5px 5px;
 	-moz-border-radius: 5px 5px;
 	-webkit-border-radius: 5px 5px;
@@ -264,7 +262,6 @@ article #post-0 {
 	
 /* Attachments */
 .attachment .navigation-attachment {
-	background: rgba(255,255,255,1);
 	border-radius: 6px 6px;
 	-moz-border-radius: 6px 6px;
 	-webkit-border-radius: 6px 6px;
