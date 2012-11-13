@@ -1,10 +1,10 @@
 /*
 Theme Name: Cubricks
-Theme URI: http://cubricks.cubrick.us/
+Theme URI: http://cubricks.brickpress.us/
 Author: Raphael Villanea
 Author URI: http://cubrick.us/
 Description: Cubricks theme is a responsive theme inspired by TwentyTwelve theme for WordPress. Features include a homepage template with a its own widgets, an optional display font, styling for post formats on both index and single views, and an optional no-sidebar page template. Make it yours with a custom menu, header image, and background.
-Version: 1.0.0
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -471,7 +471,7 @@ a:hover {
 .site {
 	padding: 0 24px;
 	padding: 0 1.714285714rem;
-	background-color: #fff;
+	/*background-color: #fff;*/
 }
 .site-content {
 	margin: 24px 0 0;
@@ -1683,3 +1683,40 @@ img#wpstats {
 .ie img.wp-post-image {
 	width: auto; /* Prevent stretching of full-size and large-size images with height and width attributes in IE8 */
 }
+
+/* Layout Sections */
+#page {
+	margin-bottom: 0 !important;
+	background: url(images/wh-bg-main.jpg) no-repeat scroll 50% 0%;
+}
+/*
+.wrapper {
+	max-width: 980px;
+	margin: 0 auto;
+}
+#masthead hgroup {
+	float: left;
+	width: 30%;	
+}
+#masthead .main-navigation {
+	width: 70%;
+	float: right;
+	margin: 0;
+	border: none;
+}
+#footer {
+
+}
+body {
+	background: url(images/bg-main-one-repeat-no-shadow.jpg) repeat-y scroll 50% 0%;
+}
+#header {
+
+}
+body .site {
+	background-color: none;
+	box-shadow: none;
+}
+.site {
+	background-color: none;
+}*/

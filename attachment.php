@@ -14,7 +14,6 @@ get_header(); ?>
             
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
            
-			<?php cubricks_before_article(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     			
                 <header class="entry-header">
@@ -108,7 +107,7 @@ get_header(); ?>
         <?php endif; ?>
 
         </div><!-- #content -->
-    <?php cubricks_after_content(); ?>
+    
 
     </div><!-- #primary -->
  

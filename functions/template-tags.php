@@ -23,6 +23,43 @@
  */
 
 /**
+ * Displays the current post's title.
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists('cubricks_entry_header') ) :
+function cubricks_entry_header() {
+	?>
+	<?php if( is_single() ) { ?>
+        <header class="entry-header">
+            <h1 class="entry-title"><?php the_title(); ?></h1>
+        </header>
+    <?php } elseif( is_sticky() ) { ?>
+        <header class="entry-header">
+            <h1 class="entry-title">
+            <a class="slider-caption" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
+            </h1>
+        </header>
+    <?php } elseif( has_post_format('status') ) { ?>
+    	<header>  
+            <h1><?php the_author(); ?></h1>
+            <h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php echo get_the_date(); ?></a>
+            </h2>
+        </header>
+	<?php } else { ?>
+    	<header class="entry-header">
+            <h1 class="entry-title">
+            <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+            </h1>
+        </header>
+		<?php } ?>
+		<div class="clearfix"></div>
+        <?php
+	}
+endif;
+
+
+/**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.
  *
@@ -63,7 +100,7 @@ add_filter( 'wp_title', 'cubricks_wp_title', 10, 2 );
 if( ! function_exists('cubricks_nav_menu') ) :
 	function cubricks_nav_menu() { 
 	
-    	global $page, $paged, $theme_options; ?>
+    	global $page, $paged, $cubricks_options; ?>
 		
         <nav id="access" role="navigation">
             <?php wp_nav_menu( array(
@@ -111,20 +148,29 @@ endif;
 
 if ( ! function_exists( 'cubricks_content_nav' ) ) :
 /**
- * Displays navigation to next/previous pages when applicable.
+ * Display navigation to next/previous pages when applicable
  *
- * @since Cubricks 1.0.0
+ * @since 1.0.0
  */
-function cubricks_content_nav( $nav_id ) {
-	global $wp_query;
-
-	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $nav_id; ?>" class="navigation" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'cubricks' ); ?></h3>
-			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'cubricks' ) ); ?></div>
-			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'cubricks' ) ); ?></div>
-		</nav><!-- #<?php echo $nav_id; ?> .navigation -->
-	<?php endif;
+function cubricks_content_nav() {
+	
+	global $wp_rewrite, $wp_query;
+	
+	$current = ( $wp_query->query_vars['paged'] > 1 ? $wp_query->query_vars['paged'] : 1 );
+	
+	$pagination = array(
+		'base' => @add_query_arg( 'paged','%#%' ),
+		'format' => '',
+		'total' => $wp_query->max_num_pages,
+		'current' => $current,
+		'show_all' => false,
+		'type' => 'plain',
+	);
+	
+	if( ! empty( $wp_query->query_vars['s'] ) ) {
+		$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+	}
+	echo '<nav id="nav-single">' . paginate_links( $pagination ) . '</nav>';	
 }
 endif;
 
@@ -238,5 +284,176 @@ function cubricks_entry_meta() {
 		$date,
 		$author
 	);
+}
+endif;
+
+
+/**
+ * Returns header for archive pages.
+ * 
+ * @since 1.0.0
+ */
+if( ! function_exists('cubricks_archive_header') ) :
+function cubricks_archive_header() {
+	
+    $format = get_post_format(); ?>
+    <header class="archive-header">
+    <h1 class="archive-title">
+		<?php if ( is_day() ) {
+            printf( __( 'Daily Archives: %s', 'cubricks' ), '<span>' . get_the_date() . '</span>' );
+        } elseif ( is_month() ) {
+            printf( __( 'Monthly Archives: %s', 'cubricks' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); 
+        } elseif ( is_year() ) {
+            printf( __( 'Yearly Archives: %s', 'cubricks' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+        } elseif ( is_category() ) {
+            printf( __( 'Category Archives: %s', 'cubricks' ), single_cat_title( '', false ) );
+			if ( category_description() ) : // Show an optional category description ?>
+				</h1><div class="archive-meta"><?php echo category_description(); ?></div>
+			<?php endif;
+        } elseif ( is_tag() ) {
+            printf( __( 'Tag Archives: %s', 'cubricks' ), single_tag_title( '', false ) );
+			if ( tag_description() ) : // Show an optional tag description ?>
+				</h1><div class="archive-meta"><?php echo tag_description(); ?></div>
+			<?php endif;
+        } elseif ( is_author() ) {
+            printf( __( 'Author Archives: %s', 'cubricks' ) );
+        } elseif ( has_post_format('aside') ) {
+            printf( __( 'Asides Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('audio') ) {
+            printf( __( 'Audio Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('chat') ) {
+            printf( __( 'Chat Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('gallery') ) {
+            printf( __( 'Gallery Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('image') ) {
+            printf( __( 'Image Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('link') ) {
+            printf( __( 'Link Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('quote') ) {
+            printf( __( 'Quote Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('status') ) {
+            printf( __( 'Status Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } elseif ( has_post_format('video') ) {
+            printf( __( 'Video Archives: %s', 'cubricks' ), ucwords( $format ) );
+        } else {
+            _e( 'Blog Archives', 'cubricks' );
+        } ?>
+        </h1>
+    </header>
+	<?php
+}
+endif;
+
+/**
+ * Displays post date.
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists('cubricks_post_date_text') ) : 
+function cubricks_post_date_text() {
+		
+	global $cubricks_options;
+	
+	$format = get_post_format();
+	$author_avatar = cubricks_theme_option('author_avatar');
+	if( '' == $format )
+		$format = 'article';
+	
+	if( ! is_single() || is_single() && $author_avatar == 'hide_avatar' ) {
+		
+		$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%7$s" title="%8$s" rel="author">%9$s.</a></span></span>' );		
+	} else {
+		
+		$utility_text = __( '<span class="%1$s-post"></span><a href="%3$s" title="%3$s" rel="bookmark">%2$s</a> posted on <a href="%3$s" title="%4$s" rel="bookmark"><time class="entry-date" datetime="%5$s">%6$s</time></a>' );
+	}
+	
+	printf(
+		$utility_text,																		// [0]
+		$post_icon = strtolower( $format ),													// [1]
+		$post_format = ucwords( $format ),													// [2]
+		esc_url( get_permalink() ),															// [3]
+		esc_attr( get_the_time() ),															// [4]
+		esc_attr( get_the_date( 'c' ) ),													// [5]
+		esc_html( get_the_date() ),															// [6]
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),						// [7]
+		esc_attr( sprintf( __( 'View all posts by %s', 'cubricks' ), get_the_author() ) ),	// [8]
+		get_the_author()																	// [9]																		
+	);
+}
+endif;
+
+/**
+ * Cubricks pagination
+ *
+ * @since   1.0.0
+ */
+function cubricks_link_pages_args() {
+	
+	$args = array(
+			  'before'         => '<div class="pagination"><span class="page-link-meta">' . __( 'Pages:', 'cubricks' ) . '</span>',
+			  'after'          => '</div>',
+			  'next_or_number' => 'number',
+			  'link_before'    => '<span>',
+			  'link_after'     => '</span>'
+		  );
+	return $args;
+}
+
+/**
+ * Return the URL for the first link found in the post content.
+ *
+ * @since Cubricks 1.0.0
+ * @return string|bool URL or false when no link is present.
+ */
+function cubricks_first_link() {
+	
+	global $post;
+	
+	$content1 = $post->post_content;
+	
+	preg_match_all( '|<a.*?(title=[\'"](.*?)[\'"])*? href=[\'"](.*?)[\'"].*?>(.*?)</a>|i', $post->post_content, $matches );
+	
+	if ( isset( $matches ) ) {
+		
+		$title = apply_filters( 'post_title', $post->post_title );
+		
+		// link has a title attribute
+		if ( $matches[2][0] != '' )
+			$title_attribute = $matches[2][0];
+		
+		// link has no title, use post title
+		elseif ( $post->post_title != '' )
+			$title_attribute = $post->post_title;
+		
+		// link and post have no title, use description
+		else
+			$title_attribute = $matches[4][0];
+		
+		$url = $matches[3][0];
+		$desc = $matches[4][0];
+		
+		return array(
+			'title'      => $title,
+			'title_attr' => $title_attribute,
+			'url'        => $url,
+			'desc'       => $desc
+		);
+	}
+	else {
+		return false;
+	}
+}
+
+/**
+ * Returns comments link.
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists('cubricks_comment_link') ) :
+function cubricks_comments_link() {
+	
+	if( comments_open() && ! post_password_required() ) {
+		comments_popup_link( '<span class="comments-link"></span>' . __( 'Leave a Comment. ', 'cubricks' ), '<span class="comments-link"></span>' . _x( '1 Comment ', 'comments number', 'cubricks' ), '<span class="comments-link"></span>' . _x( '% Comments ', 'comments number', 'cubricks' ) );
+	}
 }
 endif;

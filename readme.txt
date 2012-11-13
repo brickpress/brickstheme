@@ -1,9 +1,9 @@
-== CUCUBRICKS THEME FOR WORDPRESS ==
+== CUBRICKS THEME FOR WORDPRESS ==
 
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
 Tested up to: 3.4.2
-Version: 1.0.5
+Version: 1.0.6
 
 == Licenses and Copyright Info ==
 

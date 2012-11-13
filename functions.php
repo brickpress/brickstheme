@@ -20,17 +20,17 @@
  * @copyright  Copyright (c) 2012, BrickPress
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
  */
+define( 'CUBRICKS_VERSION', '1.0.6' );
 
 /* Theme options class */
-require_once( trailingslashit( get_template_directory() ) . 'lib/class.cubricks-theme-options.php' );
+require( trailingslashit( get_template_directory() ) . 'lib/class.cubricks-theme-options.php' );
 $cubricks_options = new Cubricks_Theme_Options();
 
-
 /* Theme setup class */
-require_once( trailingslashit( get_template_directory() ) . 'lib/class.cubricks-theme-setup.php' );
-$cubricks_setup = new Cubricks_Theme_Setup();
+require( trailingslashit( get_template_directory() ) . 'lib/class.cubricks-theme-setup.php' );
+$cubricks_theme_setup = new Cubricks_Theme_Setup();
 
-global $theme_options, $cubricks_theme_setup;
+global $cubricks_options, $cubricks_theme_setup;
 
 /**
  * Retrieves an option from our array of theme options.
@@ -49,6 +49,8 @@ function cubricks_theme_option( $option ) {
 //require( trailingslashit( get_template_directory() ) . 'inc/custom-header.php' );
 
 require( trailingslashit( get_template_directory() ) . 'functions/template-tags.php' );
+require( trailingslashit( get_template_directory() ) . 'functions/post-formats.php' );
+require( trailingslashit( get_template_directory() ) . 'functions/cubricks-slider.php' );
 
 
 /**
@@ -60,7 +62,7 @@ require( trailingslashit( get_template_directory() ) . 'functions/template-tags.
 function cubricks_content_width() {
 	if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
 		global $content_width;
-		$content_width = 960;
+		$content_width = get_theme_mod('cubricks_content_width');
 	}
 }
 add_action( 'template_redirect', 'cubricks_content_width' );
@@ -78,7 +80,7 @@ function cubricks_customize_register( $wp_customize ) {
 	
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	$wp_customize->cubricks_theme_option( 'link_color' )->transport = 'postMessage';
+	//$wp_customize->cubricks_theme_option( 'link_color' )->transport = 'postMessage';
 }
 
 /**
@@ -87,6 +89,6 @@ function cubricks_customize_register( $wp_customize ) {
  * @since Cubricks 1.0.0
  */
 function cubricks_customize_preview_js() {
-	wp_enqueue_script( 'cubricks-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), 'CUCUBRICKS_VERSION', true );
+	wp_enqueue_script( 'cubricks-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), 'CUBRICKS_VERSION', true );
 }
 add_action( 'customize_preview_init', 'cubricks_customize_preview_js' );

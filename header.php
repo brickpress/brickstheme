@@ -30,7 +30,11 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
+<?php //if( is_page_template('page-templates/showcase.php') /*&& cubricks_theme_option('slider_position') == 'before_header' */)
+ // cubricks_featured_slider(); ?>
+
+<div id="header" class="container">
+	<header id="masthead" class="site-header wrapper" role="banner">
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -47,5 +51,8 @@
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 		<?php endif; ?>
 	</header><!-- #masthead -->
+</div><!-- #header .layout -->
 
+<?php //if( is_page_template('page-templates/showcase.php') /* && cubricks_theme_option('slider_position') == 'after-header'*/ || is_page_template('page-templates/slider-homepage.php') /*&& cubricks_theme_option('slider_position') == 'after-header' */)
+       //   cubricks_featured_slider(); ?>
 	<div id="main" class="wrapper">

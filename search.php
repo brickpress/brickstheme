@@ -22,7 +22,7 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<?php get_template_part( 'content', 'posts' ); ?>
 			<?php endwhile; ?>
 
 			<?php cubricks_content_nav( 'nav-below' ); ?>
@@ -37,6 +37,27 @@ get_header(); ?>
 				<div class="entry-content">
 					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'cubricks' ); ?></p>
 					<?php get_search_form(); ?>
+                    
+                    <?php the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ), array( 'widget_id' => 'Search' ) ); ?>
+				
+                    <hr />
+                    <div class="widget widget_categories">
+                        <h2 class="widgettitle"><?php _e( 'Most Used Categories', 'cubricks' ); ?></h2>
+                        <ul>
+                        <?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
+                        </ul>
+                    </div>
+                    <hr />
+                    
+                    <?php
+                    /* translators: %1$s: smilie */
+                    $archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'cubricks' ), convert_smilies( ':)' ) ) . '</p>';
+                    the_widget( 'WP_Widget_Archives', array('count' => 1 , 'dropdown' => 0 ), array( 'after_title' => '</h2>'.$archive_content ) );
+                    ?>
+                    <hr />
+                    
+                    <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->
 
