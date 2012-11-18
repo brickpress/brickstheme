@@ -21,39 +21,54 @@ get_header(); ?>
 
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
+        
+			<?php cubricks_archive_header(); ?>
 
-		<?php if ( have_posts() ) : ?>
-			<header class="archive-header">
-				<h1 class="archive-title"><?php
-					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'cubricks' ), '<span>' . get_the_date() . '</span>' );
-					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'cubricks' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'cubricks' ) ) . '</span>' );
-					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'cubricks' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'cubricks' ) ) . '</span>' );
-					else :
-						_e( 'Archives', 'cubricks' );
-					endif;
-				?></h1>
-			</header><!-- .archive-header -->
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            
+        <?php $post_format = strtolower( get_post_format() ); ?>
+        <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' || $post_format == 'audio' )
+				cubricks_entry_header(); ?>
+        
+        <div class="clear"></div>
+            
+            <div class="entry-content">
+                <?php
+					if( has_post_format('chat') ) {
+						echo cubricks_chat_content();
+					} elseif( has_post_format('gallery') ) {
+						echo cubricks_gallery_content();
+					} elseif( has_post_format('link') ) {
+						echo cubricks_link_content();
+					} elseif(  has_post_format('quote') ) {
+						echo cubricks_quote_content();
+					} else {
+						the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) );
+					}
+				?>
+                <?php wp_link_pages( cubricks_link_pages_args() ); ?>
+            </div><!-- .entry-content -->        
+			<div class="clear"></div>
+            
+			<footer class="entry-meta">
+                <?php cubricks_entry_meta(); ?>
+                <?php cubricks_comments_link(); ?>
+                <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
+			</footer>
+			<div class="clear"></div>
 
-				/* Include the post format-specific template for the content. If you want to
-				 * this in a child theme then include a file called called content-___.php
-				 * (where ___ is the post format) and that will be used instead.
-				 */
-				get_template_part( 'content', get_post_format() );
+            <div class="left-post-shadow"></div>
+            <div class="right-post-shadow"></div>
+		</article><!-- #post-<?php the_ID(); ?> -->
 
-			endwhile;
+		<?php endwhile;
 
-			cubricks_content_nav( 'nav-below' );
-			?>
+			cubricks_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php cubricks_no_posts(); ?>
 		<?php endif; ?>
 
 		</div><!-- #content -->

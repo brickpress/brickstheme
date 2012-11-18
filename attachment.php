@@ -8,8 +8,6 @@
 get_header(); ?>
 
         <div id="primary">
-    
-            <?php cubricks_before_content(); ?>
             <div id="content" role="main">
             
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -22,13 +20,13 @@ get_header(); ?>
                     </h1>
                     </hgroup>
                 </header>
-                <div class="clearfix"></div>
+                <div class="clear"></div>
                
                 <div class="entry">
 
 				<?php if ( wp_attachment_is_image() ) :
                 
-                    $content_width = cubricks_theme_option('content_width');
+                    $content_width = get_theme_mod('cubricks_content_width');
 
                     $attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
                     foreach ( $attachments as $k => $attachment ) {
@@ -63,7 +61,7 @@ get_header(); ?>
                         <div class="caption"><?php if ( !empty($post->post_excerpt) ) the_excerpt(); ?></div>
                         <div class="image-description"><?php if ( !empty($post->post_content) ) the_content(); ?></div>
                     </div>
-					<div class="clearfix"></div>
+					<div class="clear"></div>
                     
                     <div class="navigation-attachment">
                         <div class="attachment-nav-left"><?php previous_image_link(); ?></div>
@@ -80,38 +78,23 @@ get_header(); ?>
                         <?php endif; ?>
     
                     <div class="bottom-of-entry">&nbsp;</div>
-                    <div class="clearfix"></div>
+                    <div class="clear"></div>
                 </div><!-- .entry -->
-				
-                <?php if( cubricks_theme_option('author_avatar') == 'show_avatar' )
-						  cubricks_author_meta(); ?>
-                
+
                 <footer class="entry-meta">
                     <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
                 </footer><!-- .entry-meta -->
                 
                 <?php comments_template( '', true ); ?>
             
-            <?php if( cubricks_theme_option('article_container') == 'no-shadow' ) : ?>
-            <div class="post-no-shadow"></div>
-            <?php else : ?>
-            <div class="left-post-shadow"></div>
-            <div class="right-post-shadow"></div>
-            <?php endif; ?>   
+                <div class="left-post-shadow"></div>
+                <div class="right-post-shadow"></div>   
             </article><!-- #post-<?php the_ID(); ?> -->
-            
-            <?php cubricks_after_single(); ?>
-                
-            <div class="clearfix"></div>
         <?php endwhile; ?>
         <?php endif; ?>
 
         </div><!-- #content -->
-    
-
     </div><!-- #primary -->
  
-<?php if( cubricks_theme_option( 'singular_sidebar' ) == 'sidebar' ) {
-	      get_sidebar();
-	  } ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The sidebar before the footer.
+ * The optional sidebar before the footer.
  *
  * If no active widgets in sidebar, let's hide it completely.
  *
@@ -40,5 +40,5 @@
                 <?php dynamic_sidebar( 'sidebar-f4' ); ?>
             </div><!-- #fourth .widget-area -->
         <?php endif; ?>
-        </div><!-- #supplementary -->
+        </div><!-- #supplementary .inner -->
 	</div><!-- #sidebar-footer .wrapper -->
