@@ -14,15 +14,16 @@
  */
 get_header(); ?>
 
-		<div id="primary" class="showcase">
+		<div id="primary" class="site-content">
 			<div id="content" role="main">
-				<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'cubricks' ); ?></h1>
+				<header class="showcase-header">
+                	<h1 class="showcase-heading"><span><?php _e( 'Recent Posts', 'cubricks' ); ?></span></h1>
+                </header>
 				<?php
-				$showcase_recent_posts = get_theme_mod('showcase_recent_posts');
 				// Display our recent posts, showing full content for the very latest.
 				$recent_args = array(
 					'order' => 'DESC',
-					'posts_per_page' => $showcase_recent_posts,
+					'posts_per_page' => '10',
 					'post__not_in' => get_option( 'sticky_posts' ),
 					'no_found_rows' => true
 				);

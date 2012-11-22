@@ -87,7 +87,7 @@
 		animation	: {opacity:'show'},
 		speed		: 'normal',
 		autoArrows	: true,
-		dropShadows : true,
+		dropShadows : false,
 		disableHI	: false,		// true disables hoverIntent detection
 		onInit		: function(){}, // callback functions
 		onBeforeShow: function(){},

@@ -33,7 +33,8 @@ get_header(); ?>
             <?php cubricks_no_posts(); ?>
         
 		<?php endif; // end have_posts() check ?>
-
+		
+        <?php cubricks_after_content(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

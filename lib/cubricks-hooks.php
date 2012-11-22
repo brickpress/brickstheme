@@ -25,11 +25,11 @@ function cubricks_after_header() {
 }
 
 /**
- * Before the site footer, right after the main div closing tag.
+ * After all the site content has loaded.
  * @since 1.0.0
  */
-function cubricks_before_footer() {
-	do_action( 'cubricks_before_footer' );
+function cubricks_after_content() {
+	do_action( 'cubricks_after_content' );
 }
 
 /**
@@ -38,4 +38,12 @@ function cubricks_before_footer() {
  */
 function cubricks_credits() {
 	do_action( 'cubricks_credits' );
+}
+
+/**
+ * At footer, before"Proudly powered by WordPress" is called.
+ * @since 1.0.0
+ */
+function cubricks_footer_menu() {
+	do_action( 'cubricks_footer_menu' );
 }

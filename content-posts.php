@@ -11,15 +11,17 @@
         <?php $post_format = strtolower( get_post_format() ); ?>
         <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' || $post_format == 'audio' )
 				cubricks_entry_header(); ?>
-        
+        <?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
+		<div class="featured-post">
+			<?php _e( 'Featured post', 'cubricks' ); ?>
+		</div>
+		<?php endif; ?>
         <div class="clear"></div>
             
             <div class="entry-content">
                 <?php
 					if( has_post_format('chat') ) {
 						echo cubricks_chat_content();
-					} elseif( has_post_format('gallery') ) {
-						echo cubricks_gallery_content();
 					} elseif( has_post_format('link') ) {
 						echo cubricks_link_content();
 					} elseif(  has_post_format('quote') ) {

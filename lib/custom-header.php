@@ -21,7 +21,7 @@
 function cubricks_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
-		'default-text-color'     => '333',
+		'default-text-color'     => '#FFFFFF',
 		'default-image'          => '',
 
 		// Set height and width, with a maximum value for the width.
@@ -73,6 +73,9 @@ function cubricks_header_style() {
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
+		.header-menu li a {
+			color: #<?php echo $text_color; ?>;
+		}
 	<?php
 		// If the user has set a custom color for the text, use that.
 		else :
@@ -80,6 +83,9 @@ function cubricks_header_style() {
 		.site-title a,
 		.site-description {
 			color: #<?php echo $text_color; ?> !important;
+		}
+		.header-menu li a {
+			color: #<?php echo $text_color; ?>;
 		}
 	<?php endif; ?>
 	</style>

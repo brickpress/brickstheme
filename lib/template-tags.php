@@ -100,7 +100,7 @@ add_filter( 'wp_title', 'cubricks_wp_title', 10, 2 );
 if( ! function_exists('cubricks_nav_menu') ) :
 	function cubricks_nav_menu() { 
 	
-    	global $page, $paged, $cubricks_options; ?>
+    	global $page, $paged; ?>
         
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'cubricks' ); ?></h3>
@@ -134,19 +134,15 @@ add_action( 'cubricks_footer_menu', 'cubricks_footer_nav' );
 if( ! function_exists('cubricks_footer_nav') ) :
 	function cubricks_footer_nav() { ?>
     
-    	global $page, $paged, $cubricks_options; ?>
-        
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'cubricks' ); ?></h3>
-			<div class="skip-link assistive-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'cubricks' ); ?>"><?php _e( 'Skip to content', 'cubricks' ); ?></a></div>
+		<nav id="site-navigation" class="footer-navigation" role="navigation">
+        	<h3 class="menu-toggle"><?php _e( 'Menu', 'cubricks' ); ?></h3>
             <?php wp_nav_menu( array(
 					  'theme_location' => 'footer',
-					  'show_home' 	   => false,
-					  'items_wrap'     => '<ul id="%1$s" class="nav-menu">%3$s</ul>',
+					  'show_home' 	   => true,
 					  'menu_class' 	   => 'nav-menu'
-				      ));
+				  ));
 			?>
-        </nav><!-- #site-navigation -->
+        </nav><!-- #footer-nav -->
 	<?php
 	}
 endif;
@@ -316,7 +312,7 @@ function cubricks_archive_header() {
 	
     $format = get_post_format(); ?>
     <header class="archive-header">
-    <h1 class="archive-title">
+    <h1 class="archive-title"><span>
 		<?php if ( is_day() ) {
             printf( __( 'Daily Archives: %s', 'cubricks' ), '<span>' . get_the_date() . '</span>' );
         } elseif ( is_month() ) {
@@ -326,12 +322,12 @@ function cubricks_archive_header() {
         } elseif ( is_category() ) {
             printf( __( 'Category Archives: %s', 'cubricks' ), single_cat_title( '', false ) );
 			if ( category_description() ) : // Show an optional category description ?>
-				</h1><div class="archive-meta"><?php echo category_description(); ?></div>
+				</span></h1><div class="archive-meta"><?php echo category_description(); ?></div>
 			<?php endif;
         } elseif ( is_tag() ) {
             printf( __( 'Tag Archives: %s', 'cubricks' ), single_tag_title( '', false ) );
 			if ( tag_description() ) : // Show an optional tag description ?>
-				</h1><div class="archive-meta"><?php echo tag_description(); ?></div>
+				</span></h1><div class="archive-meta"><?php echo tag_description(); ?></div>
 			<?php endif;
         } elseif ( is_author() ) {
             printf( __( 'Author Archives: %s', 'cubricks' ) );
@@ -356,7 +352,7 @@ function cubricks_archive_header() {
         } else {
             _e( 'Blog Archives', 'cubricks' );
         } ?>
-        </h1>
+        </span></h1>
     </header><!-- .archive-header -->
 	<?php
 }

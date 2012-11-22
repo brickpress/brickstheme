@@ -9,7 +9,7 @@
  */
 get_header(); ?>
 
-		<div id="primary">
+		<div id="primary" class="site-content">
 			<div id="content" role="main">
             
             <?php if($post->post_content != '') : ?>
