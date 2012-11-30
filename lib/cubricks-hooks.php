@@ -1,12 +1,19 @@
 <?php
 /**
  * Cubricks custom hook functions.
- * Modeled after those in Hybrid by Justin Tadlock.
  *
- * @package Cubricks
+ * @package Cubricks Theme
  * @subpackage Functions
  * @since 1.0.0
  */
+
+/**
+ * Navigation menu located at the header.
+ * @since 1.0.0
+ */
+function cubricks_header_menu() {
+	do_action( 'cubricks_header_menu' );
+}
  
 /**
  * Before the site header.
@@ -38,12 +45,4 @@ function cubricks_after_content() {
  */
 function cubricks_credits() {
 	do_action( 'cubricks_credits' );
-}
-
-/**
- * At footer, before"Proudly powered by WordPress" is called.
- * @since 1.0.0
- */
-function cubricks_footer_menu() {
-	do_action( 'cubricks_footer_menu' );
 }

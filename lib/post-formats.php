@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 
- * @package    Cubricks
+ * @package    Cubricks Theme
  * @subpackage Cubricks Theme Functions
  * @author     Raphael Villanea <support@brickpress.us>
  * @copyright  Copyright (c) 2012, Raphael Villanea
@@ -114,19 +114,9 @@ function cubricks_chat_content() {
  * @since 1.0.0
  */
 function cubricks_link_content() {
-	
-	$output = '<div class="link-content"><div class="link-icon"></div>';
-	
-	$link = cubricks_first_link();
-	
-	$output .= '<a href="' .esc_url( $link['url'] ). '" title="' .esc_attr( $link['title_attr'] ). '">' .esc_attr( $link['title_attr'] ). '</a>';
 
-	$output .= '</div>';
-	
-	$output .= esc_attr( $link['desc'] );
-	
-	$output = str_replace( '<div class="link-content"><div class="link-icon"></div></div>', '', $output );
-	
+	$link = cubricks_first_link();
+	$output .= '<a href="' .esc_url( $link['url'] ). '" title="' .esc_attr( $link['title_attr'] ). '">' .esc_attr( $link['desc'] ). '</a>';
 	return apply_filters( 'the_content', $output );
 }
 	
@@ -145,11 +135,11 @@ function cubricks_quote_content() {
 		
 	the_content();
 
+	if ( strpos( $post->post_content, '<p' ) === false )
+		echo '<cite>&mdash;' . get_the_title() . '</cite>';
+		
 	if ( strpos( $post->post_content, '</blockquote' ) === false )
 		echo '</blockquote>';
-	
-	//if ( strpos( $post->post_content, '<p' ) === false )
-		//echo '<cite>&mdash;' . get_the_title() . '</cite>';
 }
 
 

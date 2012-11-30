@@ -34,7 +34,6 @@ get_header(); ?>
         
 		<?php endif; // end have_posts() check ?>
 		
-        <?php cubricks_after_content(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

@@ -44,7 +44,8 @@ function cubricks_featured_slider() {
 	$slider_timer = get_theme_mod( 'slider_timer' );
 	$slider_items = get_theme_mod( 'slider_items' );
 	$slider_effects = get_theme_mod( 'slider_effects' );
-	
+	$large_slider_width = get_theme_mod( '$large_slider_width' );
+ 	
 	// Proceed only if sticky posts exist.
 	if ( ! empty( $sticky ) ) :
 		$featured_args = array(
@@ -54,7 +55,10 @@ function cubricks_featured_slider() {
 			'no_found_rows' => true,
 		); ?>
             
-	<input type="hidden" id="slider_timer" name="slider_timer" value="<?php if( $slider_timer ) { echo $slider_timer; } else { echo '5'; } ?>"/>	
+	<input type="hidden" id="slider_timer" class="slider_timer" name="slider_timer" value="<?php if( $slider_timer ) { echo $slider_timer; } else { echo '5'; } ?>"/>	
+    <input type="hidden" id="slider_effects" class="slider_effects" name="slider_effects" value="<?php if( $slider_effects ) { echo $slider_effects; } else { echo 'fade'; } ?>"/>
+    <input type="hidden" id="slider_items" class="slider_items" name="slider_items" value="<?php if( $slider_items ) { echo $slider_items; } else { echo '10'; } ?>"/>
+    <input type="hidden" id="large_slider_width" class="large_slider_width" name="large_slider_width" value="<?php if( $large_slider_width ) { echo $large_slider_width; } else { echo '1024'; } ?>"/>
     <div class="inner-slider">
         <div id="slider"><!-- nivoSlider -->
 
@@ -73,8 +77,8 @@ function cubricks_featured_slider() {
                 
                echo '<a href="' .esc_url( get_permalink() ). '" title="' .esc_attr( the_title_attribute('echo=0') ). '">';
                
-               if( is_page_template('page-templates/showcase.php') || is_page_template('page-templates/slider-homepage.php') ) {
-                   the_post_thumbnail('cubricks-large-slider');
+               if( is_page_template('page-templates/showcase.php') || is_page_template('page-templates/homepage.php') ) {
+                   the_post_thumbnail($large_slider_width, 9999);
                } else {
                    the_post_thumbnail('cubricks-medium-slider');
                }

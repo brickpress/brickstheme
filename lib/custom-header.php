@@ -21,12 +21,12 @@
 function cubricks_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
-		'default-text-color'     => '#FFFFFF',
+		'default-text-color'     => 'FFFFFF',
 		'default-image'          => '',
 
 		// Set height and width, with a maximum value for the width.
-		'height'                 => 250,
-		'width'                  => 960,
+		'height'                 => 267,
+		'width'                  => 1024,
 		'max-width'              => 2000,
 
 		// Support flexible height and width.

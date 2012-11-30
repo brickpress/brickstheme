@@ -40,5 +40,17 @@
                 <?php dynamic_sidebar( 'sidebar-f4' ); ?>
             </div><!-- #fourth .widget-area -->
         <?php endif; ?>
+        
+        <?php if ( is_active_sidebar( 'sidebar-f5' ) ) : ?>
+            <div id="five" class="widget-area" role="complementary">
+                <?php dynamic_sidebar( 'sidebar-f5' ); ?>
+            </div><!-- #fifth .widget-area -->
+        <?php endif; ?>
+        
+        <?php if ( is_active_sidebar( 'sidebar-f6' ) ) : ?>
+            <div id="six" class="widget-area" role="complementary">
+                <?php dynamic_sidebar( 'sidebar-f6' ); ?>
+            </div><!-- #sixth .widget-area -->
+        <?php endif; ?>
         </div><!-- #supplementary .inner -->
 	</div><!-- #sidebar-footer .wrapper -->

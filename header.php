@@ -37,17 +37,17 @@
     <div id="header" class="wrapper">
         <header id="masthead" class="site-header inner" role="banner">
         	<?php if( '' != get_theme_mod('site_logo') ) : ?>
-				<a class="sitelogo" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod('site_logo'); ?>" alt="<?php __( 'Site Logo', 'cubricks' ); ?>" /></a>
+				<a class="site-logo" href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod('site_logo'); ?>" alt="<?php __( 'Site Logo', 'cubricks' ); ?>" /></a>
             <?php endif; ?>
             <hgroup>
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
             </hgroup>
-			<?php wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'header-menu' ) ); ?>
-            <?php $header_image = get_header_image();
-            if ( ! empty( $header_image ) ) : ?>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
-            <?php endif; ?>
+            <?php // Calls the naigatin menu located at the header. 
+		 		  cubricks_header_nav(); ?>
+        
+			<?php // Displays our custom header. 
+				  cubricks_custom_header(); ?>
         </header><!-- #masthead .inner -->
     </div><!-- #header .wrapper -->
 
@@ -57,7 +57,7 @@
     </div><!-- #sub-head .inner -->
 
     <?php 
-	if( is_page_template('page-templates/showcase.php') && get_theme_mod('slider_position') == 'after-header' || is_page_template('page-templates/slider-homepage.php') && get_theme_mod('slider_position') == 'after-header')
+	if( is_page_template('page-templates/showcase.php') && get_theme_mod('slider_position') == 'after-header' || is_page_template('page-templates/homepage.php') && get_theme_mod('slider_position') == 'after-header')
           cubricks_showcase_slider();
 		  ?>
     <div id="main-content" class="wrapper">

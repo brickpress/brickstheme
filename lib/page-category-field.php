@@ -19,8 +19,8 @@ add_action( 'admin_menu', 'page_category_field_admin_setup' );
 
 
 /**
- * Adds post type support of 'page-category-field' to the 'page' post type.  Developers should register support 
- * for additional post types.
+ * Adds post type support of 'page-category-field' to the 'page' post type. 
+ * Developers should register support for additional post types.
  *
  * @return void
  * @since 1.0.0

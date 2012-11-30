@@ -2,7 +2,7 @@
 
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
-Tested up to: 3.4.2
+Tested up to: 3.5-RC1
 Version: 1.0.6
 
 == Licenses and Copyright Info ==

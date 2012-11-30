@@ -1,12 +1,12 @@
 <?php
 /**
- * The sidebar containing the front page widget areas.
+ * The sidebar containing the homepage widget areas.
  *
  * If no active widgets in either sidebar, they will be hidden completely.
  *
  * @package WordPress
  * @subpackage Cubricks
- * @since Cubricks 1.0.0
+ * @since Cubricks 1.0.5
  */
 
 /*
@@ -15,21 +15,30 @@
  *
  * If none of the sidebars have widgets, then let's bail early.
  */
-if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) )
+if ( ! is_active_sidebar( 'sidebar-h1' ) && ! is_active_sidebar( 'sidebar-h2' ) && ! is_active_sidebar( 'sidebar-h3' ) )
 	return;
 
 // If we get this far, we have widgets. Let do this.
 ?>
-<div id="secondary" class="widget-area" role="complementary">
-	<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-	<div class="first front-widgets">
-		<?php dynamic_sidebar( 'sidebar-2' ); ?>
-	</div><!-- .first -->
+<div id="sidebar-homepage" class="wrapper">
+	<div id="supplementary" <?php cubricks_homepage_sidebar_class(); ?>>
+	
+	<?php if ( is_active_sidebar( 'sidebar-h1' ) ) : ?>	    
+		<div id="first" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-h1' ); ?>
+		</div><!-- #first .widget-area -->
+	<?php endif; ?>
+	
+	<?php if ( is_active_sidebar( 'sidebar-h2' ) ) : ?>
+		<div id="second" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-h2' ); ?>
+		</div><!-- #second .widget-area -->
 	<?php endif; ?>
 
-	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-	<div class="second front-widgets">
-		<?php dynamic_sidebar( 'sidebar-3' ); ?>
-	</div><!-- .second -->
+	<?php if ( is_active_sidebar( 'sidebar-h3' ) ) : ?>	    
+		<div id="third" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'sidebar-h3' ); ?>
+		</div><!-- #third .widget-area -->
 	<?php endif; ?>
-</div><!-- #secondary -->
+	</div><!-- #supplementary .inner -->
+</div><!-- #sidebar-homepage .wrapper -->

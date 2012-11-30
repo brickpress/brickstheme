@@ -10,19 +10,23 @@
  * @since Cubricks 1.0.0
  */
 ?>
-
+		<?php cubricks_after_content(); ?>
         </div><!-- #main .inner -->
     </div><!-- #main-content .wrapper -->
 	<?php 
-	if ( ! is_404() )
-		get_sidebar( 'footer' ); ?>
+	if (  ! is_404() ) {
+		if( is_page_template('page-templates/homepage.php') )
+			get_sidebar('homepage');
+		else
+			get_sidebar('footer');
+	}
+	?>
             
 	<div id="footer" class="wrapper">
         <footer id="colophon" class="inner" role="contentinfo">
         	<div class="footnote">
             	<p class="copyright-notice"><?php echo get_theme_mod( 'copyright_notice' ); ?></p>
             </div>
-        	<?php echo cubricks_footer_menu(); ?>
             <div class="clearfix"></div>
             <div class="site-info">
                 <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cubricks' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'cubricks' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'cubricks' ), 'WordPress' ); ?></a>

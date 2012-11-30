@@ -15,15 +15,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 
- * @package    Cubricks
+ * @package    Cubricks Theme
  * @author     Raphael Villanea <support@brickpress.us>
- * @copyright  Copyright (c) 2012, BrickPress
- * @license    http://www.gnu.org/licenses/gpl-3.0.html
+ * @copyright  Copyright (c) 2012, Raphael Villanea
+ * @license    http://www.gnu.org/licenses/gpl-2.0.html
  */
-define( 'CUBRICKS_VERSION', '1.0.6' );
+if ( !defined('CUBRICKS_VERSION') )
+	define( 'CUBRICKS_VERSION', '1.0.6' );
 
 if( ! isset( $content_width ) )
-	$content_width = get_theme_mod('cubricks_content_width');
+	$content_width = 680;
 
 /**
  * Sets up theme defaults and registers the various WordPress features that
@@ -45,9 +46,6 @@ function cubricks_setup() {
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 	
-	// Adds RSS feed links to <head> for posts and comments.
-	add_theme_support( 'automatic-feed-links' );
-	
 	// This theme supports a variety of post formats.
 	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link',  'quote', 'status',  'video' ) );
 	
@@ -57,32 +55,72 @@ function cubricks_setup() {
 	// This theme uses wp_nav_menu() in three locations.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'cubricks' ) );
 	register_nav_menu( 'header', __( 'Header Menu', 'cubricks' ) );
-	register_nav_menu( 'footer',  __( 'Footer Menu', 'cubricks' ) );
-		
+	
 	// Add support for custom background color and image.
 	add_theme_support( 'custom-background', array(
 		// Background color default
 		'default-color' => '#F5F5F5'
 	) );
 	
+	// Proposed removal in WordPress 3.5 Guidelines Revisions
+	add_theme_support( 'automatic-feed-links' );
+	
+	$page_width = get_theme_mod('cubricks_page_width');
 	/* Sets the width of the medium featured slider to the theme's content width.
 	 * Default value is 680px.
 	 */
-	$medium_feature_width = get_theme_mod('cubricks_content_width');
+	$medium_slider_width = cubricks_get_content_width();
+	
+	// Sets the height of the medium featured slider. Default value is 365px.
+	$medium_slider_height = get_content_slider_height();
 	
 	/* Sets the width of the large featured slider to the theme's page width.
 	 * Default value is 1024px.
 	 */
-	$large_feature_width = get_theme_mod('large_feature_width');
+	$large_slider_width = get_theme_mod('large_slider_width');
 	
-	add_image_size( 'cubricks-large-slider', $large_feature_width, 9999 );         // 1024 pixels wide and unlimited height, soft crop
-	add_image_size( 'cubricks-medium-slider', $medium_feature_width, 9999 ); 	   //  680 pixels wide and unlimited height, soft crop
+	// Sets the height of the large featured slider. Default value is 550px.
+	$large_slider_height = get_theme_mod('large_slider_height');
+	
+	add_image_size( 'cubricks-large-slider', $large_slider_width, 9999 );         // 1024 pixels wide and unlimited height, soft crop
+	add_image_size( 'cubricks-medium-slider', $medium_slider_width, 9999 ); 	   //  680 pixels wide and unlimited height, soft crop
 	
 	// This theme uses a custom image size for featured images, displayed on "standard" posts.
 	add_theme_support( 'post-thumbnails' );	
-	set_post_thumbnail_size( $medium_feature_width, 9999 ); // Unlimited height, soft crop
+	set_post_thumbnail_size( $medium_slider_width, 9999 ); // Unlimited height, soft crop
 }
 add_action( 'after_setup_theme', 'cubricks_setup' );
+
+
+/**
+ * Returns the content width according to page width.
+ *
+ * @uses get_theme_mod
+ *
+ * @since Cubricks 1.0.6
+ */
+function cubricks_get_content_width() {
+	
+	$page_width = get_theme_mod('cubricks_page_width');
+	$content_width = round($page_width * 0.6640625);
+	return $content_width;
+}
+
+
+/**
+ * Returns the height for the content slider (medium
+ * sized slider).
+ *
+ * @uses cubricks_get_content_width()
+ *
+ * @since Cubricks 1.0.6
+ */
+function get_content_slider_height() {
+	
+	$slider_width = cubricks_get_content_width();
+	$slider_height = round($slider_width * 0.537109375);
+	return $slider_height;
+}
 
 
 /**
@@ -92,7 +130,7 @@ add_action( 'after_setup_theme', 'cubricks_setup' );
  */
 function cubricks_widgets_init() {
 	
-	//register_widget( 'Cubricks_Category_Posts_Widget' );
+	register_widget( 'Cubricks_Category_Posts_Widget' );
 			
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'cubricks' ),
@@ -168,6 +206,26 @@ function cubricks_widgets_init() {
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Area Five', 'cubricks' ),
+		'id' => 'sidebar-f5',
+		'description' => __( 'An optional widget area for your site footer', 'cubricks' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );		
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Area Six', 'cubricks' ),
+		'id' => 'sidebar-f6',
+		'description' => __( 'An optional widget area for your site footer', 'cubricks' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
 	) );	
 }
 add_action( 'widgets_init', 'cubricks_widgets_init' );
@@ -190,7 +248,7 @@ add_action( 'widgets_init', 'cubricks_widgets_init' );
  */
 function cubricks_body_classes( $classes ) {
 	$background_color = get_background_color();
-	$container_type = get_theme_mod( 'container_type' );
+	$page_layout = get_theme_mod( 'page_layout' );
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) )
 		$classes[] = 'full-width';
@@ -215,10 +273,10 @@ function cubricks_body_classes( $classes ) {
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
 		
-	if( $container_type == 'type1' ) {
-		$classes[] = 'type1';
+	if( $page_layout == 'full-wide' ) {
+		$classes[] = 'full-wide';
 	} else {
-		$classes[] = 'type2';
+		$classes[] = 'page-centered';
 	}
 	return $classes;
 }
@@ -292,6 +350,13 @@ require( get_template_directory() . '/lib/cubricks-slider.php' );
 /* Implements theme options into the theme. */ 
 require( get_template_directory() . '/lib/theme-customizer.php' );
 
+/* Implements theme options into the theme. */ 
+//require( get_template_directory() . '/lib/cubricks-custom-controls.php' );
+
+/* Cubricks widgets */ 
+require( get_template_directory() . '/lib/cubricks-widgets.php' );
+
+require( get_template_directory() . '/lib/page-category-field.php' );
 
 /**
  * Enqueues scripts and styles for front-end.
@@ -311,9 +376,9 @@ function cubricks_scripts_styles() {
 	wp_enqueue_script( 'scroll-to-top', get_template_directory_uri() . '/js/scrolltopcontrol.js', array( 'jquery' ), CUBRICKS_VERSION );
 	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ), CUBRICKS_VERSION );
 
-	if( is_page_template('page-templates/showcase.php') || is_page_template('page-templates/content-slider.php') || is_page_template('page-templates/slider-homepage.php') ) {
+	if( is_page_template('page-templates/showcase.php') || is_page_template('page-templates/content-slider.php') || is_page_template('page-templates/homepage.php') ) {
 		wp_enqueue_script( 'nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array( 'jquery' ), CUBRICKS_VERSION );
-		wp_enqueue_style( 'slider-style', get_template_directory_uri() . '/js/cubricks-slider.css' );
+		wp_enqueue_style( 'slider-style', get_template_directory_uri() . '/css/cubricks-slider.css' );
 	}
 
 	/*
@@ -353,10 +418,16 @@ function cubricks_scripts_styles() {
 		wp_enqueue_style( 'cubricks-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
 	}
 
-	/*
-	 * Loads our main stylesheet.
-	 */
+	// Loads our main stylesheet.
 	wp_enqueue_style( 'cubricks-style', get_stylesheet_uri() );
+	
+	// Loads stylesheet for buttons.
+	wp_enqueue_style( 'buttons-style', get_template_directory_uri() . '/css/buttons.css' );
+	
+	if( is_admin() ) {
+		wp_enqueue_script( 'jquery-ui-slider' );
+		wp_enqueue_style( 'jquery-custom-css', get_template_directory_uri() . '/js/redmond/jquery-ui-1.8.19.custom.css' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'cubricks_scripts_styles' );
 
@@ -368,7 +439,8 @@ add_action( 'wp_enqueue_scripts', 'cubricks_scripts_styles' );
  * @since Cubricks 1.0.0
  */
 function cubricks_content_width() {
-	if ( is_page_template( 'page-templates/full-width.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
+	if ( is_page_template( 'page-templates/full-width.php' ) || is_page_template( 'page-templates/homepage.php' ) || is_attachment() || ! is_active_sidebar( 'sidebar-1' ) ) {
+		
 		global $content_width;
 		$content_width = get_theme_mod( 'cubricks_page_width' );
 	}

@@ -22,6 +22,32 @@
 			$( '.copyright-notice' ).html( to );
 		} );
 	} );
+	wp.customize( 'slider_timer', function( value ) {
+		value.bind( function( to ) {
+			$( '.slider_timer' ).html( to );
+		} );
+	} );
+	wp.customize( 'slider_effects', function( value ) {
+		value.bind( function( to ) {
+			$( '.slider_effects' ).html( to );
+		} );
+	} );
+	wp.customize( 'slider_items', function( value ) {
+		value.bind( function( to ) {
+			$( '.slider_items' ).html( to );
+		} );
+	} );
+	wp.customize( 'large_slider_width', function( value ) {
+		value.bind( function( to ) {
+			$( '.large_slider_width' ).html( to );
+		} );
+	} );
+	wp.customize( 'large_slider_height', function( value ) {
+		value.bind( function( to ) {
+			$( '.large_slider_height' ).html( to );
+		} );
+	} );
+	
 
 	// Hook into background color change and adjust body class value as needed.
 	wp.customize( 'background_color', function( value ) {

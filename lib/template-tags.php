@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 
- * @package    Cubricks
+ * @package    Cubricks Theme
  * @author     Raphael Villanea <support@brickpress.us>
  * @copyright  Copyright (c) 2012, Raphael Villanea
- * @license    http://www.gnu.org/licenses/gpl-3.0.html
+ * @license    http://www.gnu.org/licenses/gpl-2.0.html
  * @since      1.0.0
  */
 
@@ -46,15 +46,16 @@ function cubricks_entry_header() {
             <h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php echo get_the_date(); ?></a>
             </h2>
         </header>
+    <?php } elseif( has_post_format('link') ) { ?>
+    	<header><?php  _e( 'Link', 'cubricks' ); ?></header>
 	<?php } else { ?>
     	<header class="entry-header">
             <h1 class="entry-title">
             <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
             </h1>
         </header>
-		<?php } ?>
-		<div class="clear"></div>
-        <?php
+		<?php
+        }
 	}
 endif;
 
@@ -125,24 +126,24 @@ if( ! function_exists('cubricks_nav_menu') ) :
 endif;
 
 
-add_action( 'cubricks_footer_menu', 'cubricks_footer_nav' );
+add_action( 'cubricks_header_menu', 'cubricks_header_nav' );
 /**
- * Displays Cubricks footer navigation menu.
+ * Displays Cubricks header navigation menu.
  *
  * @since 1.0.0
  */
-if( ! function_exists('cubricks_footer_nav') ) :
-	function cubricks_footer_nav() { ?>
+if( ! function_exists('cubricks_header_nav') ) :
+	function cubricks_header_nav() { ?>
     
-		<nav id="site-navigation" class="footer-navigation" role="navigation">
-        	<h3 class="menu-toggle"><?php _e( 'Menu', 'cubricks' ); ?></h3>
+		<nav id="top-navigation" class="header-navigation" role="navigation">
             <?php wp_nav_menu( array(
-					  'theme_location' => 'footer',
-					  'show_home' 	   => true,
-					  'menu_class' 	   => 'nav-menu'
+					  'theme_location' => 'header',
+					  'show_home' 	   => false,
+					  'menu_class' 	   => 'header-menu',
+					  'depth'          => 1
 				  ));
 			?>
-        </nav><!-- #footer-nav -->
+        </nav><!-- #site-navigation .header-navigation -->
 	<?php
 	}
 endif;
@@ -252,8 +253,6 @@ if ( ! function_exists( 'cubricks_entry_meta' ) ) :
  */
 function cubricks_entry_meta() {
 	
-	global $cubricks_options;
-	
 	$format = get_post_format();
 	if( '' == $format )
 		$format = 'article';
@@ -292,11 +291,11 @@ function cubricks_entry_meta() {
 
 	printf(
 		$utility_text,
-		$post_format,
-		$categories_list,
-		$tag_list,
-		$date,
-		$author
+		$post_format,			// 1
+		$categories_list,		// 2
+		$tag_list,				// 3
+		$date,					// 4
+		$author					// 5
 	);
 }
 endif;
@@ -332,23 +331,25 @@ function cubricks_archive_header() {
         } elseif ( is_author() ) {
             printf( __( 'Author Archives: %s', 'cubricks' ) );
         } elseif ( has_post_format('aside') ) {
-            printf( __( 'Asides Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Asides Archives', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('audio') ) {
-            printf( __( 'Audio Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Audio Archives', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('chat') ) {
-            printf( __( 'Chat Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Chat Archives', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('gallery') ) {
-            printf( __( 'Gallery Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Gallery Archives', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('image') ) {
-            printf( __( 'Image Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Image Archives', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('link') ) {
-            printf( __( 'Link Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Link Archives', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('quote') ) {
-            printf( __( 'Quote Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Quote Archives', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('status') ) {
-            printf( __( 'Status Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Status Archives', 'cubricks' ), ucwords( $format ) );
         } elseif ( has_post_format('video') ) {
-            printf( __( 'Video Archives: %s', 'cubricks' ), ucwords( $format ) );
+            printf( __( 'Video Archives', 'cubricks' ), ucwords( $format ) );
+		} elseif( is_page_template('page-templates/category-page.php') ) {
+            printf( the_title() );
         } else {
             _e( 'Blog Archives', 'cubricks' );
         } ?>
@@ -404,6 +405,47 @@ if( ! function_exists( 'cubricks_footer_sidebar_class' ) ) :
 				break;
 			case '6':
 				$class = 'six';
+				break;
+		}
+		if ( $class ) {
+			echo 'class="inner ' . $class . '"';
+		}
+	}
+endif;
+
+
+/* 
+ * Homepage sidebar class.
+ *
+ * Count the number of homepage sidebars to enable dynamic classes
+ * for the homepage sidebar.
+ *
+ * @param     void
+ * @return    string $class
+ * 
+ * @since     1.0.0
+ */
+if( ! function_exists( 'cubricks_homepage_sidebar_class' ) ) :
+	function cubricks_homepage_sidebar_class() {
+		
+		$count = 0;
+		if ( is_active_sidebar( 'sidebar-h1' ) )
+			$count++;
+		if ( is_active_sidebar( 'sidebar-h2' ) )
+			$count++;
+		if ( is_active_sidebar( 'sidebar-h3' ) )
+			$count++;
+		$class = '';
+	
+		switch ( $count ) {
+			case '1':
+				$class = 'one';
+				break;
+			case '2':
+				$class = 'two';
+				break;
+			case '3':
+				$class = 'three';
 				break;
 		}
 		if ( $class ) {
@@ -488,3 +530,14 @@ function cubricks_comments_link() {
 	}
 }
 endif;
+
+function cubricks_custom_header() {
+	
+	if( is_page_template('page-templates/showcase.php') || !is_page_template('page-templates/homepage-slider.php') )
+		return;
+	
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) : ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="		<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+	<?php endif;
+}

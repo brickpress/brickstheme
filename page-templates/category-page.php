@@ -3,7 +3,7 @@
  * Template Name: Category Page Template
  * Description: A Page Template that shows posts from a single category.
  *
- * @package Cubricks
+ * @package Cubricks Theme
  * @subpackage Page Templates
  * @since Cubricks 1.0.0
  */
@@ -18,7 +18,7 @@ get_header(); ?>
                 
                 <article id="post-<?php the_ID(); ?>" <?php post_class('intro'); ?>>
                     
-                    <?php cubricks_entry_header(); ?>
+                    <?php cubricks_archive_header(); ?>
                    
                     <div class="entry-content">
 						<?php the_content(); ?> 
