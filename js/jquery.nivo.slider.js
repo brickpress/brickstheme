@@ -88,11 +88,11 @@
         });
 
         //Create caption
-        slider.append($('<div class="nivo-caption"></div>'));
+        slider.siblings().append($('<div class="nivo-caption"></div>'));
         
         // Process caption function
         var processCaption = function(settings){
-            var nivoCaption = $('.nivo-caption', slider);
+            var nivoCaption = $('.nivo-caption', slider.parent());
             if(vars.currentImage.parent().attr('title') != '' && vars.currentImage.parent().attr('title') != undefined){
                 var title = vars.currentImage.parent().attr('title');
                 if(title.substr(0,1) == '#') title = $(title).html();   
@@ -121,8 +121,8 @@
         
         // Add Direction nav
         if(settings.directionNav){
-            slider.append('<div class="nivo-directionNav"><a class="nivo-prevNav">'+ settings.prevText +'</a><a class="nivo-nextNav">'+ settings.nextText +'</a></div>');
-            
+            slider.append('<div class="nivo-directionNav"><span><a class="nivo-prevNav"><span class="arrow">'+ settings.prevText +'</span></a></span><span><a class="nivo-nextNav"><span class="arrow">'+ settings.nextText +'</span></a></span></div>');
+
             $('a.nivo-prevNav', slider).live('click', function(){
                 if(vars.running) { return false; }
                 clearInterval(timer);
@@ -653,8 +653,8 @@
 		pauseOnHover: true,
 		manualAdvance: false,
 		captionOpacity: 0.8,
-		prevText: 'Prev',
-		nextText: 'Next',
+		prevText: '&lArr;',
+		nextText: '&rArr;',
 		beforeChange: function(){},
 		afterChange: function(){},
 		slideshowEnd: function(){},

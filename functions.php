@@ -56,6 +56,11 @@ function cubricks_setup() {
 	register_nav_menu( 'primary', __( 'Primary Menu', 'cubricks' ) );
 	register_nav_menu( 'header', __( 'Header Menu', 'cubricks' ) );
 	
+	// Adds Jetpack's infinite scroll support.
+	add_theme_support( 'infinite-scroll', array(
+		'container'    => 'content',
+	) );
+	
 	// Add support for custom background color and image.
 	add_theme_support( 'custom-background', array(
 		// Background color default
@@ -249,6 +254,7 @@ add_action( 'widgets_init', 'cubricks_widgets_init' );
 function cubricks_body_classes( $classes ) {
 	$background_color = get_background_color();
 	$page_layout = get_theme_mod( 'page_layout' );
+	$showcase_slider  = get_theme_mod( 'slider_position' );
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) )
 		$classes[] = 'full-width';
@@ -278,6 +284,10 @@ function cubricks_body_classes( $classes ) {
 	} else {
 		$classes[] = 'page-centered';
 	}
+	
+	if( $showcase_slider == 'before_header' )
+		$classes[] = 'slider-before-header';
+		
 	return $classes;
 }
 add_filter( 'body_class', 'cubricks_body_classes' );
@@ -349,9 +359,6 @@ require( get_template_directory() . '/lib/cubricks-slider.php' );
 
 /* Implements theme options into the theme. */ 
 require( get_template_directory() . '/lib/theme-customizer.php' );
-
-/* Implements theme options into the theme. */ 
-//require( get_template_directory() . '/lib/cubricks-custom-controls.php' );
 
 /* Cubricks widgets */ 
 require( get_template_directory() . '/lib/cubricks-widgets.php' );

@@ -28,26 +28,14 @@ get_header(); ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 
-            <?php $post_format = strtolower( get_post_format() ); ?>
-            <?php if( $post_format == '' || $post_format == 'gallery' || $post_format == 'chat' || $post_format == 'audio' )
-                    cubricks_entry_header(); ?>
-            
-            <div class="clear"></div>
-                
+                <header class="entry-header">
+                <?php $post_format = strtolower( get_post_format() );
+                if( $post_format == '' || $post_format == 'gallery' || $post_format == 'audio' || $post_format == 'chat' || $post_format == 'status' )
+                    cubricks_post_title(); ?>
+                </header>
+
                 <div class="entry-content">
-                    <?php
-                        if( has_post_format('chat') ) {
-                            echo cubricks_chat_content();
-                        } elseif( has_post_format('gallery') ) {
-                            echo cubricks_gallery_content();
-                        } elseif( has_post_format('link') ) {
-                            echo cubricks_link_content();
-                        } elseif(  has_post_format('quote') ) {
-                            echo cubricks_quote_content();
-                        } else {
-                            the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) );
-                        }
-                    ?>
+					<?php cubricks_entry_content(); ?>
                     <?php wp_link_pages( cubricks_link_pages_args() ); ?>
                 </div><!-- .entry-content -->        
                 <div class="clear"></div>

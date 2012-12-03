@@ -51,17 +51,16 @@ function cubricks_customize_register( $wp_customize ) {
 	class Cubricks_Customize_Text_Control extends WP_Customize_Control {
 		
 		public $type = 'text';
-		
 		public $desc = '';
 	
 		public function render_content() {
 		
 			echo '<label><span class="customize-control-title">' .esc_html( $this->label ). '</span>';
 			if( $this->setting->default != '' )
-				echo '<span class="default-setting">Default: <span>' .$this->setting->default. '</span></span>';	
+				echo '<span class="default-setting" style="float:right; margin-top:-20px; color:#4F7079;">Default: <span><strong>' .$this->setting->default. '</strong></span></span>';	
 			if( $this->desc != '' )
-				echo '<span class="customize-control-desc">' .$this->desc. '</span>';
-			echo '<input type="text"' .$this->link(''). ' value="' .esc_textarea( $this->value() ). '"/></label>';
+				echo '<span class="customize-control-desc">' .$this->desc. '</span>'; ?>
+			<input type="text" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> /></label><?php           
 		}
 	}
 	
@@ -83,64 +82,17 @@ function cubricks_customize_register( $wp_customize ) {
 			
 			echo '<label><span class="customize-control-title">' .esc_html( $this->label ). '</span>';
 			if( $this->desc != '' )
-				echo '<span class="customize-control-desc">' .$this->desc. '</span>';
-			echo '<textarea rows="5" style="width:100%;"' .$this->link(''). '>' .esc_textarea( $this->value() ). '</textarea></label>';
+				echo '<span class="customize-control-desc">' .$this->desc. '</span>'; ?>
+			<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php esc_textarea( $this->value() ); ?></textarea></label>
+			<?php
 		}
 	}
 	
-	/**
-	 * Cubricks custom jquery-ui-slider.
-	 *
-	 * @param $wp_customize Theme Customizer object
-	 * @return void
-	 *
-	 * @since Cubricks 1.0.6
-	 */	
-	class Cubricks_Customize_Slider_Control extends WP_Customize_Control {
-		
-		public $type = 'slider';
-		
-		public $desc = '';
-		
-		public $minvalue = '';
-		
-		public $maxvalue = '';
-		
-		public $step = '';
-		
-		public function enqueue() {
-			wp_enqueue_script( 'jquery-ui-slider' );
-			wp_enqueue_style( 'jquery-custom-css', get_template_directory_uri() . '/js/redmond/jquery-ui-1.8.19.custom.css' );
-		}
-	
-		public function render_content() {
-			
-			echo '<label><span class="customize-control-title">' .esc_html( $this->label ). '</span>';	
-			echo '<div id="' .$this->id. '" class="default-values">';
-			echo '<div id="slider-range-min" style="width: 200px; padding: 0 !important;">';
-			echo '<input id="' .$this->id. '" name="' .$this->id. '" value="' .esc_attr( $this->value() ). '" type="text" style="width:40px;" />';
-			echo '<div id="slider_' .$this->id. '"></div></div>';
-			echo '<script type="text/javascript">jQuery(document).ready(function($) {
-			$( "div#' .$this->id. ' #slider_' .$this->id. '" ).slider({ range: "min", value: ' .$this->value(). ', min: ' .$this->minvalue. ', max: ' .$this->maxvalue. ', step: ' .$this->step. ',
-					slide: function( event, ui ) {
-						$( "div#' .$this->id. ' #' .$this->id. '" ).val( ui.value );
-					}
-				});
-				$( "div#' .$this->id. '#' .$this->id. '" ).val( $( "div#' .$this->id. ' #slider_' .$this->id. '" ).slider( "value" ) );
-			});
-			</script>';
-			echo '</div>';
-			if( $this->desc != '' )
-				echo '<span class="customize-control-desc">' .$this->desc. '</span>';
-			echo '</label>';
-		}
-	}
-
 	/* Layout Section
 	=======================================================*/
 	$wp_customize->add_section( 'layout_section', array(
 		'title'          => __( 'Theme Layout', 'cubricks' ),
-		'priority'       => 30,
+		'priority'       => 23,
 	) );
 	
 	$wp_customize->add_setting( 'page_layout', array(
@@ -160,16 +112,6 @@ function cubricks_customize_register( $wp_customize ) {
 			),
 	) ) );
 	
-	$wp_customize->add_setting( 'cubricks_page_width', array(
-		'default'        => __( '1024', 'cubricks' ),
-		'type'			 => 'theme_mod'
-	) );
-	
-	$wp_customize->add_control( new Cubricks_Customize_Text_Control( $wp_customize, 'cubricks_page_width', array(
-		'label'    => __( 'Page Width', 'cubricks' ),
-		'section'  => 'layout_section',
-		'settings' => 'cubricks_page_width',	
-	) ) );
 	
 	/* Site and Tagline Section
 	=======================================================*/
@@ -188,33 +130,42 @@ function cubricks_customize_register( $wp_customize ) {
 	/* Color Section
 	=======================================================*/
 	$colors = array(
-		'primary_text_color'   => '#333333',
-		'secondary_text_color' => '#777777',
-		'link_color'		   => '#21759B',
-		'titles_and_main_menu' => '#21759B',
+		'primary_text_color'    => '#333333',
+		'secondary_text_color'  => '#777777',
+		'link_color'		    => '#21759B',
+		'post_entry_titles'     => '#1E598E',
+		'post_entry_headers'    => '#357AE8',
+		'main_menu_link'        => '#1E598E',
+		'menu_current_page'     => '#333333',
 		'menu_hover_background' => '#F5F5F5',
-		'sidebar_link_color'   => '#336699',
-		'footer_sidebar_text'  => '#474747',
-		'footer_sidebar_link'  => '#1E598E',
-		'footer_text_color'    => '#F5F5F5',
-		'footer_link_color'    => '#F7F7F7'
+		'header_menu_hover'     => '#DD4B39',
+		'sidebar_link_color'    => '#336699',
+		'footer_sidebar_text'   => '#474747',
+		'footer_sidebar_link'   => '#1E598E',
+		'footer_text_color'     => '#F5F5F5',
+		'footer_link_color'     => '#F7F7F7',
+		'homepage_sidebar_text' => '#0B3C63'
 	);
+	
+	$color_priority = 20;
 	
 	foreach( $colors as $color => $default ) {
 		
 		$label = ucwords( preg_replace('/_+/', ' ', $color) );
+		$priority = $color_priority++;
 		
 		$wp_customize->add_setting( $color, array(
 			'default'           => $default,
 			'type'              => 'theme_mod',
 			'sanitize_callback' => 'sanitize_hex_color',
-			'capability'        => $capability,
+			'capability'        => $capability
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $color, array(
 			'label'    => $label,
 			'section'  => 'colors',
 			'settings' => $color,
+			'priority' => $priority
 		) ) );
 	}
 	
@@ -226,10 +177,10 @@ function cubricks_customize_register( $wp_customize ) {
 	) );
 	
 	$shadows = array(
-		'header_text_shadow'   => '#6F94BC',
-		'menu_text_shadow'     => '#FFFFFF',
-		'fsidebar_text_shadow' => '#FFFFFF',
-		'homepage_text_shadow' => '#333333',
+		'header_text_shadow'      => '#6F94BC',
+		'menu_text_shadow'        => '#FFFFFF',
+		'fsidebar_text_shadow'    => '#FFFFFF',
+		'homepage_sidebar_shadow' => '#333333',
 	);
 	
 	foreach( $shadows as $shadow => $default ) {
@@ -265,7 +216,8 @@ function cubricks_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'social_links_label', array(
 		'label'    => __( 'Social Links Label', 'cubricks' ),
 		'section'  => 'social_section',
-		'settings' => 'social_links_label',	
+		'settings' => 'social_links_label',
+		'priority' => 10
 	) ) );	
 
 	$socials = array(
@@ -290,6 +242,7 @@ function cubricks_customize_register( $wp_customize ) {
 			'label'    => $label,
 			'section'  => 'social_section',
 			'settings' => $social,
+			'type'     => 'text',
 			'desc'     => $desc
 		) ) );
 	}	
@@ -305,14 +258,18 @@ function cubricks_customize_register( $wp_customize ) {
 		'footer_wrapper'   => '#1E598E',
 		'slider_wrapper'   => '#FFFFFF',
 	);
+	
+	$wrapper_priority = 42;
+	
 	foreach( $wrappers as $wrapper => $default ) {
 		
 		$label = ucwords( preg_replace('/_+/', ' ', $wrapper) );
-		$opacity = __( '0 = transparent | 1 = opaque', 'cubricks' );
+		$opacity = __( 'Enter values between 0 and 1, 0 = transparent | 1 = opaque', 'cubricks' );
+		$priority = $wrapper_priority++;
 		
 		$wp_customize->add_section( $wrapper, array(
 			'title'          => $label,
-			'priority'       => 70
+			'priority'       => $priority
 		) );
 		
 		$wp_customize->add_setting( $wrapper.'_color', array(
@@ -329,18 +286,15 @@ function cubricks_customize_register( $wp_customize ) {
 		) ) );
 		
 		$wp_customize->add_setting( $wrapper.'_opacity', array(
-			'default'           => '1',
-			'capability'        => $capability
+			'default'    => '1',
+			'capability' => $capability
 		) );
 	
-		$wp_customize->add_control( new Cubricks_Customize_Slider_Control( $wp_customize, $wrapper.'_opacity', array(
+		$wp_customize->add_control( new Cubricks_Customize_Text_Control( $wp_customize, $wrapper.'_opacity', array(
 			'label'    => __( 'Background Opacity', 'cubricks' ),
 			'section'  => $wrapper,
 			'settings' => $wrapper.'_opacity',
-			'desc'    => $opacity,
-			'minvalue'   => '0',
-			'maxvalue'   => '1',
-			'step'    	 => '0.1'
+			'desc'     => $opacity
 		) ) );
 		
 		$wp_customize->add_setting( $wrapper.'_image', array(
@@ -370,7 +324,7 @@ function cubricks_customize_register( $wp_customize ) {
 				'repeat'     => __('Tile', 'cubricks'),
 				'repeat-x'   => __('Tile Horizontally', 'cubricks'),
 				'repeat-y'   => __('Tile Vertically', 'cubricks'),
-				),
+			 	),
 		) ) );
 		
 		$wp_customize->add_setting( $wrapper.'_position_x', array(
@@ -378,15 +332,18 @@ function cubricks_customize_register( $wp_customize ) {
 			'capability'     => $capability
 		) );
 	
-		$wp_customize->add_control( new Cubricks_Customize_Slider_Control( $wp_customize, $wrapper.'_position_x', array(
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $wrapper.'_position_x', array(
 			'label'      => __( 'Background Horizontal Position', 'cubricks' ),
 			'section'    => $wrapper,
 			'settings' 	 => $wrapper.'_position_x',
 			'visibility' => $wrapper.'_image',
-			'desc'    => __( '0 = left | 50 = center | 100 = right', 'cubricks' ),
-			'minvalue'   => '0',
-			'maxvalue'   => '100',
-			'step'    	 => '1'
+			'type'       => 'radio',
+			'priority'   => 11,
+			'choices'    => array(
+				'0'   => __('Left', 'cubricks'),
+				'50'  => __('Center', 'cubricks'),
+				'100' => __('Right', 'cubricks')
+				),
 		) ) );
 		
 		$wp_customize->add_setting( $wrapper.'_position_y', array(
@@ -394,15 +351,18 @@ function cubricks_customize_register( $wp_customize ) {
 			'capability'     => $capability
 		) );
 	
-		$wp_customize->add_control( new Cubricks_Customize_Slider_Control( $wp_customize, $wrapper.'_position_y', array(
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $wrapper.'_position_y', array(
 			'label'      => __( 'Background Vertical Position', 'cubricks' ),
 			'section'    => $wrapper,
 			'settings' 	 => $wrapper.'_position_y',
 			'visibility' => $wrapper.'_image',
-			'desc'    => __( '0 = top | 50 = middle | 100 = bottom', 'cubricks' ),
-			'minvalue'   => '0',
-			'maxvalue'   => '100',
-			'step'    	 => '1'
+			'type'       => 'radio',
+			'priority'   => 12,
+			'choices'    => array(
+				'0'   => __('Top', 'cubricks'),
+				'50'  => __('Middle', 'cubricks'),
+				'100' => __('Bottom', 'cubricks')
+				),
 		) ) );
 		
 		$wp_customize->add_setting( $wrapper.'_attachment', array(
@@ -421,8 +381,8 @@ function cubricks_customize_register( $wp_customize ) {
 				'scroll'     => __('Scroll', 'cubricks')
 				),
 		) ) );
-	} // end foreach
-	
+	}
+	// end foreach
 	
 	/* Footer Section
 	==========================================================*/
@@ -439,7 +399,8 @@ function cubricks_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Cubricks_Customize_Textarea_Control( $wp_customize, 'copyright_notice', array(
 		'label'    => __( 'Copyright Notice', 'cubricks' ),
 		'section'  => 'footer_section',
-		'settings' => 'copyright_notice',	
+		'settings' => 'copyright_notice',
+		'type'     => 'textarea',	
 		'desc'	   => ''
 	) ) );
 	
@@ -447,11 +408,11 @@ function cubricks_customize_register( $wp_customize ) {
 	============================================================*/
 	$wp_customize->add_section( 'slider_section', array(
 		'title'          => __( 'Featured Slider', 'cubricks' ),
-		'priority'       => 52,
+		'priority'       => 24,
 	) );
 	
 	$wp_customize->add_setting( 'slider_position', array(
-		'default'        => 'after-header',
+		'default'        => 'after_header',
 		'capability'     => $capability
 	) );
 		
@@ -462,8 +423,8 @@ function cubricks_customize_register( $wp_customize ) {
 		'type'     => 'radio',
 		'visibility' => 'slider_position',
 		'choices'  => array(
-			'before-header'  => __( 'Before site header', 'cubricks' ),
-			'after-header'   => __( 'After site header', 'cubricks' )
+			'before_header'  => __( 'Before site header', 'cubricks' ),
+			'after_header'   => __( 'After site header', 'cubricks' )
 			),	
 	) ) );
 	
@@ -472,14 +433,11 @@ function cubricks_customize_register( $wp_customize ) {
 		'capability'     => $capability
 	) );
 		
-	$wp_customize->add_control( new Cubricks_Customize_Slider_Control( $wp_customize, 'slider_timer', array(
+	$wp_customize->add_control( new Cubricks_Customize_Text_Control( $wp_customize, 'slider_timer', array(
 		'label'    => __('Slider Timer', 'cubricks'),
 		'section'  => 'slider_section',
 		'settings' => 'slider_timer',
-		'desc'     => __( 'Time interval (in seconds) between slides', 'cubricks' ),
-		'minvalue' => '1',
-		'maxvalue' => '10',
-		'step'     => '1'	
+		'desc'     => __( 'Time interval (in seconds) between slides', 'cubricks' )
 	) ) );
 	
 	$wp_customize->add_setting( 'slider_items', array(
@@ -487,14 +445,11 @@ function cubricks_customize_register( $wp_customize ) {
 		'capability'     => $capability
 	) );
 		
-	$wp_customize->add_control( new Cubricks_Customize_Slider_Control( $wp_customize, 'slider_items', array(
+	$wp_customize->add_control( new Cubricks_Customize_Text_Control( $wp_customize, 'slider_items', array(
 		'label'    => __('Slider Items', 'cubricks'),
 		'section'  => 'slider_section',
 		'settings' => 'slider_items',
-		'desc'    => __( 'Number of featured posts', 'cubricks' ),
-		'minvalue'   => '2',
-		'maxvalue'   => '10',
-		'step'    	 => '1'
+		'desc'     => __( 'Number of featured posts', 'cubricks' )
 	) ) );
 	
 	$wp_customize->add_setting( 'slider_effects', array(
@@ -545,6 +500,19 @@ function cubricks_customize_register( $wp_customize ) {
 		'label'    => __('Featured Slider Height', 'cubricks'),
 		'section'  => 'slider_section',
 		'settings' => 'large_slider_height',	
+	) ) );
+	
+	$wp_customize->add_setting( 'large_slider_caption', array(
+		'default'           => '#FFFFFF',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => $capability,
+	) );
+	
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'large_slider_caption', array(
+		'label'    => __('Large Slider Caption Color', 'cubricks'),
+		'section'  => 'slider_section',
+		'settings' => 'large_slider_caption',
 	) ) );
 	
 	/* Reset Section
@@ -657,12 +625,16 @@ function cubricks_text_color() {
 	.archive-meta,
 	.format-status .entry-header header a,
 	h3.widget-title a,
-	#secondary .widget .textwidget {
+	#secondary .widget .textwidget,
+	article.format-quote .entry-content cite,
+	.entry-content .cubricks-chat .chat-even {
 		color: <?php echo get_theme_mod('secondary_text_color'); ?>;
 	}
 	a,
 	.main-navigation a:hover,
+	.comments-link a,
 	.comments-link a:hover,
+	.entry-meta a,
 	.entry-meta a:hover,
 	.format-status .entry-header header a:hover,
 	.comments-area article header a:hover,
@@ -677,14 +649,45 @@ function cubricks_text_color() {
 	.site-description {
 		text-shadow: 1px 1px <?php echo get_theme_mod('header_text_shadow'); ?>;
 	}
-	.main-navigation li a,
-	.entry-header .entry-title a {
-		color: <?php echo get_theme_mod('titles_and_main_menu'); ?>;
-	}
 	.main-navigation li a {
-		text-shadow: 1px 1px <?php echo get_theme_mod('menu_text_shadow'); ?>;
+		color: <?php echo get_theme_mod('main_menu_link'); ?>;
 	}
-	.main-navigation li ul li a:hover,
+	/* Minimum width of 600 pixels. */
+	@media screen and (min-width: 600px) {
+		.main-navigation li a {
+			color: <?php echo get_theme_mod('main_menu_link'); ?>;
+		}
+		.main-navigation li a:hover,
+		.main-navigation .current-menu-item > a,
+		.main-navigation .current-menu-ancestor > a  {
+			color: <?php echo get_theme_mod('menu_current_page'); ?>;
+		}
+	}
+	.header-navigation li a:hover {
+		color: <?php echo get_theme_mod('header_menu_hover'); ?>
+	}
+	.entry-header .entry-title a,
+	article.format-quote .entry-content blockquote:before,
+	article.format-quote .entry-content blockquote  {
+		color: <?php echo get_theme_mod('post_entry_titles'); ?>;
+	}
+	.entry-content h1, .comment-content h1,
+	.entry-content h2, .comment-content h2,
+	.entry-content .cubricks-chat .chat-even strong {
+		color: <?php echo get_theme_mod('post_entry_headers'); ?>;
+	}
+	/* Minimum width of 1024 pixels. */
+	@media screen and (min-width: 1024px) {
+		.main-navigation li a {
+			text-shadow: 1px 1px <?php echo get_theme_mod('menu_text_shadow'); ?>;
+		}
+		.main-navigation li ul li a:hover {
+			background: <?php echo get_theme_mod('menu_hover_background'); ?>;
+		}
+		#showcase-slider .nivo-caption {
+			color: <?php echo get_theme_mod('large_slider_caption'); ?>;
+		}
+	}
 	#secondary .widget h3,
 	.archive-header .archive-title,
 	.showcase-header .showcase-heading,
@@ -710,6 +713,12 @@ function cubricks_text_color() {
 	#supplementary .widget #calendar_wrap table {
 		color: <?php echo get_theme_mod('footer_sidebar_text'); ?>;
 		text-shadow: 1px 1px <?php echo get_theme_mod('fsidebar_text_shadow'); ?>;
+	}
+	#sidebar-homepage #supplementary .widget .textwidget,
+	#sidebar-homepage #supplementary .widget-title,
+	#sidebar-homepage #supplementary .widget p {
+		color: <?php echo get_theme_mod('homepage_sidebar_text'); ?>;
+		text-shadow: 1px 1px <?php echo get_theme_mod('homepage_sidebar_shadow'); ?>;
 	}
 	footer[role="contentinfo"],
 	footer[role="contentinfo"] p {
@@ -977,7 +986,7 @@ function cubricks_slider_wrapper() {
 
 	if( '#FFFFFF' != $slider_wrapper_color && '' == $slider_wrapper_image ) : ?>
     	<style type="text/css">
-			#featured-slider-wrapper {
+			#showcase-slider {
 			<?php if( '1' == $slider_wrapper_opacity ) : ?>
 				background: <?php echo $slider_wrapper_color; ?>;
 			<?php else : ?>
@@ -987,7 +996,7 @@ function cubricks_slider_wrapper() {
 		</style>
 		<?php elseif( '' != $slider_wrapper_image ) : ?>
         <style type="text/css">
-			#featured-slider-wrapper {
+			#showcase-slider {
 				background: rgba( <?php echo hex_to_rgb($slider_wrapper_color) .','. $slider_wrapper_opacity; ?>) url( <?php echo $slider_wrapper_image; ?>) <?php echo get_theme_mod('slider_wrapper_repeat') .' '. get_theme_mod('slider_wrapper_attachment') .' '. get_theme_mod('slider_wrapper_position_x') .'% '. get_theme_mod('slider_wrapper_position_y') .'%'; ?>;
 			}
 		</style>
@@ -1032,42 +1041,6 @@ add_action( 'wp_head', 'cubricks_header_layout_fix' );
 
 
 /**
- * Modifies the medium featured slider dimensions.
- * @uses get_theme_mod
- *
- * @since 1.0.6
- */
-function cubricks_medium_slider_size() {
-	
-	$medium_slider_width = cubricks_get_content_width();
-	$medium_slider_height = get_content_slider_height();
-	$rembase = 14;
-	
-	if( is_page_template('page-templates/content-slider.php') ) : ?>
-		<style type="text/css">
-			#content-slider-wrapper .nivoSlider  {
-				width: <?php echo $medium_slider_width; ?>px;
-				width: <?php echo ($medium_slider_width / $rembase); ?>rem;
-			}
-			#content-slider-wrapper .inner-slider {
-				max-width: <?php echo $medium_slider_width; ?>px;
-				max-width: <?php echo ($medium_slider_width / $rembase); ?>rem;
-				height: <?php echo $medium_slider_height; ?>px;
-				height: <?php echo ($medium_slider_height / $rembase); ?>rem;
-			}
-			#content-slider-wrapper .nivo-directionNav a {
-				top: <?php echo ($medium_slider_height / 2 ) -25; ?>px;
-				top: <?php echo ((($medium_slider_height / 2 ) -25) / $rembase); ?>rem;
-			}
-		</style>
-	<?php else :
-		return;
-	endif;
-}
-//add_action( 'wp_head', 'cubricks_medium_slider_size' );
-
-
-/**
  * Modifies the large featured slider dimensions.
  * @uses get_theme_mod
  *
@@ -1075,7 +1048,6 @@ function cubricks_medium_slider_size() {
  */
 function cubricks_large_slider_size() {
 	
-	$page_width = get_theme_mod('cubricks_page_width');
 	$large_slider_width = get_theme_mod('large_slider_width');
 	$large_slider_height = get_theme_mod('large_slider_height');
 	$rembase = 14;
@@ -1083,144 +1055,42 @@ function cubricks_large_slider_size() {
 	if( '1024' != $large_slider_width || '520' != $large_slider_height ) : ?>
     	<style type="text/css">
 		<?php if( '1024' != $large_slider_width && '520' == $large_slider_height ) : ?>
-			#featured-slider-wrapper .nivoSlider {
-				width: <?php echo $large_slider_width; ?>px;
-				width: <?php echo ($large_slider_width / $rembase) ; ?>rem;
+			#showcase-slider #slider-wrapper,
+			#showcase-slider .nivoSlider {
+				max-width: <?php echo $large_slider_width; ?>px;
+				max-width: <?php echo ($large_slider_width / $rembase) ; ?>rem;
 			}
-			#featured-slider-wrapper .inner-slider {
-				width: <?php echo $large_slider_width; ?>px;
-				width: <?php echo ($large_slider_width / $rembase) ; ?>rem;
-			}
-			#featured-slider-wrapper .nivo-caption {
-				top: <?php echo round($large_slider_height * 0.8); ?>px;
-				top: <?php echo (round($large_slider_height * 0.8) / $rembase); ?>rem;
-				<?php if($large_slider_width > $page_width) :
-					  $left = round(round($large_slider_width - $page_width) /2 ); ?>
-					left: <?php echo $left; ?>px;
-					left: <?php echo round($left /$rembase); ?>rem;
-				<?php endif; ?>
-			}
-			<?php if($large_slider_width > $page_width) :
-					  $right = round(round($large_slider_width - $page_width) /2 ); ?>
-				#featured-slider-wrapper .nivo-controlNav,
-				#featured-slider-wrapper .nivo-nextNav {
-					right: <?php echo $right; ?>px;
-					right: <?php echo round($right /$rembase); ?>rem;
-				}
-				#featured-slider-wrapper .nivo-prevNav {
-					left: <?php echo $right; ?>px;
-					left: <?php echo round($right /$rembase); ?>rem;
-				}
-			<?php endif; ?>	
 			<?php elseif( '1024' == $large_slider_width && '520' != $large_slider_height ) : ?>
-			#featured-slider-wrapper .nivoSlider {
-				height: <?php echo $large_slider_height; ?>px;
-				height: <?php echo ($large_slider_height / $rembase) ; ?>rem;
-			}
-			#featured-slider-wrapper .inner-slider {
+			#showcase-slider #slider-wrapper,
+			#showcase-slider .nivoSlider {
 				max-height: <?php echo $large_slider_height; ?>px;
 				max-height: <?php echo ($large_slider_height / $rembase) ; ?>rem;
 			}
-			#featured-slider-wrapper .nivo-directionNav a {
-				top: <?php echo ($large_slider_height / 2 ) -41; ?>px;
-				top: <?php echo ((($large_slider_height / 2 ) -41) / $rembase); ?>rem;
+			#showcase-slider .nivo-directionNav a {
+				top: -<?php echo ((520 - $large_slider_height) + 50); ?>px;
+			}
+			#showcase-slider .nivo-controlNav {
+				top: -<?php echo ((520 - $large_slider_height) + 20); ?>px;
 			}
 			<?php else : ?>
-			#featured-slider-wrapper .nivoSlider {
-				width: <?php echo $large_slider_width; ?>px;
-				width: <?php echo ($large_slider_width / $rembase); ?>rem;
-				height: <?php echo $large_slider_height; ?>px;
-				height: <?php echo ($large_slider_height / $rembase); ?>rem;
-			}
-			#featured-slider-wrapper .inner-slider {
-				width: <?php echo $large_slider_width; ?>px;
-				width: <?php echo ($large_slider_width / $rembase); ?>rem;
+			#showcase-slider #slider-wrapper,
+			#showcase-slider .nivoSlider {
+				max-width: <?php echo $large_slider_width; ?>px;
+				max-width: <?php echo ($large_slider_width / $rembase); ?>rem;
 				max-height: <?php echo $large_slider_height; ?>px;
 				max-height: <?php echo ($large_slider_height / $rembase); ?>rem;
 			}
-			#featured-slider-wrapper .nivo-directionNav a {
-				top: <?php echo ($large_slider_height / 2 ) -41; ?>px;
-				top: <?php echo ((($large_slider_height / 2 ) -41) / $rembase); ?>rem;
+			#showcase-slider .nivo-directionNav a {
+				top: -<?php echo ((520 - $large_slider_height) + 50); ?>px;
 			}
-			#featured-slider-wrapper .nivo-caption {
-				top: <?php echo round($large_slider_height * 0.8); ?>px;
-				top: <?php echo (round($large_slider_height * 0.8) / $rembase); ?>rem;
-				<?php if($large_slider_width > $page_width) :
-					  $left = round(round($large_slider_width - $page_width) /2 ); ?>
-					left: <?php echo $left; ?>px;
-					left: <?php echo round($left /$rembase); ?>rem;
-				<?php endif; ?>
+			#showcase-slider .nivo-controlNav {
+				top: -<?php echo ((520 - $large_slider_height) + 20); ?>px;
 			}
-			<?php if($large_slider_width > $page_width) :
-					  $right = round(round($large_slider_width - $page_width) /2 ); ?>
-				#featured-slider-wrapper .nivo-controlNav,
-				#featured-slider-wrapper .nivo-nextNav {
-					right: <?php echo $right; ?>px;
-					right: <?php echo round($right /$rembase); ?>rem;
-				}
-				#featured-slider-wrapper .nivo-prevNav {
-					left: <?php echo $right; ?>px;
-					left: <?php echo round($right /$rembase); ?>rem;
-				}
-			<?php endif; ?>		
 		<?php endif; ?>
 		</style>
 	<?php endif;
 }
 add_action( 'wp_head', 'cubricks_large_slider_size' );
-
-
-/**
- * Modifies the large featured slider dimensions.
- * @uses get_theme_mod
- *
- * @since 1.0.0 
- */
-function cubricks_layout_size() {
-	
-	$page_layout = get_theme_mod('page_layout');
-	$page_width = get_theme_mod('cubricks_page_width');
-	$rembase = 14;
-
-	if( '1024' != $page_width ) :
-		if( $page_layout == 'full-wide' ) : ?>
-        <style type="text/css">
-			footer[role="contentinfo"],
-			.footer-navigation,
-			.inner,
-			.main-navigation,
-			.header-image,
-			.ie .site,
-			#featured-slider-wrapper .nivo-caption,
-			#featured-slider-wrapper .nivo-control {
-				max-width: <?php echo $page_width; ?>px;
-				max-width: <?php echo ($page_width / $rembase); ?>rem;
-			}
-		</style>	
-    	<?php elseif( $page_layout == 'page-centered' ) : ?>
-        <style type="text/css"> 
-			footer[role="contentinfo"],
-			.footer-navigation,
-			.inner,
-			.main-navigation,
-			.header-image,
-			.ie .site,
-			#featured-slider-wrapper .nivo-caption,
-			#featured-slider-wrapper .nivo-control {
-				max-width: <?php echo $page_width; ?>px;
-				max-width: <?php echo ($page_width / $rembase); ?>rem;
-			}
-			body.page-centered .site {
-				max-width: <?php echo $page_width + 80; ?>px;
-				max-width: <?php echo (($page_width + 80) / $rembase); ?>rem;
-			}
-		</style>
-		<?php endif;
-	else :
-		return;
-	endif;
-}
-//add_action( 'wp_head', 'cubricks_layout_size' );
 
 
 /**
@@ -1237,42 +1107,47 @@ function cubricks_layout_size() {
 function cubricks_reset_theme() {
 	
 	$cubricks_mods = array(
-	    'page_layout'            => 'full-wide',
-		'cubricks_page_width'    => '1024',
-		'large_slider_width'     => '1024',
-		'large_slider_height'    => '520',
-		'slider_timer'           => '5',
-		'slider_effects'         => 'fade',
-		'slider_items'           => '6',
-		'primary_text_color'     => '#333333',
-		'secondary_text_color'   => '#777777',
-		'link_color'		     => '#21759B',
-		'titles_and_main_menu'   => '#21759B',
-		'menu_hover_background'  => '#F5F5F5',
-		'sidebar_link_color'     => '#336699',
-		'footer_sidebar_text'    => '#474747',
-		'footer_sidebar_link'    => '#1E598E', 
-		'footer_text_color'      => '#F5F5F5',
-		'footer_link_color'      => '#F7F7F7',
-		'header_text_shadow'     => '#6F94BC',
-		'menu_text_shadow'       => '#FFFFFF',
-		'fsidebar_text_shadow'   => '#FFFFFF',
-		'homepage_text_shadow'   => '#333333',
-		'page_wrapper_color'     => '#FFFFFF',
-		'header_wrapper_color'   => '#638EBC',
-		'nav_wrapper_color'	     => '#E3EDF4',
-		'content_wrapper_color'  => '#FFFFFF',
-		'fsidebar_wrapper_color' => '#E3EDF4',
-		'footer_wrapper_color' 	 => '#1E598E',
-		'slider_wrapper_color'	 => '#FFFFFF',
-		'page_wrapper_image'     => '',
-		'header_wrapper_image'   => '',
-		'nav_wrapper_image'	     => '',
-		'content_wrapper_image'  => '',
-		'fsidebar_wrapper_image' => '',
-		'footer_wrapper_image' 	 => '',
-		'slider_wrapper_image'	 => '',
-		'reset_theme'		   => false
+	    'page_layout'             => 'full-wide',
+		'large_slider_width'      => '1024',
+		'large_slider_height'     => '520',
+		'slider_timer'            => '3',
+		'slider_effects'          => 'fade',
+		'slider_items'            => '6',
+		'large_slider_caption'    => '#FFFFFF',
+		'primary_text_color'      => '#333333',
+		'secondary_text_color'    => '#777777',
+		'link_color'		      => '#21759B',
+		'post_entry_titles'       => '#1E598E',
+		'post_entry_headers'      => '#357AE8',
+		'main_menu_link'          => '#1E598E',
+		'menu_current_page'       => '#333333',
+		'menu_hover_background'   => '#F5F5F5',
+		'header_menu_hover'       => '#DD4B39',
+		'sidebar_link_color'      => '#336699',
+		'footer_sidebar_text'     => '#474747',
+		'footer_sidebar_link'     => '#1E598E', 
+		'footer_text_color'       => '#F5F5F5',
+		'footer_link_color'       => '#F7F7F7',
+		'homepage_sidebar_text'   => '#0B3C63',
+		'header_text_shadow'      => '#6F94BC',
+		'menu_text_shadow'        => '#FFFFFF',
+		'fsidebar_text_shadow'    => '#FFFFFF',
+		'homepage_sidebar_shadow' => '#FFFFFF',
+		'page_wrapper_color'      => '#FFFFFF',
+		'header_wrapper_color'    => '#638EBC',
+		'nav_wrapper_color'	      => '#E3EDF4',
+		'content_wrapper_color'   => '#FFFFFF',
+		'fsidebar_wrapper_color'  => '#E3EDF4',
+		'footer_wrapper_color' 	  => '#1E598E',
+		'slider_wrapper_color'	  => '#FFFFFF',
+		'page_wrapper_image'      => '',
+		'header_wrapper_image'    => '',
+		'nav_wrapper_image'	      => '',
+		'content_wrapper_image'   => '',
+		'fsidebar_wrapper_image'  => '',
+		'footer_wrapper_image' 	  => '',
+		'slider_wrapper_image'	  => '',
+		'reset_theme'		      => false
 	);
 	if( get_theme_mod('reset_theme') ) {
 		foreach( $cubricks_mods as $mod_name => $value ) {

@@ -107,19 +107,6 @@ function cubricks_chat_content() {
 	return apply_filters( 'the_content', $output );
 }
 
-
-/**
- * Returns content for link post format.
- *
- * @since 1.0.0
- */
-function cubricks_link_content() {
-
-	$link = cubricks_first_link();
-	$output .= '<a href="' .esc_url( $link['url'] ). '" title="' .esc_attr( $link['title_attr'] ). '">' .esc_attr( $link['desc'] ). '</a>';
-	return apply_filters( 'the_content', $output );
-}
-	
 	
 /**
  * Returns content for quote post format.
@@ -132,12 +119,9 @@ function cubricks_quote_content() {
 	
 	if ( strpos( $post->post_content, '<blockquote' ) === false )
 		echo '<blockquote>';
-		
+	
 	the_content();
 
-	if ( strpos( $post->post_content, '<p' ) === false )
-		echo '<cite>&mdash;' . get_the_title() . '</cite>';
-		
 	if ( strpos( $post->post_content, '</blockquote' ) === false )
 		echo '</blockquote>';
 }
@@ -215,9 +199,7 @@ function cubricks_image_content() {
 		$image = array_shift( $images );
 		$image_img_tag = wp_get_attachment_image( $image->ID, 'full' );
 	?>
-
 	<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
-	
 	<?php
 }
 

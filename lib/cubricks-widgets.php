@@ -1,6 +1,6 @@
 <?php
 /**
- * Category Posts widget class
+ * Cubricks Category Posts widget class
  *
  * @since 1.0.0
  */
@@ -124,4 +124,4 @@ class Cubricks_Category_Posts_Widget extends WP_Widget {
 	</p>
 <?php
 	}
-}
+} // Cubricks_Category_Posts_Widget

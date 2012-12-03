@@ -31,7 +31,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php 
-	if( is_page_template('page-templates/showcase.php') && get_theme_mod('slider_position') == 'before_header' )
+	if( is_page_template('page-templates/showcase.php') && get_theme_mod('slider_position') == 'before_header' || is_page_template('page-templates/homepage.php') && get_theme_mod('slider_position') == 'before_header' )
     		cubricks_showcase_slider(); ?>
    
     <div id="header" class="wrapper">
@@ -57,7 +57,7 @@
     </div><!-- #sub-head .inner -->
 
     <?php 
-	if( is_page_template('page-templates/showcase.php') && get_theme_mod('slider_position') == 'after-header' || is_page_template('page-templates/homepage.php') && get_theme_mod('slider_position') == 'after-header')
+	if( is_page_template('page-templates/showcase.php') && get_theme_mod('slider_position') == 'after_header' || is_page_template('page-templates/homepage.php') && get_theme_mod('slider_position') == 'after_header' )
           cubricks_showcase_slider();
 		  ?>
     <div id="main-content" class="wrapper">

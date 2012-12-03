@@ -20,12 +20,15 @@ get_header(); ?>
                 	<h1 class="showcase-heading"><span><?php _e( 'Recent Posts', 'cubricks' ); ?></span></h1>
                 </header>
 				<?php
+				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+				
 				// Display our recent posts, showing full content for the very latest.
 				$recent_args = array(
-					'order' => 'DESC',
+					'order'          => 'DESC',
 					'posts_per_page' => '10',
-					'post__not_in' => get_option( 'sticky_posts' ),
-					'no_found_rows' => true
+					'paged'          => $paged,
+					'post__not_in'   => get_option( 'sticky_posts' ),
+					'no_found_rows'  => true
 				);
 
 				// Our new query for the Recent Posts section.
@@ -45,11 +48,19 @@ get_header(); ?>
 				?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                <?php cubricks_entry_header(); ?>
+                <header class="entry-header">
+                <?php $post_format = strtolower( get_post_format() );
+                if( $post_format == '' || $post_format == 'gallery' || $post_format == 'audio' || $post_format == 'chat' || $post_format == 'status' )
+                    cubricks_post_title(); ?>
+                </header>
                
                 <div class="clear"></div>
                 <div class="entry-content">
-                    <?php the_excerpt(); ?>
+                <?php if( $post_format == '' || $post_format == 'aside' || $post_format == 'chat' || $post_format == 'status' ) {	
+                    the_excerpt(); 
+				} else {
+					cubricks_entry_content();
+				} ?>
                 </div><!-- .entry-content -->
                 
                 <footer class="entry-meta">
@@ -65,7 +76,7 @@ get_header(); ?>
             <?php endwhile; ?>
             
             <?php cubricks_content_nav(); ?>
-                
+            
             </div><!-- #content -->
         </div><!-- #primary -->
 

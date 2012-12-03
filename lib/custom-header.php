@@ -73,7 +73,7 @@ function cubricks_header_style() {
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-		.header-menu li a {
+		.header-navigation li a {
 			color: #<?php echo $text_color; ?>;
 		}
 	<?php
@@ -84,7 +84,7 @@ function cubricks_header_style() {
 		.site-description {
 			color: #<?php echo $text_color; ?> !important;
 		}
-		.header-menu li a {
+		.header-navigation li a {
 			color: #<?php echo $text_color; ?>;
 		}
 	<?php endif; ?>

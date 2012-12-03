@@ -30,6 +30,7 @@
             <div class="clearfix"></div>
             <div class="site-info">
                 <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cubricks' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'cubricks' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'cubricks' ), 'WordPress' ); ?></a>
+                <a class="theme-url" href="<?php echo esc_url( __( 'http://cubrickstheme.brickpress.us/', 'cubricks' ) ); ?>" title="<?php esc_attr_e( 'Cubricks Theme Website', 'cubricks' ); ?>"><?php printf( __( 'Theme by %s', 'cubricks' ), 'Cubricks' ); ?></a>
             </div><!-- .site-info -->
         </footer><!-- #colophon .inner -->
     </div><!-- #footer .wrapper -->

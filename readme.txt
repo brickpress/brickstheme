@@ -1,27 +1,23 @@
-== CUBRICKS THEME FOR WORDPRESS ==
+﻿== CUBRICKS THEME FOR WORDPRESS ==
 
 Contributors: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
-Tested up to: 3.5-RC1
+Tested up to: 3.5-RC2
 Version: 1.0.6
 
 == Licenses and Copyright Info ==
 
-Cubricks Theme, Copyright 2012 cubrick.brickpress.us
-Cubricks Theme is distributed under the terms of the GNU GPL v3
+Cubricks Theme, Copyright 2012 cubrickstheme.brickpress.us
+Cubricks Theme is distributed under the terms of the GNU GPL v2
 
 Bundled Resources
 
-* Bolts Theme, Copyright (c) 2011 Themejack <alison@themejack.net>, distributed under the terms of the GNU GPL v3
-* TwentyEleven Theme, the WordPress team, GNU General Public License v2
-* Hybrid Core, Copyright (c) 2008 - 2011, Justin Tadlock
+* TwentyTwelve Theme, the WordPress team, GNU General Public License v2
 * jQuery UI, Copyright 2012 jQuery Foundation and other contributors, http://jqueryui.com/, Dual licensed under the MIT or GPL Version 2 licenses
 * nivoSlider, Copyright (c) 2010-2012 Dev7studios
-* Color Picker - jQuery Plugin, Stefan Petre http://www.eyecon.ro, Dual licensed under the MIT and GPL licenses
 * Superfish v1.4.8 - jQuery menu widget, Copyright (c) 2008 Joel Birch
 * jQuery Scroll to Top Control script- (c) Dynamic Drive DHTML code library: http://www.dynamicdrive.com, Copyright © 1998-2012 Dynamic Drive
 * HTML5 script, html5shiv MIT @rem remysharp.com/html5-enabling-script
-* iPhone-style Checkboxes jQuery plugin, Copyright Thomas Reynolds, licensed GPL & MIT
 
 == Description ==
 
@@ -89,3 +85,7 @@ Check out live demos of the theme: http://brickpress.us/
  * removed webmaster tools
  * added option to choose social icons
  * added option to hide footer widget area on slider homepage page template
+ 
+1 December 2012 - version 1.0.5
+ * Implemented theme options into Theme Customizer. Made a lot of changes including the removal of the theme options page and Setting API altogether.
+ * Cubricks Theme is now based on TwentyTwelve theme by WordPress.

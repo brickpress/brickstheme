@@ -27,36 +27,46 @@
  *
  * @since 1.0.0
  */
-if( ! function_exists('cubricks_entry_header') ) :
-function cubricks_entry_header() {
+if( ! function_exists('cubricks_post_title') ) :
+function cubricks_post_title() {
 	?>
 	<?php if( is_single() ) { ?>
-        <header class="entry-header">
-            <h1 class="entry-title"><?php the_title(); ?></h1>
-        </header>
+		<h1 class="entry-title"><?php the_title(); ?></h1>
     <?php } elseif( is_sticky() ) { ?>
-        <header class="entry-header">
-            <h1 class="entry-title">
-            <a class="slider-caption" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
-            </h1>
-        </header>
-    <?php } elseif( has_post_format('status') ) { ?>
-    	<header>  
-            <h1><?php the_author(); ?></h1>
-            <h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php echo get_the_date(); ?></a>
-            </h2>
-        </header>
-    <?php } elseif( has_post_format('link') ) { ?>
-    	<header><?php  _e( 'Link', 'cubricks' ); ?></header>
+		<h1 class="entry-title">
+		<a class="slider-caption" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
+        </h1>
+    <?php } elseif( is_author() ) { ?>     
+        <h1 class="entry-title"><?php the_author(); ?></h1>
+        <h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php echo get_the_date(); ?></a>
+        </h2>
 	<?php } else { ?>
-    	<header class="entry-header">
-            <h1 class="entry-title">
-            <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
-            </h1>
-        </header>
-		<?php
-        }
+		<h1 class="entry-title">
+		<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'cubricks' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+        </h1><?php
 	}
+}
+endif;
+
+
+/**
+ * Displays the current post's content according to post formats.
+ *
+ * @since 1.0.0
+ */
+if( ! function_exists('cubricks_entry_content') ) :
+function cubricks_entry_content() {
+	
+	$post_format = strtolower( get_post_format() );
+	
+	if( $post_format == 'chat' ) {
+		echo cubricks_chat_content();
+	} elseif(  $post_format == 'quote' ) {
+		echo cubricks_quote_content();
+	} else {
+		the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>' ) );
+	}
+}
 endif;
 
 
@@ -109,14 +119,14 @@ if( ! function_exists('cubricks_nav_menu') ) :
             <?php wp_nav_menu( array(
 					  'theme_location' => 'primary',
 					  'show_home' 	   => false,
-					  'items_wrap'     => '<ul id="%1$s" class="sf-menu">%3$s</ul>',
+					  /*'items_wrap'     => '<ul id="%1$s" class="sf-menu">%3$s</ul>',*/
 					  'menu_class' 	   => 'nav-menu'
 				      ));
 			?>
 			<script type="text/javascript">
             <!--//--><![CDATA[//><!--
             jQuery(document).ready(function() { 
-                jQuery('ul.sf-menu').superfish(); 
+                jQuery('ul.nav-menu').superfish(); 
             });
             //--><!]]>
             </script>
@@ -133,19 +143,22 @@ add_action( 'cubricks_header_menu', 'cubricks_header_nav' );
  * @since 1.0.0
  */
 if( ! function_exists('cubricks_header_nav') ) :
-	function cubricks_header_nav() { ?>
-    
-		<nav id="top-navigation" class="header-navigation" role="navigation">
-            <?php wp_nav_menu( array(
-					  'theme_location' => 'header',
-					  'show_home' 	   => false,
-					  'menu_class' 	   => 'header-menu',
-					  'depth'          => 1
-				  ));
-			?>
-        </nav><!-- #site-navigation .header-navigation -->
-	<?php
-	}
+function cubricks_header_nav() {
+
+	if ( !is_user_logged_in() ) { ?>
+		<div class="cubricks-login"><?php wp_loginout(); ?></div><?php
+	} ?>
+	<nav id="top-navigation" class="header-navigation" role="navigation">
+		<h3 class="menu-toggle"><?php _e( 'Menu', 'cubricks' ); ?></h3>
+		<?php wp_nav_menu( array(
+				  'theme_location' => 'header',
+				  'show_home' 	   => false,
+				  'menu_class' 	   => 'nav-menu',
+				  'depth'          => 1
+			  )); ?>
+	</nav><!-- #site-navigation .header-navigation -->
+<?php
+}
 endif;
 
 
@@ -208,7 +221,7 @@ function cubricks_comment( $comment, $args, $depth ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<header class="comment-meta comment-author vcard">
 				<?php
-					echo get_avatar( $comment, 44 );
+					echo get_avatar( $comment, 70 );
 					printf( '<cite class="fn">%1$s %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
@@ -221,6 +234,9 @@ function cubricks_comment( $comment, $args, $depth ) {
 						sprintf( __( '%1$s at %2$s', 'cubricks' ), get_comment_date(), get_comment_time() )
 					);
 				?>
+                <div class="reply">
+                    <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'cubricks' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+                </div><!-- .reply -->
 			</header><!-- .comment-meta -->
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
@@ -231,10 +247,6 @@ function cubricks_comment( $comment, $args, $depth ) {
 				<?php comment_text(); ?>
 				<?php edit_comment_link( __( 'Edit', 'cubricks' ), '<p class="edit-link">', '</p>' ); ?>
 			</section><!-- .comment-content -->
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'cubricks' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 	<?php
 		break;
@@ -260,6 +272,19 @@ function cubricks_entry_meta() {
 		esc_url( get_permalink() ),
 		ucwords( $format )
 	);
+	
+	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'cubricks' ), get_the_author() ) ),
+		get_the_author()
+	);
+	
+	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>',
+		esc_url( get_permalink() ),
+		esc_attr( get_the_time() ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
 		
 	// Translators: used between list items, there is a space after the comma.
 	$categories_list = get_the_category_list( __( ', ', 'cubricks' ) );
@@ -267,35 +292,22 @@ function cubricks_entry_meta() {
 	// Translators: used between list items, there is a space after the comma.
 	$tag_list = get_the_tag_list( '', __( ', ', 'cubricks' ) );
 
-	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>',
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
-
-	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'cubricks' ), get_the_author() ) ),
-		get_the_author()
-	);
-
-	// Translators: 1 is post format, 2 is category, 3 is tag, 4 is the date and 5 is the author's name.
+	// Translators: 1 is the post format, 2 is the author, 3 is date published, 4 is the category and 5 is tags.
 	if ( $tag_list ) {
-		$utility_text = __( '%1$s was posted in %2$s and tagged %3$s on %4$s<span class="by-author"> by %5$s</span>.', 'cubricks' );
+		$utility_text = __( '%1$s posted <span class="by-author"> by %2$s</span> on %3$s in %4$s and tagged %5$s.', 'cubricks' );
 	} elseif ( $categories_list ) {
-		$utility_text = __( '%1$s was posted in %2$s on %4$s<span class="by-author"> by %5$s</span>.', 'cubricks' );
+		$utility_text = __( '%1$s posted <span class="by-author"> by %2$s</span> on %3$s in %4$s.', 'cubricks' );
 	} else {
-		$utility_text = __( '%1$s was posted on %4$s<span class="by-author"> by %5$s</span>.', 'cubricks' );
+		$utility_text = __( '%1$s posted <span class="by-author"> by %2$s</span> on %3$s.', 'cubricks' );
 	}
 
 	printf(
 		$utility_text,
 		$post_format,			// 1
-		$categories_list,		// 2
-		$tag_list,				// 3
-		$date,					// 4
-		$author					// 5
+		$author,				// 2
+		$date,					// 3
+		$categories_list,		// 4
+		$tag_list				// 5	
 	);
 }
 endif;
@@ -463,7 +475,7 @@ endif;
 function cubricks_link_pages_args() {
 	
 	$args = array(
-			  'before'         => '<div class="pagination"><span class="page-link-meta">' . __( 'Pages:', 'cubricks' ) . '</span>',
+			  'before'         => '<div class="page-links"><span class="page-link-meta">' . __( 'Pages:', 'cubricks' ) . '</span>',
 			  'after'          => '</div>',
 			  'next_or_number' => 'number',
 			  'link_before'    => '<span>',
@@ -472,50 +484,6 @@ function cubricks_link_pages_args() {
 	return $args;
 }
 
-/**
- * Return the URL for the first link found in the post content.
- *
- * @since Cubricks 1.0.0
- * @return string|bool URL or false when no link is present.
- */
-function cubricks_first_link() {
-	
-	global $post;
-	
-	$content1 = $post->post_content;
-	
-	preg_match_all( '|<a.*?(title=[\'"](.*?)[\'"])*? href=[\'"](.*?)[\'"].*?>(.*?)</a>|i', $post->post_content, $matches );
-	
-	if ( isset( $matches ) ) {
-		
-		$title = apply_filters( 'post_title', $post->post_title );
-		
-		// link has a title attribute
-		if ( $matches[2][0] != '' )
-			$title_attribute = $matches[2][0];
-		
-		// link has no title, use post title
-		elseif ( $post->post_title != '' )
-			$title_attribute = $post->post_title;
-		
-		// link and post have no title, use description
-		else
-			$title_attribute = $matches[4][0];
-		
-		$url = $matches[3][0];
-		$desc = $matches[4][0];
-		
-		return array(
-			'title'      => $title,
-			'title_attr' => $title_attribute,
-			'url'        => $url,
-			'desc'       => $desc
-		);
-	}
-	else {
-		return false;
-	}
-}
 
 /**
  * Returns comments link.
@@ -531,9 +499,10 @@ function cubricks_comments_link() {
 }
 endif;
 
+
 function cubricks_custom_header() {
 	
-	if( is_page_template('page-templates/showcase.php') || !is_page_template('page-templates/homepage-slider.php') )
+	if( is_page_template('page-templates/showcase.php') || is_page_template('page-templates/homepage.php') )
 		return;
 	
 	$header_image = get_header_image();
@@ -541,3 +510,55 @@ function cubricks_custom_header() {
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="		<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 	<?php endif;
 }
+
+
+/**
+ * Sets the post excerpt length to 40 words.
+ *
+ * To override this length in a child theme, remove the filter and add your own
+ * function tied to the excerpt_length filter hook.
+ *
+ * @since 1.0.0
+ */
+function bricks_excerpt_length( $length ) {
+	return 40;
+}
+add_filter( 'excerpt_length', 'bricks_excerpt_length' );
+
+
+/**
+ * Returns a "Continue Reading" link for excerpts
+ * @since 1.0.0
+ */
+function bricks_continue_reading_link() {
+	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cubricks' ) . '</a>';
+}
+
+
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and bricks_continue_reading_link().
+ *
+ * To override this in a child theme, remove the filter and add your own
+ * function tied to the excerpt_more filter hook.  
+ * @since 1.0.0
+ */
+function bricks_auto_excerpt_more( $more ) {
+	return ' &hellip;' . bricks_continue_reading_link();
+}
+add_filter( 'excerpt_more', 'bricks_auto_excerpt_more' );
+
+
+/**
+ * Adds a pretty "Continue Reading" link to custom post excerpts.
+ *
+ * To override this link in a child theme, remove the filter and add your own
+ * function tied to the get_the_excerpt filter hook.
+ * @since 1.0.0
+ */
+function bricks_custom_excerpt_more( $output ) {
+	if ( has_excerpt() && ! is_attachment() ) {
+		$output .= bricks_continue_reading_link();
+	}
+	return $output;
+}
+add_filter( 'get_the_excerpt', 'bricks_custom_excerpt_more' );
