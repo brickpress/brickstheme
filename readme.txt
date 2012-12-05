@@ -1,6 +1,6 @@
 ﻿== CUBRICKS THEME FOR WORDPRESS ==
 
-Contributors: Raphael Villanea <support@brickpress.us>
+Author: Raphael Villanea <support@brickpress.us>
 Requires at least: 3.1
 Tested up to: 3.5-RC2
 Version: 1.0.6
@@ -13,7 +13,6 @@ Cubricks Theme is distributed under the terms of the GNU GPL v2
 Bundled Resources
 
 * TwentyTwelve Theme, the WordPress team, GNU General Public License v2
-* jQuery UI, Copyright 2012 jQuery Foundation and other contributors, http://jqueryui.com/, Dual licensed under the MIT or GPL Version 2 licenses
 * nivoSlider, Copyright (c) 2010-2012 Dev7studios
 * Superfish v1.4.8 - jQuery menu widget, Copyright (c) 2008 Joel Birch
 * jQuery Scroll to Top Control script- (c) Dynamic Drive DHTML code library: http://www.dynamicdrive.com, Copyright © 1998-2012 Dynamic Drive
@@ -21,34 +20,40 @@ Bundled Resources
 
 == Description ==
 
-Cubricks is a clean, intuitive, flexible and responsive theme for WordPress. Inspired by LEGO and WordPress. 
+Cubricks theme is a fully responsive theme inspired by TwentyTwelve Theme for WordPress. Featuring the new theme customizer, you can transform your website into almost anything you can imagine. It includes a featured post slider, ten widget areas, five page-templates and supports post formats, custom header and background.
 
-Theme Options Sections:
-* General Section     - set the overall layout of your website and global styles. This section also sets HTML elements found on your content and				                        your website's custom background.
-* Header Section      - set site logo, site header and site description. This also sets your custom header.
-* Navigation Section  - Cubricks theme comes with three navigation menus. You may choose to disable topbar and footer navigation.
-* Content Section     - sets the style for your content boxes.
-* Sidebars Section    - when setting an image as custom background, your primary sidebar text may not stand out, thus difficult to read. If so, you can try increase the primary widget background opacity or change it's color altogether. 
-* Social Section      - add your social network profiles. This also lets you add webmaster tools meta data if you haven't done so already.
-* Footer Section      - set footer logo, copyright notice and a site badge or a wide ad banner.
-* Layout Section      - exlpore advanced styling options. Try setting background images for sections with wrappers, manipulate opacity to reveal images in the background, or just about anything you can imagine.
-* Reset Section       - resets theme settings to defaults. This does not reset text entries such as copyright notice, Creative Commons license, and footer ads. This does not reset social media entries and webmaster tools entries as well. To remove the aforementioned entries, click on the the Clear Field button found at the bottom of each entry field.
+Since version 1.0.6, Cubricks theme options were implemented into the Theme Customizer. It is much easier to use and offers live preview. Theme options sections are now in the theme customizer panel.
 
+== Theme Options Sections ==
+* Layout Section
+Changes the whole layout of your website.
+* Colors section
+Changes the color of text elements such as the site title, site description, post title, headings, link color, primary and secondary text colors.
+* Text Shadows
+Give your website that elegant look you commonly find on premium themes with text shadows.
+* Wrappers Section
+Put your creativity to the test with Cubricks theme section wrappers. Each section wrapper can be styled independently using a combination of colors, opacity, background images and background positioning. You can transform your website into almost anything you can imagine using this feature.
+* Featured Slider Section
+Changes the location, background and dimensions of your featured posts slider when using the showcase and homepage page templates.
+* Reset Section
+Resets theme settings to defaults. This does not reset text entries such as copyright notice and social links.
 
-Custom Widgets:
+== Custom Widgets ==
 
 * Cubricks Category Post Widget - show recent posts filed under a single category
 
-Theme Supports:
+== Theme Supports ==
 * Custom Header
 * Custom Background
 * Post Formats: aside, audio, chat, gallery, image, link, quote, status, video
 
-Page Templates:
-* Sidebar Page Template
+== Page Templates ==
+* Sidebar Page Template (default)
+* Full Width Template
 * Category Page Template
 * Content Slider Template
 * Showcase Template
+* Homepage Template
  
 == BrickPress Themes Demo ==
 
@@ -86,6 +91,6 @@ Check out live demos of the theme: http://brickpress.us/
  * added option to choose social icons
  * added option to hide footer widget area on slider homepage page template
  
-1 December 2012 - version 1.0.5
+27 November 2012 - version 1.0.5
  * Implemented theme options into Theme Customizer. Made a lot of changes including the removal of the theme options page and Setting API altogether.
- * Cubricks Theme is now based on TwentyTwelve theme by WordPress.
+ * Cubricks Theme is now based on TwentyTwelve Theme by WordPress.

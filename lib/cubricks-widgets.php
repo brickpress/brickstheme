@@ -7,11 +7,11 @@
 class Cubricks_Category_Posts_Widget extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget_category_posts', 'description' => __( "Show posts in a category.", 'cubricks' ) );
+		$widget_ops = array('classname' => 'cubricks_category_posts', 'description' => __( "Show posts in a category.", 'cubricks' ) );
 		
 		/* Create the widget. */
-		parent::__construct('category-posts', __('Cubricks Category Posts', 'cubricks'), $widget_ops );
-		$this->alt_option_name = 'widget_category_posts';
+		parent::__construct('cubricks-category-posts', __('Cubricks Category Posts', 'cubricks'), $widget_ops );
+		$this->alt_option_name = 'cubricks_category_posts';
 
 		add_action( 'save_post', array(&$this, 'flush_widget_cache') );
 		add_action( 'deleted_post', array(&$this, 'flush_widget_cache') );
@@ -74,8 +74,8 @@ class Cubricks_Category_Posts_Widget extends WP_Widget {
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
-		if ( isset($alloptions['widget_category_posts']) )
-			delete_option('widget_category_posts');
+		if ( isset($alloptions['cubricks_category_posts']) )
+			delete_option('cubricks_category_posts');
 
 		return $instance;
 	}

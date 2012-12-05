@@ -9,9 +9,9 @@
  * any active widgets from the Main Sidebar area, and the sidebar will
  * disappear everywhere.
  *
- * @package WordPress
- * @subpackage Cubricks
- * @since Cubricks 1.0.0
+ * @package Cubricks Theme
+ *
+ * @since Cubricks 1.0.6
  */
 
 get_header(); ?>

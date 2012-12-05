@@ -210,7 +210,7 @@ function cubricks_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments.
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'cubricks' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'cubricks' ); ?> <?php comment_author_link(); ?></p>
 	<?php
 			break;
 		default :
@@ -245,8 +245,8 @@ function cubricks_comment( $comment, $args, $depth ) {
 
 			<section class="comment-content comment">
 				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'cubricks' ), '<p class="edit-link">', '</p>' ); ?>
 			</section><!-- .comment-content -->
+            <?php edit_comment_link( __( 'Edit', 'cubricks' ), '<p class="edit-comment-link">', '</p>' ); ?>
 		</article><!-- #comment-## -->
 	<?php
 		break;
@@ -492,12 +492,27 @@ function cubricks_link_pages_args() {
  */
 if( ! function_exists('cubricks_comment_link') ) :
 function cubricks_comments_link() {
-	
+	?>
+	<div class="comments-link"><?php
 	if( comments_open() && ! post_password_required() ) {
-		comments_popup_link( '<span class="comments-link"></span>' . __( 'Leave a Comment. ', 'cubricks' ), '<span class="comments-link"></span>' . _x( '1 Comment ', 'comments number', 'cubricks' ), '<span class="comments-link"></span>' . _x( '% Comments ', 'comments number', 'cubricks' ) );
-	}
+		comments_popup_link( __( 'Leave a Comment', 'cubricks' ), _x( '1 Comment ', 'comments number', 'cubricks' ), _x( '% Comments ', 'comments number', 'cubricks' ) );
+	} ?>
+    </div><!-- .comments-link --><?php
 }
 endif;
+
+
+/**
+ * Returns edit link.
+ *
+ * @since 1.0.0
+ */
+function cubricks_edit_link() {
+	?>
+	<div class="edit-link"><?php
+	edit_post_link( __( 'Edit', 'cubricks' ), '', '' ); ?>
+    </div><!-- .edit-link --><?php
+}
 
 
 function cubricks_custom_header() {
@@ -507,7 +522,7 @@ function cubricks_custom_header() {
 	
 	$header_image = get_header_image();
 	if ( ! empty( $header_image ) ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="		<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 	<?php endif;
 }
 
@@ -520,32 +535,34 @@ function cubricks_custom_header() {
  *
  * @since 1.0.0
  */
-function bricks_excerpt_length( $length ) {
+function cubricks_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'bricks_excerpt_length' );
+add_filter( 'excerpt_length', 'cubricks_excerpt_length' );
 
 
 /**
  * Returns a "Continue Reading" link for excerpts
+ *
  * @since 1.0.0
  */
-function bricks_continue_reading_link() {
+function cubricks_continue_reading_link() {
 	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'cubricks' ) . '</a>';
 }
 
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and bricks_continue_reading_link().
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and cubricks_continue_reading_link().
  *
  * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.  
+ * function tied to the excerpt_more filter hook.
+ * 
  * @since 1.0.0
  */
-function bricks_auto_excerpt_more( $more ) {
-	return ' &hellip;' . bricks_continue_reading_link();
+function cubricks_auto_excerpt_more( $more ) {
+	return ' &hellip;' . cubricks_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'bricks_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'cubricks_auto_excerpt_more' );
 
 
 /**
@@ -553,12 +570,24 @@ add_filter( 'excerpt_more', 'bricks_auto_excerpt_more' );
  *
  * To override this link in a child theme, remove the filter and add your own
  * function tied to the get_the_excerpt filter hook.
+ *
  * @since 1.0.0
  */
-function bricks_custom_excerpt_more( $output ) {
+function cubricks_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= bricks_continue_reading_link();
+		$output .= cubricks_continue_reading_link();
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'bricks_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'cubricks_custom_excerpt_more' );
+
+
+/**
+ * Returns a link leading to theme documentation homepage.
+ *
+ * @since 1.0.0
+ */
+function cubricks_theme_link() {
+	?>
+	<a class="theme-url" href="<?php echo esc_url( __( 'http://cubrickstheme.brickpress.us/', 'cubricks' ) ); ?>" title="<?php esc_attr_e( 'Cubricks Theme Website', 'cubricks' ); ?>"><?php printf( __( '%s', 'cubricks' ), 'Cubricks Theme' ); ?></a><?php
+}

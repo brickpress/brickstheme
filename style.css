@@ -1,13 +1,13 @@
 /*
 Theme Name: Cubricks
-Theme URI: http://cubricks.brickpress.us/
+Theme URI: http://cubrickstheme.brickpress.us/
 Author: Raphael Villanea
-Author URI: http://cubrick.us/
-Description: Cubricks theme is a fully responsive theme inspired by TwentyTwelve theme for WordPress. Transform your website into almost anything you can imagine with the theme customizer. Cubricks Theme comes with a featured post slider, 10 widget areas, 5 page templates and supports 9 post formats.
+Author URI: http://cubrick.brickpress.us/
+Description: Cubricks theme is a fully responsive theme inspired by TwentyTwelve Theme for WordPress. Featuring the new theme customizer, you can transform your website into almost anything you can imagine. It includes a featured post slider, ten widget areas, five page-templates and supports post formats, custom header and background.
 Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blue, light, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Tags: light, blue, gray, white, one-column, two-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 Text Domain: cubricks
 
 /* =Notes
@@ -737,19 +737,19 @@ footer[role="contentinfo"] a:hover {
 	margin-top: 0.857142857rem;
 	font-weight: normal;
 }
-.entry-header .comments-link {
+.comments-link {
 	margin-top: 12px;
 	margin-top: 0.857142857rem;
-	font-size: 13px;
-	font-size: 0.928571429rem;
-	line-height: 1.846153846;
-	color: #777;
+	float: left;
 }
-.comments-link a,
+.edit-link {
+	margin-top: 12px;
+	margin-top: 0.857142857rem;
+	float: right;
+}
 .entry-meta a {
 	color: #777;
 }
-.comments-link a:hover,
 .entry-meta a:hover {
 	color: #21759b;
 	text-decoration: underline;
@@ -1111,6 +1111,9 @@ article.format-link .entry-content {
 article.format-link header .link-icon {
 	background: url(images/link-icon.png) no-repeat scroll;
 }
+article.format-link header .link-icon span {
+	margin-left: 20px;
+}
 article.format-link .entry-content a {
 	font-size: 22px;
 	font-size: 1.571428571rem;
@@ -1126,8 +1129,6 @@ article.format-quote .entry-content p {
 	font-style: italic;
 	margin-left: 36px;
 	margin-left: 2.571428571rem;
-	padding-bottom: 12px;
-	padding-bottom: 0.857142857rem;
 }
 article.format-quote .entry-content blockquote {
 	position: relative;
@@ -1379,46 +1380,10 @@ label ~ span.required {
 	font-weight: normal;
 	color: #757575;
 }
-.template-homepage h1,
-.template-homepage h2 {
-	color: #333333;
-}
 .entry-page-image {
 	margin-bottom: 14px;
 	margin-bottom: 1rem;
 }
-.template-homepage .site-content article {
-	border: 0;
-	margin-bottom: 0;
-	background: none;
-}
-.template-homepage .widget-area {
-	float: left;
-	width: auto;
-	padding-top: 12px;
-	padding-top: 0.857142857rem;
-}
-.template-homepage .widget-area .widget li {
-	margin: 8px 0 0;
-	margin: 0.571428571rem 0 0;
-	font-size: 13px;
-	font-size: 0.928571429rem;
-	line-height: 1.714285714;
-	list-style-type: square;
-	list-style-position: inside;
-}
-.template-homepage .widget-area .widget li a {
-	color: #777;
-}
-.template-homepage .widget-area .widget li a:hover {
-	color: #21759b;
-}
-.template-homepage .widget-area .widget_text img {
-	float: left;
-	margin: 8px 12px 8px 0;
-	margin: 0.571428571rem 0.857142857rem 0.571428571rem 0;
-}
-
 
 /* =Widgets
 -------------------------------------------------------------- */
@@ -1496,14 +1461,44 @@ img#wpstats {
 		float: right;
 		width: 80%;
 	}
-	body.full-wide .site {
+	body.full-wide .site,
+	body.post-boxes .site {
 		margin: 0 auto;
 		width: 100%;
 	}
 	body.full-wide .inner,
-	body.full-wide .main-navigation {
+	body.full-wide .main-navigation,
+	body.post-boxes .inner,
+	body.post-boxes .main-navigation {
 		padding: 0 12px;
 		padding: 0 0.857142857rem;
+	}
+	body.post-boxes #main-content {
+		background: none;
+	}
+	body.post-boxes #content > article {
+		-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);	
+		background: rgba(255, 255, 255, 1);
+		border-radius: 6px;
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
+		-khtml-border-radius: 6px;
+		padding: 24px;
+		padding: 1.714285714rem;
+	}
+	body.post-boxes #secondary .widget {
+		-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+		-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);	
+		background: rgba(255, 255, 255, 1);
+		border-radius: 6px;
+		-moz-border-radius: 6px;
+		-webkit-border-radius: 6px;
+		-khtml-border-radius: 6px;
+		padding: 12px;
+		padding: 0.857142857rem;
 	}
 	body.page-centered .site {
 		margin: 0 auto;
@@ -1671,7 +1666,8 @@ img#wpstats {
 	}
 	#secondary .widget.widget_search input[type="text"] {
 		background: #FFFFFF url(images/search.png) no-repeat 5px 6px;
-		padding-left: 6px;
+		padding-left: 28px;
+		width: 80%;
 	}
 	#secondary .widget.widget_search input[type="submit"] {
 		visibility: hidden;
@@ -1683,7 +1679,8 @@ img#wpstats {
 	body {
 		background-color: #e6e6e6;
 	}
-	body.full-wide .site {
+	body.full-wide .site,
+	body.post-boxes .site {
 		padding: 0;
 		margin-top: 0;
 		margin-bottom: 0;
@@ -1739,15 +1736,14 @@ img#wpstats {
 	.main-navigation li { 
 		margin-top: 0;
 	}
-	#secondary .widget.widget_search input[type="text"] {
-		background: #FFFFFF;
-	}
 	#secondary .widget.widget_search input[type="submit"] {
 		visibility: visible;
 	}
-		
+	#secondary .widget.widget_search input[type="text"] {
+		width: 60%;
+	}
 	/* Superfish Navigation */
-	.sf-menu a.sf-with-ul {
+	nav-menu a.sf-with-ul {
 		min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
 	}
 	.sf-sub-indicator {
@@ -1759,34 +1755,30 @@ img#wpstats {
 		height:			10px;
 		text-indent: 	-999em;
 		overflow:		hidden;
-		background:		url(images/arrows-ffffff.png) no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
-	}
-	a > .sf-sub-indicator {  /* give all except IE6 the correct values */
-		top: 30%;
-		background-position: 0 -100px; /* use translucent arrow for modern browsers*/
 	}
 	/* apply hovers to modern browsers */
+	a > .sf-sub-indicator,
 	a:focus > .sf-sub-indicator,
 	a:hover > .sf-sub-indicator,
 	a:active > .sf-sub-indicator,
 	li:hover > a > .sf-sub-indicator,
 	li.sfHover > a > .sf-sub-indicator {
-		background-position: -10px -100px; /* arrow hovers for modern browsers*/
+		background: url(images/arrow-superfish.png) no-repeat scroll 50% 0%; /* arrow hovers for modern browsers*/
 	}
 	/* point right for anchors in subs */
-	.sf-menu ul .sf-sub-indicator {
-		background-position: -10px 0;
+	.nav-menu ul .sf-sub-indicator {
+		background: url(images/arrow-superfish-right.png) no-repeat scroll;
 	}
-	.sf-menu ul a > .sf-sub-indicator {
-		background-position: 0 0;
+	.nav-menu ul a > .sf-sub-indicator {
+		background: url(images/arrow-superfish-right.png) no-repeat scroll;
 	}
 	/* apply hovers to modern browsers */
-	.sf-menu ul a:focus > .sf-sub-indicator,
-	.sf-menu ul a:hover > .sf-sub-indicator,
-	.sf-menu ul a:active > .sf-sub-indicator,
-	.sf-menu ul li:hover > a > .sf-sub-indicator,
-	.sf-menu ul li.sfHover > a > .sf-sub-indicator {
-		background-position: -10px 0; /* arrow hovers for modern browsers*/
+	.nav-menu ul a:focus > .sf-sub-indicator,
+	.nav-menu ul a:hover > .sf-sub-indicator,
+	.nav-menu ul a:active > .sf-sub-indicator,
+	.nav-menu ul li:hover > a > .sf-sub-indicator,
+	.nav-menu ul li.sfHover > a > .sf-sub-indicator {
+		background: url(images/arrow-superfish-right.png) no-repeat scroll; /* arrow hovers for modern browsers*/
 	}
 	/*** shadows for all but IE6 ***/
 	.sf-shadow ul {
@@ -1904,8 +1896,8 @@ img#wpstats {
 	#respond,
 	.commentlist .comment-edit-link,
 	.commentlist .reply,
-	.entry-header .comments-link,
-	.entry-meta .edit-link a,
+	.comments-link a,
+	.edit-link a,
 	.page-link,
 	.site-content nav,
 	.widget-area,
@@ -2004,9 +1996,6 @@ img#wpstats {
 }
 
 /* Div Wrappers */
-#page {
-	background: #FFFFFF;
-}
 #header {
 	background: #638EBC;
 }

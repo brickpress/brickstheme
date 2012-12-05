@@ -22,33 +22,27 @@
 			$( '.copyright-notice' ).html( to );
 		} );
 	} );
-	wp.customize( 'slider_timer', function( value ) {
+	wp.customize( 'header_text_shadow', function( value ) {
 		value.bind( function( to ) {
-			$( '.slider_timer' ).html( to );
+			$( '.site-title a', '.site-description a','.header-navigation li a', '.header-navigation li a:hover' ).html( to );
 		} );
 	} );
-	wp.customize( 'slider_effects', function( value ) {
+	wp.customize( 'menu_text_shadow', function( value ) {
 		value.bind( function( to ) {
-			$( '.slider_effects' ).html( to );
+			$( '.main-navigation li a' ).html( to );
 		} );
 	} );
-	wp.customize( 'slider_items', function( value ) {
+	wp.customize( 'footer_sidebar_shadow', function( value ) {
 		value.bind( function( to ) {
-			$( '.slider_items' ).html( to );
+			$( '#sidebar-homepage #supplementary .widget .textwidget', '#sidebar-homepage #supplementary .widget-title', '#sidebar-homepage #supplementary .widget p' ).html( to );
 		} );
 	} );
-	wp.customize( 'large_slider_width', function( value ) {
+	wp.customize( 'homepage_sidebar_shadow', function( value ) {
 		value.bind( function( to ) {
-			$( '.large_slider_width' ).html( to );
-		} );
-	} );
-	wp.customize( 'large_slider_height', function( value ) {
-		value.bind( function( to ) {
-			$( '.large_slider_height' ).html( to );
+			$( '#sidebar-homepage #supplementary .widget .textwidget', '#sidebar-homepage #supplementary .widget-title', '#sidebar-homepage #supplementary .widget p' ).html( to );
 		} );
 	} );
 	
-
 	// Hook into background color change and adjust body class value as needed.
 	wp.customize( 'background_color', function( value ) {
 		value.bind( function( to ) {

@@ -2,8 +2,8 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package WordPress
- * @subpackage Cubricks
+ * @package Cubricks Theme
+ *
  * @since Cubricks 1.0.0
  */
 

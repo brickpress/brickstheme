@@ -8,7 +8,7 @@
  * second section contains a list of posts in reverse chronological order. The number of posts to show on
  * this page can also be customized on the theme options admin panel.
  *
- * @package Cubricks
+ * @package Cubricks Theme
  * @subpackage Page Templates
  * @since Cubricks 1.0.0
  */

@@ -7,8 +7,8 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package WordPress
- * @subpackage Cubricks
+ * @package Cubricks Theme
+ *
  * @since Cubricks 1.0.0
  */
 
@@ -33,16 +33,15 @@ get_header(); ?>
                 </div><!-- .entry-content -->        
                 <div class="clear"></div>
                 
-                <footer class="entry-meta">
-                    <?php edit_post_link( '<span class="edit-icon"></span>'. __( 'Edit', 'cubricks' ), '<span class="edit-link">', '</span>' ); ?>
-                </footer>
+           		<?php cubricks_edit_link(); ?>
                 <div class="clear"></div>
     
                 <div class="left-post-shadow"></div>
                 <div class="right-post-shadow"></div>
 			</article><!-- #post-<?php the_ID(); ?> -->
 			<?php endwhile; // end of the loop. ?>
-
+			
+            <?php comments_template( '', true ); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

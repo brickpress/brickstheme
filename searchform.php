@@ -3,7 +3,7 @@
  * The template for displaying search forms in Cubricks Theme.
  *
  * @package Cubricks Theme
- * @subpackage Page Templates
+ *
  * @since Cubricks 1.0.0
  */
 ?>

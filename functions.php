@@ -278,13 +278,15 @@ function cubricks_body_classes( $classes ) {
 
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
-		
-	if( $page_layout == 'full-wide' ) {
-		$classes[] = 'full-wide';
-	} else {
-		$classes[] = 'page-centered';
-	}
 	
+	if( $page_layout == 'page-centered' ) {
+		$classes[] = 'page-centered';
+	} elseif( $page_layout == 'post-boxes' ) {
+		$classes[] = 'post-boxes';
+	} else {
+		$classes[] = 'full-wide';
+	}
+
 	if( $showcase_slider == 'before_header' )
 		$classes[] = 'slider-before-header';
 		

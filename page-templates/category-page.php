@@ -5,6 +5,7 @@
  *
  * @package Cubricks Theme
  * @subpackage Page Templates
+ *
  * @since Cubricks 1.0.0
  */
 get_header(); ?>
@@ -42,7 +43,7 @@ get_header(); ?>
 			<?php $page_id = get_the_ID();
 			
 			/* Get the meta key. */
-			$meta_key = page_category_field_meta_key();
+			$meta_key = cubricks_page_category_field_meta_key();
 		
 			if ( is_page() ) {
 				/* Get the meta value of the custom field key. */
@@ -59,7 +60,6 @@ get_header(); ?>
 				'order'               => 'DESC',
 				'paged'               => $paged,
 				'posts_per_page'      => $post_per_page,
-				//'offset'              => '-1',
 				'ignore_sticky_posts' => $do_not_show_stickies
 			);
 			

@@ -7,8 +7,8 @@
  * handled by a callback to cubricks_comment() which is
  * located in the functions.php file.
  *
- * @package WordPress
- * @subpackage Cubricks
+ * @package Cubricks Theme
+ *
  * @since Cubricks 1.0.0
  */
 

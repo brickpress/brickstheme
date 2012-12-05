@@ -6,8 +6,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Cubricks
+ * @package Cubricks Theme
+ *
  * @since Cubricks 1.0.0
  */
 

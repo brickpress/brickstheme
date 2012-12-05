@@ -3,10 +3,10 @@
  * The template for displaying the footer.
  *
  * Contains footer content and the closing of the
- * #main and #page div elements.
+ * #main div element.
  *
- * @package WordPress
- * @subpackage Cubricks
+ * @package Cubricks Theme
+ *
  * @since Cubricks 1.0.0
  */
 ?>
@@ -15,6 +15,7 @@
     </div><!-- #main-content .wrapper -->
 	<?php 
 	if (  ! is_404() ) {
+		// Get the sidebar for Homepage page template
 		if( is_page_template('page-templates/homepage.php') )
 			get_sidebar('homepage');
 		else
@@ -30,7 +31,7 @@
             <div class="clearfix"></div>
             <div class="site-info">
                 <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'cubricks' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'cubricks' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'cubricks' ), 'WordPress' ); ?></a>
-                <a class="theme-url" href="<?php echo esc_url( __( 'http://cubrickstheme.brickpress.us/', 'cubricks' ) ); ?>" title="<?php esc_attr_e( 'Cubricks Theme Website', 'cubricks' ); ?>"><?php printf( __( 'Theme by %s', 'cubricks' ), 'Cubricks' ); ?></a>
+                <?php cubricks_theme_link(); ?>
             </div><!-- .site-info -->
         </footer><!-- #colophon .inner -->
     </div><!-- #footer .wrapper -->

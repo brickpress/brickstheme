@@ -12,8 +12,9 @@
  *
  * We are creating two queries to fetch the proper posts.
  *
- * @package Cubricks
+ * @package Cubricks Theme
  * @subpackage Page Templates
+ *
  * @since Cubricks 1.0.0
  */
 get_header(); ?>

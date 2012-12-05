@@ -9,13 +9,13 @@
  */
 
 /* Add support for the 'page_category_field' extension to pages. */
-add_action( 'init', 'page_category_field_post_type_support' );
+add_action( 'init', 'cubricks_page_category_field_post_type_support' );
 
 /* Register metadata for the page category field. */
-add_action( 'init', 'page_category_field_register_meta' );
+add_action( 'init', 'cubricks_page_category_field_register_meta' );
 
 /* Create the meta box on the 'admin_menu' hook. */
-add_action( 'admin_menu', 'page_category_field_admin_setup' );
+add_action( 'admin_menu', 'cubricks_page_category_field_admin_setup' );
 
 
 /**
@@ -25,7 +25,7 @@ add_action( 'admin_menu', 'page_category_field_admin_setup' );
  * @return void
  * @since 1.0.0
  */
-function page_category_field_post_type_support() {
+function cubricks_page_category_field_post_type_support() {
 	add_post_type_support( 'page', 'page-category-field' );
 }
 
@@ -38,8 +38,8 @@ function page_category_field_post_type_support() {
  * @return void
  * @since 1.0.0
  */
-function page_category_field_register_meta() {
-	register_meta( 'page', page_category_field_meta_key(), 'page_category_field_sanitize_meta' );
+function cubricks_page_category_field_register_meta() {
+	register_meta( 'page', cubricks_page_category_field_meta_key(), 'cubricks_page_category_field_sanitize_meta' );
 }
 
 
@@ -54,7 +54,7 @@ function page_category_field_register_meta() {
  * @return mixed $meta_value
  * @since 1.0.0
  */
-function page_category_field_sanitize_meta( $meta_value, $meta_key, $meta_type ) {
+function cubricks_page_category_field_sanitize_meta( $meta_value, $meta_key, $meta_type ) {
 	return strip_tags( $meta_value );
 }
 
@@ -66,8 +66,8 @@ function page_category_field_sanitize_meta( $meta_value, $meta_key, $meta_type )
  * @return string
  * @since 1.0.0
  */
-function page_category_field_meta_key() {
-	return apply_filters( 'page_category_field_meta_key', 'Category' );
+function cubricks_page_category_field_meta_key() {
+	return apply_filters( 'cubricks_page_category_field_meta_key', 'Category' );
 }
 
 
@@ -78,11 +78,11 @@ function page_category_field_meta_key() {
  * @return void
  * @since 1.0.0
  */
-function page_category_field_admin_setup() {
+function cubricks_page_category_field_admin_setup() {
 
 	/* Load the post meta boxes on the new page and edit page screens. */
-	add_action( 'load-post.php', 'page_category_field_load_meta_boxes' );
-	add_action( 'load-post-new.php', 'page_category_field_load_meta_boxes' );
+	add_action( 'load-post.php', 'cubricks_page_category_field_load_meta_boxes' );
+	add_action( 'load-post-new.php', 'cubricks_page_category_field_load_meta_boxes' );
 }
 
 
@@ -94,13 +94,13 @@ function page_category_field_admin_setup() {
  * @return void
  * @since 1.0.0
  */
-function page_category_field_load_meta_boxes() {
+function cubricks_page_category_field_load_meta_boxes() {
 
 	/* Add the custom field category meta box on the 'add_meta_boxes' hook. */
-	add_action( 'add_meta_boxes', 'page_category_field_create_meta_box', 10, 2 );
+	add_action( 'add_meta_boxes', 'cubricks_page_category_field_create_meta_box', 10, 2 );
 
 	/* Saves the post meta box data. */
-	add_action( 'save_post', 'page_category_field_meta_box_save', 10, 2 );
+	add_action( 'save_post', 'cubricks_page_category_field_meta_box_save', 10, 2 );
 }
 
 
@@ -113,10 +113,10 @@ function page_category_field_load_meta_boxes() {
  * @return void
  * @since 1.0.0
  */
-function page_category_field_create_meta_box( $post_type, $post ) {
+function cubricks_page_category_field_create_meta_box( $post_type, $post ) {
 
 	if ( post_type_supports( $post_type, 'page-category-field' ) )
-		add_meta_box( 'page-category-field', __( 'Category', 'page-category-field' ), 'page_category_field_meta_box', $post_type, 'side', 'default' );
+		add_meta_box( 'page-category-field', __( 'Category', 'page-category-field' ), 'cubricks_page_category_field_meta_box', $post_type, 'side', 'default' );
 }
 
 
@@ -129,11 +129,11 @@ function page_category_field_create_meta_box( $post_type, $post ) {
  * @return void
  * @since 1.0.0
  */
-function page_category_field_meta_box( $object, $box ) {
+function cubricks_page_category_field_meta_box( $object, $box ) {
 
 		/* Category list */
         $categories = get_categories(array('type' => 'post', 'hide_empty' => 0, 'orderby' => 'name', 'order' => 'ASC', 'taxonomy' => 'category'));
-		$category_name = esc_attr( get_post_meta( $object->ID, page_category_field_meta_key(), true ) );
+		$category_name = esc_attr( get_post_meta( $object->ID, cubricks_page_category_field_meta_key(), true ) );
 		
 		wp_nonce_field( basename( __FILE__ ), 'page-category-field-nonce' ); ?>
  
@@ -166,7 +166,7 @@ function page_category_field_meta_box( $object, $box ) {
  * @return void
  * @since 1.0.0
  */
-function page_category_field_meta_box_save( $post_id, $post ) {
+function cubricks_page_category_field_meta_box_save( $post_id, $post ) {
 
 	/* Verify the nonce before proceeding. */
 	if ( !isset( $_POST['page-category-field-nonce'] ) || !wp_verify_nonce( $_POST['page-category-field-nonce'], basename( __FILE__ ) ) )
@@ -176,7 +176,7 @@ function page_category_field_meta_box_save( $post_id, $post ) {
 	$new_meta_value = $_POST['page-category-field'];
 
 	/* Get the meta key. */
-	$meta_key = page_category_field_meta_key();
+	$meta_key = cubricks_page_category_field_meta_key();
 
 	/* Get the meta value of the custom field key. */
 	$meta_value = get_post_meta( $post_id, $meta_key, true );

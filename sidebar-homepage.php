@@ -6,11 +6,12 @@
  *
  * @package WordPress
  * @subpackage Cubricks
+ *
  * @since Cubricks 1.0.5
  */
 
 /*
- * The front page widget area is triggered if any of the areas
+ * The homepage widget area is triggered if any of the areas
  * have widgets. So let's check that first.
  *
  * If none of the sidebars have widgets, then let's bail early.

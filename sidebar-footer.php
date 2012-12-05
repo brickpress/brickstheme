@@ -4,8 +4,8 @@
  *
  * If no active widgets in sidebar, let's hide it completely.
  *
- * @package WordPress
- * @subpackage Cubricks
+ * @package Cubricks Theme
+ *
  * @since Cubricks 1.0.0
  */
 ?>
